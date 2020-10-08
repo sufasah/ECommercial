@@ -1,2 +1,2 @@
 # E-Commercial Web Project
-Individual e-commercial project
+Individual e-commercial ASP.NET Angular project
