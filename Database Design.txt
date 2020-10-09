@@ -32,6 +32,71 @@ user adresses
 
 ENTITIES
 -------------------------------
+Products:
+title
+rating
+number of rating
+price
+cost
+stock amount
+shop stock code
+maximum amount to sell
+barcode
+category
+subcategory
+brand
+warranty period
+kdv
+deci
+img1
+img2
+img3
+img4
+img5
+
+Product Schemas:
+id
+category
+subcategory
+brand
+shop stock code-
+product name
+property[renk:yeşil,boy:314]
+property2
+maximum amount to buy
+count-
+price-
+VAT rate
+expiry
+day for cargo-
+cargo corporation
+commission
+
+Main categories of products
+Sub categories of main categories
+products of sub categories
+Users
+User Orders
+User favories
+User comments
+Campaigns
+hot products
+new products
+chapest products
+most commented products
+most rated products
+filter of products
+ordered cart
+shops
+general informations
+frequently asked questions
+frequently asked questions categories
+frequently asked questions subcategories
+messages
+coupons
+slider
+user adresses
+
 Düzenlenecek
 {
 mağaza
@@ -69,4 +134,39 @@ galeri gösrel yükle
 ürün listesi hazırla
 tek tek ürün ekle
 hızlı ürün ekle
+yeni sipariştekilerin sayısı
+paketlenmişlerin sayısı
+taşıma durumunda olanların sayısı
+müşteri talepleri
+iade talebi
+eksik/hasarlı/yanlış ürün talebi
+aksiyon
+ürün listesi:
+ürün no
+satıcı stok kodu [tek03,tek01,exnevlovlypnk]
+ürün adı
+özellik 1,2
+maksimum satın alma adedi
+adet
+fiyat
+kdv hariç
+vade(gün)
+kargoya veriliş süresi
+kargo şirketi
+teslimat edresi etiketi [birincil]
+hatalı iptal geciken sipariş oranları yüzdesel
+belge yönetimi sayfası
+ürün yükleme
+ürün adı
+mağaza ürün kodu
+maksimum satın alma adedi
+kargo firması
+kargo süresi
+stok(adet)
+fiyat
+ürün alış fiyatı,liste fiyatı,satış fiyatı
+ürün ekleme süreci
+iletilen ,ürün bilgilerri eksik , incelenecek , eşleşen(onay-red bekleniyor),reddedilen eşleşme
+satışa hazır,katalog sürecinde,görev açılan ürün,açık görev sayısı,tamamlanan görev sayısı
+
 }
