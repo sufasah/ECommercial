@@ -3,8 +3,10 @@ Requirements
 Products
 Main categories of products
 Sub categories of main categories
-products of sub categories
+sub categories of sub categories
+products of sub-sub categories
 Users
+invoice of users
 User Orders
 User favories
 User comments
@@ -25,146 +27,219 @@ messages
 coupons
 slider
 user adresses
-
-
+special price for some users are choosen
+pay with bank-credit card,remittance-eft,coupon,multiple-credit-card
 
 
 
 ENTITIES
 -------------------------------
-Products:
-title
-rating
-number of rating
-price
-cost
-stock amount
-shop stock code
-maximum amount to sell
-barcode
-category
-subcategory
-brand
-warranty period
-kdv
-deci
-img1
-img2
-img3
-img4
-img5
-
-Product Schemas:
+Categorized Product:
 id
-category
-subcategory
-brand
-shop stock code-
+barcode
 product name
-property[renk:yeşil,boy:314]
-property2
-maximum amount to buy
-count-
-price-
+category id
+subcategory id
+subsubcategory id
+brand id
 VAT rate
 expiry
-day for cargo-
-cargo corporation
 commission
+warranty period
+description
+properties[renk:yeşil,boy:314]
+state[onsale,closed to sale]
+cargo corporation
+deci
 
-Main categories of products
-Sub categories of main categories
-products of sub categories
-Users
-User Orders
-User favories
-User comments
-Campaigns
-hot products
-new products
-chapest products
-most commented products
-most rated products
-filter of products
-ordered cart
-shops
-general informations
-frequently asked questions
-frequently asked questions categories
-frequently asked questions subcategories
-messages
-coupons
+Products of shops:
+id
+shop id
+abstract product id
+campaign id
+variant group id
+product rating //cannot be modified by shop
+rating count //cannot be modified by shop
+stock amount
+stock code
+price
+day for cargo
+shipping adress
+claim address
+imgages [a.jpg,b.jpg,c.jpg...]
+on sale datetime
+
+Users:
+id
+email
+name
+surname
+phone
+birthdate
+gender
+email notification
+sms notification
+
+claim addresses of users:
+id
+user id
+receivers name
+receivers surname
+receivers number
+country only turkey // wont be added at now
+city
+address
+name of this address record
+
+
+invoice of users:
+id
+user id
+receivers name
+receivers surname
+receivers number
+country only turkey // wont be added at now
+city
+address
+name of this address record
+type[individual,institutional]
+
+User Orders:
+id
+user id
+claim adress id
+invoice id
+datetime
+
+products of order:
+id
+order id
+product id
+count
+
+User favorites:
+id
+user id
+product id
+
+User will be ordered later:
+id
+user id
+product id
+
+product rates:
+id
+product id
+user id
+comment
+rate
+imgages[a.jpg,b.jpg...]
+hidden user info [true,false]
+datetime
+
+categories:
+id
+title
+
+sub categories:
+id
+title
+
+sub sub categories:
+id
+title
+
+brands:
+id
+brand
+
+Campaigns:
+id
+start datetime
+end datetime
+rate
+
+shops:
+id
+username
+password
+name
+authorized name
+authorized surname
+authorized gender
+authorized position
+authorized phone
+authorized email
+firm owner name
+firm owner surname
+firm owner phone
+kep mail
+firm website
+firm email
+legal firm name
+firm type  [limited,anonymous,individual,partnership]
+firm profile [distributor,importer, main dealer,dealer , producer]
+sale category
+commercial record number
+tax office city
+tax office
+tax number/tr id number
+mersis number
+invoice adress
+invoice city
+invoice district
+invoice neighborhood
+invoice email
+shipping address
+shipping city
+shipping district
+shipping neighborhood
+bank account owner
+bank name
+branch bank
+branch code
+account number
+IBAN
+
+general informations:
+facebook address
+twitter address
+instagram address
+linkedin address
+pinterest address
+youtube address
+logo url
+whatsapp number
+
+faq:
+id
+title
+content
+
+faq categories:
+id
+title
+
+faq subcategories:
+id
+title
+
+coupons:
+id
+user id
+amount
+
 slider
-user adresses
+id
+img url
+...
 
 Düzenlenecek
 {
-mağaza
-kullanıcıadı
-şifre
-yetkili ad soyad 
-cinsiyet şirketteki pozisyon
-tel eposta
-mağaza sahibi ad soyad 
-şirket adı türü şahıs limited anonim adi ortaklık vakıf
-şirktet profili dağıtıcı ithalatçı anabayi bayi üretici satış kategorisi
-vergi bilgileri ticari sicil no vergi dairesi ili müdürlüğü numarası mersisno
-şirket sabitno kep adres web sitesi epostası
-fatura bilgileri
-adres il ilçe mahalle/semt fatura eposta 
-gönderi adresiniz fatura adresinizle aynı mı ? evetse gönderi adresi o hayırsa adres il ilçe semt girsin
-şirketiniz e fatura mükellefi mi ?evet hayır
-hesap sahibi banka adı şube adı şube kodu hesap no iban
-başvuru tamamla
-iletilen incelenecek eşleşen onay-red reddedilen eşleme satışa hazır katalog sürecinde gönderime açılan ürün, açık görev sayısı
-tamamlanan görev sayısı
-evraklar yüklenecek
-14 sayfalık satıcı sözleşmesi
-ek3 pazaryeri satıcı bilgileri formu
-vergi levhası
-imza sirküleri
-banka bilgileri
-faaliyet bilgileri
-ticaret sicil gazetesi
-görev takibi sistem sizden bir şey yapmanızı bekliyorsa oraya ekliyor
-başlık durum ürünler atanan sebep son yorum oluşturma tarihi
-ürün işlemleri ürünlerim
-galeri gösrel yükle
-ürün listesi yükle
-ürün listesi hazırla
-tek tek ürün ekle
-hızlı ürün ekle
-yeni sipariştekilerin sayısı
-paketlenmişlerin sayısı
-taşıma durumunda olanların sayısı
-müşteri talepleri
-iade talebi
-eksik/hasarlı/yanlış ürün talebi
-aksiyon
-ürün listesi:
-ürün no
-satıcı stok kodu [tek03,tek01,exnevlovlypnk]
-ürün adı
-özellik 1,2
-maksimum satın alma adedi
-adet
-fiyat
-kdv hariç
-vade(gün)
-kargoya veriliş süresi
-kargo şirketi
-teslimat edresi etiketi [birincil]
+
+teslimat adresi etiketi [birincil]
 hatalı iptal geciken sipariş oranları yüzdesel
 belge yönetimi sayfası
-ürün yükleme
-ürün adı
-mağaza ürün kodu
-maksimum satın alma adedi
-kargo firması
-kargo süresi
-stok(adet)
-fiyat
-ürün alış fiyatı,liste fiyatı,satış fiyatı
 ürün ekleme süreci
 iletilen ,ürün bilgilerri eksik , incelenecek , eşleşen(onay-red bekleniyor),reddedilen eşleşme
 satışa hazır,katalog sürecinde,görev açılan ürün,açık görev sayısı,tamamlanan görev sayısı
