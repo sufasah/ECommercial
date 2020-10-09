@@ -1,0 +1,72 @@
+Requirements
+-----------------------------
+Products
+Main categories of products
+Sub categories of main categories
+products of sub categories
+Users
+User Orders
+User favories
+User comments
+Campaigns
+hot products
+new products
+chapest products
+most commented products
+most rated products
+filter of products
+ordered cart
+shops
+general informations
+frequently asked questions
+frequently asked questions categories
+frequently asked questions subcategories
+messages
+coupons
+slider
+user adresses
+
+
+
+
+
+ENTITIES
+-------------------------------
+Düzenlenecek
+{
+mağaza
+kullanıcıadı
+şifre
+yetkili ad soyad 
+cinsiyet şirketteki pozisyon
+tel eposta
+mağaza sahibi ad soyad 
+şirket adı türü şahıs limited anonim adi ortaklık vakıf
+şirktet profili dağıtıcı ithalatçı anabayi bayi üretici satış kategorisi
+vergi bilgileri ticari sicil no vergi dairesi ili müdürlüğü numarası mersisno
+şirket sabitno kep adres web sitesi epostası
+fatura bilgileri
+adres il ilçe mahalle/semt fatura eposta 
+gönderi adresiniz fatura adresinizle aynı mı ? evetse gönderi adresi o hayırsa adres il ilçe semt girsin
+şirketiniz e fatura mükellefi mi ?evet hayır
+hesap sahibi banka adı şube adı şube kodu hesap no iban
+başvuru tamamla
+iletilen incelenecek eşleşen onay-red reddedilen eşleme satışa hazır katalog sürecinde gönderime açılan ürün, açık görev sayısı
+tamamlanan görev sayısı
+evraklar yüklenecek
+14 sayfalık satıcı sözleşmesi
+ek3 pazaryeri satıcı bilgileri formu
+vergi levhası
+imza sirküleri
+banka bilgileri
+faaliyet bilgileri
+ticaret sicil gazetesi
+görev takibi sistem sizden bir şey yapmanızı bekliyorsa oraya ekliyor
+başlık durum ürünler atanan sebep son yorum oluşturma tarihi
+ürün işlemleri ürünlerim
+galeri gösrel yükle
+ürün listesi yükle
+ürün listesi hazırla
+tek tek ürün ekle
+hızlı ürün ekle
+}
