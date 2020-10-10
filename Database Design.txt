@@ -34,14 +34,12 @@ pay with bank-credit card,remittance-eft,coupon,multiple-credit-card
 
 ENTITIES
 -------------------------------
-Categorized Product:
+Product:
 id
-barcode
-product name
-category id
-subcategory id
 subsubcategory id
 brand id
+barcode
+product name
 VAT rate
 expiry
 commission
@@ -55,8 +53,7 @@ deci
 Products of shops:
 id
 shop id
-abstract product id
-campaign id
+product id
 variant group id
 product rating //cannot be modified by shop
 rating count //cannot be modified by shop
@@ -64,10 +61,14 @@ stock amount
 stock code
 price
 day for cargo
-shipping adress
-claim address
 imgages [a.jpg,b.jpg,c.jpg...]
-on sale datetime
+release datetime
+
+campaigns of product:
+id
+product id
+campaign id
+
 
 Users:
 id
@@ -83,9 +84,18 @@ sms notification
 claim addresses of users:
 id
 user id
-receivers name
-receivers surname
-receivers number
+address id
+
+claim addresses of shops:
+id
+shop id
+address id
+
+addresses:
+id
+receiver name
+receiver surname
+receiver number
 country only turkey // wont be added at now
 city
 address
@@ -94,10 +104,14 @@ name of this address record
 
 invoice of users:
 id
-user id
-receivers name
-receivers surname
-receivers number
+user_id
+invoice id
+
+invoices:
+id
+invoicee name
+invoicee surname
+invoicee number
 country only turkey // wont be added at now
 city
 address
@@ -107,9 +121,12 @@ type[individual,institutional]
 User Orders:
 id
 user id
-claim adress id
-invoice id
-datetime
+order id
+
+user orders:
+id
+user id
+order id
 
 products of order:
 id
@@ -122,7 +139,7 @@ id
 user id
 product id
 
-User will be ordered later:
+User will be order later:
 id
 user id
 product id
@@ -143,10 +160,12 @@ title
 
 sub categories:
 id
+category_id
 title
 
 sub sub categories:
 id
+subcategory_id
 title
 
 brands:
@@ -179,7 +198,7 @@ firm email
 legal firm name
 firm type  [limited,anonymous,individual,partnership]
 firm profile [distributor,importer, main dealer,dealer , producer]
-sale category
+selling_category
 commercial record number
 tax office city
 tax office
@@ -211,8 +230,9 @@ youtube address
 logo url
 whatsapp number
 
-faq:
+faqs:
 id
+subcategory_id
 title
 content
 
@@ -222,17 +242,24 @@ title
 
 faq subcategories:
 id
+category_id
 title
 
 coupons:
 id
-user id
 amount
 
-slider
+user coupons:
+id
+coupon id
+user id
+
+
+slides
 id
 img url
-...
+route url
+order
 
 Düzenlenecek
 {
@@ -245,3 +272,239 @@ iletilen ,ürün bilgilerri eksik , incelenecek , eşleşen(onay-red bekleniyor)
 satışa hazır,katalog sürecinde,görev açılan ürün,açık görev sayısı,tamamlanan görev sayısı
 
 }
+
+Database Schemas
+---------------------
+
+shops(
+id,
+username,
+password,
+shop_owner_name,
+authorized_name,
+authorized_surname,
+authorized_gender,
+authorized_position,
+authorized_phone,
+authorized_email,
+firm_owner_name,
+firm_owner_surname,
+firm_owner_phone,
+kep_mail,
+firm_websites,
+firm_email,
+legal_firm_name,
+firm_type,
+firm_profile,
+selling_category,
+commercial_record_number,
+tax_office_city,
+tax_office,
+tax_or_trid_number,
+mersis_number,
+invoice_adress,
+invoice_city,
+invoice_district,
+invoice_neighborhood,
+invoice_email,
+shipping_address,
+shipping_city,
+shipping_district,
+shipping_neighborhood,
+bank_account_owner,
+bank_name,
+branch_bank,
+branch_code,
+account_number,
+IBAN
+)
+
+users(
+id,
+email,
+name,
+surname,
+phone,
+birthdate,
+gender,
+email_notification_enabled,
+sms_notification_enabled
+)
+
+invoices(
+id,
+user_id,
+invoicee_name,
+invoicee_surname,
+invoicee_number,
+city,
+address,
+name,
+type
+)
+
+addresses(
+id,
+user_or_shop_id,
+receiver_name,
+receiver_surname,
+receiver_number,
+city,
+address,
+name
+)
+
+products(
+id,
+barcode,
+subsubcategory_id,
+brand_id,
+name,
+vat_rate,
+expiry,
+commission,
+warranty_period,
+description,
+properties,
+state,
+cargo_corporation,
+deci
+)
+
+coupons(
+id,
+amount
+)
+
+brands(
+id,
+brand
+)
+
+slides(
+id,
+image_url,
+route_url,
+order
+)
+
+campaigns(
+id,
+start_datetime,
+end_datetime,
+rate
+)
+
+product_rates(
+id,
+product_id,
+user_id,
+comment,
+rate,
+imgages,
+hid_user_info_enabled,
+datetime
+)
+
+categories(
+id,
+title
+)
+
+faq_categories(
+id,
+title
+)
+
+general_infos(
+facebook_address,
+twitter_address,
+instagram_address,
+linkedin_address,
+pinterest_address,
+youtube_address,
+logo_url,
+whatsapp_number
+)
+
+subcategories(
+id,
+category_id,
+title
+)
+
+subsubcategories(
+id,
+subcategory_id,
+title
+)
+
+faq_subcategories(
+id,
+faq_category_id,
+title
+)
+
+user_coupons(
+id,
+coupon_id,
+user_id
+)
+
+product_campaigns(
+id,
+product_id,
+campaign_id
+)
+
+faqs(
+id,
+faq_subcategory_id,
+title,
+content
+)
+
+
+order(
+id,
+user_id,
+claim_address_id,
+invoice_id,
+datetime
+)
+
+shop_products(
+id,
+shop_id,
+product_id,
+variant_group_id,
+product_rating_,
+rating_count,
+stock_amount,
+stock_code,
+price,
+day_for_cargo,
+images,
+release_datetime
+)
+
+user_products_will_be_ordered(
+id,
+user_id,
+product_id
+)
+
+
+user_favourite_products(
+id,
+user_id,
+product_id
+)
+
+
+order_products(
+id,
+order_id,
+product_id,
+count
+)
