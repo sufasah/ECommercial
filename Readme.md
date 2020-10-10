@@ -9,4 +9,4 @@ Individual e-commercial ASP.NET Angular project
 - - - -
 ![Database Schemas](https://github.com/sufasah/ECommercial/blob/master/UML/Entities.png?raw=true "Database Schemas")
 
-:exclamation: To See ***[Database Tables and table attributes properties](https://github.com/sufasah/ECommercial/blob/master/Database%20Design.txt "Database Design.txt")*** click and scroll to the end
+:exclamation: To See ***[Database Tables and table attribute's properties](https://github.com/sufasah/ECommercial/blob/master/Database%20Design.txt "Database Design.txt")*** click and scroll to the end
