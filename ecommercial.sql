@@ -439,14 +439,8 @@ ALTER TABLE public.faqs ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 --
 
 CREATE TABLE public.general_infos (
-    facebook_address character varying(100),
-    twitter_address character varying(100),
-    instagram_address character varying(100),
-    linkedin_address character varying(100),
-    pinterest_address character varying(100),
-    youtube_address character varying(100),
-    logo_url character varying(250),
-    whatsapp_number bigint
+    key character varying(30) NOT NULL,
+    value character varying(200)
 );
 
 
@@ -2182,7 +2176,7 @@ COPY public.faqs (id, faq_subcategory_id, title, content) FROM stdin;
 -- Data for Name: general_infos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.general_infos (facebook_address, twitter_address, instagram_address, linkedin_address, pinterest_address, youtube_address, logo_url, whatsapp_number) FROM stdin;
+COPY public.general_infos (key, value) FROM stdin;
 \.
 
 
@@ -3634,6 +3628,14 @@ ALTER TABLE ONLY public.faqs
 
 
 --
+-- Name: general_infos general_infos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.general_infos
+    ADD CONSTRAINT general_infos_pkey PRIMARY KEY (key);
+
+
+--
 -- Name: invoices invoices_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3727,6 +3729,14 @@ ALTER TABLE ONLY public.subsubcategories
 
 ALTER TABLE ONLY public.tax_offices
     ADD CONSTRAINT tax_offices_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: districts unique_district; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.districts
+    ADD CONSTRAINT unique_district UNIQUE (name, city_id);
 
 
 --
