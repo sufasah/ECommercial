@@ -12,5 +12,9 @@
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj" />
+    <ProjectReference Include="../ECommercial.DataAccess/ECommercial.DataAccess.csproj" />
+    <ProjectReference Include="../ECommercial.Entities/ECommercial.Entities.csproj" />
+  </ItemGroup>
 </Project>
