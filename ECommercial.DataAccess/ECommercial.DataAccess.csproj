@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj"/>
+    <ProjectReference Include="../ECommercial.Entites/ECommercial.Entites.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NHibernate" Version="5.3.3"/>
+    <PackageReference Include="FluentNHibernate" Version="3.0.1"/>
+  </ItemGroup>
 </Project>

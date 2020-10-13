@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ECommercial.Core.DataAccess.NHibernate.Helpers;
 using ECommercial.Core.Entities;
 
 namespace ECommercial.Core.DataAccess.NHibernate

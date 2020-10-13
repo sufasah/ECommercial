@@ -2,6 +2,6 @@ namespace ECommercial.Core.Entities
 {
     public interface IEntity
     {
-         //TO MAKE SURE CLASSES OBJECT IS A DATABASE ENTITY
+         //TO MAKE SURE CLASS OBJECT IS A DATABASE ENTITY
     }
 }

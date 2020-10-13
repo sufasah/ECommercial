@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using ECommercial.Core.DataAccess.NHibernate.Helpers;
 using ECommercial.Core.Entities;
 
 namespace ECommercial.Core.DataAccess.NHibernate

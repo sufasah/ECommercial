@@ -1,7 +1,7 @@
 using System;
 using NHibernate;
 
-namespace ECommercial.Core.DataAccess.NHibernate
+namespace ECommercial.Core.DataAccess.NHibernate.Helpers
 {
     public abstract class NHibernateHelper : IDisposable
     {
