@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj": {}
+    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {}
   },
   "projects": {
     "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
@@ -38,6 +38,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -63,14 +67,14 @@
         }
       }
     },
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj": {
+    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj",
-        "projectName": "ECommercial.Entites",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj",
+        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+        "projectName": "ECommercial.Entities",
+        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\obj\\",
+        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",

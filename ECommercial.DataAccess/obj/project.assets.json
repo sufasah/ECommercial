@@ -488,6 +488,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FluentNHibernate": "3.0.1",
           "NHibernate": "5.3.3"
         },
         "compile": {
@@ -495,19 +496,6 @@
         },
         "runtime": {
           "bin/placeholder/ECommercial.Core.dll": {}
-        }
-      },
-      "ECommercial.Entites/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "ECommercial.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ECommercial.Entites.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ECommercial.Entites.dll": {}
         }
       }
     }
@@ -2424,17 +2412,11 @@
       "type": "project",
       "path": "../ECommercial.Core/ECommercial.Core.csproj",
       "msbuildProject": "../ECommercial.Core/ECommercial.Core.csproj"
-    },
-    "ECommercial.Entites/1.0.0": {
-      "type": "project",
-      "path": "../ECommercial.Entites/ECommercial.Entites.csproj",
-      "msbuildProject": "../ECommercial.Entites/ECommercial.Entites.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "ECommercial.Core >= 1.0.0",
-      "ECommercial.Entites >= 1.0.0",
       "FluentNHibernate >= 3.0.1",
       "NETStandard.Library >= 2.0.3",
       "NHibernate >= 5.3.3"
@@ -2468,9 +2450,6 @@
           "projectReferences": {
             "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
               "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
-            },
-            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj": {
-              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entites\\ECommercial.Entites.csproj"
             }
           }
         }

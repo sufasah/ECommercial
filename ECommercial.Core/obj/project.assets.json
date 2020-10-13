@@ -14,6 +14,18 @@
           "lib/netstandard1.1/Antlr3.Runtime.dll": {}
         }
       },
+      "FluentNHibernate/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NHibernate": "5.2.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentNHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentNHibernate.dll": {}
+        }
+      },
       "Iesi.Collections/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -492,6 +504,27 @@
         "lib/netstandard1.1/Antlr3.Runtime.xml",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr3.Runtime.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr3.Runtime.xml"
+      ]
+    },
+    "FluentNHibernate/3.0.1": {
+      "sha512": "0rfa2UeVGoKZkg6sBkRsnGIZhG1haZi5RMILneS6dV5evfWhuIdOovJbkeuJlTCp0NjtQQwIoR7Ot+MMKGtrDg==",
+      "type": "package",
+      "path": "fluentnhibernate/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentnhibernate.3.0.1.nupkg.sha512",
+        "fluentnhibernate.nuspec",
+        "lib/net461/FluentNHibernate.dll",
+        "lib/net461/FluentNHibernate.pdb",
+        "lib/net461/FluentNHibernate.xml",
+        "lib/netcoreapp2.0/FluentNHibernate.dll",
+        "lib/netcoreapp2.0/FluentNHibernate.pdb",
+        "lib/netcoreapp2.0/FluentNHibernate.xml",
+        "lib/netstandard2.0/FluentNHibernate.dll",
+        "lib/netstandard2.0/FluentNHibernate.pdb",
+        "lib/netstandard2.0/FluentNHibernate.xml",
+        "logo-nuget.png"
       ]
     },
     "Iesi.Collections/4.0.4": {
@@ -2364,6 +2397,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "FluentNHibernate >= 3.0.1",
       "NETStandard.Library >= 2.0.3",
       "NHibernate >= 5.3.3"
     ]
@@ -2405,6 +2439,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "FluentNHibernate": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

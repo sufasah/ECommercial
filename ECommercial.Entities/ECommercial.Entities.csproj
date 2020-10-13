@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\ECommercial.Core\ECommercial.Core.csproj" />
-    <ProjectReference Include="..\ECommercial.Entities\ECommercial.Entities.csproj" />
   </ItemGroup>
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework> 
   </PropertyGroup>
+
 </Project>

@@ -38,6 +38,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
