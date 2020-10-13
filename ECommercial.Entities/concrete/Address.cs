@@ -6,7 +6,7 @@ namespace ECommercial.Entites.concrete
     public class Address:IEntity
     {
         public int Id { get; set; }
-        public int UserShopId { get; set; }
+        public int UserOrShopId { get; set; }
         public long ReceiverNumber { get; set; }
 
         public int CityId { get; set; }
