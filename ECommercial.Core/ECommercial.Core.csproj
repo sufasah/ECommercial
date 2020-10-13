@@ -6,7 +6,4 @@
     <PackageReference Include="NHibernate" Version="5.3.3" />
     <PackageReference Include="FluentNHibernate" Version="3.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="../ECommercial.Entities/ECommercial.Entities.csproj" />
-  </ItemGroup>
 </Project>
