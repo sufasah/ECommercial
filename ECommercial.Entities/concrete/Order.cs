@@ -5,10 +5,10 @@ namespace ECommercial.Entites.concrete
 {
     public class Order:IEntity
     {
-        public short Id { get; set; }
-        public int UserId { get; set; }
-        public int ClaimAddressId { get; set; }
-        public int InvoiceId { get; set; }
-        public DateTime Datetime { get; set; }
+        public virtual short Id { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual int ClaimAddressId { get; set; }
+        public virtual int InvoiceId { get; set; }
+        public virtual DateTime Datetime { get; set; }
     }
 }

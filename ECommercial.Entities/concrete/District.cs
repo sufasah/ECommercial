@@ -5,8 +5,8 @@ namespace ECommercial.Entites.concrete
 {
     public class District:IEntity
     {
-        public short Id { get; set; }
-        public short CityId { get; set; }
-        public string Name { get; set; }
+        public virtual short Id { get; set; }
+        public virtual short CityId { get; set; }
+        public virtual string Name { get; set; }
     }
 }

@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+
     <IsPackable>false</IsPackable>
-    
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,8 +13,8 @@
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj" />
-    <ProjectReference Include="../ECommercial.Entities/ECommercial.Entities.csproj"/>
     <ProjectReference Include="../ECommercial.DataAccess/ECommercial.DataAccess.csproj" />
+    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj" />
+    <ProjectReference Include="../ECommercial.Entities/ECommercial.Entities.csproj" />
   </ItemGroup>
 </Project>

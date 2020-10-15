@@ -5,13 +5,13 @@ namespace ECommercial.Entites.concrete
 {
     public class ProductRate:IEntity
     {
-        public DateTime Datetime { get; set; }
-        public int ProductId { get; set; }
-        public int UserId { get; set; }
-        public bool HidUserInfoEnabled { get; set; }
-        public int Id { get; set; }
-        public short Rate { get; set; }
-        public string Comment { get; set; }
-        public string[] Images { get; set; }
+        public virtual DateTime Datetime { get; set; }
+        public virtual int ProductId { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual bool HidUserInfoEnabled { get; set; }
+        public virtual int Id { get; set; }
+        public virtual short Rate { get; set; }
+        public virtual string Comment { get; set; }
+        public virtual string[] Images { get; set; }
     }
 }

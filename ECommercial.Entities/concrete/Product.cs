@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ECommercial.Core.Entities;
 
 namespace ECommercial.Entites.concrete
@@ -8,7 +9,7 @@ namespace ECommercial.Entites.concrete
         public enum WarrantyTypes { Day, Month, Year };
 
         public Product(){}
-        public Product(short deci, long barcode, int subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int id, float vatRate, short expiry, string name, string cargoCorporation, string description)
+        public Product(short deci, long barcode, int subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int id, float vatRate, short expiry, string name, string cargoCorporation, string description,string properties)
         {
             this.Deci = deci;
             this.Barcode = barcode;
@@ -23,22 +24,22 @@ namespace ECommercial.Entites.concrete
             this.Name = name;
             this.CargoCorporation = cargoCorporation;
             this.Description = description;
-
+            this.Properties = properties;
         }
-        public short Deci { get; set; }
-        public long Barcode { get; set; }
-        public int SubsubcategoryId { get; set; }
-        public int BrandId { get; set; }
-        public float Commission { get; set; }
-        public short WarrantyPeriod { get; set; }
-        public WarrantyTypes WarrantyType { get; set; }
-        public int Id { get; set; }
-        public float VatRate { get; set; }
-        public short Expiry { get; set; }
-        public string Name { get; set; }
-        public string[] Properties { get; set; }
-        public string CargoCorporation { get; set; }
-        public string Description { get; set; }
+        public virtual short Deci { get; set; }
+        public virtual long Barcode { get; set; }
+        public virtual int SubsubcategoryId { get; set; }
+        public virtual int BrandId { get; set; }
+        public virtual float Commission { get; set; }
+        public virtual short WarrantyPeriod { get; set; }
+        public virtual WarrantyTypes WarrantyType { get; set; }
+        public virtual int Id { get; set; }
+        public virtual float VatRate { get; set; }
+        public virtual short Expiry { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Properties { get; set; }
+        public virtual string CargoCorporation { get; set; }
+        public virtual string Description { get; set; }
 
     }
 }

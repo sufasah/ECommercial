@@ -6,9 +6,9 @@ namespace ECommercial.Entites.concrete
 {
     public class Campaign:IEntity
     {
-        public int Id { get; set; }
-        public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
-        public float Rate { get; set; }
+        public virtual int Id { get; set; }
+        public virtual DateTime StartDateTime { get; set; }
+        public virtual DateTime EndDateTime { get; set; }
+        public virtual float Rate { get; set; }
     }
 }

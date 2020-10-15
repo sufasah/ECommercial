@@ -14,6 +14,18 @@
           "lib/netstandard1.1/Antlr3.Runtime.dll": {}
         }
       },
+      "FluentNHibernate/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "NHibernate": "5.1.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/FluentNHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/FluentNHibernate.dll": {}
+        }
+      },
       "Iesi.Collections/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -119,6 +131,18 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/NHibernate.dll": {}
+        }
+      },
+      "Npgsql/4.1.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Npgsql.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -873,6 +897,15 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1368,6 +1401,23 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr3.Runtime.xml"
       ]
     },
+    "FluentNHibernate/2.1.2": {
+      "sha512": "JcSxfsgciJQJDEWGYp1tur4XIEBRYpWquDihFZZhFP0yF1UuXwvC/UxNGawQArw6PpLAaVDJdLZPH1Ot8+8DHQ==",
+      "type": "package",
+      "path": "fluentnhibernate/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentnhibernate.2.1.2.nupkg.sha512",
+        "fluentnhibernate.nuspec",
+        "lib/net461/FluentNHibernate.dll",
+        "lib/net461/FluentNHibernate.xml",
+        "lib/netcoreapp2.0/FluentNHibernate.dll",
+        "lib/netcoreapp2.0/FluentNHibernate.xml",
+        "lib/netstandard2.0/FluentNHibernate.dll",
+        "lib/netstandard2.0/FluentNHibernate.xml"
+      ]
+    },
     "Iesi.Collections/4.0.4": {
       "sha512": "jlebSjv2a7amYfKXEUsPDSf2Yi9r0/FkvvT6Dy7ehl7z8du+dTGqKDu+fYbnE+WuIz/v3prYm1jpBljMrY1p+Q==",
       "type": "package",
@@ -1501,6 +1551,26 @@
         "nhibernate-mapping.xsd",
         "nhibernate.5.3.3.nupkg.sha512",
         "nhibernate.nuspec"
+      ]
+    },
+    "Npgsql/4.1.5": {
+      "sha512": "juDlNse+SKfXRP0VSgpJkpdCcaVLZt8m37EHdRX+8hw+GG69Eat1Y0MdEfl+oetdOnf9E133GjIDEjg9AF6HSQ==",
+      "type": "package",
+      "path": "npgsql/4.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Npgsql.dll",
+        "lib/net461/Npgsql.xml",
+        "lib/netcoreapp3.0/Npgsql.dll",
+        "lib/netcoreapp3.0/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.4.1.5.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -3693,6 +3763,31 @@
         "system.runtime.nuspec"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "sha512": "HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.Extensions/4.3.0": {
       "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "type": "package",
@@ -4959,7 +5054,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "NHibernate >= 5.3.3"
+      "FluentNHibernate >= 2.1.2",
+      "NHibernate >= 5.3.3",
+      "Npgsql >= 4.1.5"
     ]
   },
   "packageFolders": {
@@ -4999,9 +5096,17 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "FluentNHibernate": {
+            "target": "Package",
+            "version": "[2.1.2, )"
+          },
           "NHibernate": {
             "target": "Package",
             "version": "[5.3.3, )"
+          },
+          "Npgsql": {
+            "target": "Package",
+            "version": "[4.1.5, )"
           }
         },
         "imports": [
@@ -5015,9 +5120,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

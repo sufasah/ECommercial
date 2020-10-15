@@ -5,10 +5,10 @@ namespace ECommercial.Entites.concrete
 {
     public class TaxOffice:IEntity
     {
-        public short Id { get; set; }
-        public short CityId { get; set; }
-        public short DistrictId { get; set; }
-        public int AccountingUnitCode { get; set; }
-        public string Name { get; set; }
+        public virtual short Id { get; set; }
+        public virtual short CityId { get; set; }
+        public virtual short DistrictId { get; set; }
+        public virtual int AccountingUnitCode { get; set; }
+        public virtual string Name { get; set; }
     }
 }

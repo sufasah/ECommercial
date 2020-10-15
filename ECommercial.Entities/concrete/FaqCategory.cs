@@ -5,7 +5,7 @@ namespace ECommercial.Entites.concrete
 {
     public class FaqCategory:IEntity
     {
-        public short Id { get; set; }
-        public string Title { get; set; }
+        public virtual short Id { get; set; }
+        public virtual string Title { get; set; }
     }
 }

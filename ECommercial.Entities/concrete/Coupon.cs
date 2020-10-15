@@ -4,7 +4,7 @@ namespace ECommercial.Entites.concrete
 {
     public class Coupon:IEntity
     {
-        public int Id { get; set; }
-        public int Amount { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int Amount { get; set; }
     }
 }

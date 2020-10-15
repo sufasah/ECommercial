@@ -4,7 +4,7 @@ namespace ECommercial.Entites.concrete
 {
     public class Brand:IEntity
     {
-        public int Id { get; set; }
-        public string brand { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string brand { get; set; }
     }
 }

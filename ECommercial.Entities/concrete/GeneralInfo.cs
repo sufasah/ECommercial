@@ -4,7 +4,7 @@ namespace ECommercial.Entites.concrete
 {
     public class GeneralInfo:IEntity
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
+        public virtual string Key { get; set; }
+        public virtual string Value { get; set; }
     }
 }

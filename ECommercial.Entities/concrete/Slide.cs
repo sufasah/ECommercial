@@ -5,9 +5,9 @@ namespace ECommercial.Entites.concrete
 {
     public class Slide:IEntity
     {
-        public int Id { get; set; }
-        public short SlideOrder { get; set; }
-        public string ImageUrl { get; set; }
-        public string RouteUrl { get; set; }
+        public virtual int Id { get; set; }
+        public virtual short SlideOrder { get; set; }
+        public virtual string ImageUrl { get; set; }
+        public virtual string RouteUrl { get; set; }
     }
 }

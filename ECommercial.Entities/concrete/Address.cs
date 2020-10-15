@@ -5,14 +5,14 @@ namespace ECommercial.Entites.concrete
 {
     public class Address:IEntity
     {
-        public int Id { get; set; }
-        public int UserShopId { get; set; }
-        public long ReceiverNumber { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int UserShopId { get; set; }
+        public virtual long ReceiverNumber { get; set; }
 
-        public int CityId { get; set; }
+        public virtual int CityId { get; set; }
 
-        public string address { get; set; }
-        public string ReceiverName { get; set; }
-        public string ReceiverSurname { get; set; }
+        public virtual string address { get; set; }
+        public virtual string ReceiverName { get; set; }
+        public virtual string ReceiverSurname { get; set; }
     }
 }

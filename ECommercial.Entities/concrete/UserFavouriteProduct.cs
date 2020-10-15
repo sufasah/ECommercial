@@ -4,8 +4,8 @@ namespace ECommercial.Entites.concrete
 {
     public class UserFavouriteProduct:IEntity
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int ProductId { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual int ProductId { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using ECommercial.Entites.concrete;
 using FluentNHibernate.Mapping;
 
@@ -8,7 +9,7 @@ namespace ECommercial.Core.DataAccess.NHibernate.Mappings
         public ProductMap()
         {
             Table(@"products");
-            Id(x=>x.Id).Column("id");
+            Id(x=>x.Id).Column("id").Access.ReadOnly();
 
             Map(x=>x.Expiry).Column("expiry");
             
@@ -22,7 +23,7 @@ namespace ECommercial.Core.DataAccess.NHibernate.Mappings
             
             Map(x=>x.WarrantyPeriod).Column("warranty_period");
             
-            Map(x=>x.WarrantyType).Column("warranty_type");
+            Map(x=>x.WarrantyType).Column("warranty_type").CustomType<GenericEnumMapper<Product.WarrantyTypes>>();
             
             Map(x=>x.Barcode).Column("barcode");
             

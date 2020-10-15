@@ -9,6 +9,8 @@
       "ECommercial.DataAccess.Tests/1.0.0": {
         "dependencies": {
           "ECommercial.Core": "1.0.0",
+          "ECommercial.DataAccess": "1.0.0",
+          "ECommercial.Entities": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "coverlet.collector": "1.2.0",
           "xunit": "2.4.0",
@@ -30,6 +32,17 @@
         }
       },
       "coverlet.collector/1.2.0": {},
+      "FluentNHibernate/2.1.2": {
+        "dependencies": {
+          "NHibernate": "5.3.3"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/FluentNHibernate.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
       "Iesi.Collections/4.0.4": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -423,6 +436,17 @@
           "lib/netcoreapp2.0/NHibernate.dll": {
             "assemblyVersion": "5.3.0.0",
             "fileVersion": "5.3.3.0"
+          }
+        }
+      },
+      "Npgsql/4.1.5": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Npgsql.dll": {
+            "assemblyVersion": "4.1.5.0",
+            "fileVersion": "4.1.5.0"
           }
         }
       },
@@ -875,6 +899,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1213,10 +1238,31 @@
       },
       "ECommercial.Core/1.0.0": {
         "dependencies": {
-          "NHibernate": "5.3.3"
+          "FluentNHibernate": "2.1.2",
+          "NHibernate": "5.3.3",
+          "Npgsql": "4.1.5"
         },
         "runtime": {
           "ECommercial.Core.dll": {}
+        }
+      },
+      "ECommercial.DataAccess/1.0.0": {
+        "dependencies": {
+          "ECommercial.Core": "1.0.0",
+          "ECommercial.Entities": "1.0.0",
+          "NHibernate": "5.3.3"
+        },
+        "runtime": {
+          "ECommercial.DataAccess.dll": {}
+        }
+      },
+      "ECommercial.Entities/1.0.0": {
+        "dependencies": {
+          "ECommercial.Core": "1.0.0",
+          "NHibernate": "5.3.3"
+        },
+        "runtime": {
+          "ECommercial.Entities.dll": {}
         }
       }
     }
@@ -1240,6 +1286,13 @@
       "sha512": "sha512-ZB+EGXsVBIn8cew7D3S2c+rgIlokKv1dSwsXEoiFQaNXF/BSxp9Rlfz/jV1ehSWH5XpLitfRxFNW3ok7uPDOXA==",
       "path": "coverlet.collector/1.2.0",
       "hashPath": "coverlet.collector.1.2.0.nupkg.sha512"
+    },
+    "FluentNHibernate/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JcSxfsgciJQJDEWGYp1tur4XIEBRYpWquDihFZZhFP0yF1UuXwvC/UxNGawQArw6PpLAaVDJdLZPH1Ot8+8DHQ==",
+      "path": "fluentnhibernate/2.1.2",
+      "hashPath": "fluentnhibernate.2.1.2.nupkg.sha512"
     },
     "Iesi.Collections/4.0.4": {
       "type": "package",
@@ -1324,6 +1377,13 @@
       "sha512": "sha512-ar4yr/NgtkysCK46UsEPmraqlAsfDOgpda9tWDRhN0K/N/A2X3rDOFaVg3f+ab3L6oy/+C2hAcUM7sZIBFhq+g==",
       "path": "nhibernate/5.3.3",
       "hashPath": "nhibernate.5.3.3.nupkg.sha512"
+    },
+    "Npgsql/4.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-juDlNse+SKfXRP0VSgpJkpdCcaVLZt8m37EHdRX+8hw+GG69Eat1Y0MdEfl+oetdOnf9E133GjIDEjg9AF6HSQ==",
+      "path": "npgsql/4.1.5",
+      "hashPath": "npgsql.4.1.5.nupkg.sha512"
     },
     "NuGet.Frameworks/5.0.0": {
       "type": "package",
@@ -1703,6 +1763,13 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+    },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1928,6 +1995,16 @@
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
     "ECommercial.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommercial.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommercial.Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

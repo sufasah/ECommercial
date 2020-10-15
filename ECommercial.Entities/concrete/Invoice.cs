@@ -6,14 +6,14 @@ namespace ECommercial.Entites.concrete
     public enum typeEnum{individual,institutional};
     public class Invoice:IEntity
     {
-        public typeEnum Type { get; set; }
-        public int UserId { get; set; }
-        public long InvoiceeNumber { get; set; }
-        public short CityId { get; set; }
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string InvoiceeName { get; set; }
-        public string InvoiceeSurname { get; set; }
-        public string Address { get; set; }
+        public virtual typeEnum Type { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual long InvoiceeNumber { get; set; }
+        public virtual short CityId { get; set; }
+        public virtual string Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string InvoiceeName { get; set; }
+        public virtual string InvoiceeSurname { get; set; }
+        public virtual string Address { get; set; }
     }
 }

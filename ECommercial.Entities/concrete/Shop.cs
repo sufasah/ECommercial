@@ -7,41 +7,41 @@ namespace ECommercial.Entites.concrete
     {
         public enum FirmTypes{Private,Incorporated,SoleProprietorShip,OrdinaryPartnership,Foundation};
         public enum FirmProfiles{Distributor,Importer,MainDealer,Dealer,Producer};
-        public long Iban { get; set; }
-        public long AuthorizedPhone { get; set; }
-        public long FırmOwnerPhone { get; set; }
-        public FirmTypes FirmType { get; set; }
-        public FirmProfiles FirmProfile { get; set; }
-        public int SellingSubcategoryId { get; set; }
-        public int CommercialRecordNumber { get; set; }
-        public short TaxOfficeCıtyId { get; set; }
-        public short TaxOfficeId { get; set; }
-        public long TaxOrTrIdNumber { get; set; }
-        public long MersisNumber { get; set; }
-        public long FirmFixedPhone { get; set; }
-        public short InvoiceCityId { get; set; }
-        public short InvoiceDistrictId { get; set; }
-        public short BankId { get; set; }
-        public short BranchCode { get; set; }
-        public long AccountNumber { get; set; }
-        public int Id { get; set; }
-        public bool AuthorizedGender { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string ShopOwnerName { get; set; }
-        public string AuthorizedName { get; set; }
-        public string AuthorizedSurname { get; set; }
-        public string InvoiceAddress { get; set; }
-        public string AuthorizedPosition { get; set; }
-        public string BankAccountOwner { get; set; }
-        public string AuthorizedEmail { get; set; }
-        public string FirmOwnerName { get; set; }
-        public string FirmOwnerSurname{ get; set; }
-        public string BranchBankName { get; set; }
-        public string KepMail { get; set; }
-        public string FirmWebsite{ get; set; }
-        public string FirmEmail { get; set; }
-        public string LegalFirmName { get; set; }
-        public string InvoiceEmail { get; set; }
+        public virtual long Iban { get; set; }
+        public virtual long AuthorizedPhone { get; set; }
+        public virtual long FırmOwnerPhone { get; set; }
+        public virtual FirmTypes FirmType { get; set; }
+        public virtual FirmProfiles FirmProfile { get; set; }
+        public virtual int SellingSubcategoryId { get; set; }
+        public virtual int CommercialRecordNumber { get; set; }
+        public virtual short TaxOfficeCıtyId { get; set; }
+        public virtual short TaxOfficeId { get; set; }
+        public virtual long TaxOrTrIdNumber { get; set; }
+        public virtual long MersisNumber { get; set; }
+        public virtual long FirmFixedPhone { get; set; }
+        public virtual short InvoiceCityId { get; set; }
+        public virtual short InvoiceDistrictId { get; set; }
+        public virtual short BankId { get; set; }
+        public virtual short BranchCode { get; set; }
+        public virtual long AccountNumber { get; set; }
+        public virtual int Id { get; set; }
+        public virtual bool AuthorizedGender { get; set; }
+        public virtual string Username { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string ShopOwnerName { get; set; }
+        public virtual string AuthorizedName { get; set; }
+        public virtual string AuthorizedSurname { get; set; }
+        public virtual string InvoiceAddress { get; set; }
+        public virtual string AuthorizedPosition { get; set; }
+        public virtual string BankAccountOwner { get; set; }
+        public virtual string AuthorizedEmail { get; set; }
+        public virtual string FirmOwnerName { get; set; }
+        public virtual string FirmOwnerSurname{ get; set; }
+        public virtual string BranchBankName { get; set; }
+        public virtual string KepMail { get; set; }
+        public virtual string FirmWebsite{ get; set; }
+        public virtual string FirmEmail { get; set; }
+        public virtual string LegalFirmName { get; set; }
+        public virtual string InvoiceEmail { get; set; }
     }
 }

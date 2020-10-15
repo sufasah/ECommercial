@@ -5,8 +5,8 @@ namespace ECommercial.Entites.concrete
 {
     public class SubCategory:IEntity
     {
-        public short Id { get; set; }
-        public short CategoryId { get; set; }
-        public string Title { get; set; }
+        public virtual short Id { get; set; }
+        public virtual short CategoryId { get; set; }
+        public virtual string Title { get; set; }
     }
 }
