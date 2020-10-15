@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lBfzjcJ/6yDgGtHMZs4t82WFxNAVuqKUUpAj1m6dyoro6zYMS8x2bePFS713m9/o1jxg0bqt2mjKUnHy55gJ/w==",
+  "dgSpecHash": "uHYUaswep3LCKrWw9NxvylI8+EiGXzAXl80bj1sQtF6BSoYc/ZcAT+/UtnzE8ZGn9usJ3WfWdke2Daim6DUH0g==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\nihaSWin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

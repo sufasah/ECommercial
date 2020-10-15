@@ -1,0 +1,9 @@
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Business.deps.json
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Business.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Business.pdb
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.csprojAssemblyReference.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.AssemblyInfoInputs.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.AssemblyInfo.cs
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.csproj.CoreCompileInputs.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.pdb

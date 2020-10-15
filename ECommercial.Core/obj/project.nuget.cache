@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qQ/V5SKmCRJAFWKFwpU2HWbqooVtiJGDxbusU09Nc+M+GaGhr1ycaj9vsnz6dj0PcSCMo0ptPA74+OXn3AacdQ==",
+  "dgSpecHash": "ncBMhRql9T+4flhdbsIUFSckEC5WPug8NwOuG4wQdpvCIFuYQHiKQGgUKsGJt/BzOXA5q5aVG5ky8fCW7MWcJw==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
-    "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentnhibernate\\3.0.1\\fluentnhibernate.3.0.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\iesi.collections\\4.0.4\\iesi.collections.4.0.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

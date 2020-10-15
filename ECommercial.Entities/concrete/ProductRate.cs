@@ -10,7 +10,7 @@ namespace ECommercial.Entites.concrete
         public int UserId { get; set; }
         public bool HidUserInfoEnabled { get; set; }
         public int Id { get; set; }
-        public Int16 Rate { get; set; }
+        public short Rate { get; set; }
         public string Comment { get; set; }
         public string[] Images { get; set; }
     }

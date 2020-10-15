@@ -38,10 +38,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "FluentNHibernate": {
-              "target": "Package",
-              "version": "[3.0.1, )"
-            },
             "NHibernate": {
               "target": "Package",
               "version": "[5.3.3, )"

@@ -5,8 +5,8 @@ namespace ECommercial.Entites.concrete
 {
     public class SubSubCategory:IEntity
     {
-        public Int16 Id { get; set; }
-        public Int16 SubCategoryId { get; set; }
+        public short Id { get; set; }
+        public short SubCategoryId { get; set; }
         public string Title { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.csprojAssemblyReference.cache
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfoInputs.cache
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfo.cs
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.csproj.CoreCompileInputs.cache
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.csprojAssemblyReference.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfoInputs.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfo.cs
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.csproj.CoreCompileInputs.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.MvcApplicationPartsAssemblyInfo.cache

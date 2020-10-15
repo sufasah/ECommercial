@@ -16,7 +16,7 @@ namespace ECommercial.Entites.concrete
         public DateTime ReleaseDatetime { get; set; }
         public int Id { get; set; }
         public float Price { get; set; }
-        public Int16 DayForCargo { get; set; }
+        public short DayForCargo { get; set; }
         public string StockCode { get; set; }
         public string[] Images { get; set; }
     }

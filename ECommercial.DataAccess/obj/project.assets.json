@@ -1362,7 +1362,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "FluentNHibernate": "3.0.1",
           "NHibernate": "5.3.3"
         },
         "compile": {

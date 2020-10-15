@@ -5,7 +5,7 @@ using FluentNHibernate.Cfg.Db;
 using System.Configuration;
 using ECommercial.Core.DataAccess.NHibernate.Helpers;
 
-namespace ECommercial.DataAccess.Helpers
+namespace ECommercial.DataAccess.NHibarnate.Helpers
 {
     public class PostgreSqlServerHelper : NHibernateHelper
     {

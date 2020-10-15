@@ -3,7 +3,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NHibernate" Version="5.3.3" />
-    <PackageReference Include="FluentNHibernate" Version="3.0.1" />
+    <PackageReference Include="NHibernate" Version="5.3.3"/> 
   </ItemGroup>
 </Project>

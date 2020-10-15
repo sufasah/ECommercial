@@ -23,7 +23,7 @@ namespace ECommercial.Core.DataAccess.NHibernate.Mappings
              
              Map(x=>x.ReceiverSurname).Column("receiver_surname");
              
-             Map(x=>x.UserOrShopId).Column("user_shop_id");
+             Map(x=>x.UserShopId).Column("user_shop_id");
 
 
          }

@@ -1,0 +1,5 @@
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.csprojAssemblyReference.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.AssemblyInfoInputs.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.AssemblyInfo.cs
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.MvcApplicationPartsAssemblyInfo.cache

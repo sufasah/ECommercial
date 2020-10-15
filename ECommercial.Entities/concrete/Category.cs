@@ -5,7 +5,7 @@ namespace ECommercial.Entites.concrete
 {
     public class Category:IEntity
     {
-        public Int16 Id { get; set; }
+        public short Id { get; set; }
         public string Title { get; set; }
     }
 }

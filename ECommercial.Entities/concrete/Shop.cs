@@ -14,15 +14,15 @@ namespace ECommercial.Entites.concrete
         public FirmProfiles FirmProfile { get; set; }
         public int SellingSubcategoryId { get; set; }
         public int CommercialRecordNumber { get; set; }
-        public Int16 TaxOfficeCıtyId { get; set; }
-        public Int16 TaxOfficeId { get; set; }
+        public short TaxOfficeCıtyId { get; set; }
+        public short TaxOfficeId { get; set; }
         public long TaxOrTrIdNumber { get; set; }
         public long MersisNumber { get; set; }
         public long FirmFixedPhone { get; set; }
-        public Int16 InvoiceCityId { get; set; }
-        public Int16 InvoiceDistrictId { get; set; }
-        public Int16 BankId { get; set; }
-        public Int16 BranchCode { get; set; }
+        public short InvoiceCityId { get; set; }
+        public short InvoiceDistrictId { get; set; }
+        public short BankId { get; set; }
+        public short BranchCode { get; set; }
         public long AccountNumber { get; set; }
         public int Id { get; set; }
         public bool AuthorizedGender { get; set; }
