@@ -102,5 +102,5 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\net
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Business.dll
-c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Business.pdb
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
