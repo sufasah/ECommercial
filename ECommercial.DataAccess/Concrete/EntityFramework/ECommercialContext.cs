@@ -43,7 +43,7 @@ namespace ECommercial.DataAccess.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=127.0.0.1;Database=ECommercial;Username=postgres;Password=123;Port=5432;");
+            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=123;Database=ecommercial");
         }
         public DbSet<Address> Addresses {get;set;}
         public DbSet<Bank> Banks {get;set;}

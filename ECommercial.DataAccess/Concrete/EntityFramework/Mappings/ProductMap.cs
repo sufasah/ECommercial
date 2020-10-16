@@ -1,9 +1,12 @@
+using System.ComponentModel;
+using System.Reflection.Emit;
 using System.Xml.Linq;
 using System;
 using ECommercial.Entites.concrete;
 using FluentNHibernate.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
 {
@@ -23,14 +26,14 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.Property(x=>x.Properties).HasColumnName("properties");
             
-            builder.Property(x=>x.SubsubcategoryId).HasColumnName("subcategory_id");
+            builder.Property(x=>x.SubsubcategoryId).HasColumnName("subsubcategory_id");
             
             builder.Property(x=>x.VatRate).HasColumnName("vat_rate");
             
             builder.Property(x=>x.WarrantyPeriod).HasColumnName("warranty_period");
             
-            builder.Property(x=>x.WarrantyType).HasColumnName("warranty_type");
-            
+            builder.Property(x=>x.WarrantyType).HasColumnName("warranty_type").HasConversion(new EnumToStringConverter<Product.WarrantyTypes>());
+
             builder.Property(x=>x.Barcode).HasColumnName("barcode");
             
             builder.Property(x=>x.BrandId).HasColumnName("brand_id");

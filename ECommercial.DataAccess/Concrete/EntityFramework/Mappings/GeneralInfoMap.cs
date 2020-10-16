@@ -17,7 +17,7 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
 
             builder.Property(x=>x.Value).HasColumnName("key");
 
-            builder.Property(x=>x).HasColumnName("value");
+            builder.Property(x=>x.Value).HasColumnName("value");
             
         }
     }

@@ -1,6 +1,9 @@
+using System.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using ECommercial.Core.Entities;
+using ECommercial.Entites.concrete;
 
 namespace ECommercial.Entites.concrete
 {
@@ -44,4 +47,30 @@ namespace ECommercial.Entites.concrete
         public virtual string Description { get; set; }
 
     }
+}
+public class ProductEqualityComparer:IEqualityComparer<Product>{
+    public bool Equals([AllowNull] Product x, [AllowNull] Product y)
+        {
+            if(x==null ||y==null)
+                return false;
+            return x.Barcode==y.Barcode && 
+            x.BrandId==y.BrandId &&
+            x.CargoCorporation.Equals(y.CargoCorporation) &&
+            x.Commission==y.Commission &&
+            x.Deci == y.Deci &&
+            x.Description.Equals(y.Description) &&
+            x.Expiry==y.Expiry &&
+            x.Id==y.Id &&
+            x.Name.Equals(y.Name) &&
+            x.Properties.SequenceEqual(y.Properties) &&
+            x.SubsubcategoryId == y.SubsubcategoryId &&
+            x.VatRate == y.VatRate &&
+            x.WarrantyPeriod == y.WarrantyPeriod &&
+            x.WarrantyType == y.WarrantyType;
+        }
+
+        public int GetHashCode([DisallowNull] Product obj)
+        {
+            return (int)obj.Barcode ^obj.Id;
+        }    
 }
