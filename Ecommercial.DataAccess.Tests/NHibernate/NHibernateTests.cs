@@ -17,7 +17,7 @@ namespace ECommercial.DataAccess.Tests.NHibernate
         {
             List<string> properties= new List<string>();
             properties.Add("Özellik:1");
-            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme","Cargoşirket","Açıklama",new String[]{"Özellik:1"});
+            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme","Cargoşirket","Açıklama","Özellik:1");
 
             Product res = _productDal.Get(x=>x.Id==5);
 
@@ -29,7 +29,7 @@ namespace ECommercial.DataAccess.Tests.NHibernate
         {
             List<string> properties= new List<string>();
             properties.Add("Özellik:1");
-            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme","Cargoşirket","Açıklama",new String[]{"Özellik:1"});
+            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme","Cargoşirket","Açıklama","Özellik:1");
 
             List<Product> res = _productDal.GetList(x=>x.Id==5);
 
@@ -41,7 +41,7 @@ namespace ECommercial.DataAccess.Tests.NHibernate
         {
             List<string> properties= new List<string>();
             properties.Add("Özellik:1");
-            Product value = new Product(6,new Random().Next(1,Int16.MaxValue),2,1,15.00f,28,Product.WarrantyTypes.Day,0,10.00f,20,"Deneme","Cargoşirket","Açıklama",new String[]{"Özellik:1"});
+            Product value = new Product(6,new Random().Next(1,Int16.MaxValue),2,1,15.00f,28,Product.WarrantyTypes.Day,0,10.00f,20,"Deneme","Cargoşirket","Açıklama","Özellik:1");
 
             Product res = _productDal.Add(value);
             _productInserted=res;
@@ -62,7 +62,7 @@ namespace ECommercial.DataAccess.Tests.NHibernate
         {
             List<string> properties= new List<string>();
             properties.Add("Özellik:1");
-            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme_updated","Cargoşirket","Açıklama_updated",new String[]{"Özellik:1"});
+            Product value = new Product(5,1234,2,1,15.00f,28,Product.WarrantyTypes.Day,5,10.00f,20,"Deneme_updated","Cargoşirket","Açıklama_updated","Özellik:1");
 
             Product res = _productDal.Add(value);
 

@@ -9,10 +9,10 @@ namespace ECommercial.Core.DataAccess.NHibernate.Mappings
         public ProductMap()
         {
             Table(@"products");
-            Id(x=>x.Id).Column("id").Access.ReadOnly();
-
-            Map(x=>x.Expiry).Column("expiry");
+            Id(x=>x.Id).Column("id").Access.ReadOnly().GeneratedBy.SequenceIdentity();
             
+            Map(x=>x.Expiry).Column("expiry");
+
             Map(x=>x.Name).Column("name");
             
             Map(x=>x.Properties).Column("properties");

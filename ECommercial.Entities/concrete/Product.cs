@@ -37,7 +37,14 @@ namespace ECommercial.Entites.concrete
         public virtual float VatRate { get; set; }
         public virtual short Expiry { get; set; }
         public virtual string Name { get; set; }
-        public virtual string Properties { get; set; }
+        private string _properties;
+        public virtual string Properties { 
+            get{return _properties;} 
+            set{
+                var x = value;
+                this._properties=x;
+            } 
+        }
         public virtual string CargoCorporation { get; set; }
         public virtual string Description { get; set; }
 
