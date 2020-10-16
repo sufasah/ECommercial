@@ -10,3 +10,4 @@ C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.csproj.CopyComplete
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.dll
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.pdb
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Core.dll.config

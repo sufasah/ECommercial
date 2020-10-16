@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LOHhVwRyCCuAdRCOdfRWAgr1d/gZfiLz+7/FVqxd/JScZKrBk6QU6l7V32d9vd57g78VQ/pt6sS403QR+q+xTQ==",
+  "dgSpecHash": "7Lt/Y2G2SUaZQeSuNXAuxqjn4OvOaWxs1MFeOd3YuPeCaC5EdY4cZNiYBXiJGaNGpSWFrO0wHcZt5tIm8Nyfjw==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.4\\npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq.eagerfetching\\2.2.0\\remotion.linq.eagerfetching.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

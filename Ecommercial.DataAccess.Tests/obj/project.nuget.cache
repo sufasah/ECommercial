@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hHNcvl5PT/JvbTl9MoAEmYE6V/5kms0gE4l+tt1iB64L8fApf9CLH5asHLAHeIoAU4zKxZfbblz49aS6O0lxxw==",
+  "dgSpecHash": "QpFkfyTnvUe2jjoss3xpLzmDdoIAwQC8QX+dwbHPtcFuWeRS3z+QBFKV9IkRrWozp4nBIB7uR+PB4RELirlIZA==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess.Tests\\ECommercial.DataAccess.Tests.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.4\\npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq.eagerfetching\\2.2.0\\remotion.linq.eagerfetching.2.2.0.nupkg.sha512",
