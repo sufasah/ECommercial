@@ -3,7 +3,7 @@ using ECommercial.Entites.concrete;
 
 namespace ECommercial.DataAccess.Abstract
 {
-    public interface IFaqSubCategoryDal:IEntityRepository<FaqSubcategory>
+    public interface IFaqSubCategoryDal:IEntityRepository<FaqSubCategory>
     {
          
     }

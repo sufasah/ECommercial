@@ -9,23 +9,25 @@ namespace ECommercial.Entites.concrete
         public enum WarrantyTypes { Day, Month, Year };
 
         public Product(){}
-        public Product(short deci, long barcode, int subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int id, float vatRate, short expiry, string name, string cargoCorporation, string description,string properties)
+
+        public Product(short deci, long barcode, int subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int ıd, float vatRate, short expiry, string name, string[] properties, string cargoCorporation, string description)
         {
-            this.Deci = deci;
-            this.Barcode = barcode;
-            this.SubsubcategoryId = subsubcategoryId;
-            this.BrandId = brandId;
-            this.Commission = commission;
-            this.WarrantyPeriod = warrantyPeriod;
-            this.WarrantyType = warrantyType;
-            this.Id = id;
-            this.VatRate = vatRate;
-            this.Expiry = expiry;
-            this.Name = name;
-            this.CargoCorporation = cargoCorporation;
-            this.Description = description;
-            this.Properties = properties;
+            Deci = deci;
+            Barcode = barcode;
+            SubsubcategoryId = subsubcategoryId;
+            BrandId = brandId;
+            Commission = commission;
+            WarrantyPeriod = warrantyPeriod;
+            WarrantyType = warrantyType;
+            Id = ıd;
+            VatRate = vatRate;
+            Expiry = expiry;
+            Name = name;
+            Properties = properties;
+            CargoCorporation = cargoCorporation;
+            Description = description;
         }
+
         public virtual short Deci { get; set; }
         public virtual long Barcode { get; set; }
         public virtual int SubsubcategoryId { get; set; }
@@ -37,14 +39,7 @@ namespace ECommercial.Entites.concrete
         public virtual float VatRate { get; set; }
         public virtual short Expiry { get; set; }
         public virtual string Name { get; set; }
-        private string _properties;
-        public virtual string Properties { 
-            get{return _properties;} 
-            set{
-                var x = value;
-                this._properties=x;
-            } 
-        }
+        public virtual string[] Properties { get; set;}
         public virtual string CargoCorporation { get; set; }
         public virtual string Description { get; set; }
 

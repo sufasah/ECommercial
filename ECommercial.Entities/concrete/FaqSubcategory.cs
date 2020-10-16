@@ -3,7 +3,7 @@ using ECommercial.Core.Entities;
 
 namespace ECommercial.Entites.concrete
 {
-    public class FaqSubcategory:IEntity
+    public class FaqSubCategory:IEntity
     {
         public virtual short Id { get; set; }
         public virtual short FaqCategoryId { get; set; }

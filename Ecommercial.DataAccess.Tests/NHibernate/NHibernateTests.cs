@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using ECommercial.DataAccess.NHibarnate;
 using ECommercial.DataAccess.NHibarnate.Helpers;
@@ -70,4 +70,4 @@ namespace ECommercial.DataAccess.Tests.NHibernate
         }
 
     }
-}
+}*/
