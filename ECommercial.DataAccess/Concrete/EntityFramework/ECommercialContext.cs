@@ -1,3 +1,4 @@
+using ECommercial.Core.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
 using Microsoft.EntityFrameworkCore;
 
@@ -5,7 +6,41 @@ namespace ECommercial.DataAccess.EntityFramework
 {
     public class ECommercialContext:DbContext
     {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("public");
+            modelBuilder.ApplyConfiguration(new AddressMap());
+            modelBuilder.ApplyConfiguration(new BankMap());
+            modelBuilder.ApplyConfiguration(new BrandMap());
+            modelBuilder.ApplyConfiguration(new CampaignMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new CityMap());
+            modelBuilder.ApplyConfiguration(new CouponMap());
+            modelBuilder.ApplyConfiguration(new DistrictMap());
+            modelBuilder.ApplyConfiguration(new FaqCategoryMap());
+            modelBuilder.ApplyConfiguration(new FaqMap());
+            modelBuilder.ApplyConfiguration(new FaqSubcategoryMap());
+            modelBuilder.ApplyConfiguration(new GeneralInfoMap());
+            modelBuilder.ApplyConfiguration(new InvoiceMap());
+            modelBuilder.ApplyConfiguration(new OrderMap());
+            modelBuilder.ApplyConfiguration(new OrderProductMap());
+            modelBuilder.ApplyConfiguration(new ProductCampaignMap());
+            modelBuilder.ApplyConfiguration(new ProductMap());
+            modelBuilder.ApplyConfiguration(new ProductRateMap());
+            modelBuilder.ApplyConfiguration(new ShopMap());
+            modelBuilder.ApplyConfiguration(new ShopProductMap());
+            modelBuilder.ApplyConfiguration(new SlideMap());
+            modelBuilder.ApplyConfiguration(new SubCategoryMap());
+            modelBuilder.ApplyConfiguration(new SubSubCategoryMap());
+            modelBuilder.ApplyConfiguration(new TaxOfficeMap());
+            modelBuilder.ApplyConfiguration(new UserCouponMap());
+            modelBuilder.ApplyConfiguration(new UserFavouriteProductMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new UserProductWillBeOrderedMap());
+            
 
+            
+        }
         public DbSet<Address> Addresses {get;set;}
         public DbSet<Bank> Banks {get;set;}
         public DbSet<Brand> Brands {get;set;}
