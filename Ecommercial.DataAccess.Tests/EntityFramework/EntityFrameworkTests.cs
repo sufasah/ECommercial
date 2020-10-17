@@ -5,7 +5,7 @@ using Xunit;
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace ECommercial.DataAccess.Tests.EntityFramework
 {
-    public class ProductTests
+    public class EntityFrameworkTests
     {
 
         private EFProductDal _eFProductDal = new EFProductDal(); 

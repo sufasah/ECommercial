@@ -17,6 +17,28 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: ecommercial; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE ecommercial WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'Turkish_Turkey.1254';
+
+
+ALTER DATABASE ecommercial OWNER TO postgres;
+
+\connect ecommercial
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
 -- Name: invoice_type_enum; Type: TYPE; Schema: public; Owner: postgres
 --
 
@@ -57,9 +79,9 @@ ALTER TYPE public.order_product_state_enum OWNER TO postgres;
 --
 
 CREATE TYPE public.product_warranty_type_enum AS ENUM (
-    'day',
-    'month',
-    'year'
+    'Day',
+    'Month',
+    'Year'
 );
 
 
@@ -228,7 +250,7 @@ CREATE TABLE public.campaigns (
     id integer NOT NULL,
     start_datetime timestamp without time zone NOT NULL,
     end_datetime timestamp without time zone NOT NULL,
-    rate numeric(2,2) NOT NULL
+    rate numeric(4,2) NOT NULL
 );
 
 
@@ -459,7 +481,7 @@ CREATE TABLE public.invoices (
     city_id smallint NOT NULL,
     address character varying(250) NOT NULL,
     name character varying(30) NOT NULL,
-    type public.invoice_type_enum
+    type character varying(20)
 );
 
 
@@ -488,7 +510,7 @@ CREATE TABLE public.order_products (
     order_id integer NOT NULL,
     product_id integer NOT NULL,
     count integer,
-    state public.order_product_state_enum NOT NULL
+    state character varying(30) NOT NULL
 );
 
 
@@ -513,7 +535,7 @@ ALTER TABLE public.order_products ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTI
 --
 
 CREATE TABLE public.orders (
-    id smallint NOT NULL,
+    id bigint NOT NULL,
     user_id integer NOT NULL,
     claim_address_id integer NOT NULL,
     invoice_id integer NOT NULL,
@@ -606,11 +628,11 @@ CREATE TABLE public.products (
     subsubcategory_id integer NOT NULL,
     brand_id integer NOT NULL,
     name character varying(250) NOT NULL,
-    vat_rate numeric(2,2) NOT NULL,
+    vat_rate numeric(4,2) NOT NULL,
     expiry smallint NOT NULL,
-    commission numeric(2,2) DEFAULT 0,
+    commission numeric(4,2) DEFAULT 0,
     warranty_period smallint DEFAULT 0,
-    warranty_type public.product_warranty_type_enum NOT NULL,
+    warranty_type character varying(5) NOT NULL,
     description text DEFAULT ''::text,
     properties character varying(200)[] DEFAULT '{}'::character varying[],
     cargo_corporation character varying(50) NOT NULL,
@@ -643,15 +665,15 @@ CREATE TABLE public.shop_products (
     shop_id integer NOT NULL,
     product_id integer NOT NULL,
     variant_group_id integer,
-    product_rating numeric(2,2) DEFAULT 0.00,
+    product_rating numeric(4,2) DEFAULT 0.00,
     rating_count integer DEFAULT 0,
     stock_amount integer DEFAULT 0,
     stock_code character varying(10),
-    price numeric(20,2) NOT NULL,
+    price numeric(22,2) NOT NULL,
     day_for_cargo smallint NOT NULL,
     images character varying(250)[] DEFAULT '{}'::character varying[],
     release_datetime timestamp without time zone NOT NULL,
-    state public.shop_product_state_enum
+    state character varying(20)
 );
 
 
@@ -693,8 +715,8 @@ CREATE TABLE public.shops (
     firm_website character varying(50),
     firm_email character varying(50) NOT NULL,
     legal_firm_name character varying(50) NOT NULL,
-    firm_type public.shop_firm_type_enum NOT NULL,
-    firm_profile public.shop_firm_profile_enum NOT NULL,
+    firm_type character varying(30) NOT NULL,
+    firm_profile character varying(20) NOT NULL,
     selling_subcategory_id integer NOT NULL,
     commercial_record_number integer,
     tax_office_city_id smallint NOT NULL,
@@ -1024,6 +1046,7 @@ COPY public.banks (id, name, address, telephone, fax, web, telex, eft, swift) FR
 --
 
 COPY public.brands (id, brand) FROM stdin;
+1	Test_Brand
 \.
 
 
@@ -1040,6 +1063,7 @@ COPY public.campaigns (id, start_datetime, end_datetime, rate) FROM stdin;
 --
 
 COPY public.categories (id, title) FROM stdin;
+1	Test_Categori
 \.
 
 
@@ -2225,6 +2249,7 @@ COPY public.product_rates (id, product_id, user_id, comment, rate, images, hid_u
 --
 
 COPY public.products (id, barcode, subsubcategory_id, brand_id, name, vat_rate, expiry, commission, warranty_period, warranty_type, description, properties, cargo_corporation, deci) FROM stdin;
+5	1234	2	1	Deneme	10.00	20	15.00	28	Day	Açıklama	{Özellik:1}	Cargoşirket	5
 \.
 
 
@@ -2257,6 +2282,7 @@ COPY public.slides (id, image_url, route_url, slide_order) FROM stdin;
 --
 
 COPY public.subcategories (id, category_id, title) FROM stdin;
+3	1	Test_Subcategory
 \.
 
 
@@ -2265,6 +2291,7 @@ COPY public.subcategories (id, category_id, title) FROM stdin;
 --
 
 COPY public.subsubcategories (id, subcategory_id, title) FROM stdin;
+2	3	Test_Subsubcategory
 \.
 
 
@@ -3368,7 +3395,7 @@ SELECT pg_catalog.setval('public.banks_id_seq', 47, true);
 -- Name: brands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.brands_id_seq', 1, false);
+SELECT pg_catalog.setval('public.brands_id_seq', 1, true);
 
 
 --
@@ -3382,7 +3409,7 @@ SELECT pg_catalog.setval('public.campaigns_id_seq', 1, false);
 -- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.categories_id_seq', 1, false);
+SELECT pg_catalog.setval('public.categories_id_seq', 1, true);
 
 
 --
@@ -3466,7 +3493,7 @@ SELECT pg_catalog.setval('public.product_rates_id_seq', 1, false);
 -- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.products_id_seq', 1, false);
+SELECT pg_catalog.setval('public.products_id_seq', 11, true);
 
 
 --
@@ -3494,14 +3521,14 @@ SELECT pg_catalog.setval('public.slides_id_seq', 1, false);
 -- Name: subcategories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.subcategories_id_seq', 1, false);
+SELECT pg_catalog.setval('public.subcategories_id_seq', 3, true);
 
 
 --
 -- Name: subsubcategories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.subsubcategories_id_seq', 1, false);
+SELECT pg_catalog.setval('public.subsubcategories_id_seq', 2, true);
 
 
 --
@@ -3673,6 +3700,14 @@ ALTER TABLE ONLY public.product_campaigns
 
 ALTER TABLE ONLY public.product_rates
     ADD CONSTRAINT product_rates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: products products_barcode_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT products_barcode_unique UNIQUE (barcode);
 
 
 --

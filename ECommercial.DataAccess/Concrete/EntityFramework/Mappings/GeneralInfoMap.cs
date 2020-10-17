@@ -15,7 +15,7 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.HasKey(x=>x.Key);
 
-            builder.Property(x=>x.Value).HasColumnName("key");
+            builder.Property(x=>x.Key).HasColumnName("key");
 
             builder.Property(x=>x.Value).HasColumnName("value");
             

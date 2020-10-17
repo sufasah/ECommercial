@@ -14,7 +14,7 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.HasKey(x=>x.Id);
 
-            builder.Property(x=>x.Id).HasColumnName("id");
+            builder.Property(x=>x.Id).HasColumnName("id").UseIdentityAlwaysColumn<int>();
 
             builder.Property(x=>x.CouponId).HasColumnName("coupon_id");
             
