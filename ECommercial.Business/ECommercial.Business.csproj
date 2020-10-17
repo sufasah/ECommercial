@@ -4,5 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>Library</OutputType>
   </PropertyGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj" />
+    <ProjectReference Include="../ECommercial.DataAccess/ECommercial.DataAccess.csproj" />
+  </ItemGroup>
 </Project> 

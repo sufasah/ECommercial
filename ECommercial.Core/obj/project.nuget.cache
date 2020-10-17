@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vAYo4apwcsSRbQt/9IpC9vZ3jZ/2kCGs35ATVTUdEPuCBtjX84mrhFIn2O0Tq0jlihV9GcRz2v+9aRTY1J+tmQ==",
+  "dgSpecHash": "LwQ82h9jY8XY08vy1W8UkslVVlD0awl2fEhbCWb/+iki5ygOfDNr+9aojwEuUBZcZzmNfeiHCwMiDaoFVwcR0Q==",
   "success": true,
-  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+  "projectFilePath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentnhibernate\\2.1.2\\fluentnhibernate.2.1.2.nupkg.sha512",

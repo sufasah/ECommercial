@@ -1,9 +1,9 @@
-
+using System;
 using ECommercial.Core.Entities;
 
 namespace ECommercial.Entites.concrete
 {
-    public class Address:IEntity
+    public class Address:IHasPrimaryKey<int>,IEntity 
     {
         public Address(){}
         public Address(int ıd, int userShopId, long receiverNumber, int cityId, string address, string receiverName, string receiverSurname)
@@ -26,5 +26,7 @@ namespace ECommercial.Entites.concrete
         public virtual string address { get; set; }
         public virtual string ReceiverName { get; set; }
         public virtual string ReceiverSurname { get; set; }
+
+        public int GetId(){return Id;}
     }
 }
