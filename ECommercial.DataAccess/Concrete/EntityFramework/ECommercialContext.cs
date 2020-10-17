@@ -1,4 +1,5 @@
-using ECommercial.Core.DataAccess.EntitiyFramework.Mappings;
+
+using ECommercial.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,7 +38,7 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new UserFavouriteProductMap());
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new UserProductWillBeOrderedMap());
-            
+            modelBuilder.ApplyConfiguration(new TestMap());
             
         }
 

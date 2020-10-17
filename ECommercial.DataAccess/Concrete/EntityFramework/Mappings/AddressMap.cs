@@ -3,7 +3,7 @@ using ECommercial.Entites.concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class AddressMap:IEntityTypeConfiguration<Address>
     {

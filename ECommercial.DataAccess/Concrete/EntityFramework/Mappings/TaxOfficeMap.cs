@@ -1,9 +1,8 @@
 using ECommercial.Entites.concrete;
-using FluentNHibernate.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class TaxOfficeMap : IEntityTypeConfiguration<TaxOffice>
     {

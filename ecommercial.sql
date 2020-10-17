@@ -509,7 +509,7 @@ CREATE TABLE public.order_products (
     id integer NOT NULL,
     order_id integer NOT NULL,
     product_id integer NOT NULL,
-    count integer,
+    count integer NOT NULL,
     state character varying(30) NOT NULL
 );
 
@@ -856,6 +856,35 @@ ALTER TABLE public.tax_offices OWNER TO postgres;
 
 ALTER TABLE public.tax_offices ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
     SEQUENCE NAME public.tax_offices_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: tests; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tests (
+    id integer NOT NULL,
+    chr "char",
+    varchr character varying,
+    varchr_array character varying[],
+    intgr integer
+);
+
+
+ALTER TABLE public.tests OWNER TO postgres;
+
+--
+-- Name: tests_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.tests ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.tests_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -3346,6 +3375,19 @@ COPY public.tax_offices (id, city_id, district_id, accounting_unit_code, name) F
 
 
 --
+-- Data for Name: tests; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.tests (id, chr, varchr, varchr_array, intgr) FROM stdin;
+1	\N	getitem delete will cause error in tests	\N	\N
+19	\N	delete items	\N	1
+20	\N	delete items	\N	1
+2	\N	update item deletion will cause error in tests	\N	\N
+21	\N	delete items	\N	1
+\.
+
+
+--
 -- Data for Name: user_coupons; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3536,6 +3578,13 @@ SELECT pg_catalog.setval('public.subsubcategories_id_seq', 2, true);
 --
 
 SELECT pg_catalog.setval('public.tax_offices_id_seq', 7314, true);
+
+
+--
+-- Name: tests_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tests_id_seq', 21, true);
 
 
 --

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class ProductMap : IEntityTypeConfiguration<Product>
     {

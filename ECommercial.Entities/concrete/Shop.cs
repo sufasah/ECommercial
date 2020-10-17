@@ -5,6 +5,50 @@ namespace ECommercial.Entites.concrete
 {
     public class Shop:IEntity
     {
+        public Shop()
+        {
+        }
+
+        public Shop(long ıban, long authorizedPhone, long fırmOwnerPhone, FirmTypes firmType, FirmProfiles firmProfile, int sellingSubcategoryId, int commercialRecordNumber, short taxOfficeCıtyId, short taxOfficeId, long taxOrTrIdNumber, long mersisNumber, long firmFixedPhone, short ınvoiceCityId, short ınvoiceDistrictId, short bankId, short branchCode, long accountNumber, int ıd, bool authorizedGender, string username, string password, string shopOwnerName, string authorizedName, string authorizedSurname, string ınvoiceAddress, string authorizedPosition, string bankAccountOwner, string authorizedEmail, string firmOwnerName, string firmOwnerSurname, string branchBankName, string kepMail, string firmWebsite, string firmEmail, string legalFirmName, string ınvoiceEmail)
+        {
+            Iban = ıban;
+            AuthorizedPhone = authorizedPhone;
+            FırmOwnerPhone = fırmOwnerPhone;
+            FirmType = firmType;
+            FirmProfile = firmProfile;
+            SellingSubcategoryId = sellingSubcategoryId;
+            CommercialRecordNumber = commercialRecordNumber;
+            TaxOfficeCıtyId = taxOfficeCıtyId;
+            TaxOfficeId = taxOfficeId;
+            TaxOrTrIdNumber = taxOrTrIdNumber;
+            MersisNumber = mersisNumber;
+            FirmFixedPhone = firmFixedPhone;
+            InvoiceCityId = ınvoiceCityId;
+            InvoiceDistrictId = ınvoiceDistrictId;
+            BankId = bankId;
+            BranchCode = branchCode;
+            AccountNumber = accountNumber;
+            Id = ıd;
+            AuthorizedGender = authorizedGender;
+            Username = username;
+            Password = password;
+            ShopOwnerName = shopOwnerName;
+            AuthorizedName = authorizedName;
+            AuthorizedSurname = authorizedSurname;
+            InvoiceAddress = ınvoiceAddress;
+            AuthorizedPosition = authorizedPosition;
+            BankAccountOwner = bankAccountOwner;
+            AuthorizedEmail = authorizedEmail;
+            FirmOwnerName = firmOwnerName;
+            FirmOwnerSurname = firmOwnerSurname;
+            BranchBankName = branchBankName;
+            KepMail = kepMail;
+            FirmWebsite = firmWebsite;
+            FirmEmail = firmEmail;
+            LegalFirmName = legalFirmName;
+            InvoiceEmail = ınvoiceEmail;
+        }
+
         public enum FirmTypes{Private,Incorporated,SoleProprietorShip,OrdinaryPartnership,Foundation};
         public enum FirmProfiles{Distributor,Importer,MainDealer,Dealer,Producer};
         public virtual long Iban { get; set; }
@@ -13,7 +57,7 @@ namespace ECommercial.Entites.concrete
         public virtual FirmTypes FirmType { get; set; }
         public virtual FirmProfiles FirmProfile { get; set; }
         public virtual int SellingSubcategoryId { get; set; }
-        public virtual int CommercialRecordNumber { get; set; }
+        public virtual int? CommercialRecordNumber { get; set; }
         public virtual short TaxOfficeCıtyId { get; set; }
         public virtual short TaxOfficeId { get; set; }
         public virtual long TaxOrTrIdNumber { get; set; }

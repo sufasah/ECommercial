@@ -2,8 +2,9 @@ using ECommercial.Entites.concrete;
 using FluentNHibernate.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class InvoiceMap : IEntityTypeConfiguration<Invoice>
     {
@@ -25,7 +26,7 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.Property(x=>x.InvoiceeSurname).HasColumnName("invoicee_surname");
             
-            builder.Property(x=>x.Type).HasColumnName("type");
+            builder.Property(x=>x.Type).HasColumnName("type").HasConversion(new EnumToStringConverter<Invoice.Types>());
             
             builder.Property(x=>x.UserId).HasColumnName("user_id");
             

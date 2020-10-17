@@ -3,11 +3,28 @@ using ECommercial.Core.Entities;
 
 namespace ECommercial.Entites.concrete
 {
-    public enum typeEnum{individual,institutional};
     public class Invoice:IEntity
     {
-        public virtual typeEnum Type { get; set; }
-        public virtual int UserId { get; set; }
+        public Invoice()
+        {
+        }
+
+        public Invoice(Types type, int userId, long ınvoiceeNumber, short cityId, int ıd, string name, string ınvoiceeName, string ınvoiceeSurname, string address)
+        {
+            Type = type;
+            UserId = userId;
+            InvoiceeNumber = ınvoiceeNumber;
+            CityId = cityId;
+            Id = ıd;
+            Name = name;
+            InvoiceeName = ınvoiceeName;
+            InvoiceeSurname = ınvoiceeSurname;
+            Address = address;
+        }
+
+        public enum Types{individual,institutional};
+        public virtual Types? Type { get; set; }
+        public virtual int? UserId { get; set; }
         public virtual long InvoiceeNumber { get; set; }
         public virtual short CityId { get; set; }
         public virtual int Id { get; set; }

@@ -2,8 +2,9 @@ using ECommercial.Entites.concrete;
 using FluentNHibernate.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class ShopMap : IEntityTypeConfiguration<Shop>
     {
@@ -49,9 +50,9 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.Property(x=>x.FirmOwnerSurname).HasColumnName("firm_owner_surname");
             
-            builder.Property(x=>x.FirmProfile).HasColumnName("firm_profile");
+            builder.Property(x=>x.FirmProfile).HasColumnName("firm_profile").HasConversion(new EnumToStringConverter<Shop.FirmProfiles>());
             
-            builder.Property(x=>x.FirmType).HasColumnName("firm_type");
+            builder.Property(x=>x.FirmType).HasColumnName("firm_type").HasConversion(new EnumToStringConverter<Shop.FirmTypes>());
             
             builder.Property(x=>x.FirmWebsite).HasColumnName("firm_website");
             

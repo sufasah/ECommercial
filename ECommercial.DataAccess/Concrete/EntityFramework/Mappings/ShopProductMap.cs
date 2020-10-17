@@ -1,8 +1,9 @@
 using ECommercial.Entites.concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
+namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 {
     public class ShopProductMap : IEntityTypeConfiguration<ShopProduct>
     {
@@ -31,7 +32,7 @@ namespace ECommercial.Core.DataAccess.EntitiyFramework.Mappings
             
             builder.Property(x=>x.ShopId).HasColumnName("shop_id");
             
-            builder.Property(x=>x.State).HasColumnName("state");
+            builder.Property(x=>x.State).HasColumnName("state").HasConversion(new EnumToStringConverter<ShopProduct.States>());
             
             builder.Property(x=>x.StockAmount).HasColumnName("stock_amount");
             

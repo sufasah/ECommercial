@@ -4,6 +4,23 @@ namespace ECommercial.Entites.concrete
 {
     public class Bank:IEntity
     {
+        public Bank()
+        {
+        }
+
+        public Bank(int ıd, string name, string address, string telephone, string fax, string web, string telex, string eft, string swift)
+        {
+            Id = ıd;
+            Name = name;
+            Address = address;
+            Telephone = telephone;
+            Fax = fax;
+            Web = web;
+            Telex = telex;
+            Eft = eft;
+            Swift = swift;
+        }
+
         public virtual int Id { get; set; }
 
         public virtual string Name { get; set; }
