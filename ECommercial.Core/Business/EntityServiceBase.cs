@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Linq.Expressions;
 using System;
 using System.Collections.Generic;
 using ECommercial.Core.DataAccess;
@@ -5,14 +7,16 @@ using ECommercial.Core.Entities;
 
 namespace ECommercial.Core.Business
 {
-    public class EntityServiceBase<TEntity> : IService<TEntity>
-        where TEntity :class, IHasPrimaryKey<Nullable<Object>>,IEntity, new()
+    public abstract class EntityServiceBase<TEntity> : IService<TEntity>
+        where TEntity :class,IEntity, new()
     {
         private IEntityRepository<TEntity> _entityRepository;
+        private MemberInfo _entityPrimaryKeyMember;
 
-        public EntityServiceBase(IEntityRepository<TEntity> entityRepository)
+        protected EntityServiceBase(IEntityRepository<TEntity> entityRepository, MemberInfo entityPrimaryKeyMember)
         {
             _entityRepository = entityRepository;
+            _entityPrimaryKeyMember = entityPrimaryKeyMember;
         }
 
         public List<TEntity> GetAll()
@@ -20,9 +24,20 @@ namespace ECommercial.Core.Business
             return _entityRepository.GetList();
         }
 
-        public TEntity GetByPrimaryKey(object key)
+        public TEntity GetByPrimaryKey(Object key)
         {
-            return _entityRepository.Get(o=>o.GetId()==key);
+            if(_entityPrimaryKeyMember==null)
+                throw new KeyNotFoundException($"For {typeof(TEntity).Name} Class, There is any given primary key when instantiating Service.");
+            var param = Expression.Parameter(typeof(TEntity),"e");
+            Expression<Func<TEntity,bool>> filter = Expression.Lambda<Func<TEntity,bool>>(
+                Expression.Call(
+                    Expression.MakeMemberAccess(param,_entityPrimaryKeyMember),
+                    typeof(TEntity).GetMethod("Equals"),
+                    Expression.Constant(Expression.Convert(Expression.Constant(key),typeof(Object)))
+                ),
+                param
+            );
+            return _entityRepository.Get(filter);
         }
     }
 }

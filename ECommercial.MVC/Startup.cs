@@ -1,6 +1,9 @@
+using ECommercial.Business.Concrete.Managers;
+using ECommercial.DataAccess.Concrete.EntityFramework;
+using ECommercial.DataAccess.EntityFramework;
+using ECommercial.Entites.concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +16,9 @@ namespace ECommercial.MVC
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            EntityManager entityManager = new EntityManager(new EFEntityDal<Product>(new ECommercialContext()));
+            ProductManager manager = new ProductManager(new EFProductDal(),entityManager.GetPrimaryKeyMember());
+            Product result = manager.GetByPrimaryKey(4);
         }
 
         public IConfiguration Configuration { get; }
