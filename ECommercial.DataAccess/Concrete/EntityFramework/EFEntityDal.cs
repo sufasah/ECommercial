@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Reflection;
 using ECommercial.Core.Entities;
@@ -19,10 +20,12 @@ namespace ECommercial.DataAccess.Concrete.EntityFramework
 
         public MemberInfo GetPrimaryKeyMember()
         {
+
             IEntityType entityType=_context.Model.GetEntityTypes().FirstOrDefault(t=>t.ClrType==typeof(TEntity));
-            if(entityType ==default(IEntityType)){
+            
+            if(entityType ==default(IEntityType))
                 throw new TargetException($"There is no such a given entity in {_context.GetType().Name} context");
-            }
+            
             IKey key =entityType.FindPrimaryKey();
             if(key==null)
                 return null;

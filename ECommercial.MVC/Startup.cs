@@ -17,8 +17,8 @@ namespace ECommercial.MVC
         {
             Configuration = configuration;
             EntityManager entityManager = new EntityManager(new EFEntityDal<Product>(new ECommercialContext()));
-            ProductManager manager = new ProductManager(new EFProductDal(),entityManager.GetPrimaryKeyMember());
-            Product result = manager.GetByPrimaryKey(4);
+            ProductManager manager = new ProductManager(new EFProductDal(),null);
+            
         }
 
         public IConfiguration Configuration { get; }

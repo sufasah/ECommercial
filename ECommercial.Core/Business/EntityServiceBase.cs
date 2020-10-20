@@ -24,10 +24,10 @@ namespace ECommercial.Core.Business
             return _entityRepository.GetList();
         }
 
-        public TEntity GetByPrimaryKey(Object key)
+        public virtual TEntity GetByPrimaryKey(Object key)
         {
             if(_entityPrimaryKeyMember==null)
-                throw new KeyNotFoundException($"For {typeof(TEntity).Name} Class, There is any given primary key when instantiating Service.");
+                throw new KeyNotFoundException($"For {typeof(TEntity).Name} Class, There is any memberfield that infer primary key of the class when instantiating service.");
             var param = Expression.Parameter(typeof(TEntity),"e");
             Expression<Func<TEntity,bool>> filter = Expression.Lambda<Func<TEntity,bool>>(
                 Expression.Call(
