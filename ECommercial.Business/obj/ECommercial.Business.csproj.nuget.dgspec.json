@@ -119,6 +119,10 @@
               "target": "Package",
               "version": "[5.3.3, )"
             },
+            "Ninject": {
+              "target": "Package",
+              "version": "[3.3.4, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.5, )"

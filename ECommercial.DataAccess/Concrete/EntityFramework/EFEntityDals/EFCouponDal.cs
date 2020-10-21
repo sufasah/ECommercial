@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFCouponDal : EFIEntityRepositoryBase<Coupon,ECommercialContext>,ICouponDal
+    public class EFCouponDal : EFEntityRepositoryBase<Coupon,ECommercialContext>,ICouponDal
     {
         
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QiWCitJh/q49RTahZ/7zp5tKJM2gfs+uhtqIWXxUMZTVjojwovEtSbSshcPx9K6QGU1uw3TeYIDCDGdkbDWEBA==",
+  "dgSpecHash": "BM1Kzu0UORPlgrIMxFeqDFozGkRNALVKE0Yq2mSwfeLWizX253sqb6jiYvrZW8vIZbnM00QpehGoCNWdamTuUg==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq.eagerfetching\\2.2.0\\remotion.linq.eagerfetching.2.2.0.nupkg.sha512",

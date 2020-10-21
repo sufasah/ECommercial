@@ -4,7 +4,6 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {

@@ -11,8 +11,8 @@ namespace ECommercial.DataAccess.Tests.EntityFramework.Integration
     {
         // Prerequirements is these:
         // there must be get record and id is 1, update record and id is 2, delete records for delete tests 
-        private EFIEntityRepositoryBase<Test,ECommercialContext> _repo = new EFIEntityRepositoryBase<Test,ECommercialContext>();
-        private EFIQueryableRepositoryBase<Test> _queryablerepo = new EFIQueryableRepositoryBase<Test>(new ECommercialContext());
+        private EFEntityRepositoryBase<Test,ECommercialContext> _repo = new EFEntityRepositoryBase<Test,ECommercialContext>();
+        private EFQueryableRepositoryBase<Test> _queryablerepo = new EFQueryableRepositoryBase<Test>(new ECommercialContext());
         [Fact]
         public void GetFunc(){
             Test value= new Test(1,null,"getitem delete will cause error in tests",null,null);

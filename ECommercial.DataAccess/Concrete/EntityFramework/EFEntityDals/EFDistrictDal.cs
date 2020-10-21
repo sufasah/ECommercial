@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFDistrictDal : EFIEntityRepositoryBase<District,ECommercialContext>,IDistrictDal
+    public class EFDistrictDal : EFEntityRepositoryBase<District,ECommercialContext>,IDistrictDal
     {
         
     }

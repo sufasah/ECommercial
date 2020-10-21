@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFFaqSubCategoryDal : EFIEntityRepositoryBase<FaqSubCategory,ECommercialContext>,IFaqSubCategoryDal
+    public class EFFaqSubCategoryDal : EFEntityRepositoryBase<FaqSubCategory,ECommercialContext>,IFaqSubCategoryDal
     {
         
     }

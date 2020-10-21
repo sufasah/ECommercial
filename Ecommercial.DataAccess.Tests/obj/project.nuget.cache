@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UWxZB9IB2Ru1RQtPqH8QMr4JeK+GTroLYxe5bpQH3Z5XBLKxhPEdp9eyJRmflWmr8oas8veE1vMse7jeXDK5Tw==",
+  "dgSpecHash": "c/wFJS/BKSkeSu8R5Ij2eyEGJb3F2lbJPbniW414wyJ3rllHLfeuWk7DqEX3DSLmNsr4MXZpvXG52cKnPawYSA==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess.Tests\\ECommercial.DataAccess.Tests.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.4\\npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",

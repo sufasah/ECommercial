@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFInvoiceDal : EFIEntityRepositoryBase<Invoice,ECommercialContext>,IInvoiceDal
+    public class EFInvoiceDal : EFEntityRepositoryBase<Invoice,ECommercialContext>,IInvoiceDal
     {
         
     }

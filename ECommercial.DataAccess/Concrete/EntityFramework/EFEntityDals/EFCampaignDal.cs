@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFCampaignDal : EFIEntityRepositoryBase<Campaign,ECommercialContext>,ICampaignDal
+    public class EFCampaignDal : EFEntityRepositoryBase<Campaign,ECommercialContext>,ICampaignDal
     {
         
     }

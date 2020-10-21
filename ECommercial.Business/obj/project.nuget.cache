@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bIJX78A8JYVxFSyjF6ilHN/xBaUbtmun7Re1m/Gp3au6ANvBGde7Awo2VjK/j6FhX45ZUNineLiW07RNaO9T0w==",
+  "dgSpecHash": "5h5wRxi5FVvwHs+Oe+m39ArESEoVrAjBl/dEzJ7VWZMqdFohv8/LL8OoTv0QBz8jFQhW3v+bGwabefwz47OfgA==",
   "success": true,
   "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.4\\npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",

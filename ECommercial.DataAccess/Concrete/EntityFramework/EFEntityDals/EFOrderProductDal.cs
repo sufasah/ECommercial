@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFOrderProductDal : EFIEntityRepositoryBase<OrderProduct,ECommercialContext>,IOrderProductDal
+    public class EFOrderProductDal : EFEntityRepositoryBase<OrderProduct,ECommercialContext>,IOrderProductDal
     {
         
     }

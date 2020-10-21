@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFBankDal : EFIEntityRepositoryBase<Bank,ECommercialContext>,IBankDal
+    public class EFBankDal : EFEntityRepositoryBase<Bank,ECommercialContext>,IBankDal
     {
         
     }

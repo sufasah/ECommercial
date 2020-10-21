@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFUserDal : EFIEntityRepositoryBase<User,ECommercialContext>,IUserDal
+    public class EFUserDal : EFEntityRepositoryBase<User,ECommercialContext>,IUserDal
     {
         
     }

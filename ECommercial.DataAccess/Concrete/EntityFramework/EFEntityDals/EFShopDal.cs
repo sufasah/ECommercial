@@ -5,7 +5,7 @@ using ECommercial.Entites.concrete;
 using ECommercial.DataAccess.EntityFramework;
 namespace ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals
 {
-    public class EFShopDal : EFIEntityRepositoryBase<Shop,ECommercialContext>,IShopDal
+    public class EFShopDal : EFEntityRepositoryBase<Shop,ECommercialContext>,IShopDal
     {
         
     }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.Core.DataAccess.EntitiyFramework
 {
-    public class EFIEntityRepositoryBase<TEntity,TContext> : IEntityRepository<TEntity> 
+    public class EFEntityRepositoryBase<TEntity,TContext> : IEntityRepository<TEntity> 
         where TEntity :class, IEntity, new()
         where TContext:DbContext,new()
     {

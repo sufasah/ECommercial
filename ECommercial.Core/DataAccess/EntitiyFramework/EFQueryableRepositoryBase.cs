@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.Core.DataAccess.EntitiyFramework
 {
-    public class EFIQueryableRepositoryBase<TEntity> : IQueryableRepository<TEntity>
+    public class EFQueryableRepositoryBase<TEntity> : IQueryableRepository<TEntity>
         where TEntity : class, IEntity, new()
     {
         private DbContext _context;
         private DbSet<TEntity> _entities;
-        public EFIQueryableRepositoryBase(DbContext context)
+        public EFQueryableRepositoryBase(DbContext context)
         {
             _context = context;
         }
