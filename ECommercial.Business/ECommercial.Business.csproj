@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>Library</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj" />
-    <ProjectReference Include="../ECommercial.DataAccess/ECommercial.DataAccess.csproj" />
+    <ProjectReference Include="../ECommercial.Core/ECommercial.Core.csproj"/>
+    <ProjectReference Include="../ECommercial.DataAccess/ECommercial.DataAccess.csproj"/>
   </ItemGroup>
-</Project> 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0"/>
+  </ItemGroup>
+</Project>

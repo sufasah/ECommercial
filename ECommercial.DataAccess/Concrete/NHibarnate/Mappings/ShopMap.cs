@@ -72,7 +72,7 @@ namespace ECommercial.Core.DataAccess.NHibernate.Mappings
             
             Map(x=>x.ShopOwnerName).Column("shop_owner_name");
             
-            Map(x=>x.TaxOfficeCıtyId).Column("tax_office_city_id");
+            Map(x=>x.TaxOfficeCityId).Column("tax_office_city_id");
             
             Map(x=>x.TaxOfficeId).Column("tax_office_id");
             

@@ -80,7 +80,7 @@ namespace ECommercial.DataAccess.EntitiyFramework.Mappings
             
             builder.Property(x=>x.ShopOwnerName).HasColumnName("shop_owner_name");
             
-            builder.Property(x=>x.TaxOfficeCıtyId).HasColumnName("tax_office_city_id");
+            builder.Property(x=>x.TaxOfficeCityId).HasColumnName("tax_office_city_id");
             
             builder.Property(x=>x.TaxOfficeId).HasColumnName("tax_office_id");
             

@@ -8,7 +8,7 @@ namespace ECommercial.Entites.concrete
 
         public Product(){}
 
-        public Product(short deci, long barcode, int subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int ıd, float vatRate, short expiry, string name, string[] properties, string cargoCorporation, string description)
+        public Product(short deci, long barcode, short subsubcategoryId, int brandId, float commission, short warrantyPeriod, WarrantyTypes warrantyType, int ıd, float vatRate, short expiry, string name, string[] properties, string cargoCorporation, string description)
         {
             Deci = deci;
             Barcode = barcode;
@@ -28,7 +28,7 @@ namespace ECommercial.Entites.concrete
 
         public virtual short Deci { get; set; }
         public virtual long Barcode { get; set; }
-        public virtual int SubsubcategoryId { get; set; }
+        public virtual short SubsubcategoryId { get; set; }
         public virtual int BrandId { get; set; }
         public virtual float Commission { get; set; }
         public virtual short WarrantyPeriod { get; set; }

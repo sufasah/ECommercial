@@ -8,7 +8,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Bank(int ıd, string name, string address, string telephone, string fax, string web, string telex, string eft, string swift)
+        public Bank(short ıd, string name, string address, string telephone, string fax, string web, string telex, string eft, string swift)
         {
             Id = ıd;
             Name = name;
@@ -21,7 +21,7 @@ namespace ECommercial.Entites.concrete
             Swift = swift;
         }
 
-        public virtual int Id { get; set; }
+        public virtual short Id { get; set; }
 
         public virtual string Name { get; set; }
         public virtual string Address { get; set; }

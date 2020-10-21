@@ -5,7 +5,7 @@ using ECommercial.Entities.concrete;
 using ECommercial.DataAccess.EntityFramework;
 using System.Collections.Generic;
 
-namespace ECommercial.DataAccess.Tests.EntityFramework
+namespace ECommercial.DataAccess.Tests.EntityFramework.Integration
 {
     public class RepositoryTests
     {

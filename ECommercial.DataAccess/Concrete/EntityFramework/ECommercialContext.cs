@@ -1,12 +1,19 @@
 
+using System.Configuration;
 using ECommercial.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
+using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.DataAccess.EntityFramework
 {
     public class ECommercialContext:DbContext
     {
+        public ECommercialContext(){   
+        }
+        public ECommercialContext(DbContextOptions<ECommercialContext> options):base(options){
+
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("public");
@@ -41,10 +48,9 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new TestMap());
             
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=123;Database=ecommercial");
+            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=123;Database=ecommercial;");
         }
         public DbSet<Address> Addresses {get;set;}
         public DbSet<Bank> Banks {get;set;}

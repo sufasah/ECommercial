@@ -507,7 +507,7 @@ ALTER TABLE public.invoices ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 CREATE TABLE public.order_products (
     id integer NOT NULL,
-    order_id integer NOT NULL,
+    order_id bigint NOT NULL,
     product_id integer NOT NULL,
     count integer NOT NULL,
     state character varying(30) NOT NULL
@@ -625,7 +625,7 @@ ALTER TABLE public.product_rates ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 CREATE TABLE public.products (
     id integer NOT NULL,
     barcode bigint NOT NULL,
-    subsubcategory_id integer NOT NULL,
+    subsubcategory_id smallint NOT NULL,
     brand_id integer NOT NULL,
     name character varying(250) NOT NULL,
     vat_rate numeric(4,2) NOT NULL,
@@ -717,7 +717,7 @@ CREATE TABLE public.shops (
     legal_firm_name character varying(50) NOT NULL,
     firm_type character varying(30) NOT NULL,
     firm_profile character varying(20) NOT NULL,
-    selling_subcategory_id integer NOT NULL,
+    selling_subcategory_id smallint NOT NULL,
     commercial_record_number integer,
     tax_office_city_id smallint NOT NULL,
     tax_office_id smallint NOT NULL,

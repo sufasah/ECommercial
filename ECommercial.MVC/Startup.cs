@@ -5,6 +5,7 @@ using ECommercial.Entites.concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -15,10 +16,7 @@ namespace ECommercial.MVC
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-            EntityManager entityManager = new EntityManager(new EFEntityDal<Product>(new ECommercialContext()));
-            ProductManager manager = new ProductManager(new EFProductDal(),null);
-            
+            Configuration = configuration;            
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +24,7 @@ namespace ECommercial.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -63,7 +62,6 @@ namespace ECommercial.MVC
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
-
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -76,6 +74,7 @@ namespace ECommercial.MVC
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+            app.UseSpaStaticFiles();
         }
     }
 }

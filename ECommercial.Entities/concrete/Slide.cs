@@ -18,7 +18,7 @@ namespace ECommercial.Entites.concrete
         }
 
         public virtual int Id { get; set; }
-        public virtual short? SlideOrder { get; set; }
+        public virtual short SlideOrder { get; set; }
         public virtual string ImageUrl { get; set; }
         public virtual string RouteUrl { get; set; }
     }

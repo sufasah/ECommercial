@@ -23,8 +23,8 @@ namespace ECommercial.Entites.concrete
         }
 
         public enum Types{individual,institutional};
-        public virtual Types? Type { get; set; }
-        public virtual int? UserId { get; set; }
+        public virtual Types Type { get; set; }
+        public virtual int UserId { get; set; }
         public virtual long InvoiceeNumber { get; set; }
         public virtual short CityId { get; set; }
         public virtual int Id { get; set; }

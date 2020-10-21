@@ -9,7 +9,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Shop(long ıban, long authorizedPhone, long fırmOwnerPhone, FirmTypes firmType, FirmProfiles firmProfile, int sellingSubcategoryId, int commercialRecordNumber, short taxOfficeCıtyId, short taxOfficeId, long taxOrTrIdNumber, long mersisNumber, long firmFixedPhone, short ınvoiceCityId, short ınvoiceDistrictId, short bankId, short branchCode, long accountNumber, int ıd, bool authorizedGender, string username, string password, string shopOwnerName, string authorizedName, string authorizedSurname, string ınvoiceAddress, string authorizedPosition, string bankAccountOwner, string authorizedEmail, string firmOwnerName, string firmOwnerSurname, string branchBankName, string kepMail, string firmWebsite, string firmEmail, string legalFirmName, string ınvoiceEmail)
+        public Shop(long ıban, long authorizedPhone, long fırmOwnerPhone, FirmTypes firmType, FirmProfiles firmProfile, short sellingSubcategoryId, int commercialRecordNumber, short taxOfficeCıtyId, short taxOfficeId, long taxOrTrIdNumber, long mersisNumber, long firmFixedPhone, short ınvoiceCityId, short ınvoiceDistrictId, short bankId, short branchCode, long accountNumber, int ıd, bool authorizedGender, string username, string password, string shopOwnerName, string authorizedName, string authorizedSurname, string ınvoiceAddress, string authorizedPosition, string bankAccountOwner, string authorizedEmail, string firmOwnerName, string firmOwnerSurname, string branchBankName, string kepMail, string firmWebsite, string firmEmail, string legalFirmName, string ınvoiceEmail)
         {
             Iban = ıban;
             AuthorizedPhone = authorizedPhone;
@@ -18,7 +18,7 @@ namespace ECommercial.Entites.concrete
             FirmProfile = firmProfile;
             SellingSubcategoryId = sellingSubcategoryId;
             CommercialRecordNumber = commercialRecordNumber;
-            TaxOfficeCıtyId = taxOfficeCıtyId;
+            TaxOfficeCityId = taxOfficeCıtyId;
             TaxOfficeId = taxOfficeId;
             TaxOrTrIdNumber = taxOrTrIdNumber;
             MersisNumber = mersisNumber;
@@ -56,9 +56,9 @@ namespace ECommercial.Entites.concrete
         public virtual long FırmOwnerPhone { get; set; }
         public virtual FirmTypes FirmType { get; set; }
         public virtual FirmProfiles FirmProfile { get; set; }
-        public virtual int SellingSubcategoryId { get; set; }
-        public virtual int? CommercialRecordNumber { get; set; }
-        public virtual short TaxOfficeCıtyId { get; set; }
+        public virtual short SellingSubcategoryId { get; set; }
+        public virtual int CommercialRecordNumber { get; set; }
+        public virtual short TaxOfficeCityId { get; set; }
         public virtual short TaxOfficeId { get; set; }
         public virtual long TaxOrTrIdNumber { get; set; }
         public virtual long MersisNumber { get; set; }
