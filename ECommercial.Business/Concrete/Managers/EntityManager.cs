@@ -1,7 +1,7 @@
 using System.Reflection;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 
-namespace ECommercial.Business.Concrete.Managers.EntityManagers
+namespace ECommercial.Business.Concrete.Managers
 {
     public class EntityManager
     {

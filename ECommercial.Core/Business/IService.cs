@@ -10,5 +10,11 @@ namespace ECommercial.Core.Business
 
          T GetByPrimaryKey(Object key);
 
+         T Add(T Entity);
+
+         T Update(T Entity);
+
+         void Delete(T Entity);
+
     }
 }

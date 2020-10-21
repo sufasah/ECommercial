@@ -1647,6 +1647,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "FluentNHibernate": "2.1.2",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "NHibernate": "5.3.3",
           "Npgsql": "4.1.5"
@@ -5851,11 +5852,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
       "projectName": "ECommercial.Business",
-      "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\obj\\",
+      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5871,11 +5872,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
             },
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
             }
           }
         }

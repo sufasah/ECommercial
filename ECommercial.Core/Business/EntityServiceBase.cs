@@ -19,7 +19,17 @@ namespace ECommercial.Core.Business
             _entityPrimaryKeyMember = entityPrimaryKeyMember;
         }
 
-        public List<TEntity> GetAll()
+        public virtual TEntity Add(TEntity Entity)
+        {
+            return _entityRepository.Add(Entity);
+        }
+
+        public virtual void Delete(TEntity Entity)
+        {
+            _entityRepository.Delete(Entity);
+        }
+
+        public virtual List<TEntity> GetAll()
         {
             return _entityRepository.GetList();
         }
@@ -38,6 +48,11 @@ namespace ECommercial.Core.Business
                 param
             );
             return _entityRepository.Get(filter);
+        }
+
+        public virtual TEntity Update(TEntity Entity)
+        {
+            return _entityRepository.Update(Entity);
         }
     }
 }

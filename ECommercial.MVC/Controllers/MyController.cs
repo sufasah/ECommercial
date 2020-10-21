@@ -1,4 +1,5 @@
 ﻿using System;
+using ECommercial.Business.Concrete.Managers;
 using ECommercial.Business.Concrete.Managers.EntityManagers;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Concrete.EntityFramework;

@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "LwQ82h9jY8XY08vy1W8UkslVVlD0awl2fEhbCWb/+iki5ygOfDNr+9aojwEuUBZcZzmNfeiHCwMiDaoFVwcR0Q==",
+  "dgSpecHash": "QiWCitJh/q49RTahZ/7zp5tKJM2gfs+uhtqIWXxUMZTVjojwovEtSbSshcPx9K6QGU1uw3TeYIDCDGdkbDWEBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentnhibernate\\2.1.2\\fluentnhibernate.2.1.2.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentvalidation\\9.2.0\\fluentvalidation.9.2.0.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.2.0\\fluentvalidation.aspnetcore.9.2.0.nupkg.sha512",
+    "C:\\Users\\nihaSWin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.2.0\\fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\iesi.collections\\4.0.4\\iesi.collections.4.0.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
