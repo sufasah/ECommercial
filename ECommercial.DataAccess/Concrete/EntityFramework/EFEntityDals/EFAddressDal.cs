@@ -1,6 +1,6 @@
 
 using ECommercial.Core.DataAccess.EntitiyFramework;
-using ECommercial.DataAccess.Abstract;
+using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.DataAccess.EntityFramework;
 using ECommercial.Entites.concrete;
 

@@ -1,5 +1,5 @@
 using System.Reflection;
-using ECommercial.DataAccess.Abstract;
+using ECommercial.DataAccess.Abstract.AbstractEntities;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {

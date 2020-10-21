@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Reflection;
 using ECommercial.Core.Entities;
-using ECommercial.DataAccess.Abstract;
+using ECommercial.DataAccess.Abstract.AbstractEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
