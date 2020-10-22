@@ -8,7 +8,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public AddressValidator()
         {
-            RuleFor(x=>x.Id)
+             RuleFor(x=>x.Id)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.UserShopId)

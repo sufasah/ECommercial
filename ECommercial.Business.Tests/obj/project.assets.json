@@ -201,6 +201,18 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Relational/3.1.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.9"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/3.1.9": {
         "type": "package",
         "dependencies": {
@@ -747,6 +759,21 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/Npgsql.dll": {}
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/3.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.4",
+          "Microsoft.EntityFrameworkCore.Abstractions": "3.1.4",
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.4",
+          "Npgsql": "4.1.3.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
       "NuGet.Frameworks/5.0.0": {
@@ -2244,6 +2271,21 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "ECommercial.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ECommercial.Core": "1.0.0",
+          "ECommercial.DataAccess": "1.0.0",
+          "FluentValidation.AspNetCore": "9.2.0"
+        },
+        "compile": {
+          "bin/placeholder/ECommercial.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommercial.Business.dll": {}
+        }
+      },
       "ECommercial.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2261,6 +2303,24 @@
         },
         "runtime": {
           "bin/placeholder/ECommercial.Core.dll": {}
+        }
+      },
+      "ECommercial.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ECommercial.Core": "1.0.0",
+          "ECommercial.Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.9",
+          "NHibernate": "5.3.3",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "3.1.4"
+        },
+        "compile": {
+          "bin/placeholder/ECommercial.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommercial.DataAccess.dll": {}
         }
       },
       "ECommercial.Entities/1.0.0": {
@@ -2621,6 +2681,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.3.1.9.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational/3.1.9": {
+      "sha512": "7fhWuSfrCYlv/hvOX5OhbFJF/G9f8sifqTrJiYnAYLDOvNizwv7t9tFPD8JwaF3zM2S54O5/Vni2NxvwzSaW2w==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational/3.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
+        "microsoft.entityframeworkcore.relational.3.1.9.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.9": {
@@ -3230,6 +3304,19 @@
         "lib/netstandard2.1/Npgsql.xml",
         "npgsql.4.1.5.nupkg.sha512",
         "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/3.1.4": {
+      "sha512": "T+BIWO+ceje5d52/sOwwqaU/F4Rm2jAWx5qA3+pUGbzY/ZXG0QbHQsyjyg0k8aef6JTq8FRk3FtRWkocsa1QWQ==",
+      "type": "package",
+      "path": "npgsql.entityframeworkcore.postgresql/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+        "npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
       ]
     },
@@ -7414,10 +7501,20 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "ECommercial.Business/1.0.0": {
+      "type": "project",
+      "path": "../ECommercial.Business/ECommercial.Business.csproj",
+      "msbuildProject": "../ECommercial.Business/ECommercial.Business.csproj"
+    },
     "ECommercial.Core/1.0.0": {
       "type": "project",
       "path": "../ECommercial.Core/ECommercial.Core.csproj",
       "msbuildProject": "../ECommercial.Core/ECommercial.Core.csproj"
+    },
+    "ECommercial.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../ECommercial.DataAccess/ECommercial.DataAccess.csproj",
+      "msbuildProject": "../ECommercial.DataAccess/ECommercial.DataAccess.csproj"
     },
     "ECommercial.Entities/1.0.0": {
       "type": "project",
@@ -7427,6 +7524,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ECommercial.Business >= 1.0.0",
       "ECommercial.Core >= 1.0.0",
       "ECommercial.Entities >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
@@ -7442,11 +7540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\ECommercial.Business.Tests.csproj",
+      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\ECommercial.Business.Tests.csproj",
       "projectName": "ECommercial.Business.Tests",
-      "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\ECommercial.Business.Tests.csproj",
+      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\ECommercial.Business.Tests.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\obj\\",
+      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7462,11 +7560,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj"
             },
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+            },
+            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
             }
           }
         }

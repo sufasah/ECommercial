@@ -6,7 +6,9 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     public static class CustomValidators
     {
         public static IRuleBuilderOptions<T,int> PrimaryKeyIdRule<T>(this IRuleBuilder<T,int> ruleBuilder){
-            return PrimaryKeyIdRule(ruleBuilder);
+            return ruleBuilder
+                .GreaterThanOrEqualTo(0)
+                .NotNull();
         }
         public static IRuleBuilderOptions<T,long> PrimaryKeyIdRule<T>(this IRuleBuilder<T,long> ruleBuilder){
             return ruleBuilder

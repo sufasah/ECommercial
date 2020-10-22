@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using ECommercial.Core.Entities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
 
 namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
@@ -10,8 +8,10 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
     public class EntityValidationFixture : IDisposable
     {
         
-        public List<IEntity> Entities;
-        public List<IValidator> Validators;
+        public static List<Object[]> Entities = new List<Object[]>();
+
+        public static List<Object[]> Validators = new List<Object[]>();
+        public static List<Object[]> EntityValidators= new List<Object[]>();
         public EntityValidationFixture()
         {
             initializeEntities();
@@ -32,8 +32,8 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             var swiftExample="ADABTRIS";
             var bankNameExample="ZiraatBank A.Ş.";
             var brandExample="Vestel";
-            var startDateExample=new DateTime().AddDays(-5);
-            var endDateExample=new DateTime();
+            var startDateExample=DateTime.Now.AddDays(-5.0);
+            var endDateExample=DateTime.Now;
             var rateExample=72.52f;
             var titleExample="Kitchen Staff";
             var cityNameExample="İstanbul";
@@ -47,76 +47,78 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             var emailExample="test@hotmail.com";
             var kepMailExample="test@kep.tr";
             var urlExample = "./test/url/example/here.txt";
-            Entities = new List<IEntity>(){
-                new Address((short)idExample,(short)idExample,phoneExample,(short)idExample,addressExample,nameExample,surnameExample),
-                new Bank((short)idExample,bankNameExample,addressExample,telephoneExample,faxExample,websiteExample,telexExample,eftExample,swiftExample),
-                new Brand((int)idExample,brandExample),
-                new Campaign((int)idExample,startDateExample,endDateExample,rateExample),
-                new Category((short)idExample,titleExample),
-                new City((short)idExample,cityNameExample),
-                new Coupon((int)idExample,500),
-                new District((short)idExample,(short)idExample,cityNameExample),
-                new Faq((short)idExample,(short)idExample,titleExample,contentExample),
-                new FaqCategory((short)idExample,titleExample),
-                new FaqSubCategory((short)idExample,(short)idExample,titleExample),
-                new GeneralInfo(stringKeyExample,titleExample),
-                new Invoice(Invoice.Types.individual,(int)idExample,idExample,(short)idExample,(int)idExample,nameExample,nameExample,surnameExample,addressExample),
-                new Order(idExample,(int)idExample,(int)idExample,(int)idExample,endDateExample),
-                new OrderProduct((int)idExample,(int)idExample,(int)idExample,21,OrderProduct.OrderProductState.OnReply),
-                new Product(45,125125125,(short)idExample,(int)idExample,rateExample,42,Product.WarrantyTypes.Day,(int)idExample,rateExample,421,nameExample,stringArrayExample,stringKeyExample,contentExample),
-                new ProductCampaign((int)idExample,(int)idExample,(int)idExample),
-                new ProductRate(endDateExample,(int)idExample,(int)idExample,boolExample,(int)idExample,3,contentExample,stringArrayExample),
+            Entities = new List<Object[]>(){
+                new Object[]{ new Address((short)idExample,(short)idExample,phoneExample,(short)idExample,addressExample,nameExample,surnameExample)},
+                new Object[]{ new Bank((short)idExample,bankNameExample,addressExample,telephoneExample,faxExample,websiteExample,telexExample,eftExample,swiftExample)},
+                new Object[]{ new Brand((int)idExample,brandExample)},
+                new Object[]{ new Campaign((int)idExample,startDateExample,endDateExample,rateExample)},
+                new Object[]{ new Category((short)idExample,titleExample)},
+                new Object[]{ new City((short)idExample,cityNameExample)},
+                new Object[]{ new Coupon((int)idExample,500)},
+                new Object[]{ new District((short)idExample,(short)idExample,cityNameExample)},
+                new Object[]{ new Faq((short)idExample,(short)idExample,titleExample,contentExample)},
+                new Object[]{ new FaqCategory((short)idExample,titleExample)},
+                new Object[]{ new FaqSubCategory((short)idExample,(short)idExample,titleExample)},
+                new Object[]{ new GeneralInfo(stringKeyExample,titleExample)},
+                new Object[]{ new Invoice(Invoice.Types.individual,(int)idExample,idExample,(short)idExample,(int)idExample,nameExample,nameExample,surnameExample,addressExample)},
+                new Object[]{ new Order(idExample,(int)idExample,(int)idExample,(int)idExample,endDateExample)},
+                new Object[]{ new OrderProduct((int)idExample,(int)idExample,(int)idExample,21,OrderProduct.OrderProductState.OnReply)},
+                new Object[]{ new Product(45,125125125,(short)idExample,(int)idExample,rateExample,42,Product.WarrantyTypes.Day,(int)idExample,rateExample,421,nameExample,stringArrayExample,stringKeyExample,contentExample)},
+                new Object[]{ new ProductCampaign((int)idExample,(int)idExample,(int)idExample)},
+                new Object[]{ new ProductRate(endDateExample,(int)idExample,(int)idExample,boolExample,(int)idExample,3,contentExample,stringArrayExample)},
                 
-                new Shop(ibanExample,phoneExample,phoneExample,Shop.FirmTypes.Incorporated,Shop.FirmProfiles.Importer,(short)idExample,123123
+                new Object[]{ new Shop(ibanExample,phoneExample,phoneExample,Shop.FirmTypes.Incorporated,Shop.FirmProfiles.Importer,(short)idExample,123123
                 ,(short)idExample,(short)idExample,22222222222,1234567890123456,phoneExample,(short)idExample,(short)idExample,(short)idExample
                 ,1523,1234567890123456,(int)idExample,boolExample,usernameExample,passwordExample,nameExample,nameExample,surnameExample
                 ,addressExample,"IT Manager",nameExample,emailExample,nameExample,surnameExample,bankNameExample,kepMailExample,websiteExample,
-                emailExample,"For Example ltd. şti.",emailExample),
+                emailExample,"For Example ltd. şti.",emailExample)},
                 
-                new ShopProduct(ShopProduct.States.Onsale,(int)idExample,(int)idExample,21,rateExample,125,32,endDateExample,(int)idExample,124.42f,12,"dEF12-k3",new string[]{urlExample}),
-                new Slide((int)idExample,2,urlExample,websiteExample),
-                new SubCategory((short)idExample,(short)idExample,titleExample),
-                new SubSubCategory((short)idExample,(short)idExample,titleExample),
-                new TaxOffice((short)idExample,(short)idExample,(short)idExample,1250,"Nazilli Vergi Dairesi Müdürlüğü"),
-                new User(boolExample,boolExample,boolExample,(int)idExample,phoneExample,endDateExample,emailExample,nameExample,surnameExample),
-                new UserCoupon((int)idExample,(int)idExample,(int)idExample),
-                new UserFavouriteProduct((int)idExample,(int)idExample,(int)idExample),
-                new UserProductWillBeOrdered((int)idExample,(int)idExample,(int)idExample)
+                new Object[]{ new ShopProduct(ShopProduct.States.Onsale,(int)idExample,(int)idExample,21,rateExample,125,32,endDateExample,(int)idExample,124.42f,12,"dEF12-k3",new string[]{urlExample})},
+                new Object[]{ new Slide((int)idExample,2,urlExample,websiteExample)},
+                new Object[]{ new SubCategory((short)idExample,(short)idExample,titleExample)},
+                new Object[]{ new SubSubCategory((short)idExample,(short)idExample,titleExample)},
+                new Object[]{ new TaxOffice((short)idExample,(short)idExample,(short)idExample,1250,"Nazilli Vergi Dairesi Müdürlüğü")},
+                new Object[]{ new User(boolExample,boolExample,boolExample,(int)idExample,phoneExample,endDateExample,emailExample,nameExample,surnameExample)},
+                new Object[]{ new UserCoupon((int)idExample,(int)idExample,(int)idExample)},
+                new Object[]{ new UserFavouriteProduct((int)idExample,(int)idExample,(int)idExample)},
+                new Object[]{ new UserProductWillBeOrdered((int)idExample,(int)idExample,(int)idExample)}
             };
         }
 
         public void initializeValidators(){
-            validators=new List<IValidator>(){
-                new AddressValidator(),
-                new BankValidator(),
-                new BankValidator(),
-                new BrandValidator(),
-                new CampaignValidator(),
-                new CategoryValidator(),
-                new CityValidator(),
-                new CouponValidator(),
-                new DistrictValidator(),
-                new FaqValidator(),
-                new FaqCategoryValidator(),
-                new FaqSubCategoryValidator(),
-                new GeneralInfoValidator(),
-                new InvoiceValidator(),
-                new OrderValidator(),
-                new OrderProductValidator(),
-                new ProductValidator(),
-                new ProductCampaignValidator(),
-                new ProductRateValidator(),
-                new ShopValidator(),
-                new ShopProductValidator(),
-                new SlideValidator(),
-                new SubCategoryValidator(),
-                new SubSubCategoryValidator(),
-                new TaxOfficeValidator(),
-                new UserValidator(),
-                new UserCouponValidator(),
-                new UserFavouriteProductValidator(),
-                new UserProductWillBeOrderedValidator()
+            
+            Validators=new List<Object[]>(){
+                new Object[]{ new AddressValidator()},
+                new Object[]{ new BankValidator()},
+                new Object[]{ new BankValidator()},
+                new Object[]{ new BrandValidator()},
+                new Object[]{ new CampaignValidator()},
+                new Object[]{ new CategoryValidator()},
+                new Object[]{ new CityValidator()},
+                new Object[]{ new CouponValidator()},
+                new Object[]{ new DistrictValidator()},
+                new Object[]{ new FaqValidator()},
+                new Object[]{ new FaqCategoryValidator()},
+                new Object[]{ new FaqSubCategoryValidator()},
+                new Object[]{ new GeneralInfoValidator()},
+                new Object[]{ new InvoiceValidator()},
+                new Object[]{ new OrderValidator()},
+                new Object[]{ new OrderProductValidator()},
+                new Object[]{ new ProductValidator()},
+                new Object[]{ new ProductCampaignValidator()},
+                new Object[]{ new ProductRateValidator()},
+                new Object[]{ new ShopValidator()},
+                new Object[]{ new ShopProductValidator()},
+                new Object[]{ new SlideValidator()},
+                new Object[]{ new SubCategoryValidator()},
+                new Object[]{ new SubSubCategoryValidator()},
+                new Object[]{ new TaxOfficeValidator()},
+                new Object[]{ new UserValidator()},
+                new Object[]{ new UserCouponValidator()},
+                new Object[]{ new UserFavouriteProductValidator()},
+                new Object[]{ new UserProductWillBeOrderedValidator()}
             };
+            
         }
         
         public void Dispose()
