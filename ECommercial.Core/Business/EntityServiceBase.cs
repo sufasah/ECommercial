@@ -12,7 +12,7 @@ namespace ECommercial.Core.Business
     {
         private IEntityRepository<TEntity> _entityRepository;
         private MemberInfo _entityPrimaryKeyMember;
-
+        
         protected EntityServiceBase(IEntityRepository<TEntity> entityRepository, MemberInfo entityPrimaryKeyMember)
         {
             _entityRepository = entityRepository;

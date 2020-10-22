@@ -37,6 +37,38 @@
           }
         }
       },
+      "FluentValidation/9.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.2.0.0"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/9.2.0": {
+        "dependencies": {
+          "FluentValidation": "9.2.0",
+          "FluentValidation.DependencyInjectionExtensions": "9.2.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.2.0.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/9.2.0": {
+        "dependencies": {
+          "FluentValidation": "9.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.2.0.0"
+          }
+        }
+      },
       "Iesi.Collections/4.0.4": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -285,6 +317,18 @@
           }
         }
       },
+      "Ninject/3.3.4": {
+        "dependencies": {
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ninject.dll": {
+            "assemblyVersion": "3.3.4.0",
+            "fileVersion": "3.3.4.0"
+          }
+        }
+      },
       "Npgsql/4.1.5": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "4.6.0"
@@ -293,6 +337,14 @@
           "lib/netcoreapp3.0/Npgsql.dll": {
             "assemblyVersion": "4.1.5.0",
             "fileVersion": "4.1.5.0"
+          }
+        }
+      },
+      "PostSharp/4.2.17": {
+        "runtime": {
+          "lib/net35-client/PostSharp.dll": {
+            "assemblyVersion": "4.2.17.0",
+            "fileVersion": "4.2.17.0"
           }
         }
       },
@@ -1009,9 +1061,12 @@
       "ECommercial.Core/1.0.0": {
         "dependencies": {
           "FluentNHibernate": "2.1.2",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "NHibernate": "5.3.3",
-          "Npgsql": "4.1.5"
+          "Ninject": "3.3.4",
+          "Npgsql": "4.1.5",
+          "PostSharp": "4.2.17"
         },
         "runtime": {
           "ECommercial.Core.dll": {}
@@ -1038,6 +1093,27 @@
       "sha512": "sha512-JcSxfsgciJQJDEWGYp1tur4XIEBRYpWquDihFZZhFP0yF1UuXwvC/UxNGawQArw6PpLAaVDJdLZPH1Ot8+8DHQ==",
       "path": "fluentnhibernate/2.1.2",
       "hashPath": "fluentnhibernate.2.1.2.nupkg.sha512"
+    },
+    "FluentValidation/9.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LNUzNXWlBQavU/eB9pf4Tg8TTWgCw8E85OBA1GJv4xkdwuer9FuFLHTBjcYX+gGBkPFc2G+3utzEA4aMhUOL3w==",
+      "path": "fluentvalidation/9.2.0",
+      "hashPath": "fluentvalidation.9.2.0.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/9.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LOEBZoLPCULAVnRLgxPzF64V2KnMNlWatE6zfLq+h+kgEsPGxl0i/0ky6vNhyRHQkINSqaEBzTCOaQuOvz/d9Q==",
+      "path": "fluentvalidation.aspnetcore/9.2.0",
+      "hashPath": "fluentvalidation.aspnetcore.9.2.0.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/9.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NZWi2FIRsD/R6JOngv2faT9I8BfKR3hRfxY8DoRUjBkOM6X2LMfmYnTNg/NFjKc8w3bKhVj7n7CxvApTKXetwQ==",
+      "path": "fluentvalidation.dependencyinjectionextensions/9.2.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512"
     },
     "Iesi.Collections/4.0.4": {
       "type": "package",
@@ -1193,12 +1269,26 @@
       "path": "nhibernate/5.3.3",
       "hashPath": "nhibernate.5.3.3.nupkg.sha512"
     },
+    "Ninject/3.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CmbWW97FfJuh4LEOVZM/spqXl4KAulRUjqeMwRd5J9rDMQArmIYaDMU3pyzXXHT062tbF0OPIMwI7tSOtprPfg==",
+      "path": "ninject/3.3.4",
+      "hashPath": "ninject.3.3.4.nupkg.sha512"
+    },
     "Npgsql/4.1.5": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-juDlNse+SKfXRP0VSgpJkpdCcaVLZt8m37EHdRX+8hw+GG69Eat1Y0MdEfl+oetdOnf9E133GjIDEjg9AF6HSQ==",
       "path": "npgsql/4.1.5",
       "hashPath": "npgsql.4.1.5.nupkg.sha512"
+    },
+    "PostSharp/4.2.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b7THtwQmAxkDwo5+AGIE6mysPx8QY/v2rV6yxfh8ByWkidZ70V5Ssy1sqIK9ao4wMec2T3r1obUGxrR/lpIf2A==",
+      "path": "postsharp/4.2.17",
+      "hashPath": "postsharp.4.2.17.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",

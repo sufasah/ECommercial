@@ -61,6 +61,10 @@
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.5, )"
+            },
+            "PostSharp": {
+              "target": "Package",
+              "version": "[4.2.17, )"
             }
           },
           "imports": [

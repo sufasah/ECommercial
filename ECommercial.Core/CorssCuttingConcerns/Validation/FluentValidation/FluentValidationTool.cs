@@ -1,7 +1,7 @@
 using ECommercial.Core.Entities;
 using FluentValidation;
 
-namespace ECommercial.Business.Utilities.FluentValidation
+namespace ECommercial.Core.CrossCuttingConcerns.Validaton.FluentValidation
 {
     public static class FluentValidationTool
     {
