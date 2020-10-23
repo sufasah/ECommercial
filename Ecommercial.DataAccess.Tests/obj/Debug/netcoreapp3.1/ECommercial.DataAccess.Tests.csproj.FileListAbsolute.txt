@@ -130,3 +130,8 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\obj\Debug\net
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.Tests.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.Tests.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.Tests.genruntimeconfig.cache
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\FluentValidation.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\Ninject.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\PostSharp.dll

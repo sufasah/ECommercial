@@ -2,23 +2,23 @@ using System;
 using System.Collections.Generic;
 using ECommercial.Entites.concrete;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
+using System.Linq;
 
 namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
 {
     public class EntityValidationFixture : IDisposable
     {
         
-        public static List<Object[]> Entities = new List<Object[]>();
+        public static List<Object[]> Entities = EntityValidationFixture.InitializeEntities();
 
-        public static List<Object[]> Validators = new List<Object[]>();
-        public static List<Object[]> EntityValidators= new List<Object[]>();
+        public static List<Object[]> Validators = EntityValidationFixture.InitializeValidators();
+        public static List<Object[]> EntityValidator= EntityValidationFixture.InitializeEntityValidator();
         public EntityValidationFixture()
         {
-            initializeEntities();
-            initializeValidators();
+
         }
 
-        public void initializeEntities(){
+        public static List<Object[]> InitializeEntities(){
             var addressExample="Büyükdere Cad. Rumelihan No 40 Kat 2 Mecidiyeköy İstanbul";
             var phoneExample=5444444444L;
             var nameExample="Ahmet";
@@ -47,7 +47,7 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             var emailExample="test@hotmail.com";
             var kepMailExample="test@kep.tr";
             var urlExample = "./test/url/example/here.txt";
-            Entities = new List<Object[]>(){
+            return new List<Object[]>(){
                 new Object[]{ new Address((short)idExample,(short)idExample,phoneExample,(short)idExample,addressExample,nameExample,surnameExample)},
                 new Object[]{ new Bank((short)idExample,bankNameExample,addressExample,telephoneExample,faxExample,websiteExample,telexExample,eftExample,swiftExample)},
                 new Object[]{ new Brand((int)idExample,brandExample)},
@@ -60,7 +60,7 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
                 new Object[]{ new FaqCategory((short)idExample,titleExample)},
                 new Object[]{ new FaqSubCategory((short)idExample,(short)idExample,titleExample)},
                 new Object[]{ new GeneralInfo(stringKeyExample,titleExample)},
-                new Object[]{ new Invoice(Invoice.Types.individual,(int)idExample,idExample,(short)idExample,(int)idExample,nameExample,nameExample,surnameExample,addressExample)},
+                new Object[]{ new Invoice(Invoice.Types.individual,(int)idExample,phoneExample,(short)idExample,(int)idExample,nameExample,nameExample,surnameExample,addressExample)},
                 new Object[]{ new Order(idExample,(int)idExample,(int)idExample,(int)idExample,endDateExample)},
                 new Object[]{ new OrderProduct((int)idExample,(int)idExample,(int)idExample,21,OrderProduct.OrderProductState.OnReply)},
                 new Object[]{ new Product(45,125125125,(short)idExample,(int)idExample,rateExample,42,Product.WarrantyTypes.Day,(int)idExample,rateExample,421,nameExample,stringArrayExample,stringKeyExample,contentExample)},
@@ -85,11 +85,10 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             };
         }
 
-        public void initializeValidators(){
+        public static List<Object[]> InitializeValidators(){
             
-            Validators=new List<Object[]>(){
+            return new List<Object[]>(){
                 new Object[]{ new AddressValidator()},
-                new Object[]{ new BankValidator()},
                 new Object[]{ new BankValidator()},
                 new Object[]{ new BrandValidator()},
                 new Object[]{ new CampaignValidator()},
@@ -118,12 +117,14 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
                 new Object[]{ new UserFavouriteProductValidator()},
                 new Object[]{ new UserProductWillBeOrderedValidator()}
             };
-            
         }
         
+        public static List<Object[]> InitializeEntityValidator(){
+            return Validators.Select((val,index)=>new Object[]{Validators[index][0],Entities[index][0]}).ToList();
+        }
         public void Dispose()
         {
-
+            
         }
     }
 }

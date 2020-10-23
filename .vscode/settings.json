@@ -1,3 +1,4 @@
 {
-    "dotnet-test-explorer.testProjectPath": "../ECommercial.Business.Tests"
+    "dotnet-test-explorer.testProjectPath": "**/*Tests.csproj"
+    
 }

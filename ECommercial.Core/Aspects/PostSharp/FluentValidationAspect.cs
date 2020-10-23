@@ -23,7 +23,7 @@ namespace ECommercial.Core.Aspects.PostSharp
             var entities = args.Arguments.Where(t=>t.GetType()==entityType);
             
             foreach(var entity in entities){
-                FluentValidationTool.validate(validator,(IEntity)entity);
+                FluentValidationTool.Validate(validator,(IEntity)entity);
             }
         }
     }
