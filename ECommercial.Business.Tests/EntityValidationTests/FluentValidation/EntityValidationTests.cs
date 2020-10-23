@@ -17,13 +17,9 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
 
         [Theory]
         [MemberData(nameof(EntityValidationFixture.EntityValidator),MemberType=typeof(EntityValidationFixture))]
-        public void validateShouldSuccess(IValidator validator,IEntity entity){
+        public void validateSuccess(IValidator validator,IEntity entity){
             FluentValidationTool.Validate(validator,entity);
-            Assert.True(true);
         }
-        [Fact]
-        public void Is_Null(){
-
-        }
+        
     }
 }
