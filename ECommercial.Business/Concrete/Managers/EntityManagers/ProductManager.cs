@@ -1,11 +1,10 @@
-using System.Reflection;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using System.Collections.Generic;
-using ECommercial.Core.Aspects.PostSharp;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
+using ECommercial.Core.Aspects.PostSharp.ValidationAspects.FluentValidation;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {

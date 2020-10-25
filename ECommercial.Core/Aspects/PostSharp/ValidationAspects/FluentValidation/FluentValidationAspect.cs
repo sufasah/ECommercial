@@ -4,7 +4,7 @@ using ECommercial.Core.CrossCuttingConcerns.Validaton.FluentValidation;
 using ECommercial.Core.Entities;
 using FluentValidation;
 using PostSharp.Aspects;
-namespace ECommercial.Core.Aspects.PostSharp
+namespace ECommercial.Core.Aspects.PostSharp.ValidationAspects.FluentValidation
 {
     [Serializable]
     public class FluentValidationAspect:OnMethodBoundaryAspect
