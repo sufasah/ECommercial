@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ECommercial.Entites.concrete;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
 using System.Linq;
+using ECommercial.Core.Entities;
 
 namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
 {
@@ -23,10 +24,36 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             
         }
 
-        
         public static List<Object[]> InitializeEntities(){
             
-            
+            var addressExample="Büyükdere Cad. Rumelihan No 40 Kat 2 Mecidiyeköy İstanbul";
+            var phoneExample=5444444444L;
+            var nameExample="Ahmet";
+            var surnameExample="Günay";
+            var idExample=54L;
+            var telephoneExample="212-2726446";
+            var faxExample="212-2726446";
+            var websiteExample="www.google.com";
+            var telexExample="27282 adb TR";
+            var eftExample="0100";
+            var swiftExample="ADABTRIS";
+            var bankNameExample="ZiraatBank A.Ş.";
+            var brandExample="Vestel";
+            var startDateExample=DateTime.Now.AddDays(-5.0);
+            var endDateExample=DateTime.Now;
+            var rateExample=72.52f;
+            var titleExample="Kitchen Staff";
+            var cityNameExample="İstanbul";
+            var contentExample="This is a really loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong content.";
+            var stringKeyExample="AnExampleKey";
+            var stringArrayExample=new string[]{"test:value"};
+            var boolExample=true;
+            var ibanExample="TR3550000000054910000003";
+            var usernameExample="username_example03";
+            var passwordExample="myPassword";
+            var emailExample="test@hotmail.com";
+            var kepMailExample="test@kep.tr";
+            var urlExample = "./test/url/example/here.txt";
             return new List<Object[]>(){
                 new Object[]{ new Address((short)idExample,(short)idExample,phoneExample,(short)idExample,addressExample,nameExample,surnameExample)},
                 new Object[]{ new Bank((short)idExample,bankNameExample,addressExample,telephoneExample,faxExample,websiteExample,telexExample,eftExample,swiftExample)},
@@ -103,33 +130,5 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation
             return Validators.Select((val,index)=>new Object[]{Validators[index][0],Entities[index][0]}).ToList();
         }
 
-        public static string addressExample="Büyükdere Cad. Rumelihan No 40 Kat 2 Mecidiyeköy İstanbul";
-        public static long phoneExample=5444444444L;
-        public static string nameExample="Ahmet";
-        public static string surnameExample="Günay";
-        public static long idExample=54L;
-        public static string telephoneExample="212-2726446";
-        public static string faxExample="212-2726446";
-        public static string websiteExample="www.google.com";
-        public static string telexExample="27282 adb TR";
-        public static string eftExample="0100";
-        public static string swiftExample="ADABTRIS";
-        public static string bankNameExample="ZiraatBank A.Ş.";
-        public static string brandExample="Vestel";
-        public static DateTime startDateExample=DateTime.Now.AddDays(-5.0);
-        public static DateTime endDateExample=DateTime.Now;
-        public static float rateExample=72.52f;
-        public static string titleExample="Kitchen Staff";
-        public static string cityNameExample="İstanbul";
-        public static string contentExample="This is a really loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong content.";
-        public static string stringKeyExample="AnExampleKey";
-        public static string[] stringArrayExample=new string[]{"test:value"};
-        public static bool boolExample=true;
-        public static string ibanExample="TR3550000000054910000003";
-        public static string usernameExample="username_example03";
-        public static string passwordExample="myPassword";
-        public static string emailExample="test@hotmail.com";
-        public static string kepMailExample="test@kep.tr";
-        public static string urlExample = "./test/url/example/here.txt";
     }
 }

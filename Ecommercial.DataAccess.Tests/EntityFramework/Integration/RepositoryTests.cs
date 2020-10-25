@@ -43,7 +43,7 @@ namespace ECommercial.DataAccess.Tests.EntityFramework.Integration
 
         [Fact]
         public void InsertFunc(){
-            Test value= new Test(0,null,"delete items",null,1);
+            Test value= new Test(null,null,"delete items",null,1);
 
             Test result=_repo.Add(value);
 

@@ -733,7 +733,7 @@ CREATE TABLE public.shops (
     branch_bank_name character varying(128) NOT NULL,
     branch_code smallint NOT NULL,
     account_number bigint NOT NULL,
-    iban bigint NOT NULL
+    iban character varying(24) NOT NULL
 );
 
 
@@ -3380,10 +3380,8 @@ COPY public.tax_offices (id, city_id, district_id, accounting_unit_code, name) F
 
 COPY public.tests (id, chr, varchr, varchr_array, intgr) FROM stdin;
 1	\N	getitem delete will cause error in tests	\N	\N
-19	\N	delete items	\N	1
-20	\N	delete items	\N	1
 2	\N	update item deletion will cause error in tests	\N	\N
-21	\N	delete items	\N	1
+24	\N	delete items	\N	1
 \.
 
 
@@ -3584,7 +3582,7 @@ SELECT pg_catalog.setval('public.tax_offices_id_seq', 7314, true);
 -- Name: tests_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tests_id_seq', 21, true);
+SELECT pg_catalog.setval('public.tests_id_seq', 24, true);
 
 
 --
@@ -3813,6 +3811,14 @@ ALTER TABLE ONLY public.subsubcategories
 
 ALTER TABLE ONLY public.tax_offices
     ADD CONSTRAINT tax_offices_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tests tests_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tests
+    ADD CONSTRAINT tests_pkey PRIMARY KEY (id);
 
 
 --
