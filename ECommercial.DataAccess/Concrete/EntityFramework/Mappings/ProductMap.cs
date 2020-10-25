@@ -18,7 +18,7 @@ namespace ECommercial.DataAccess.EntitiyFramework.Mappings
             
             builder.HasKey(x=>x.Id);
 
-            builder.Property(x=>x.Id).HasColumnName("id").UseIdentityAlwaysColumn<int>();
+            builder.Property(x=>x.Id).HasColumnName("id").UseIdentityAlwaysColumn<int?>();
 
             builder.Property(x=>x.Expiry).HasColumnName("expiry");
             

@@ -13,7 +13,7 @@ namespace ECommercial.DataAccess.EntitiyFramework.Mappings
             
             builder.HasKey(x=>x.Id);
 
-            builder.Property(x=>x.Id).HasColumnName("id").UseIdentityAlwaysColumn<int>();
+            builder.Property(x=>x.Id).HasColumnName("id").UseIdentityAlwaysColumn<int?>();
 
             builder.Property(x=>x.ProductId).HasColumnName("product_id");
             
