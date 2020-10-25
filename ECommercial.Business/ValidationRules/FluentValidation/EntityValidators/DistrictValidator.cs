@@ -7,14 +7,14 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public DistrictValidator()
         {
-            RuleFor(x=>(int)x.Id)
+            RuleFor(x=>(int?)x.Id)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.Name)
             .NotNull()
             .NotEmpty();
 
-            RuleFor(x=>(int)x.CityId)
+            RuleFor(x=>(int?)x.CityId)
             .PrimaryKeyIdRule();
             
         }

@@ -123,7 +123,6 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\net
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Entities.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
-c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.dll.config
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\ECommercial.Entities.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.Tests.csproj.CopyComplete

@@ -15,7 +15,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .MaximumLength(250)
             .NotEmpty();
             
-            RuleFor(x=>(int)x.CityId)
+            RuleFor(x=>(int?)x.CityId)
             .PrimaryKeyIdRule();
             
             RuleFor(x=>x.InvoiceeName)

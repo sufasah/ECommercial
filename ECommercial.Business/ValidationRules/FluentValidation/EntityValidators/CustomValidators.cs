@@ -5,17 +5,17 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
 {
     public static class CustomValidators
     {
-        public static IRuleBuilderOptions<T,int> PrimaryKeyIdRule<T>(this IRuleBuilder<T,int> ruleBuilder){
+        public static IRuleBuilderOptions<T,int?> PrimaryKeyIdRule<T>(this IRuleBuilder<T,int?> ruleBuilder){
             return ruleBuilder
-                .GreaterThanOrEqualTo(0)
-                .NotNull();
+                .NotNull()
+                .GreaterThanOrEqualTo(0);
         }
-        public static IRuleBuilderOptions<T,long> PrimaryKeyIdRule<T>(this IRuleBuilder<T,long> ruleBuilder){
+        public static IRuleBuilderOptions<T,long?> PrimaryKeyIdRule<T>(this IRuleBuilder<T,long?> ruleBuilder){
             return ruleBuilder
-                .GreaterThanOrEqualTo(0)
-                .NotNull();
+                .NotNull()
+                .GreaterThanOrEqualTo(0);
         }
-        public static IRuleBuilderOptions<T,long> PhoneNumberRule<T>(this IRuleBuilder<T,long> ruleBuilder){
+        public static IRuleBuilderOptions<T,long?> PhoneNumberRule<T>(this IRuleBuilder<T,long?> ruleBuilder){
             return ruleBuilder
                 .GreaterThan(05000000000)
                 .LessThan(06000000000);

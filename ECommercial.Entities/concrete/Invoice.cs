@@ -9,7 +9,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Invoice(Types type, int userId, long ınvoiceeNumber, short cityId, int ıd, string name, string ınvoiceeName, string ınvoiceeSurname, string address)
+        public Invoice(Types? type, int? userId, long? ınvoiceeNumber, short? cityId, int? ıd, string name, string ınvoiceeName, string ınvoiceeSurname, string address)
         {
             Type = type;
             UserId = userId;
@@ -23,11 +23,11 @@ namespace ECommercial.Entites.concrete
         }
 
         public enum Types{individual,institutional};
-        public virtual Types Type { get; set; }
-        public virtual int UserId { get; set; }
-        public virtual long InvoiceeNumber { get; set; }
-        public virtual short CityId { get; set; }
-        public virtual int Id { get; set; }
+        public virtual Types? Type { get; set; }
+        public virtual int? UserId { get; set; }
+        public virtual long? InvoiceeNumber { get; set; }
+        public virtual short? CityId { get; set; }
+        public virtual int? Id { get; set; }
         public virtual string Name { get; set; }
         public virtual string InvoiceeName { get; set; }
         public virtual string InvoiceeSurname { get; set; }

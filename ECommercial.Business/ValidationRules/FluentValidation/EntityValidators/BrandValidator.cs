@@ -11,8 +11,9 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
 
             RuleFor(x=>x.brand)
             .NotNull()
+            .NotEmpty()
             .MaximumLength(200)
-            .NotEmpty();
+            ;
 
         }
         

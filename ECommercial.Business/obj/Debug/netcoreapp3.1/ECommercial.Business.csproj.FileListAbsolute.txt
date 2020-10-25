@@ -11,7 +11,6 @@ C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.dll
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Entities.dll
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
-C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Core.dll.config
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\bin\Debug\netcoreapp3.1\ECommercial.Entities.pdb
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.csproj.CopyComplete

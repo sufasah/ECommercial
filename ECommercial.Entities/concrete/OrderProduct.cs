@@ -25,7 +25,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public OrderProduct(int ıd, int orderId, int productId, int count, OrderProductState state)
+        public OrderProduct(int? ıd, int? orderId, int? productId, int? count, OrderProductState? state)
         {
             Id = ıd;
             OrderId = orderId;
@@ -34,10 +34,10 @@ namespace ECommercial.Entites.concrete
             State = state;
         }
 
-        public virtual int Id { get; set; }
-        public virtual long OrderId { get; set; }
-        public virtual int ProductId { get; set; }
-        public virtual int Count { get; set; }
-        public virtual OrderProductState State { get; set; }
+        public virtual int? Id { get; set; }
+        public virtual long? OrderId { get; set; }
+        public virtual int? ProductId { get; set; }
+        public virtual int? Count { get; set; }
+        public virtual OrderProductState? State { get; set; }
     }
 }

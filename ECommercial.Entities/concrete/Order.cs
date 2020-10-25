@@ -9,7 +9,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Order(long ıd, int userId, int claimAddressId, int ınvoiceId, DateTime datetime)
+        public Order(long? ıd, int? userId, int? claimAddressId, int? ınvoiceId, DateTime? datetime)
         {
             Id = ıd;
             UserId = userId;
@@ -18,10 +18,10 @@ namespace ECommercial.Entites.concrete
             Datetime = datetime;
         }
 
-        public virtual long Id { get; set; }
-        public virtual int UserId { get; set; }
-        public virtual int ClaimAddressId { get; set; }
-        public virtual int InvoiceId { get; set; }
-        public virtual DateTime Datetime { get; set; }
+        public virtual long? Id { get; set; }
+        public virtual int? UserId { get; set; }
+        public virtual int? ClaimAddressId { get; set; }
+        public virtual int? InvoiceId { get; set; }
+        public virtual DateTime? Datetime { get; set; }
     }
 }

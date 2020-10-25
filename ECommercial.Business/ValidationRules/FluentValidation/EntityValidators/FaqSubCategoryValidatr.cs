@@ -9,15 +9,16 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public FaqSubCategoryValidator()
         {
-            RuleFor(x=>(int)x.Id)
+            RuleFor(x=>(int?)x.Id)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.Title)
             .NotNull()
+            .NotEmpty()
             .MaximumLength(100)
-            .NotEmpty();
+            ;
 
-            RuleFor(x=>(int)x.FaqCategoryId)
+            RuleFor(x=>(int?)x.FaqCategoryId)
             .PrimaryKeyIdRule();
             
         }

@@ -8,13 +8,13 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Coupon(int ıd, int amount)
+        public Coupon(int? ıd, int? amount)
         {
             Id = ıd;
             Amount = amount;
         }
 
-        public virtual int Id { get; set; }
-        public virtual int Amount { get; set; }
+        public virtual int? Id { get; set; }
+        public virtual int? Amount { get; set; }
     }
 }

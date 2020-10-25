@@ -9,15 +9,15 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public SubCategory(short ıd, short categoryId, string title)
+        public SubCategory(short? ıd, short? categoryId, string title)
         {
             Id = ıd;
             CategoryId = categoryId;
             Title = title;
         }
 
-        public virtual short Id { get; set; }
-        public virtual short CategoryId { get; set; }
+        public virtual short? Id { get; set; }
+        public virtual short? CategoryId { get; set; }
         public virtual string Title { get; set; }
     }
 }

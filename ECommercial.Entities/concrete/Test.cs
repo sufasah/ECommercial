@@ -11,7 +11,7 @@ namespace ECommercial.Entities.concrete
         {
         }
 
-        public Test(int ıd, char? chr, string varchr, string[] varchrArray, int? intgr)
+        public Test(int? ıd, char? chr, string varchr, string[] varchrArray, int? intgr)
         {
             Id = ıd;
             Chr = chr;
@@ -20,7 +20,7 @@ namespace ECommercial.Entities.concrete
             Intgr = intgr;
         }
 
-        public virtual int Id { get; set; }
+        public virtual int? Id { get; set; }
 
         public virtual char? Chr { get; set; }
 

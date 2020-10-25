@@ -9,7 +9,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public TaxOffice(short ıd, short cityId, short districtId, int accountingUnitCode, string name)
+        public TaxOffice(short? ıd, short? cityId, short? districtId, int? accountingUnitCode, string name)
         {
             Id = ıd;
             CityId = cityId;
@@ -18,10 +18,10 @@ namespace ECommercial.Entites.concrete
             Name = name;
         }
 
-        public virtual short Id { get; set; }
-        public virtual short CityId { get; set; }
-        public virtual short DistrictId { get; set; }
-        public virtual int AccountingUnitCode { get; set; }
+        public virtual short? Id { get; set; }
+        public virtual short? CityId { get; set; }
+        public virtual short? DistrictId { get; set; }
+        public virtual int? AccountingUnitCode { get; set; }
         public virtual string Name { get; set; }
     }
 }

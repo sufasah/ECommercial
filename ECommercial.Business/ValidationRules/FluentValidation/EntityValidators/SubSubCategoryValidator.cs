@@ -7,14 +7,14 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public SubSubCategoryValidator()
         {
-            RuleFor(x=>(int)x.Id).PrimaryKeyIdRule();
+            RuleFor(x=>(int?)x.Id).PrimaryKeyIdRule();
 
             RuleFor(x=>x.Title)
             .NotNull()
             .NotEmpty()
             .MaximumLength(50);
 
-            RuleFor(x=>(int)x.SubCategoryId)
+            RuleFor(x=>(int?)x.SubCategoryId)
             .PrimaryKeyIdRule();
             
         }

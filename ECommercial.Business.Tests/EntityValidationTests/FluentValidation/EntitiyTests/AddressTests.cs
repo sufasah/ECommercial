@@ -1,7 +1,6 @@
 using System;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
 using ECommercial.Core.CrossCuttingConcerns.Validaton.FluentValidation;
-using ECommercial.Core.Entities;
 using ECommercial.Entites.concrete;
 using FluentValidation;
 using Xunit;
@@ -19,7 +18,6 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation.Enti
 
         public void Dispose()
         {
-            Assert.True(true);
         }
     }
     public class AddressTests:IClassFixture<AddressFixture>
@@ -44,8 +42,8 @@ namespace ECommercial.Business.Tests.EntityValidationTests.FluentValidation.Enti
         [Theory]
         [InlineData(-10)]
         [InlineData(null)]
-        public void throws_exception_id_primarykey(long value){
-            AddressEntity.Id=(int)value;
+        public void throws_exception_id_primarykey(long? value){
+            AddressEntity.Id=(Int32)value;
             Assert.Throws<ValidationException>(()=>{
                 FluentValidationTool.Validate(_fixture.Validator,AddressEntity);
             });

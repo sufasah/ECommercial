@@ -15,7 +15,7 @@ namespace ECommercial.Entites.concrete
             this.brand = brand;
         }
 
-        public virtual int Id { get; set; }
+        public virtual int? Id { get; set; }
         public virtual string brand { get; set; }
     }
 }

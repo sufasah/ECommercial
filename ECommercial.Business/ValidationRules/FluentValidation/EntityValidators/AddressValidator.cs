@@ -18,12 +18,12 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .NotNull()
             .PhoneNumberRule();
             
-            RuleFor(x=>(int)x.CityId)
+            RuleFor(x=>(int?)x.CityId)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.ReceiverSurname)
-            .MaximumLength(40)
-            .NotEmpty();
+            .NotEmpty()
+            .MaximumLength(40);
             
             RuleFor(x=>x.address)
             .NotNull()

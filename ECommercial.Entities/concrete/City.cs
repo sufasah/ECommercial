@@ -9,13 +9,13 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public City(short ıd, string name)
+        public City(short? ıd, string name)
         {
             Id = ıd;
             Name = name;
         }
 
-        public virtual short Id { get; set; }
+        public virtual short? Id { get; set; }
         public virtual string Name { get; set; }
     }
 }

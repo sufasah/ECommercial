@@ -9,12 +9,14 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
         {
             RuleFor(x=>x.Key)
             .NotNull()
+            .NotEmpty()
             .MaximumLength(30)
-            .NotEmpty();
+            ;
 
             RuleFor(x=>x.Value)
+            .NotEmpty()
             .MaximumLength(200)
-            .NotEmpty();
+            ;
 
         }
         

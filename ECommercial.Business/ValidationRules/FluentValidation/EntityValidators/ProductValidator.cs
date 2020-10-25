@@ -11,14 +11,16 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             RuleFor(p=>p.Id).PrimaryKeyIdRule();
 
             RuleFor(p=>p.Barcode)
+            .NotNull()
             .GreaterThan(0)
-            .NotNull();
+            ;
 
             RuleFor(p=>p.BrandId).PrimaryKeyIdRule();
 
             RuleFor(p=>p.CargoCorporation)
+            .NotNull()
             .MaximumLength(50)
-            .NotNull();
+            ;
 
             RuleFor(p=>p.Commission)
             .InclusiveBetween(0,100);
@@ -39,7 +41,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             
             RuleFor(p=>p.Properties);
             
-            RuleFor(p=>(int)p.SubsubcategoryId)
+            RuleFor(p=>(int?)p.SubsubcategoryId)
             .PrimaryKeyIdRule();
 
             RuleFor(p=>p.VatRate)

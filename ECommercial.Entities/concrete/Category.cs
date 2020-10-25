@@ -10,13 +10,13 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public Category(short ıd, string title)
+        public Category(short? ıd, string title)
         {
             Id = ıd;
             Title = title;
         }
 
-        public virtual short Id { get; set; }
+        public virtual short? Id { get; set; }
         public virtual string Title { get; set; }
     }
 }

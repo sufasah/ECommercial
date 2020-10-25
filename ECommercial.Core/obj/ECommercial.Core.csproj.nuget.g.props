@@ -15,7 +15,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgPostSharp Condition=" '$(PkgPostSharp)' == '' ">C:\Users\nihaSWin\.nuget\packages\postsharp\4.2.17</PkgPostSharp>
-  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)postsharp\6.4.12\build\PostSharp.props" Condition="Exists('$(NuGetPackageRoot)postsharp\6.4.12\build\PostSharp.props')" />
+  </ImportGroup>
 </Project>

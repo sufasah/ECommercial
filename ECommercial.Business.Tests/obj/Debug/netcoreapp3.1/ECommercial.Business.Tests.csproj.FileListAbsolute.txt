@@ -133,7 +133,6 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netco
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.Entities.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
-c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.Core.dll.config
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.Entities.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.Business.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb

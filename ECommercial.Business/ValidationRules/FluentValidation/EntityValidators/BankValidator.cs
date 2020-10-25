@@ -7,41 +7,48 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public BankValidator()
         {
-            RuleFor(x=>(int)x.Id)
+            RuleFor(x=>(int?)x.Id)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.Address)
-            .MaximumLength(255)
-            .NotEmpty();
+            .NotEmpty()
+            .MaximumLength(255);
 
             RuleFor(x=>x.Eft)
+            .NotEmpty()
             .MaximumLength(4)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Fax)
+            .NotEmpty()
             .MaximumLength(16)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Name)
             .NotNull()
+            .NotEmpty()
             .MaximumLength(128)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Swift)
+            .NotEmpty()
             .MaximumLength(16)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Telephone)
+            .NotEmpty()
             .MaximumLength(16)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Telex)
+            .NotEmpty()
             .MaximumLength(32)
-            .NotEmpty();
+            ;
             
             RuleFor(x=>x.Web)
+            .NotEmpty()
             .MaximumLength(64)
-            .NotEmpty();
+            ;
                         
         }
         

@@ -45,7 +45,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .NotEmpty()
             .MaximumLength(40);
             
-            RuleFor(x=>(int)x.BankId)
+            RuleFor(x=>(int?)x.BankId)
             .PrimaryKeyIdRule();
             
             RuleFor(x=>x.BranchBankName)
@@ -99,10 +99,10 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .NotEmpty()
             .MaximumLength(250);
             
-            RuleFor(x=>(int)x.InvoiceCityId)
+            RuleFor(x=>(int?)x.InvoiceCityId)
             .PrimaryKeyIdRule();
             
-            RuleFor(x=>(int)x.InvoiceDistrictId)
+            RuleFor(x=>(int?)x.InvoiceDistrictId)
             .PrimaryKeyIdRule();
             
             RuleFor(x=>x.InvoiceEmail)
@@ -128,7 +128,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .MinimumLength(8)
             .MaximumLength(16);
             
-            RuleFor(x=>(int)x.SellingSubcategoryId)
+            RuleFor(x=>(int?)x.SellingSubcategoryId)
             .PrimaryKeyIdRule();
             
             RuleFor(x=>x.ShopOwnerName)
@@ -136,10 +136,10 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             .NotEmpty()
             .MaximumLength(40);
             
-            RuleFor(x=>(int)x.TaxOfficeCityId)
+            RuleFor(x=>(int?)x.TaxOfficeCityId)
             .PrimaryKeyIdRule();
             
-            RuleFor(x=>(int)x.TaxOfficeId)
+            RuleFor(x=>(int?)x.TaxOfficeId)
             .PrimaryKeyIdRule();
             
             RuleFor(x=>x.TaxOrTrIdNumber)

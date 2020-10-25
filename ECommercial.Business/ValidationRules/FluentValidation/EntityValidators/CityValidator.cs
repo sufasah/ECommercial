@@ -7,7 +7,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
     {
         public CityValidator()
         {
-            RuleFor(x=>(int)x.Id)
+            RuleFor(x=>(int?)x.Id)
             .PrimaryKeyIdRule();
 
             RuleFor(x=>x.Name)
