@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class OrderManager : EntityServiceBase<Order>,IOrderService
     {
         private IOrderDal _orderDal;
-        public OrderManager(IOrderDal OrderDal,MemberInfo EntityPrimaryKeyMember):base(OrderDal,EntityPrimaryKeyMember)
+        private IEntityDal<Order> _entityDal;
+        public OrderManager(IOrderDal orderDal,IEntityDal<Order> entityDal):base(orderDal,entityDal.GetPrimaryKeyMember())
         {
-            _orderDal = OrderDal;
+            _orderDal = orderDal;
+            _entityDal=entityDal;
         }
         public override Order Add(Order Entity)
         {

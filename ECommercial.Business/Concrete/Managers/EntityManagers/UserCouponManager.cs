@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class UserCouponManager : EntityServiceBase<UserCoupon>,IUserCouponService
     {
         private IUserCouponDal _userCouponDal;
-        public UserCouponManager(IUserCouponDal UserCouponDal,MemberInfo EntityPrimaryKeyMember):base(UserCouponDal,EntityPrimaryKeyMember)
+        private IEntityDal<UserCoupon> _entityDal;
+        public UserCouponManager(IUserCouponDal userCouponDal,IEntityDal<UserCoupon> entityDal):base(userCouponDal,entityDal.GetPrimaryKeyMember())
         {
-            _userCouponDal = UserCouponDal;
+            _userCouponDal = userCouponDal;
+            _entityDal=entityDal;
         }
         public override UserCoupon Add(UserCoupon Entity)
         {

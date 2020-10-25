@@ -12,9 +12,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IFaqCategoryDal _faqCategoryDal;
         
-        public FaqCategoryManager(IFaqCategoryDal FaqCategoryDal,MemberInfo EntityPrimaryKeyMember):base(FaqCategoryDal,EntityPrimaryKeyMember)
+        private IEntityDal<FaqCategory> _entityDal;
+        public FaqCategoryManager(IFaqCategoryDal faqCategoryDal,IEntityDal<FaqCategory> entityDal):base(faqCategoryDal,entityDal.GetPrimaryKeyMember())
         {
-            _faqCategoryDal = FaqCategoryDal;
+            _faqCategoryDal = faqCategoryDal;
+            _entityDal=entityDal;
         }
         public override FaqCategory Add(FaqCategory Entity)
         {

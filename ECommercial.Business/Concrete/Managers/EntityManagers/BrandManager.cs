@@ -10,9 +10,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class BrandManager : EntityServiceBase<Brand>,IBrandService
     {
         private IBrandDal _brandDal;
-        public BrandManager(IBrandDal BrandDal,MemberInfo EntityPrimaryKeyMember):base(BrandDal,EntityPrimaryKeyMember)
+        private IEntityDal<Brand> _entityDal;
+        public BrandManager(IBrandDal brandDal,IEntityDal<Brand> entityDal):base(brandDal,entityDal.GetPrimaryKeyMember())
         {
-            _brandDal = BrandDal;
+            _brandDal = brandDal;
+            _entityDal=entityDal;
         }
         public override Brand Add(Brand Entity)
         {

@@ -10,9 +10,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class BankManager : EntityServiceBase<Bank>,IBankService
     {
         private IBankDal _bankDal;
-        public BankManager(IBankDal BankDal,MemberInfo EntityPrimaryKeyMember):base(BankDal,EntityPrimaryKeyMember)
+        private IEntityDal<Bank> _entityDal;
+        public BankManager(IBankDal bankDal,IEntityDal<Bank> entityDal):base(bankDal,entityDal.GetPrimaryKeyMember())
         {
-            _bankDal = BankDal;
+            _bankDal = bankDal;
+            _entityDal=entityDal;
         }
         public override Bank Add(Bank Entity)
         {

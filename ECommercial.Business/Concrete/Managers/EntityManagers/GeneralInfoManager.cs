@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class GeneralInfoManager : EntityServiceBase<GeneralInfo>,IGeneralInfoService
     {
         private IGeneralInfoDal _generalInfoDal;
-        public GeneralInfoManager(IGeneralInfoDal GeneralInfoDal,MemberInfo EntityPrimaryKeyMember):base(GeneralInfoDal,EntityPrimaryKeyMember)
+        private IEntityDal<GeneralInfo> _entityDal;
+        public GeneralInfoManager(IGeneralInfoDal generalInfoDal,IEntityDal<GeneralInfo> entityDal):base(generalInfoDal,entityDal.GetPrimaryKeyMember())
         {
-            _generalInfoDal = GeneralInfoDal;
+            _generalInfoDal = generalInfoDal;
+            _entityDal=entityDal;
         }
         public override GeneralInfo Add(GeneralInfo Entity)
         {

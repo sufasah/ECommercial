@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class CategoryManager : EntityServiceBase<Category>,ICategoryService
     {
         private ICategoryDal _categoryDal;
-        public CategoryManager(ICategoryDal CategoryDal,MemberInfo EntityPrimaryKeyMember):base(CategoryDal,EntityPrimaryKeyMember)
+        private IEntityDal<Category> _entityDal;
+        public CategoryManager(ICategoryDal categoryDal,IEntityDal<Category> entityDal):base(categoryDal,entityDal.GetPrimaryKeyMember())
         {
-            _categoryDal = CategoryDal;
+            _categoryDal = categoryDal;
+            _entityDal=entityDal;
         }
         public override Category Add(Category Entity)
         {

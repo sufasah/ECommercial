@@ -10,9 +10,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class AddressManager : EntityServiceBase<Address>,IAddressService
     {
         private IAddressDal _addressDal;
-        public AddressManager(IAddressDal AddressDal,MemberInfo EntityPrimaryKeyMember):base(AddressDal,EntityPrimaryKeyMember)
+        private IEntityDal<Address> _entityDal;
+        public AddressManager(IAddressDal AddressDal,IEntityDal<Address> entityDal):base(AddressDal,entityDal.GetPrimaryKeyMember())
         {
             _addressDal = AddressDal;
+            _entityDal=entityDal;
         }
         public override Address Add(Address Entity)
         {

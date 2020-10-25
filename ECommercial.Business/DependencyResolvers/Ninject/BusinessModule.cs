@@ -1,8 +1,10 @@
 using ECommercial.Business.Abstract.AbstractEntities;
+using ECommercial.Business.Concrete.Managers;
 using ECommercial.Business.Concrete.Managers.EntityManagers;
 using ECommercial.Core.DataAccess;
 using ECommercial.Core.DataAccess.EntitiyFramework;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
+using ECommercial.DataAccess.Concrete.EntityFramework;
 using ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals;
 using ECommercial.DataAccess.EntityFramework;
 using Microsoft.EntityFrameworkCore;
@@ -96,6 +98,8 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IUserProductWillBeOrderedService>().To<UserProductWillBeOrderedManager>();
             
             Bind<DbContext>().To<ECommercialContext>();
+
+            Bind(typeof(IEntityDal<>)).To(typeof(EFEntityDal<>));
 
         }
     }

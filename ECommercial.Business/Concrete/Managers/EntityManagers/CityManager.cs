@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class CityManager : EntityServiceBase<City>,ICityService
     {
         private ICityDal _cityDal;
-        public CityManager(ICityDal CityDal,MemberInfo EntityPrimaryKeyMember):base(CityDal,EntityPrimaryKeyMember)
+        private IEntityDal<City> _entityDal;
+        public CityManager(ICityDal cityDal,IEntityDal<City> entityDal):base(cityDal,entityDal.GetPrimaryKeyMember())
         {
-            _cityDal = CityDal;
+            _cityDal = cityDal;
+            _entityDal=entityDal;
         }
         public override City Add(City Entity)
         {

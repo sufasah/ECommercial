@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class SubCategoryManager : EntityServiceBase<SubCategory>,ISubCategoryService
     {
         private ISubCategoryDal _subCategoryDal;
-        public SubCategoryManager(ISubCategoryDal SubCategoryDal,MemberInfo EntityPrimaryKeyMember):base(SubCategoryDal,EntityPrimaryKeyMember)
+        private IEntityDal<SubCategory> _entityDal;
+        public SubCategoryManager(ISubCategoryDal subCategoryDal,IEntityDal<SubCategory> entityDal):base(subCategoryDal,entityDal.GetPrimaryKeyMember())
         {
-            _subCategoryDal = SubCategoryDal;
+            _subCategoryDal = subCategoryDal;
+            _entityDal=entityDal;
         }
         public override SubCategory Add(SubCategory Entity)
         {

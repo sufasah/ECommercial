@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class DistrictManager : EntityServiceBase<District>,IDistrictService
     {
         private IDistrictDal _districtDal;
-        public DistrictManager(IDistrictDal DistrictDal,MemberInfo EntityPrimaryKeyMember):base(DistrictDal,EntityPrimaryKeyMember)
+        private IEntityDal<District> _entityDal;
+        public DistrictManager(IDistrictDal districtDal,IEntityDal<District> entityDal):base(districtDal,entityDal.GetPrimaryKeyMember())
         {
-            _districtDal = DistrictDal;
+            _districtDal = districtDal;
+            _entityDal=entityDal;
         }
         public override District Add(District Entity)
         {

@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class ProductCampaignManager : EntityServiceBase<ProductCampaign>,IProductCampaignService
     {
         private IProductCampaignDal _productCampaignDal;
-        public ProductCampaignManager(IProductCampaignDal ProductCampaignDal,MemberInfo EntityPrimaryKeyMember):base(ProductCampaignDal,EntityPrimaryKeyMember)
+        private IEntityDal<ProductCampaign> _entityDal;
+        public ProductCampaignManager(IProductCampaignDal productCampaignDal,IEntityDal<ProductCampaign> entityDal):base(productCampaignDal,entityDal.GetPrimaryKeyMember())
         {
-            _productCampaignDal = ProductCampaignDal;
+            _productCampaignDal = productCampaignDal;
+            _entityDal=entityDal;
         }
         public override ProductCampaign Add(ProductCampaign Entity)
         {

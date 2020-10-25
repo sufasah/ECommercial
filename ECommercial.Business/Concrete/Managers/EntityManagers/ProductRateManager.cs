@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class ProductRateManager : EntityServiceBase<ProductRate>,IProductRateService
     {
         private IProductRateDal _productRateDal;
-        public ProductRateManager(IProductRateDal ProductRateDal,MemberInfo EntityPrimaryKeyMember):base(ProductRateDal,EntityPrimaryKeyMember)
+        private IEntityDal<ProductRate> _entityDal;
+        public ProductRateManager(IProductRateDal productRateDal,IEntityDal<ProductRate> entityDal):base(productRateDal,entityDal.GetPrimaryKeyMember())
         {
-            _productRateDal = ProductRateDal;
+            _productRateDal = productRateDal;
+            _entityDal=entityDal;
         }
         public override ProductRate Add(ProductRate Entity)
         {

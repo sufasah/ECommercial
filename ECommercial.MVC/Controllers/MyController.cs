@@ -1,6 +1,7 @@
 ﻿using System;
 using ECommercial.Business.Concrete.Managers;
 using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.DependencyResolvers.Ninject;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Concrete.EntityFramework;
 using ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals;
@@ -17,8 +18,7 @@ namespace ECommercial.MVC.Controllers
 
         [HttpGet]
         public String GetMethod(){
-            EntityManager entityManager = new EntityManager(new EFEntityDal<Product>(new ECommercialContext()));
-            IService<Product> productManager = new ProductManager(new EFProductDal(),entityManager.GetPrimaryKeyMember());
+            ProductManager productManager = InstanceFactory.GetInstance<ProductManager>(new BusinessModule());
             return productManager.GetByPrimaryKey(5).ToString();
         }
     }

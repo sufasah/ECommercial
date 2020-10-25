@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class InvoiceManager : EntityServiceBase<Invoice>,IInvoiceService
     {
         private IInvoiceDal _invoiceDal;
-        public InvoiceManager(IInvoiceDal InvoiceDal,MemberInfo EntityPrimaryKeyMember):base(InvoiceDal,EntityPrimaryKeyMember)
+        private IEntityDal<Invoice> _entityDal;
+        public InvoiceManager(IInvoiceDal invoiceDal,IEntityDal<Invoice> entityDal):base(invoiceDal,entityDal.GetPrimaryKeyMember())
         {
-            _invoiceDal = InvoiceDal;
+            _invoiceDal = invoiceDal;
+            _entityDal=entityDal;
         }
         public override Invoice Add(Invoice Entity)
         {

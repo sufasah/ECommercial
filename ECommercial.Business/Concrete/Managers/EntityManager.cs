@@ -1,13 +1,15 @@
 using System.Reflection;
+using ECommercial.Core.Entities;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 
 namespace ECommercial.Business.Concrete.Managers
 {
-    public class EntityManager
+    public class EntityManager<TEntity>
+        where TEntity:class,IEntity,new()
     {
-        private IEntityDal _entityDal;
+        private IEntityDal<TEntity> _entityDal;
 
-        public EntityManager(IEntityDal entityDal)
+        public EntityManager(IEntityDal<TEntity> entityDal)
         {
             _entityDal = entityDal;
         }

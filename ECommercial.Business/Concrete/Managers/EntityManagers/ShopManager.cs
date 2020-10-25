@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class ShopManager : EntityServiceBase<Shop>,IShopService
     {
         private IShopDal _shopDal;
-        public ShopManager(IShopDal ShopDal,MemberInfo EntityPrimaryKeyMember):base(ShopDal,EntityPrimaryKeyMember)
+        private IEntityDal<Shop> _entityDal;
+        public ShopManager(IShopDal shopDal,IEntityDal<Shop> entityDal):base(shopDal,entityDal.GetPrimaryKeyMember())
         {
-            _shopDal = ShopDal;
+            _shopDal = shopDal;
+            _entityDal=entityDal;
         }
         public override Shop Add(Shop Entity)
         {

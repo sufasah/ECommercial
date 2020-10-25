@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class UserProductWillBeOrderedManager : EntityServiceBase<UserProductWillBeOrdered>,IUserProductWillBeOrderedService
     {
         private IUserProductWillBeOrderedDal _userProductWillBeOrderedDal;
-                public UserProductWillBeOrderedManager(IUserProductWillBeOrderedDal UserProductWillBeOrderedDal,MemberInfo EntityPrimaryKeyMember):base(UserProductWillBeOrderedDal,EntityPrimaryKeyMember)
+        private IEntityDal<UserProductWillBeOrdered> _entityDal;
+        public UserProductWillBeOrderedManager(IUserProductWillBeOrderedDal userProductWillBeOrderedDal,IEntityDal<UserProductWillBeOrdered> entityDal):base(userProductWillBeOrderedDal,entityDal.GetPrimaryKeyMember())
         {
-            _userProductWillBeOrderedDal = UserProductWillBeOrderedDal;
+            _userProductWillBeOrderedDal = userProductWillBeOrderedDal;
+            _entityDal=entityDal;
         }
         public override UserProductWillBeOrdered Add(UserProductWillBeOrdered Entity)
         {

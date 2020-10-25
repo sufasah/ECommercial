@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class TaxOfficeManager : EntityServiceBase<TaxOffice>,ITaxOfficeService
     {
         private ITaxOfficeDal _taxOfficeDal;
-        public TaxOfficeManager(ITaxOfficeDal TaxOfficeDal,MemberInfo EntityPrimaryKeyMember):base(TaxOfficeDal,EntityPrimaryKeyMember)
+        private IEntityDal<TaxOffice> _entityDal;
+        public TaxOfficeManager(ITaxOfficeDal taxOfficeDal,IEntityDal<TaxOffice> entityDal):base(taxOfficeDal,entityDal.GetPrimaryKeyMember())
         {
-            _taxOfficeDal = TaxOfficeDal;
+            _taxOfficeDal = taxOfficeDal;
+            _entityDal=entityDal;
         }
         public override TaxOffice Add(TaxOffice Entity)
         {

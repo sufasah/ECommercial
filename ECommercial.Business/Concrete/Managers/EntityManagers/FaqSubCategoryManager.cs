@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class FaqSubCategoryManager : EntityServiceBase<FaqSubCategory>,IFaqSubCategoryService
     {
         private IFaqSubCategoryDal _faqSubCategoryDal;
-        public FaqSubCategoryManager(IFaqSubCategoryDal FaqSubCategoryDal,MemberInfo EntityPrimaryKeyMember):base(FaqSubCategoryDal,EntityPrimaryKeyMember)
+        private IEntityDal<FaqSubCategory> _entityDal;
+        public FaqSubCategoryManager(IFaqSubCategoryDal faqSubCategoryDal,IEntityDal<FaqSubCategory> entityDal):base(faqSubCategoryDal,entityDal.GetPrimaryKeyMember())
         {
-            _faqSubCategoryDal = FaqSubCategoryDal;
+            _faqSubCategoryDal = faqSubCategoryDal;
+            _entityDal=entityDal;
         }
         public override FaqSubCategory Add(FaqSubCategory Entity)
         {

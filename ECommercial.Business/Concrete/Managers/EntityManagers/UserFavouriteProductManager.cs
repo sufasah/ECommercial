@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class UserFavouriteProductManager : EntityServiceBase<UserFavouriteProduct>,IUserFavouriteProductService
     {
         private IUserFavouriteProductDal _userFavouriteProductDal;
-        public UserFavouriteProductManager(IUserFavouriteProductDal UserFavouriteProductDal,MemberInfo EntityPrimaryKeyMember):base(UserFavouriteProductDal,EntityPrimaryKeyMember)
+        private IEntityDal<UserFavouriteProduct> _entityDal;
+        public UserFavouriteProductManager(IUserFavouriteProductDal userFavouriteProductDal,IEntityDal<UserFavouriteProduct> entityDal):base(userFavouriteProductDal,entityDal.GetPrimaryKeyMember())
         {
-            _userFavouriteProductDal = UserFavouriteProductDal;
+            _userFavouriteProductDal = userFavouriteProductDal;
+            _entityDal=entityDal;
         }
         public override UserFavouriteProduct Add(UserFavouriteProduct Entity)
         {

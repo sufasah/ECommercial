@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class FaqManager : EntityServiceBase<Faq>,IFaqService
     {
         private IFaqDal _faqDal;
-        public FaqManager(IFaqDal FaqDal,MemberInfo EntityPrimaryKeyMember):base(FaqDal,EntityPrimaryKeyMember)
+        private IEntityDal<Faq> _entityDal;
+        public FaqManager(IFaqDal faqDal,IEntityDal<Faq> entityDal):base(faqDal,entityDal.GetPrimaryKeyMember())
         {
-            _faqDal = FaqDal;
+            _faqDal = faqDal;
+            _entityDal=entityDal;
         }
         public override Faq Add(Faq Entity)
         {

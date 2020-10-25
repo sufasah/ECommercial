@@ -11,9 +11,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class SlideManager : EntityServiceBase<Slide>,ISlideService
     {
         private ISlideDal _slideDal;
-        public SlideManager(ISlideDal SlideDal,MemberInfo EntityPrimaryKeyMember):base(SlideDal,EntityPrimaryKeyMember)
+        private IEntityDal<Slide> _entityDal;
+        public SlideManager(ISlideDal slideDal,IEntityDal<Slide> entityDal):base(slideDal,entityDal.GetPrimaryKeyMember())
         {
-            _slideDal = SlideDal;
+            _slideDal = slideDal;
+            _entityDal=entityDal;
         }
         public override Slide Add(Slide Entity)
         {

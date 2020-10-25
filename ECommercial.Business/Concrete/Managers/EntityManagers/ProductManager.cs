@@ -12,9 +12,11 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     public class ProductManager : EntityServiceBase<Product>,IProductService
     {
         private IProductDal _productDal;
-        public ProductManager(IProductDal productDal,MemberInfo EntityPrimaryKeyMember):base(productDal,EntityPrimaryKeyMember)
+        private IEntityDal<Product> _entityDal;
+        public ProductManager(IProductDal productDal,IEntityDal<Product> entityDal):base(productDal,entityDal.GetPrimaryKeyMember())
         {
             _productDal = productDal;
+            _entityDal=entityDal;
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
