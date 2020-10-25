@@ -9,7 +9,7 @@ namespace ECommercial.Entites.concrete
         {
         }
 
-        public ProductRate(DateTime? datetime, int? productId, int? userId, bool? hidUserInfoEnabled, int? ıd, short? rate, string? comment, string[] ımages)
+        public ProductRate(DateTime? datetime, int? productId, int? userId, bool? hidUserInfoEnabled, int? ıd, short? rate, string comment, string[] ımages)
         {
             Datetime = datetime;
             ProductId = productId;
