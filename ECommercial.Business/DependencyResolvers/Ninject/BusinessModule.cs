@@ -16,90 +16,90 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            Bind<IProductService>().To<ProductManager>();
-            Bind<IProductDal>().To<EFProductDal>();
+            Bind<IProductService>().To<ProductManager>().InSingletonScope();
+            Bind<IProductDal>().To<EFProductDal>().InSingletonScope();
 
-            Bind<IAddressDal>().To<EFAddressDal>();
-            Bind<IAddressService>().To<AddressManager>();
+            Bind<IAddressDal>().To<EFAddressDal>().InSingletonScope();
+            Bind<IAddressService>().To<AddressManager>().InSingletonScope();
             
-            Bind<IBankDal>().To<EFBankDal>();
-            Bind<IBankService>().To<BankManager>();
+            Bind<IBankDal>().To<EFBankDal>().InSingletonScope();
+            Bind<IBankService>().To<BankManager>().InSingletonScope();
             
-            Bind<IBrandDal>().To<EFBrandDal>();
-            Bind<IBrandService>().To<BrandManager>();
+            Bind<IBrandDal>().To<EFBrandDal>().InSingletonScope();
+            Bind<IBrandService>().To<BrandManager>().InSingletonScope();
             
-            Bind<ICampaignDal>().To<EFCampaignDal>();
-            Bind<ICampaignService>().To<CampaignManager>();
+            Bind<ICampaignDal>().To<EFCampaignDal>().InSingletonScope();
+            Bind<ICampaignService>().To<CampaignManager>().InSingletonScope();
             
-            Bind<ICategoryDal>().To<EFCategoryDal>();
-            Bind<ICategoryService>().To<CategoryManager>();
+            Bind<ICategoryDal>().To<EFCategoryDal>().InSingletonScope();
+            Bind<ICategoryService>().To<CategoryManager>().InSingletonScope();
             
-            Bind<ICityDal>().To<EFCityDal>();
-            Bind<ICityService>().To<CityManager>();
+            Bind<ICityDal>().To<EFCityDal>().InSingletonScope();
+            Bind<ICityService>().To<CityManager>().InSingletonScope();
             
-            Bind<ICouponDal>().To<EFCouponDal>();
-            Bind<ICouponService>().To<CouponManager>();
+            Bind<ICouponDal>().To<EFCouponDal>().InSingletonScope();
+            Bind<ICouponService>().To<CouponManager>().InSingletonScope();
             
-            Bind<IDistrictDal>().To<EFDistrictDal>();
-            Bind<IDistrictService>().To<DistrictManager>();
+            Bind<IDistrictDal>().To<EFDistrictDal>().InSingletonScope();
+            Bind<IDistrictService>().To<DistrictManager>().InSingletonScope();
             
-            Bind<IFaqCategoryDal>().To<EFFaqCategoryDal>();
-            Bind<IFaqCategoryService>().To<FaqCategoryManager>();
+            Bind<IFaqCategoryDal>().To<EFFaqCategoryDal>().InSingletonScope();
+            Bind<IFaqCategoryService>().To<FaqCategoryManager>().InSingletonScope();
             
-            Bind<IFaqSubCategoryDal>().To<EFFaqSubCategoryDal>();
-            Bind<IFaqSubCategoryService>().To<FaqSubCategoryManager>();
+            Bind<IFaqSubCategoryDal>().To<EFFaqSubCategoryDal>().InSingletonScope();
+            Bind<IFaqSubCategoryService>().To<FaqSubCategoryManager>().InSingletonScope();
             
-            Bind<IGeneralInfoDal>().To<EFGeneralInfoDal>();
-            Bind<IGeneralInfoService>().To<GeneralInfoManager>();
+            Bind<IGeneralInfoDal>().To<EFGeneralInfoDal>().InSingletonScope();
+            Bind<IGeneralInfoService>().To<GeneralInfoManager>().InSingletonScope();
             
-            Bind<IInvoiceDal>().To<EFInvoiceDal>();
-            Bind<IInvoiceService>().To<InvoiceManager>();
+            Bind<IInvoiceDal>().To<EFInvoiceDal>().InSingletonScope();
+            Bind<IInvoiceService>().To<InvoiceManager>().InSingletonScope();
             
-            Bind<IOrderDal>().To<EFOrderDal>();
-            Bind<IOrderService>().To<OrderManager>();
+            Bind<IOrderDal>().To<EFOrderDal>().InSingletonScope();
+            Bind<IOrderService>().To<OrderManager>().InSingletonScope();
             
-            Bind<IOrderProductDal>().To<EFOrderProductDal>();
-            Bind<IOrderProductService>().To<OrderProductManager>();
+            Bind<IOrderProductDal>().To<EFOrderProductDal>().InSingletonScope();
+            Bind<IOrderProductService>().To<OrderProductManager>().InSingletonScope();
             
-            Bind<IProductCampaignDal>().To<EFProductCampaignDal>();
-            Bind<IProductCampaignService>().To<ProductCampaignManager>();
+            Bind<IProductCampaignDal>().To<EFProductCampaignDal>().InSingletonScope();
+            Bind<IProductCampaignService>().To<ProductCampaignManager>().InSingletonScope();
             
-            Bind<IProductRateService>().To<ProductRateManager>();
-            Bind<IProductRateDal>().To<EFProductRateDal>();
+            Bind<IProductRateService>().To<ProductRateManager>().InSingletonScope();
+            Bind<IProductRateDal>().To<EFProductRateDal>().InSingletonScope();
             
-            Bind<IShopDal>().To<EFShopDal>();
-            Bind<IShopService>().To<ShopManager>();
+            Bind<IShopDal>().To<EFShopDal>().InSingletonScope();
+            Bind<IShopService>().To<ShopManager>().InSingletonScope();
             
-            Bind<IShopProductDal>().To<EFShopProductDal>();
-            Bind<IShopProductService>().To<ShopProductManager>();
+            Bind<IShopProductDal>().To<EFShopProductDal>().InSingletonScope();
+            Bind<IShopProductService>().To<ShopProductManager>().InSingletonScope();
             
-            Bind<ISlideDal>().To<EFSlideDal>();
-            Bind<ISlideService>().To<SlideManager>();
+            Bind<ISlideDal>().To<EFSlideDal>().InSingletonScope();
+            Bind<ISlideService>().To<SlideManager>().InSingletonScope();
             
-            Bind<ISubCategoryDal>().To<EFSubCategoryDal>();
-            Bind<ISubCategoryService>().To<SubCategoryManager>();
+            Bind<ISubCategoryDal>().To<EFSubCategoryDal>().InSingletonScope();
+            Bind<ISubCategoryService>().To<SubCategoryManager>().InSingletonScope();
             
-            Bind<ISubSubCategoryService>().To<SubSubCategoryManager>();
-            Bind<ISubSubCategoryDal>().To<EFSubSubCategoryDal>();
+            Bind<ISubSubCategoryService>().To<SubSubCategoryManager>().InSingletonScope();
+            Bind<ISubSubCategoryDal>().To<EFSubSubCategoryDal>().InSingletonScope();
             
-            Bind<ITaxOfficeDal>().To<EFTaxOfficeDal>();
-            Bind<ITaxOfficeService>().To<TaxOfficeManager>();
+            Bind<ITaxOfficeDal>().To<EFTaxOfficeDal>().InSingletonScope();
+            Bind<ITaxOfficeService>().To<TaxOfficeManager>().InSingletonScope();
             
-            Bind<IUserCouponDal>().To<EFUserCouponDal>();
-            Bind<IUserCouponService>().To<UserCouponManager>();
+            Bind<IUserCouponDal>().To<EFUserCouponDal>().InSingletonScope();
+            Bind<IUserCouponService>().To<UserCouponManager>().InSingletonScope();
             
-            Bind<IUserDal>().To<EFUserDal>();
-            Bind<IUserService>().To<UserManager>();
+            Bind<IUserDal>().To<EFUserDal>().InSingletonScope();
+            Bind<IUserService>().To<UserManager>().InSingletonScope();
                         
-            Bind<IUserFavouriteProductDal>().To<EFUserFavouriteProductDal>();
-            Bind<IUserFavouriteProductService>().To<UserFavouriteProductManager>();
+            Bind<IUserFavouriteProductDal>().To<EFUserFavouriteProductDal>().InSingletonScope();
+            Bind<IUserFavouriteProductService>().To<UserFavouriteProductManager>().InSingletonScope();
             
-            Bind<IUserProductWillBeOrderedDal>().To<EFUserProductWillBeOrdered>();
-            Bind<IUserProductWillBeOrderedService>().To<UserProductWillBeOrderedManager>();
+            Bind<IUserProductWillBeOrderedDal>().To<EFUserProductWillBeOrdered>().InSingletonScope();
+            Bind<IUserProductWillBeOrderedService>().To<UserProductWillBeOrderedManager>().InSingletonScope();
             
-            Bind<DbContext>().To<ECommercialContext>();
+            Bind<DbContext>().To<ECommercialContext>().InSingletonScope();
 
-            Bind(typeof(IEntityDal<>)).To(typeof(EFEntityDal<>));
+            Bind(typeof(IEntityDal<>)).To(typeof(EFEntityDal<>)).InSingletonScope();
 
         }
     }
