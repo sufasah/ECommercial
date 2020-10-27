@@ -203,6 +203,10 @@
               "target": "Package",
               "version": "[5.3.3, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "Ninject": {
               "target": "Package",
               "version": "[3.3.4, )"
@@ -214,6 +218,10 @@
             "PostSharp": {
               "target": "Package",
               "version": "[6.4.12, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.12, )"
             }
           },
           "imports": [
