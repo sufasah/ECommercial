@@ -138,3 +138,4 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netco
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business.Tests\bin\Debug\netcoreapp3.1\log4net.dll

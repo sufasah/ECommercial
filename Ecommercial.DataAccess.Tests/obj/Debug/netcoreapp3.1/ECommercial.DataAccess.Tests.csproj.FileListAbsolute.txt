@@ -134,3 +134,4 @@ c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\net
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\Ninject.dll
 c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\PostSharp.dll
+c:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess.Tests\bin\Debug\netcoreapp3.1\log4net.dll
