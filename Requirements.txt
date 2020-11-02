@@ -1,0 +1,40 @@
+Creating data access layer
+----------------------------------
+
+creating business access layer
+--------------------------------------
+
+creating MVC layer
+--------------------------
+
+hibernate orm
+---------------------
+
+handling dependecy injection with ninject
+-----------------------------------------
+
+Aspect Oriented
+---------------
+
+
+CrossCuttingConcerns
+Authentication-Authorization
+----------------------------
+
+Validation
+----------
+
+Security
+--------
+
+Logging
+-------
+
+Caching
+-------
+
+Exception handling
+------------------
+
+Transaction Management
+----------------------

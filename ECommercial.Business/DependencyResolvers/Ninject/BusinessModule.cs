@@ -1,8 +1,5 @@
 using ECommercial.Business.Abstract.AbstractEntities;
-using ECommercial.Business.Concrete.Managers;
 using ECommercial.Business.Concrete.Managers.EntityManagers;
-using ECommercial.Core.DataAccess;
-using ECommercial.Core.DataAccess.EntitiyFramework;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.DataAccess.Concrete.EntityFramework;
 using ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals;
@@ -94,8 +91,17 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IUserFavouriteProductDal>().To<EFUserFavouriteProductDal>().InSingletonScope();
             Bind<IUserFavouriteProductService>().To<UserFavouriteProductManager>().InSingletonScope();
             
-            Bind<IUserProductWillBeOrderedDal>().To<EFUserProductWillBeOrdered>().InSingletonScope();
+            Bind<IUserProductWillBeOrderedDal>().To<EFUserProductWillBeOrderedDal>().InSingletonScope();
             Bind<IUserProductWillBeOrderedService>().To<UserProductWillBeOrderedManager>().InSingletonScope();
+
+            Bind<ILogDal>().To<EFLogDal>().InSingletonScope();
+            Bind<ILogService>().To<LogManager>().InSingletonScope();
+
+            Bind<IRoleDal>().To<EFRoleDal>().InSingletonScope();
+            Bind<IRoleService>().To<RoleManager>().InSingletonScope();
+
+            Bind<IUserRoleDal>().To<EFUserRoleDal>().InSingletonScope();
+            Bind<IUserRoleService>().To<UserRoleManager>().InSingletonScope();
             
             Bind<DbContext>().To<ECommercialContext>().InSingletonScope();
 

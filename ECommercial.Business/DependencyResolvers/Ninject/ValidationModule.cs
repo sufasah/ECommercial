@@ -37,6 +37,10 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IValidator<UserCoupon>>().To<UserCouponValidator>().InSingletonScope();
             Bind<IValidator<UserFavouriteProduct>>().To<UserFavouriteProductValidator>().InSingletonScope();
             Bind<IValidator<UserProductWillBeOrdered>>().To<UserProductWillBeOrderedValidator>().InSingletonScope();
+            Bind<IValidator<Role>>().To<RoleValidator>().InSingletonScope();
+            Bind<IValidator<UserRole>>().To<UserRoleValidator>().InSingletonScope();
+            Bind<IValidator<Log>>().To<LogValidator>().InSingletonScope();
+            
         }
     }
 }

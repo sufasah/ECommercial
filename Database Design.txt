@@ -1,0 +1,1101 @@
+Requirements
+-----------------------------
+Products
+Main categories of products
+Sub categories of main categories
+sub categories of sub categories
+products of sub-sub categories
+Users
+invoice of users
+User Orders
+User favories
+User comments
+Campaigns
+hot products
+new products
+chapest products
+most commented products
+most rated products
+filter of products
+ordered cart
+shops
+general informations
+frequently asked questions
+frequently asked questions categories
+frequently asked questions subcategories
+messages
+coupons
+slider
+user addresses
+special price for some users are choosen
+pay with bank-credit card,remittance-eft,coupon,multiple-credit-card
+
+
+
+ENTITIES
+-------------------------------
+Product:
+id
+subsubcategory id
+brand id
+barcode
+product name
+VAT rate
+expiry
+commission
+warranty period
+description
+properties[renk:yeşil,boy:314]
+state[onsale,closed to sale]
+cargo corporation
+deci
+
+Products of shops:
+id
+shop id
+product id
+variant group id
+product rating //cannot be modified by shop
+rating count //cannot be modified by shop
+stock amount
+stock code
+price
+day for cargo
+imgages [a.jpg,b.jpg,c.jpg...]
+release datetime
+
+campaigns of product:
+id
+product id
+campaign id
+
+
+Users:
+id
+email
+name
+surname
+phone
+birthdate
+gender
+email notification
+sms notification
+
+claim addresses of users:
+id
+user id
+address id
+
+claim addresses of shops:
+id
+shop id
+address id
+
+addresses:
+id
+receiver name
+receiver surname
+receiver number
+country only turkey // wont be added at now
+city
+address
+name of this address record
+
+
+invoice of users:
+id
+user_id
+invoice id
+
+invoices:
+id
+invoicee name
+invoicee surname
+invoicee number
+country only turkey // wont be added at now
+city
+address
+name of this address record
+type[individual,institutional]
+
+User Orders:
+id
+user id
+order id
+
+user orders:
+id
+user id
+order id
+
+products of order:
+id
+order id
+product id
+count
+
+User favorites:
+id
+user id
+product id
+
+User will be order later:
+id
+user id
+product id
+
+product rates:
+id
+product id
+user id
+comment
+rate
+imgages[a.jpg,b.jpg...]
+hidden user info [true,false]
+datetime
+
+categories:
+id
+title
+
+sub categories:
+id
+category_id
+title
+
+sub sub categories:
+id
+subcategory_id
+title
+
+brands:
+id
+brand
+
+Campaigns:
+id
+start datetime
+end datetime
+rate
+
+shops:
+id
+username
+password
+name
+authorized name
+authorized surname
+authorized gender
+authorized position
+authorized phone
+authorized email
+firm owner name
+firm owner surname
+firm owner phone
+kep mail
+firm website
+firm email
+legal firm name
+firm type  [private,incorporated,sole proprietorship,ordinary partnership,foundation]
+firm profile [distributor,importer, main dealer,dealer , producer]
+selling_subcategory_id
+commercial record number
+tax office city
+tax office
+tax number/tr id number
+mersis number
+invoice address
+invoice city
+invoice district
+invoice neighborhood
+invoice email
+bank account owner
+bank name
+branch bank
+branch code
+account number
+IBAN
+
+general informations:
+facebook address
+twitter address
+instagram address
+linkedin address
+pinterest address
+youtube address
+logo url
+whatsapp number
+
+faqs:
+id
+subcategory_id
+title
+content
+
+faq categories:
+id
+title
+
+faq subcategories:
+id
+category_id
+title
+
+coupons:
+id
+amount
+
+user coupons:
+id
+coupon id
+user id
+
+
+slides
+id
+img url
+route url
+order
+
+Düzenlenecek
+{
+
+teslimat adresi etiketi [birincil]
+hatalı iptal geciken sipariş oranları yüzdesel
+belge yönetimi sayfası
+ürün ekleme süreci
+iletilen ,ürün bilgilerri eksik , incelenecek , eşleşen(onay-red bekleniyor),reddedilen eşleşme
+satışa hazır,katalog sürecinde,görev açılan ürün,açık görev sayısı,tamamlanan görev sayısı
+
+}
+
+Database Schemas
+[ACCORDING TO POSTGRESQL]
+
+ADDITIONAL SCHEMAS BECAUSE OF NEEDINGS
+-----------------------------------
+districts(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name TEXT NOT NULL,
+  city_id SMALLINT NOT NULL
+) 
+
+cities(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name TEXT NOT NULL
+)
+
+tax_offices(
+    id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    city_id SMALLINT NOT NULL,
+    district_id SMALLINT NOT NULL,
+    accounting_unit_code INT NOT NULL,
+    name TEXT NOT NULL,
+    CONSTRAINT fk_office_city 
+        FOREIGN KEY(city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+    CONSTRAINT fk_office_district 
+        FOREIGN KEY(district_id)
+            REFERENCES districts(id)
+            ON UPDATE CASCADE
+)
+
+banks(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(128) NOT NULL,
+  address VARCHAR(255),
+  telephone VARCHAR(16),
+  fax VARCHAR(16),
+  web VARCHAR(64),
+  telex VARCHAR(32),
+  eft VARCHAR(4),
+  swift VARCHAR(16)
+)
+
+-----------------------------------END OF ADDITIONALS
+
+CREATE TYPE shop_firm_type_enum AS ENUM('private','incorporated','sole-proprietorship','ordinary-partnership','foundation');
+CREATE TYPE shop_firm_profile_enum AS ENUM('distributor','importer', 'main dealer' , 'dealer' , 'producer');
+CREATE TYPE invoice_type_enum AS ENUM('individual','institutional');
+CREATE TYPE product_warranty_type_enum AS ENUM('day','month','year');
+CREATE TYPE shop_product_state_enum AS ENUM('onsale','onstock');
+CREATE TYPE order_product_state_enum AS ENUM('canceled-by-shop','canceled-by-user','waiting-for-payment','onreply','ready-for-shipping','oncargo-touser','concluded-success','concluded-damaged','concluded-return','concluded-missing-piece','concluded-wrong-piece','concluded-not-be-delivered','system-control','oncargo-toshop');
+
+shops(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+username VARCHAR(30) NOT NULL,
+password VARCHAR(16) NOT NULL,
+shop_owner_name VARCHAR(40) NOT NULL,
+authorized_name VARCHAR(40) NOT NULL,
+authorized_surname VARCHAR(40) NOT NULL,
+authorized_gender BOOLEAN NOT NULL,
+authorized_position VARCHAR(30) NOT NULL,
+authorized_phone BIGINT NOT NULL,
+authorized_email VARCHAR(50) NOT NULL,
+firm_owner_name VARCHAR(20) NOT NULL,
+firm_owner_surname VARCHAR(20) NOT NULL,
+firm_owner_phone BIGINT NOT NULL,
+kep_mail VARCHAR(50) NOT NULL,
+firm_website VARCHAR(50),
+firm_email VARCHAR(50) NOT NULL,
+legal_firm_name VARCHAR(50) NOT NULL,
+firm_type shop_firm_type_enum NOT NULL,
+firm_profile shop_firm_profile_enum NOT NULL,
+selling_subcategory_id INT NOT NULL,
+commercial_record_number INT,
+tax_office_city_id SMALLINT NOT NULL,
+tax_office_id SMALLINT NOT NULL,
+tax_or_trid_number BIGINT NOT NULL,
+mersis_number BIGINT NOT NULL,
+firm_fixed_phone BIGINT NOT NULL,
+invoice_address VARCHAR(250) NOT NULL,
+invoice_city_id SMALLINT NOT NULL,
+invoice_district_id SMALLINT NOT NULL,
+invoice_email VARCHAR(50) NOT NULL,
+bank_account_owner VARCHAR(40) NOT NULL,
+bank_id SMALLINT NOT NULL,
+branch_bank_name VARCHAR(128) NOT NULL,
+branch_code SMALLINT NOT NULL,
+account_number BIGINT NOT NULL,
+IBAN BIGINT NOT NULL,
+CONSTRAINT fk_shop_selling_subcategory 
+        FOREIGN KEY(selling_subcategory_id)
+            REFERENCES subcategories(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_tax_office_city
+        FOREIGN KEY(tax_office_city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_tax_office
+        FOREIGN KEY(tax_office_id)
+            REFERENCES tax_offices(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_invoice_city
+        FOREIGN KEY(invoice_city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_invoice_district
+        FOREIGN KEY(invoice_district_id)
+            REFERENCES districts(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_bank
+        FOREIGN KEY(bank_id)
+            REFERENCES banks(id)
+            ON UPDATE CASCADE
+)
+
+users(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+email VARCHAR(50) NOT NULL,
+name VARCHAR(40) NOT NULL,
+surname VARCHAR(40) NOT NULL,
+phone BIGINT NOT NULL,
+birthdate TIMESTAMP NOT NULL,
+gender BOOLEAN NOT NULL,
+email_notification_enabled BOOLEAN NOT NULL,
+sms_notification_enabled BOOLEAN NOT NULL
+)
+
+invoices(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT,
+invoicee_name VARCHAR(40) NOT NULL,
+invoicee_surname VARCHAR(40) NOT NULL,
+invoicee_number BIGINT NOT NULL,
+city_id SMALLINT NOT NULL,
+address VARCHAR(250) NOT NULL,
+name VARCHAR(30) NOT NULL,
+type invoice_type_enum,
+CONSTRAINT fk_invoice_user 
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_invoice_city 
+        FOREIGN KEY (city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE
+)
+
+addresses(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_or_shop_id INT NOT NULL,
+receiver_name VARCHAR(40) NOT NULL,
+receiver_surname VARCHAR(40) NOT NULL,
+receiver_number BIGINT NOT NULL,
+city_id INT NOT NULL,
+address VARCHAR(250) NOT NULL,
+name VARCHAR(30) NOT NULL,
+CONSTRAINT fk_address_city 
+        FOREIGN KEY(city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE
+
+--FUNCTION WILL BE CREATED FOR USER OR SHOP ID TO ADD FOREIGN KEY CONSTRAINT IN CHECK CONSTRAINT
+)
+
+products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+barcode BIGINT NOT NULL,
+subsubcategory_id INT NOT NULL,
+brand_id INT NOT NULL,
+name VARCHAR(250) NOT NULL,
+vat_rate NUMERIC(2,2) NOT NULL,
+expiry SMALLINT NOT NULL,
+commission NUMERIC(2,2) DEFAULT 0,
+warranty_period SMALLINT DEFAULT 0,
+warranty_type product_warranty_type_enum NOT NULL,
+description TEXT DEFAULT '',
+properties VARCHAR(200)[] DEFAULT '{}',
+cargo_corporation varchar(50) NOT NULL,
+deci SMALLINT NOT NULL,
+CONSTRAINT fk_product_subsubcategory 
+        FOREIGN KEY(subsubcategory_id)
+            REFERENCES subsubcategories(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_product_brand
+        FOREIGN KEY(brand_id)
+            REFERENCES brands(id)
+            ON UPDATE CASCADE
+)
+
+coupons(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+amount INT NOT NULL
+)
+
+brands(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+brand VARCHAR(200) NOT NULL
+)
+
+slides(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+image_url VARCHAR(250) NOT NULL,
+route_url VARCHAR(250),
+slide_order SMALLINT DEFAULT 0
+)
+
+campaigns(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+start_datetime TIMESTAMP NOT NULL,
+end_datetime TIMESTAMP NOT NULL,
+rate NUMERIC(2,2) NOT NULL
+)
+
+product_rates(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+product_id INT NOT NULL,
+user_id INT NOT NULL,
+comment VARCHAR(3000) DEFAULT '',
+rate SMALLINT NOT NULL,
+images VARCHAR(250)[5] DEFAULT '{}',
+hid_user_info_enabled BOOLEAN NOT NULL,
+datetime TIMESTAMP NOT NULL,
+CONSTRAINT fk_rate_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_rate_user
+        FOREIGN KEY(user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE
+)
+
+categories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+title VARCHAR(50) NOT NULL
+)
+
+faq_categories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+title varchar(50) NOT NULL
+)
+
+general_infos(
+facebook_address VARCHAR(100),
+twitter_address VARCHAR(100),
+instagram_address VARCHAR(100),
+linkedin_address VARCHAR(100),
+pinterest_address VARCHAR(100),
+youtube_address VARCHAR(100),
+logo_url VARCHAR(250),
+whatsapp_number BIGINT
+)
+
+subcategories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+category_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+CONSTRAINT fk_subcategory_category 
+        FOREIGN KEY (category_id)
+            REFERENCES categories(id)
+            ON UPDATE CASCADE
+)
+
+subsubcategories(
+id SMALLINT PRIMRAY KEY GENERATED ALWAYS AS IDENTITY,
+subcategory_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+CONSTRAINT fk_subsubcategory_subcategory 
+        FOREIGN KEY (subcategory_id)
+            REFERENCES subcategories(id)
+            ON UPDATE CASCADE
+)
+
+faq_subcategories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+faq_category_id SMALLINT NOT NULL,
+title VARCHAR(100) NOT NULL,
+CONSTRAINT fk_faq_subcategory_faq_category
+        FOREIGN KEY (faq_category_id)
+            REFERENCES faq_categories(id)
+            ON UPDATE CASCADE
+)
+
+user_coupons(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+coupon_id INT NOT NULL,
+user_id INT NOT NULL,
+CONSTRAINT fk_user_coupon_coupon 
+        FOREIGN KEY (coupon_id)
+            REFERENCES coupons(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_coupon_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE
+)
+
+product_campaigns(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+product_id INT NOT NULL,
+campaign_id INT NOT NULL,
+CONSTRAINT fk_product_campaign_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_product_campaign_campaign 
+        FOREIGN KEY (campaign_id)
+            REFERENCES campaigns(id)
+            ON UPDATE CASCADE
+)
+
+faqs(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+faq_subcategory_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+content VARCHAR(5000) NOT NULL,
+CONSTRAINT fk_faq_faq_subcategory 
+        FOREIGN KEY (faq_subcategory_id)
+            REFERENCES faq_subcategories(id)
+            ON UPDATE CASCADE
+)
+
+
+orders(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+claim_address_id INT NOT NULL,
+invoice_id INT NOT NULL,
+datetime TIMESTAMP NOT NULL,
+CONSTRAINT fk_order_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_claim_address
+        FOREIGN KEY(claim_address_id)
+            REFERENCES addresses(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_invoice
+        FOREIGN KEY (invoice_id)
+            REFERENCES invoices(id)
+            ON UPDATE CASCADE
+)
+
+shop_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+shop_id INT NOT NULL,
+product_id INT NOT NULL,
+variant_group_id INT,
+product_rating NUMERIC(2,2) DEFAULT 0.00,
+rating_count INT DEFAULT 0,
+stock_amount INT DEFAULT 0,
+stock_code VARCHAR(10),
+price NUMERIC(20,2) NOT NULL,
+day_for_cargo SMALLINT NOT NULL,
+images VARCHAR(250)[15] DEFAULT '{}' ,
+release_datetime TIMESTAMP NOT NULL,
+state shop_product_state_enum,
+CONSTRAINT fk_shop_product_shop
+        FOREIGN KEY (shop_id)
+            REFERENCES shops(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_product_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+)
+
+user_products_will_be_ordered(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+product_id INT NOT NULL,
+CONSTRAINT fk_user_products_will_be_ordered_user 
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_products_will_be_ordered_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+)
+
+
+user_favourite_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+product_id INT NOT NULL,
+CONSTRAINT fk_user_favourite_product_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_favourite_product_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+)
+
+
+order_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+order_id INT NOT NULL,
+product_id INT NOT NULL,
+count INT,
+state order_product_state_enum NOT NULL, -- system control means system control checks for concluded  defective products are denied by shop
+CONSTRAINT fk_order_product_order 
+        FOREIGN KEY (order_id)
+            REFERENCES orders(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_product_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+)
+
+-- SHOP SHIPPING ADDRESS WILL COULD BE MORE THAN 1
+
+                                                                                                POSTGRESQL DATABASE QUERY
+                                                                                            -------------------------------
+
+
+CREATE TYPE shop_firm_type_enum AS ENUM('private','incorporated','sole-proprietorship','ordinary-partnership','foundation');
+CREATE TYPE shop_firm_profile_enum AS ENUM('distributor','importer', 'main dealer' , 'dealer' , 'producer');
+CREATE TYPE invoice_type_enum AS ENUM('individual','institutional');
+CREATE TYPE product_warranty_type_enum AS ENUM('day','month','year');
+CREATE TYPE shop_product_state_enum AS ENUM('onsale','onstock');
+CREATE TYPE order_product_state_enum AS ENUM('canceled-by-shop','canceled-by-user','waiting-for-payment','onreply','ready-for-shipping','oncargo-touser','concluded-success','concluded-damaged','concluded-return','concluded-missing-piece','concluded-wrong-piece','concluded-not-be-delivered','system-control','oncargo-toshop');
+
+CREATE TABLE IF NOT EXISTS districts(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name TEXT NOT NULL,
+  city_id SMALLINT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS cities(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tax_offices(
+    id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    city_id SMALLINT NOT NULL,
+    district_id SMALLINT NOT NULL,
+    accounting_unit_code INT NOT NULL,
+    name TEXT NOT NULL,
+    CONSTRAINT fk_office_city 
+        FOREIGN KEY(city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+    CONSTRAINT fk_office_district 
+        FOREIGN KEY(district_id)
+            REFERENCES districts(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS banks(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(128) NOT NULL,
+  address VARCHAR(255),
+  telephone VARCHAR(16),
+  fax VARCHAR(16),
+  web VARCHAR(64),
+  telex VARCHAR(32),
+  eft VARCHAR(4),
+  swift VARCHAR(16)
+);
+
+CREATE TABLE IF NOT EXISTS categories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+title VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS subcategories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+category_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+CONSTRAINT fk_subcategory_category 
+        FOREIGN KEY (category_id)
+            REFERENCES categories(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS subsubcategories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+subcategory_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+CONSTRAINT fk_subsubcategory_subcategory 
+        FOREIGN KEY (subcategory_id)
+            REFERENCES subcategories(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS shops(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+username VARCHAR(30) NOT NULL,
+password VARCHAR(16) NOT NULL,
+shop_owner_name VARCHAR(40) NOT NULL,
+authorized_name VARCHAR(40) NOT NULL,
+authorized_surname VARCHAR(40) NOT NULL,
+authorized_gender BOOLEAN NOT NULL,
+authorized_position VARCHAR(30) NOT NULL,
+authorized_phone BIGINT NOT NULL,
+authorized_email VARCHAR(50) NOT NULL,
+firm_owner_name VARCHAR(20) NOT NULL,
+firm_owner_surname VARCHAR(20) NOT NULL,
+firm_owner_phone BIGINT NOT NULL,
+kep_mail VARCHAR(50) NOT NULL,
+firm_website VARCHAR(50),
+firm_email VARCHAR(50) NOT NULL,
+legal_firm_name VARCHAR(50) NOT NULL,
+firm_type shop_firm_type_enum NOT NULL,
+firm_profile shop_firm_profile_enum NOT NULL,
+selling_subcategory_id INT NOT NULL,
+commercial_record_number INT,
+tax_office_city_id SMALLINT NOT NULL,
+tax_office_id SMALLINT NOT NULL,
+tax_or_trid_number BIGINT NOT NULL,
+mersis_number BIGINT NOT NULL,
+firm_fixed_phone BIGINT NOT NULL,
+invoice_address VARCHAR(250) NOT NULL,
+invoice_city_id SMALLINT NOT NULL,
+invoice_district_id SMALLINT NOT NULL,
+invoice_email VARCHAR(50) NOT NULL,
+bank_account_owner VARCHAR(40) NOT NULL,
+bank_id SMALLINT NOT NULL,
+branch_bank_name VARCHAR(128) NOT NULL,
+branch_code SMALLINT NOT NULL,
+account_number BIGINT NOT NULL,
+IBAN BIGINT NOT NULL,
+CONSTRAINT fk_shop_selling_subcategory 
+        FOREIGN KEY(selling_subcategory_id)
+            REFERENCES subcategories(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_tax_office_city
+        FOREIGN KEY(tax_office_city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_tax_office
+        FOREIGN KEY(tax_office_id)
+            REFERENCES tax_offices(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_invoice_city
+        FOREIGN KEY(invoice_city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_invoice_district
+        FOREIGN KEY(invoice_district_id)
+            REFERENCES districts(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_bank
+        FOREIGN KEY(bank_id)
+            REFERENCES banks(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS users(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+email VARCHAR(50) NOT NULL,
+name VARCHAR(40) NOT NULL,
+surname VARCHAR(40) NOT NULL,
+phone BIGINT NOT NULL,
+birthdate TIMESTAMP NOT NULL,
+gender BOOLEAN NOT NULL,
+email_notification_enabled BOOLEAN NOT NULL,
+sms_notification_enabled BOOLEAN NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS invoices(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT,
+invoicee_name VARCHAR(40) NOT NULL,
+invoicee_surname VARCHAR(40) NOT NULL,
+invoicee_number BIGINT NOT NULL,
+city_id SMALLINT NOT NULL,
+address VARCHAR(250) NOT NULL,
+name VARCHAR(30) NOT NULL,
+type invoice_type_enum,
+CONSTRAINT fk_invoice_user 
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_invoice_city 
+        FOREIGN KEY (city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS addresses(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_or_shop_id INT NOT NULL,
+receiver_name VARCHAR(40) NOT NULL,
+receiver_surname VARCHAR(40) NOT NULL,
+receiver_number BIGINT NOT NULL,
+city_id INT NOT NULL,
+address VARCHAR(250) NOT NULL,
+name VARCHAR(30) NOT NULL,
+CONSTRAINT fk_address_city 
+        FOREIGN KEY(city_id)
+            REFERENCES cities(id)
+            ON UPDATE CASCADE
+
+--TRIGGER WILL BE CREATED FOR USER OR SHOP ID
+);
+
+CREATE TABLE IF NOT EXISTS brands(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+brand VARCHAR(200) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+barcode BIGINT NOT NULL,
+subsubcategory_id INT NOT NULL,
+brand_id INT NOT NULL,
+name VARCHAR(250) NOT NULL,
+vat_rate NUMERIC(2,2) NOT NULL,
+expiry SMALLINT NOT NULL,
+commission NUMERIC(2,2) DEFAULT 0,
+warranty_period SMALLINT DEFAULT 0,
+warranty_type product_warranty_type_enum NOT NULL,
+description TEXT DEFAULT '',
+properties VARCHAR(200)[] DEFAULT '{}',
+cargo_corporation varchar(50) NOT NULL,
+deci SMALLINT NOT NULL,
+CONSTRAINT fk_product_subsubcategory 
+        FOREIGN KEY(subsubcategory_id)
+            REFERENCES subsubcategories(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_product_brand
+        FOREIGN KEY(brand_id)
+            REFERENCES brands(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS coupons(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+amount INT NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS slides(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+image_url VARCHAR(250) NOT NULL,
+route_url VARCHAR(250),
+slide_order SMALLINT DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS campaigns(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+start_datetime TIMESTAMP NOT NULL,
+end_datetime TIMESTAMP NOT NULL,
+rate NUMERIC(2,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS product_rates(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+product_id INT NOT NULL,
+user_id INT NOT NULL,
+comment VARCHAR(3000) DEFAULT '',
+rate SMALLINT NOT NULL,
+images VARCHAR(250)[5] DEFAULT '{}',
+hid_user_info_enabled BOOLEAN NOT NULL,
+datetime TIMESTAMP NOT NULL,
+CONSTRAINT fk_rate_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_rate_user
+        FOREIGN KEY(user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS faq_categories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+title varchar(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS general_infos(
+facebook_address VARCHAR(100),
+twitter_address VARCHAR(100),
+instagram_address VARCHAR(100),
+linkedin_address VARCHAR(100),
+pinterest_address VARCHAR(100),
+youtube_address VARCHAR(100),
+logo_url VARCHAR(250),
+whatsapp_number BIGINT
+);
+
+CREATE TABLE IF NOT EXISTS faq_subcategories(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+faq_category_id SMALLINT NOT NULL,
+title VARCHAR(100) NOT NULL,
+CONSTRAINT fk_faq_subcategory_faq_category
+        FOREIGN KEY (faq_category_id)
+            REFERENCES faq_categories(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS user_coupons(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+coupon_id INT NOT NULL,
+user_id INT NOT NULL,
+CONSTRAINT fk_user_coupon_coupon 
+        FOREIGN KEY (coupon_id)
+            REFERENCES coupons(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_coupon_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS product_campaigns(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+product_id INT NOT NULL,
+campaign_id INT NOT NULL,
+CONSTRAINT fk_product_campaign_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_product_campaign_campaign 
+        FOREIGN KEY (campaign_id)
+            REFERENCES campaigns(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS faqs(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+faq_subcategory_id SMALLINT NOT NULL,
+title VARCHAR(50) NOT NULL,
+content VARCHAR(5000) NOT NULL,
+CONSTRAINT fk_faq_faq_subcategory 
+        FOREIGN KEY (faq_subcategory_id)
+            REFERENCES faq_subcategories(id)
+            ON UPDATE CASCADE
+);
+
+
+CREATE TABLE IF NOT EXISTS orders(
+id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+claim_address_id INT NOT NULL,
+invoice_id INT NOT NULL,
+datetime TIMESTAMP NOT NULL,
+CONSTRAINT fk_order_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_claim_address
+        FOREIGN KEY(claim_address_id)
+            REFERENCES addresses(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_invoice
+        FOREIGN KEY (invoice_id)
+            REFERENCES invoices(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS shop_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+shop_id INT NOT NULL,
+product_id INT NOT NULL,
+variant_group_id INT,
+product_rating NUMERIC(2,2) DEFAULT 0.00,
+rating_count INT DEFAULT 0,
+stock_amount INT DEFAULT 0,
+stock_code VARCHAR(10),
+price NUMERIC(20,2) NOT NULL,
+day_for_cargo SMALLINT NOT NULL,
+images VARCHAR(250)[15] DEFAULT '{}' ,
+release_datetime TIMESTAMP NOT NULL,
+state shop_product_state_enum,
+CONSTRAINT fk_shop_product_shop
+        FOREIGN KEY (shop_id)
+            REFERENCES shops(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_shop_product_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS user_products_will_be_ordered(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+product_id INT NOT NULL,
+CONSTRAINT fk_user_products_will_be_ordered_user 
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_products_will_be_ordered_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+);
+
+
+CREATE TABLE IF NOT EXISTS user_favourite_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+user_id INT NOT NULL,
+product_id INT NOT NULL,
+CONSTRAINT fk_user_favourite_product_user
+        FOREIGN KEY (user_id)
+            REFERENCES users(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_user_favourite_product_product 
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+);
+
+
+CREATE TABLE IF NOT EXISTS order_products(
+id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+order_id INT NOT NULL,
+product_id INT NOT NULL,
+count INT,
+state order_product_state_enum NOT NULL,
+CONSTRAINT fk_order_product_order 
+        FOREIGN KEY (order_id)
+            REFERENCES orders(id)
+            ON UPDATE CASCADE,
+CONSTRAINT fk_order_product_product
+        FOREIGN KEY (product_id)
+            REFERENCES products(id)
+            ON UPDATE CASCADE
+)
+
+END OF THE DESIGN ! NEXT DAYS NEW TABLES AND UPDATES WILL BE IMPLEMENTED TO DATABASE DIRECLY WITHOUT DOCUMENTATE ! DATABASE WILL BE SHARED DIRECLY AS ECOMMERCIAL.sql !
