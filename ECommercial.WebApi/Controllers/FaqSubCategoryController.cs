@@ -7,12 +7,12 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/products")]
-    public class ProductController:CRUDBase<Product>
+    [Route("api/faq-sub-categories")]
+    public class FaqSubCategoryController:CRUDBase<FaqSubCategory>
     {
         
-        private ProductManager _manager;
-        public ProductController(ProductManager manager):base(manager)
+        private FaqSubCategoryManager _manager;
+        public FaqSubCategoryController(FaqSubCategoryManager manager):base(manager)
         {
             _manager=manager;
         }
