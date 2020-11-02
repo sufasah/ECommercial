@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj": {}
+    "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj": {}
   },
   "projects": {
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
         "projectName": "ECommercial.Business",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
               },
-              "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
         "projectName": "ECommercial.Core",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -159,14 +159,14 @@
         }
       }
     },
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
         "projectName": "ECommercial.DataAccess",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -182,11 +182,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
               },
-              "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
               }
             }
           }
@@ -236,14 +236,14 @@
         }
       }
     },
-    "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
         "projectName": "ECommercial.Entities",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -259,8 +259,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
               }
             }
           }

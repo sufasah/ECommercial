@@ -1,9 +1,7 @@
-using System.Reflection;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
 using System.Collections.Generic;
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {

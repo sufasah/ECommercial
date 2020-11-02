@@ -6182,11 +6182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
       "projectName": "ECommercial.DataAccess",
-      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
+      "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6202,11 +6202,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
             },
-            "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
-              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
+            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
+              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj"
             }
           }
         }
