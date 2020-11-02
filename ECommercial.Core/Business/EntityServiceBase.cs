@@ -40,13 +40,27 @@ namespace ECommercial.Core.Business
                 throw new KeyNotFoundException($"For {typeof(TEntity).Name} Class, There is any memberfield that infer primary key of the class when instantiating service.");
             var param = Expression.Parameter(typeof(TEntity),"e");
             Expression<Func<TEntity,bool>> filter = Expression.Lambda<Func<TEntity,bool>>(
-                Expression.Call(
-                    Expression.MakeMemberAccess(param,_entityPrimaryKeyMember),
-                    typeof(TEntity).GetMethod("Equals"),
-                    Expression.Constant(Expression.Convert(Expression.Constant(key),typeof(Object)))
+                Expression.Or(
+                    Expression.Call(
+                        Expression.MakeMemberAccess(param,_entityPrimaryKeyMember),
+                        typeof(TEntity).GetMethod("Equals"),
+                        Expression.Constant(Expression.Convert(Expression.Constant(key),typeof(Object)))
+                    ),
+                    Expression.Equal(
+                        Expression.Call(
+                            Expression.MakeMemberAccess(param,_entityPrimaryKeyMember),
+                            typeof(TEntity).GetMethod("ToString",Type.EmptyTypes),
+                            null
+                        ),
+                        Expression.Call(
+                            Expression.Constant(key),
+                            key.GetType().GetMethod("ToString",Type.EmptyTypes),
+                            null
+                        )
+                    )
                 ),
                 param
-            );
+            );// entity => entity.Equals(key) || entity.ToString()==key.ToString()
             return _entityRepository.Get(filter);
         }
 
@@ -54,5 +68,6 @@ namespace ECommercial.Core.Business
         {
             return _entityRepository.Update(Entity);
         }
+
     }
 }

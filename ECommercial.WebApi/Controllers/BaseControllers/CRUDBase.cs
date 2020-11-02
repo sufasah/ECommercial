@@ -1,11 +1,13 @@
+using System;
 using ECommercial.Core.Business;
 using ECommercial.Core.Entities;
+using ECommercial.Entites.concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommercial.WebApi.Controllers.BaseControllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/{entityName}s/")]
     abstract public class CRUDBase<T>:ControllerBase
         where T:class,IEntity,new()
     {
@@ -15,27 +17,49 @@ namespace ECommercial.WebApi.Controllers.BaseControllers
         {
             Manager = manager;
         }
-
-        [Route("products")]
-        public IActionResult GetAll(){
+        [HttpGet]
+        public IActionResult GetAll(string entityName){
+            CheckEntityName(entityName);
             return Ok(Manager.GetAll());
         }
-        [Route((nameof(T)+"s/{id}"))]
-        public IActionResult Get(string id){
-            return Ok(Manager.GetByPrimaryKey(id));
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(string entityName,string id){
+            CheckEntityName(entityName);
+            var entity =Manager.GetByPrimaryKey(id);
+            if(entity==null)
+            return Ok("no entity");
+            else
+            return Ok(entity);
         }
-        [Route((nameof(T)+"s"))]
-        public IActionResult Post(){
-            var x =Response.Body;
-            return Ok();
+        [HttpPost]
+        public IActionResult Post(string entityName,[FromBody]T body){
+            CheckEntityName(entityName);
+            var entity = Manager.Add(body);
+            return Ok(entity);
         }
-      /*  [Route((nameof(T)+"s/{id}"))]
-        public IActionResult Get(string id){
-            return Ok(Manager.GetByPrimaryKey(id));
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(string entityName,string id){
+            CheckEntityName(entityName);
+            var entity = Manager.GetByPrimaryKey(id);
+            if(entity==null)
+            return Ok("no record");
+            else{
+                Manager.Delete(entity);
+                return Ok(entity);
+            }
         }
-        [Route((nameof(T)+"s/{id}"))]
-        public IActionResult Get(string id){
-            return Ok(Manager.GetByPrimaryKey(id));
-        }*/
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put(string entityName,[FromBody]T body){
+            CheckEntityName(entityName);
+            var entity = Manager.Update(body);
+            return Ok(Manager.Update(entity));
+        }
+
+        private bool CheckEntityName(string entityName){
+            return typeof(T).Name.ToLower()==entityName;
+        }
     }
 }

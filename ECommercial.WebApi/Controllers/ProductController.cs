@@ -14,7 +14,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [Route("test")]
         public IActionResult test(){
-            return Ok();
+            return Ok(nameof(Product));
         }
         
     }

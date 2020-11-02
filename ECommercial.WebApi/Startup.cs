@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ECommercial.Business.Concrete.Managers.EntityManagers;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.DataAccess.Concrete.EntityFramework;
@@ -10,13 +6,10 @@ using ECommercial.DataAccess.EntityFramework;
 using ECommercial.Entites.concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace ECommercial.WebApi
 {
