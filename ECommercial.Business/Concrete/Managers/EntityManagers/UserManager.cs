@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IUserDal _userDal;
         private IEntityDal<User> _entityDal;
-        public UserManager(IUserDal userDal,IEntityDal<User> entityDal):base(userDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public UserManager(IUserDal userDal,IEntityDal<User> entityDal,IMapper mapper):base(userDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _userDal = userDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override User Add(User Entity)
         {

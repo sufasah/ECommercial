@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class CityController:CRUDBase<City>
     {
         
-        private CityManager _manager;
-        public CityController(CityManager manager):base(manager)
+        private ICityService _manager;
+        public CityController(ICityService manager):base(manager)
         {
             _manager=manager;
         }

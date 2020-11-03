@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class ProductRateController:CRUDBase<ProductRate>
     {
         
-        private ProductRateManager _manager;
-        public ProductRateController(ProductRateManager manager):base(manager)
+        private IProductRateService _manager;
+        public ProductRateController(IProductRateService manager):base(manager)
         {
             _manager=manager;
         }

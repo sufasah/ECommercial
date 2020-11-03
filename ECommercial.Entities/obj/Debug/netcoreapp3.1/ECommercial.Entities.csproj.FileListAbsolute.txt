@@ -1,0 +1,12 @@
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Entities.deps.json
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Entities.dll
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Entities.pdb
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Core.dll
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.csprojAssemblyReference.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.AssemblyInfoInputs.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.AssemblyInfo.cs
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.csproj.CoreCompileInputs.cache
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.csproj.CopyComplete
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.dll
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Entities\obj\Debug\netcoreapp3.1\ECommercial.Entities.pdb

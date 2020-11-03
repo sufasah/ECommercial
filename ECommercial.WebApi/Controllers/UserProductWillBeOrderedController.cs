@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class UserProductWillBeOrderedController:CRUDBase<UserProductWillBeOrdered>
     {
         
-        private UserProductWillBeOrderedManager _manager;
-        public UserProductWillBeOrderedController(UserProductWillBeOrderedManager manager):base(manager)
+        private IUserProductWillBeOrderedService _manager;
+        public UserProductWillBeOrderedController(IUserProductWillBeOrderedService manager):base(manager)
         {
             _manager=manager;
         }

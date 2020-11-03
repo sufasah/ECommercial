@@ -40,6 +40,9 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IDistrictDal>().To<EFDistrictDal>().InSingletonScope();
             Bind<IDistrictService>().To<DistrictManager>().InSingletonScope();
             
+            Bind<IFaqDal>().To<EFFaqDal>().InSingletonScope();
+            Bind<IFaqService>().To<FaqManager>().InSingletonScope();
+            
             Bind<IFaqCategoryDal>().To<EFFaqCategoryDal>().InSingletonScope();
             Bind<IFaqCategoryService>().To<FaqCategoryManager>().InSingletonScope();
             

@@ -1,10 +1,9 @@
-using System.Reflection;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
 using System.Collections.Generic;
+using AutoMapper;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
@@ -12,10 +11,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ICategoryDal _categoryDal;
         private IEntityDal<Category> _entityDal;
-        public CategoryManager(ICategoryDal categoryDal,IEntityDal<Category> entityDal):base(categoryDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public CategoryManager(ICategoryDal categoryDal,IEntityDal<Category> entityDal,IMapper mapper):base(categoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _categoryDal = categoryDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Category Add(Category Entity)
         {

@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class TaxOfficeController:CRUDBase<TaxOffice>
     {
         
-        private TaxOfficeManager _manager;
-        public TaxOfficeController(TaxOfficeManager manager):base(manager)
+        private ITaxOfficeService _manager;
+        public TaxOfficeController(ITaxOfficeService manager):base(manager)
         {
             _manager=manager;
         }

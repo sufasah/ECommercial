@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IInvoiceDal _invoiceDal;
         private IEntityDal<Invoice> _entityDal;
-        public InvoiceManager(IInvoiceDal invoiceDal,IEntityDal<Invoice> entityDal):base(invoiceDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public InvoiceManager(IInvoiceDal invoiceDal,IEntityDal<Invoice> entityDal,IMapper mapper):base(invoiceDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _invoiceDal = invoiceDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Invoice Add(Invoice Entity)
         {

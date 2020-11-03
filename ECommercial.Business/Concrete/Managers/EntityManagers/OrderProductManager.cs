@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IOrderProductDal _orderProductDal;
         private IEntityDal<OrderProduct> _entityDal;
-        public OrderProductManager(IOrderProductDal orderProductDal,IEntityDal<OrderProduct> entityDal):base(orderProductDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public OrderProductManager(IOrderProductDal orderProductDal,IEntityDal<OrderProduct> entityDal,IMapper mapper):base(orderProductDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _orderProductDal = orderProductDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override OrderProduct Add(OrderProduct Entity)
         {

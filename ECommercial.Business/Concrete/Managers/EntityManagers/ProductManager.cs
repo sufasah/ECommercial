@@ -5,6 +5,7 @@ using ECommercial.Entites.concrete;
 using System.Collections.Generic;
 using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
 using ECommercial.Core.Aspects.PostSharp.ValidationAspects.FluentValidation;
+using AutoMapper;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
@@ -12,10 +13,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IProductDal _productDal;
         private IEntityDal<Product> _entityDal;
-        public ProductManager(IProductDal productDal,IEntityDal<Product> entityDal):base(productDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public ProductManager(IProductDal productDal,IEntityDal<Product> entityDal,IMapper mapper):base(productDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _productDal = productDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]

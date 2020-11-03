@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IProductCampaignDal _productCampaignDal;
         private IEntityDal<ProductCampaign> _entityDal;
-        public ProductCampaignManager(IProductCampaignDal productCampaignDal,IEntityDal<ProductCampaign> entityDal):base(productCampaignDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public ProductCampaignManager(IProductCampaignDal productCampaignDal,IEntityDal<ProductCampaign> entityDal,IMapper mapper):base(productCampaignDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _productCampaignDal = productCampaignDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override ProductCampaign Add(ProductCampaign Entity)
         {

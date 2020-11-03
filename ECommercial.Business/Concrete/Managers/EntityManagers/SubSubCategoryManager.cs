@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ISubSubCategoryDal _subSubCategoryDal;
         private IEntityDal<SubSubCategory> _entityDal;
-        public SubSubCategoryManager(ISubSubCategoryDal subSubCategoryDal,IEntityDal<SubSubCategory> entityDal):base(subSubCategoryDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public SubSubCategoryManager(ISubSubCategoryDal subSubCategoryDal,IEntityDal<SubSubCategory> entityDal,IMapper mapper):base(subSubCategoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _subSubCategoryDal = subSubCategoryDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override SubSubCategory Add(SubSubCategory Entity)
         {

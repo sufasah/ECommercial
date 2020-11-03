@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class SlideController:CRUDBase<Slide>
     {
         
-        private SlideManager _manager;
-        public SlideController(SlideManager manager):base(manager)
+        private ISlideService _manager;
+        public SlideController(ISlideService manager):base(manager)
         {
             _manager=manager;
         }

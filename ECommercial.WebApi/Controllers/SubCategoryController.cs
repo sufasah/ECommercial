@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class SubCategoryController:CRUDBase<SubCategory>
     {
         
-        private SubCategoryManager _manager;
-        public SubCategoryController(SubCategoryManager manager):base(manager)
+        private ISubCategoryService _manager;
+        public SubCategoryController(ISubCategoryService manager):base(manager)
         {
             _manager=manager;
         }

@@ -16,15 +16,17 @@ namespace ECommercial.WebApi.Controllers.BaseControllers
         }
         [HttpGet]
         public IActionResult GetAll(){
-            return Ok(Manager.GetAll());
+            var entity =Manager.GetAll();
+            if(entity.Count==0)
+                return NoResult();
+            return Ok(entity);
         }
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(string id){
             var entity =Manager.GetByPrimaryKey(id);
             if(entity==null)
-            return Ok("no entity");
-            else
+                return NoResult();
             return Ok(entity);
         }
         [HttpPost]
@@ -37,17 +39,19 @@ namespace ECommercial.WebApi.Controllers.BaseControllers
         public IActionResult Delete(string id){
             var entity = Manager.GetByPrimaryKey(id);
             if(entity==null)
-            return Ok("no record");
-            else{
-                Manager.Delete(entity);
-                return Ok(entity);
-            }
+                return NoResult();
+            Manager.Delete(entity);
+            return Ok(entity);
         }
         [HttpPut]
         [Route("{id}")]
         public IActionResult Put([FromBody]T body){
             var entity = Manager.Update(body);
             return Ok(Manager.Update(entity));
+        }
+
+        protected virtual IActionResult NoResult(){
+            return BadRequest("[{}]");
         }
     }
 }

@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class FaqCategoryController:CRUDBase<FaqCategory>
     {
         
-        private FaqCategoryManager _manager;
-        public FaqCategoryController(FaqCategoryManager manager):base(manager)
+        private IFaqCategoryService _manager;
+        public FaqCategoryController(IFaqCategoryService manager):base(manager)
         {
             _manager=manager;
         }

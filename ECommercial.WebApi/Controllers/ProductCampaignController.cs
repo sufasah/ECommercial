@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class ProductCampaignController:CRUDBase<ProductCampaign>
     {
         
-        private ProductCampaignManager _manager;
-        public ProductCampaignController(ProductCampaignManager manager):base(manager)
+        private IProductCampaignService _manager;
+        public ProductCampaignController(IProductCampaignService manager):base(manager)
         {
             _manager=manager;
         }

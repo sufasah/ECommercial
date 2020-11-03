@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Reflection;
+using AutoMapper;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
@@ -11,10 +11,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IBankDal _bankDal;
         private IEntityDal<Bank> _entityDal;
-        public BankManager(IBankDal bankDal,IEntityDal<Bank> entityDal):base(bankDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public BankManager(IBankDal bankDal,IEntityDal<Bank> entityDal,IMapper mapper):base(bankDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _bankDal = bankDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Bank Add(Bank Entity)
         {

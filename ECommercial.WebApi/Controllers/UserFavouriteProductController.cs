@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class UserFavouriteProductController:CRUDBase<UserFavouriteProduct>
     {
         
-        private UserFavouriteProductManager _manager;
-        public UserFavouriteProductController(UserFavouriteProductManager manager):base(manager)
+        private IUserFavouriteProductService _manager;
+        public UserFavouriteProductController(IUserFavouriteProductService manager):base(manager)
         {
             _manager=manager;
         }

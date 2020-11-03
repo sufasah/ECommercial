@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Reflection;
+using AutoMapper;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
@@ -11,10 +11,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IAddressDal _addressDal;
         private IEntityDal<Address> _entityDal;
-        public AddressManager(IAddressDal AddressDal,IEntityDal<Address> entityDal):base(AddressDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public AddressManager(IAddressDal AddressDal,IEntityDal<Address> entityDal,IMapper mapper):base(AddressDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _addressDal = AddressDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Address Add(Address Entity)
         {

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using ECommercial.Core.DataAccess;
 using ECommercial.Core.Entities;
+using AutoMapper;
+using ECommercial.Core.Utilities.Mappings;
 
 namespace ECommercial.Core.Business
 {
@@ -12,11 +14,12 @@ namespace ECommercial.Core.Business
     {
         private IEntityRepository<TEntity> _entityRepository;
         private MemberInfo _entityPrimaryKeyMember;
-        
-        protected EntityServiceBase(IEntityRepository<TEntity> entityRepository, MemberInfo entityPrimaryKeyMember)
+        private IMapper _mapper;
+        protected EntityServiceBase(IEntityRepository<TEntity> entityRepository, MemberInfo entityPrimaryKeyMember,IMapper mapper)
         {
             _entityRepository = entityRepository;
             _entityPrimaryKeyMember = entityPrimaryKeyMember;
+            _mapper=mapper;
         }
 
         public virtual TEntity Add(TEntity Entity)
@@ -31,7 +34,8 @@ namespace ECommercial.Core.Business
 
         public virtual List<TEntity> GetAll()
         {
-            return _entityRepository.GetList();
+            var entities = _mapper.Map<List<TEntity>>(_entityRepository.GetList());
+            return entities;
         }
 
         public virtual TEntity GetByPrimaryKey(Object key)
@@ -68,6 +72,8 @@ namespace ECommercial.Core.Business
         {
             return _entityRepository.Update(Entity);
         }
+
+        
 
     }
 }

@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IDistrictDal _districtDal;
         private IEntityDal<District> _entityDal;
-        public DistrictManager(IDistrictDal districtDal,IEntityDal<District> entityDal):base(districtDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public DistrictManager(IDistrictDal districtDal,IEntityDal<District> entityDal,IMapper mapper):base(districtDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _districtDal = districtDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override District Add(District Entity)
         {

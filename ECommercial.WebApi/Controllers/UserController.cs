@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class UserController:CRUDBase<User>
     {
         
-        private UserManager _manager;
-        public UserController(UserManager manager):base(manager)
+        private IUserService _manager;
+        public UserController(IUserService manager):base(manager)
         {
             _manager=manager;
         }

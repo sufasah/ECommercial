@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ITaxOfficeDal _taxOfficeDal;
         private IEntityDal<TaxOffice> _entityDal;
-        public TaxOfficeManager(ITaxOfficeDal taxOfficeDal,IEntityDal<TaxOffice> entityDal):base(taxOfficeDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public TaxOfficeManager(ITaxOfficeDal taxOfficeDal,IEntityDal<TaxOffice> entityDal,IMapper mapper):base(taxOfficeDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _taxOfficeDal = taxOfficeDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override TaxOffice Add(TaxOffice Entity)
         {

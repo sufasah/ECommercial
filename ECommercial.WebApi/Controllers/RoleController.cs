@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class RoleController:CRUDBase<Role>
     {
         
-        private RoleManager _manager;
-        public RoleController(RoleManager manager):base(manager)
+        private IRoleService _manager;
+        public RoleController(IRoleService manager):base(manager)
         {
             _manager=manager;
         }

@@ -1,21 +1,21 @@
-using System.Reflection;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
 using System.Collections.Generic;
-
+using AutoMapper;
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class CouponManager : EntityServiceBase<Coupon>,ICouponService
     {
         private ICouponDal _couponDal;
         private IEntityDal<Coupon> _entityDal;
-        public CouponManager(ICouponDal couponDal,IEntityDal<Coupon> entityDal):base(couponDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public CouponManager(ICouponDal couponDal,IEntityDal<Coupon> entityDal,IMapper mapper):base(couponDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _couponDal = couponDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Coupon Add(Coupon Entity)
         {

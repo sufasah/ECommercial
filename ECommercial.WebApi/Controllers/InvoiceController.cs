@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class InvoiceController:CRUDBase<Invoice>
     {
         
-        private InvoiceManager _manager;
-        public InvoiceController(InvoiceManager manager):base(manager)
+        private IInvoiceService _manager;
+        public InvoiceController(IInvoiceService manager):base(manager)
         {
             _manager=manager;
         }

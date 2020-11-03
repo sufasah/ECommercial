@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class BankController:CRUDBase<Bank>
     {
         
-        private BankManager _manager;
-        public BankController(BankManager manager):base(manager)
+        private IBankService _manager;
+        public BankController(IBankService manager):base(manager)
         {
             _manager=manager;
         }

@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class ShopController:CRUDBase<Shop>
     {
         
-        private ShopManager _manager;
-        public ShopController(ShopManager manager):base(manager)
+        private IShopService _manager;
+        public ShopController(IShopService manager):base(manager)
         {
             _manager=manager;
         }

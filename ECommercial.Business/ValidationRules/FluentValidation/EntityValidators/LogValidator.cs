@@ -22,6 +22,7 @@ namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators
             RuleFor(x=>x.Detail)
             .NotNull();
             
+
         }
         
     }

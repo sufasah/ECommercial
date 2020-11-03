@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IRoleDal _roleDal;
         private IEntityDal<Role> _entityDal;
-        public RoleManager(IRoleDal roleDal,IEntityDal<Role> entityDal):base(roleDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public RoleManager(IRoleDal roleDal,IEntityDal<Role> entityDal,IMapper mapper):base(roleDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _roleDal = roleDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Role Add(Role Entity)
         {

@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class AddressController:CRUDBase<Address>
     {
         
-        private AddressManager _manager;
-        public AddressController(AddressManager manager):base(manager)
+        private IAddressService _manager;
+        public AddressController(IAddressService manager):base(manager)
         {
             _manager=manager;
         }

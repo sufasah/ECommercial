@@ -17,6 +17,8 @@ namespace ECommercial.DataAccess.EntitiyFramework.Mappings
 
             builder.Property(x=>x.Title).HasColumnName("title");
 
+            builder.Property(x=>x.CategoryId).HasColumnName("category_id");
+
         }
     }
 }

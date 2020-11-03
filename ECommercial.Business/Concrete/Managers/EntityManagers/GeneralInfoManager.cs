@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IGeneralInfoDal _generalInfoDal;
         private IEntityDal<GeneralInfo> _entityDal;
-        public GeneralInfoManager(IGeneralInfoDal generalInfoDal,IEntityDal<GeneralInfo> entityDal):base(generalInfoDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public GeneralInfoManager(IGeneralInfoDal generalInfoDal,IEntityDal<GeneralInfo> entityDal,IMapper mapper):base(generalInfoDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _generalInfoDal = generalInfoDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override GeneralInfo Add(GeneralInfo Entity)
         {

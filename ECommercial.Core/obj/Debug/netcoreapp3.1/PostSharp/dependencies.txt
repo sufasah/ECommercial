@@ -1,0 +1,2 @@
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\PostSharp\PostSharp.Compiler.Engine.dll
+C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\PostSharp\postsharp.config

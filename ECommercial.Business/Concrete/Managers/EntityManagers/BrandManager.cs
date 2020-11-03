@@ -3,16 +3,19 @@ using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using System.Collections.Generic;
+using AutoMapper;
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class BrandManager : EntityServiceBase<Brand>,IBrandService
     {
         private IBrandDal _brandDal;
         private IEntityDal<Brand> _entityDal;
-        public BrandManager(IBrandDal brandDal,IEntityDal<Brand> entityDal):base(brandDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public BrandManager(IBrandDal brandDal,IEntityDal<Brand> entityDal,IMapper mapper):base(brandDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _brandDal = brandDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Brand Add(Brand Entity)
         {

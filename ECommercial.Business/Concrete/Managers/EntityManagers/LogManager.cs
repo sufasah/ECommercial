@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ILogDal _logDal;
         private IEntityDal<Log> _entityDal;
-        public LogManager(ILogDal logDal,IEntityDal<Log> entityDal):base(logDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public LogManager(ILogDal logDal,IEntityDal<Log> entityDal,IMapper mapper):base(logDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _logDal = logDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Log Add(Log Entity)
         {

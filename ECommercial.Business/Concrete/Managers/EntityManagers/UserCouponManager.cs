@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IUserCouponDal _userCouponDal;
         private IEntityDal<UserCoupon> _entityDal;
-        public UserCouponManager(IUserCouponDal userCouponDal,IEntityDal<UserCoupon> entityDal):base(userCouponDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public UserCouponManager(IUserCouponDal userCouponDal,IEntityDal<UserCoupon> entityDal,IMapper mapper):base(userCouponDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _userCouponDal = userCouponDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override UserCoupon Add(UserCoupon Entity)
         {

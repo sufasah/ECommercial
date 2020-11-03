@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class GeneralInfoController:CRUDBase<GeneralInfo>
     {
         
-        private GeneralInfoManager _manager;
-        public GeneralInfoController(GeneralInfoManager manager):base(manager)
+        private IGeneralInfoService _manager;
+        public GeneralInfoController(IGeneralInfoService manager):base(manager)
         {
             _manager=manager;
         }

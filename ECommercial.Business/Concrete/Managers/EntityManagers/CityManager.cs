@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ICityDal _cityDal;
         private IEntityDal<City> _entityDal;
-        public CityManager(ICityDal cityDal,IEntityDal<City> entityDal):base(cityDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public CityManager(ICityDal cityDal,IEntityDal<City> entityDal,IMapper mapper):base(cityDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _cityDal = cityDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override City Add(City Entity)
         {

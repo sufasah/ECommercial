@@ -1,4 +1,4 @@
-using ECommercial.Business.Concrete.Managers.EntityManagers;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entites.concrete;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
@@ -11,8 +11,8 @@ namespace ECommercial.WebApi.Controllers
     public class LogController:CRUDBase<Log>
     {
         
-        private LogManager _manager;
-        public LogController(LogManager manager):base(manager)
+        private ILogService _manager;
+        public LogController(ILogService manager):base(manager)
         {
             _manager=manager;
         }

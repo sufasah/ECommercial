@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private IUserFavouriteProductDal _userFavouriteProductDal;
         private IEntityDal<UserFavouriteProduct> _entityDal;
-        public UserFavouriteProductManager(IUserFavouriteProductDal userFavouriteProductDal,IEntityDal<UserFavouriteProduct> entityDal):base(userFavouriteProductDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public UserFavouriteProductManager(IUserFavouriteProductDal userFavouriteProductDal,IEntityDal<UserFavouriteProduct> entityDal,IMapper mapper):base(userFavouriteProductDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _userFavouriteProductDal = userFavouriteProductDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override UserFavouriteProduct Add(UserFavouriteProduct Entity)
         {

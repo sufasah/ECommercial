@@ -3,7 +3,7 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
-using FluentValidation;
+using AutoMapper;
 using System.Collections.Generic;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -12,10 +12,12 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
     {
         private ISlideDal _slideDal;
         private IEntityDal<Slide> _entityDal;
-        public SlideManager(ISlideDal slideDal,IEntityDal<Slide> entityDal):base(slideDal,entityDal.GetPrimaryKeyMember())
+        private IMapper _mapper;
+        public SlideManager(ISlideDal slideDal,IEntityDal<Slide> entityDal,IMapper mapper):base(slideDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _slideDal = slideDal;
             _entityDal=entityDal;
+            _mapper=mapper;
         }
         public override Slide Add(Slide Entity)
         {
