@@ -7,7 +7,7 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/uogs")]
+    [Route("api/logs")]
     public class LogController:CRUDBase<Log>
     {
         
