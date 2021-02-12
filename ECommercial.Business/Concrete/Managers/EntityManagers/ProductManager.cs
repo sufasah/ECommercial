@@ -3,8 +3,6 @@ using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.Entites.concrete;
 using System.Collections.Generic;
-using ECommercial.Business.ValidationRules.FluentValidation.EntityValidators;
-using ECommercial.Core.Aspects.PostSharp.ValidationAspects.FluentValidation;
 using AutoMapper;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
@@ -21,12 +19,10 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
             _mapper=mapper;
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
         public override Product Add(Product Entity)
         {
             return base.Add(Entity);
         }
-        [FluentValidationAspect(typeof(ProductValidator))]
         public override void Delete(Product Entity)
         {
             base.Delete(Entity);
@@ -37,7 +33,6 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
             return base.GetAll();
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
         public override Product Update(Product Entity)
         {
             return base.Update(Entity);

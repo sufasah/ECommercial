@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {}
+    "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {}
   },
   "projects": {
-    "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
         "projectName": "ECommercial.Core",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,10 +72,6 @@
               "target": "Package",
               "version": "[4.1.5, )"
             },
-            "PostSharp": {
-              "target": "Package",
-              "version": "[6.4.12, )"
-            },
             "log4net": {
               "target": "Package",
               "version": "[2.0.12, )"
@@ -100,14 +96,14 @@
         }
       }
     },
-    "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
+    "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
         "projectName": "ECommercial.Entities",
-        "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+        "projectPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
         "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\obj\\",
+        "outputPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,8 +120,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-                "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+              "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+                "projectPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
               }
             }
           }

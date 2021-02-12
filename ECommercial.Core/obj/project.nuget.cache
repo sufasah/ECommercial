@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eEGlM+aoZGIXNSCLgUVocvEyUvqvCnHKNflt0J2uDydnZYNW2Gx6POwL/4yLRFTayPubaxPaglkapxZfDJA4cA==",
+  "dgSpecHash": "/S0WW2VIaOBz+FUHKwoLgzS4JoEqd9kK3R00n1K4K2GWbFEfYt+KW9tMAvMjlgoVrmIKLPo84eWDzJDnZ35bfQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+  "projectFilePath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
@@ -37,8 +37,6 @@
     "C:\\Users\\nihaSWin\\.nuget\\packages\\nhibernate\\5.3.3\\nhibernate.5.3.3.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
-    "C:\\Users\\nihaSWin\\.nuget\\packages\\postsharp\\6.4.12\\postsharp.6.4.12.nupkg.sha512",
-    "C:\\Users\\nihaSWin\\.nuget\\packages\\postsharp.redist\\6.4.12\\postsharp.redist.6.4.12.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\remotion.linq.eagerfetching\\2.2.0\\remotion.linq.eagerfetching.2.2.0.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

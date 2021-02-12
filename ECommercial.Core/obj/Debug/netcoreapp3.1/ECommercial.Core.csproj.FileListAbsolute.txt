@@ -15,3 +15,8 @@ c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\
 c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfoInputs.cache
 c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.AssemblyInfo.cs
 c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.csproj.CoreCompileInputs.cache
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\bin\Debug\netcoreapp3.1\ECommercial.Core.deps.json
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\bin\Debug\netcoreapp3.1\ECommercial.Core.dll
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.dll
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Core\obj\Debug\netcoreapp3.1\ECommercial.Core.pdb

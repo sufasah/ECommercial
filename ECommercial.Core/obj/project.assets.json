@@ -426,31 +426,6 @@
           "lib/netcoreapp3.0/Npgsql.dll": {}
         }
       },
-      "PostSharp/6.4.12": {
-        "type": "package",
-        "dependencies": {
-          "PostSharp.Redist": "[6.4.12, 7.0.0)"
-        },
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "build": {
-          "build/PostSharp.props": {},
-          "build/PostSharp.targets": {}
-        }
-      },
-      "PostSharp.Redist/6.4.12": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/PostSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/PostSharp.dll": {}
-        }
-      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2409,58 +2384,6 @@
         "npgsql.4.1.5.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
-      ]
-    },
-    "PostSharp/6.4.12": {
-      "sha512": "p/rn2+vUlIfmFs7dUnwpJ3BgxSnEKhiL5LFiUSrhRQJOrljMUrInCnkMexZJ3LhngZ4ZPsAH/gH4niiDuyQ9LQ==",
-      "type": "package",
-      "path": "postsharp/6.4.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/PostSharp-Tools.7z",
-        "build/PostSharp.Version.properties",
-        "build/PostSharp.properties",
-        "build/PostSharp.props",
-        "build/PostSharp.targets",
-        "build/PostSharp.tasks",
-        "build/_common/unzipper/SharpCompress.dll",
-        "build/_common/unzipper/System.Runtime.CompilerServices.Unsafe.dll",
-        "build/_common/unzipper/System.Text.Encoding.CodePages.dll",
-        "build/_common/unzipper/runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
-        "build/_common/unzipper/unzipper.deps.json",
-        "build/_common/unzipper/unzipper.dll",
-        "build/_common/unzipper/unzipper.exe",
-        "build/_common/unzipper/unzipper.exe.config",
-        "build/_common/unzipper/unzipper.pdb",
-        "build/_common/unzipper/unzipper.runtimeconfig.json",
-        "build/net472/PostSharp.MSBuild.v6.4.12.Release.dll",
-        "build/net472/PostSharp.MSBuild.v6.4.12.Release.pdb",
-        "build/netcoreapp2.1/PostSharp.MSBuild.v6.4.12.Release.dll",
-        "build/netcoreapp2.1/PostSharp.MSBuild.v6.4.12.Release.pdb",
-        "lib/net35-client/_._",
-        "lib/netstandard1.0/_._",
-        "postsharp.6.4.12.nupkg.sha512",
-        "postsharp.nuspec"
-      ]
-    },
-    "PostSharp.Redist/6.4.12": {
-      "sha512": "3FgXW132N8ZXZCqRaxpYkdXemSgtLd8zSS2bIbhT0o+rixdCXuhr2jKuGH8hF3/RSelFIyaCUF5SLUZb4pIbmw==",
-      "type": "package",
-      "path": "postsharp.redist/6.4.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net35-client/PostSharp.dll",
-        "lib/net35-client/PostSharp.xml",
-        "lib/net45/PostSharp.dll",
-        "lib/net45/PostSharp.xml",
-        "lib/netstandard1.3/PostSharp.dll",
-        "lib/netstandard1.3/PostSharp.xml",
-        "lib/netstandard2.0/PostSharp.dll",
-        "lib/netstandard2.0/PostSharp.xml",
-        "postsharp.redist.6.4.12.nupkg.sha512",
-        "postsharp.redist.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -6196,7 +6119,6 @@
       "Newtonsoft.Json >= 12.0.3",
       "Ninject >= 3.3.4",
       "Npgsql >= 4.1.5",
-      "PostSharp >= 6.4.12",
       "log4net >= 2.0.12"
     ]
   },
@@ -6206,11 +6128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+      "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
       "projectName": "ECommercial.Core",
-      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
+      "projectPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\",
+      "outputPath": "C:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6270,10 +6192,6 @@
           "Npgsql": {
             "target": "Package",
             "version": "[4.1.5, )"
-          },
-          "PostSharp": {
-            "target": "Package",
-            "version": "[6.4.12, )"
           },
           "log4net": {
             "target": "Package",

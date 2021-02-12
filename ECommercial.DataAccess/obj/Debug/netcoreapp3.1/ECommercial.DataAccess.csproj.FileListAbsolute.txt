@@ -14,3 +14,15 @@ C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreap
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
 c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.dll
 c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.deps.json
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.dll
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.DataAccess.pdb
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.Core.dll
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.Entities.dll
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.Core.pdb
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\bin\Debug\netcoreapp3.1\ECommercial.Entities.pdb
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.csprojAssemblyReference.cache
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.AssemblyInfoInputs.cache
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.AssemblyInfo.cs
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.DataAccess\obj\Debug\netcoreapp3.1\ECommercial.DataAccess.csproj.CopyComplete
