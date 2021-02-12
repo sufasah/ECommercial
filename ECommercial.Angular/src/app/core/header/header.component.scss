@@ -1,0 +1,19 @@
+.header-col{
+  padding: 0.5rem;
+  line-height: 1.5em;
+  margin-left: .5rem;
+}
+.logo {
+  height: 60px;
+  width: 250px;
+  background-image: url("/assets/images/logo.jpeg");
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.login{
+  cursor: pointer;
+  :hover{
+    background-color: rgb(255, 221, 219)
+  }
+}
