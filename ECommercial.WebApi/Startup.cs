@@ -27,9 +27,14 @@ namespace ECommercial.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+                
             services.AddControllers();
+            
             ManagersDependencies(services);
             services.AddSingleton<IMapper>(AutoMapperHelper.CreateConfiguration().CreateMapper());
+
+            services.AddDbContext<DbContext>(options => 
+              options.UseNpgsql(Configuration.GetConnectionString("ECpgsql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +61,7 @@ namespace ECommercial.WebApi
         }
         
         private void ManagersDependencies(IServiceCollection services){
+
             services.AddSingleton( typeof(IProductService) , typeof(ProductManager));
             services.AddSingleton( typeof(IProductDal) , typeof(EFProductDal));
 
@@ -152,6 +158,8 @@ namespace ECommercial.WebApi
             services.AddSingleton( typeof(DbContext) , typeof(ECommercialContext));
 
             services.AddSingleton( typeof(IEntityDal<>) , typeof(EFEntityDal<>));
+
+
         }
     }
 }

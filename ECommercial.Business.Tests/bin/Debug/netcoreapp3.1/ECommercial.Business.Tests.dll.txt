@@ -1,0 +1,2 @@
+ECommercial.Business.Tests.EntityValidationTests.FluentValidation.EntityValidationTests.validateSuccess
+ECommercial.Business.Tests.EntityValidationTests.FluentValidation.EntityValidationTests.validationFail

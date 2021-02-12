@@ -1,0 +1,7 @@
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.GetFunc
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.GetListFunc
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.GetListFuncFiltered
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.InsertFunc
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.UpdateFunc
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.DeleteFunc
+ECommercial.DataAccess.Tests.EntityFramework.Integration.RepositoryTests.QueryableRepo_Get

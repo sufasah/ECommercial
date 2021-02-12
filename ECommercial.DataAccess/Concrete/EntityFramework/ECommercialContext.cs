@@ -1,8 +1,6 @@
-
 using System.Configuration;
 using ECommercial.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
-using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.DataAccess.EntityFramework
@@ -10,9 +8,9 @@ namespace ECommercial.DataAccess.EntityFramework
     public class ECommercialContext:DbContext
     {
         public ECommercialContext(){   
+   
         }
         public ECommercialContext(DbContextOptions<ECommercialContext> options):base(options){
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +33,7 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new ProductCampaignMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
             modelBuilder.ApplyConfiguration(new ProductRateMap());
+            modelBuilder.ApplyConfiguration(new LogMap());
             modelBuilder.ApplyConfiguration(new ShopMap());
             modelBuilder.ApplyConfiguration(new ShopProductMap());
             modelBuilder.ApplyConfiguration(new SlideMap());
@@ -45,11 +44,13 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new UserFavouriteProductMap());
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new UserProductWillBeOrderedMap());
+            modelBuilder.ApplyConfiguration(new UserRoleMap());
             modelBuilder.ApplyConfiguration(new TestMap());
             
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+           
             optionsBuilder.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=123;Database=ecommercial;");
         }
         public DbSet<Address> Addresses {get;set;}
@@ -65,6 +66,7 @@ namespace ECommercial.DataAccess.EntityFramework
         public DbSet<FaqSubCategory> FaqSubCategories {get;set;}
         public DbSet<GeneralInfo> GeneralInfos {get;set;}
         public DbSet<Invoice> Invoices {get;set;}
+        public DbSet<Log> Logs {get;set;}
         public DbSet<Order> Orders {get;set;}
         public DbSet<OrderProduct> OrderProducts {get;set;}
         public DbSet<Product> Products {get;set;}
@@ -79,6 +81,8 @@ namespace ECommercial.DataAccess.EntityFramework
         public DbSet<User> Users {get;set;}
         public DbSet<UserCoupon> UserCoupons {get;set;}
         public DbSet<UserFavouriteProduct> UserFavouriteProducts {get;set;}
-        public DbSet<UserProductWillBeOrdered> UserProductsWillBeOrdered {get;set;}        
+        public DbSet<UserProductWillBeOrdered> UserProductsWillBeOrdered {get;set;}   
+        public DbSet<UserRole> UserRoles {get;set;}        
     }
+
 }
