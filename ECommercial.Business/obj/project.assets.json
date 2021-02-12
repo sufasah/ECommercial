@@ -6321,11 +6321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
       "projectName": "ECommercial.Business",
-      "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
+      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Business\\ECommercial.Business.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Business\\obj\\",
+      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6340,12 +6340,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\ECommercial.Core.csproj"
             },
-            "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
+            "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj": {
+              "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess\\ECommercial.DataAccess.csproj"
             }
           }
         }
@@ -6358,6 +6359,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "FluentValidation.AspNetCore": {
             "target": "Package",
@@ -6379,7 +6381,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

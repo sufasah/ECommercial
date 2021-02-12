@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0": {
       "Microsoft.CodeAnalysis/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -4638,7 +4638,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0": [
       "Microsoft.CodeAnalysis >= 3.1.0",
       "Microsoft.DiaSymReader.Native >= 1.7.0",
       "Microsoft.Win32.Registry >= 4.5.0",
@@ -4662,31 +4662,33 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\netcoreapp3.1-ps6.4.12.0.deps.proj",
-      "projectName": "netcoreapp3.1-ps6.4.12.0.deps",
-      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\netcoreapp3.1-ps6.4.12.0.deps.proj",
+      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\netcoreapp5.0-ps6.4.12.0.deps.proj",
+      "projectName": "netcoreapp5.0-ps6.4.12.0.deps",
+      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\netcoreapp5.0-ps6.4.12.0.deps.proj",
       "packagesPath": "C:\\ProgramData\\PostSharp\\NuGetFallback",
-      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\obj\\",
+      "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihaSWin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "netcoreapp5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net5.0": {
+          "targetAlias": "netcoreapp5.0",
           "projectReferences": {}
         }
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
+      "net5.0": {
+        "targetAlias": "netcoreapp5.0",
         "dependencies": {
           "Microsoft.CodeAnalysis": {
             "target": "Package",
@@ -4764,7 +4766,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

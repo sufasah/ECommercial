@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T+OZ2wFQeLdIxAxaFf/krV8EVQyYT2wP0H2FYR18qN61ViGdIz9IPBGiUHdQ30EF7VZMJ+CE4pyvA5ZL7HWKhQ==",
+  "dgSpecHash": "nQWKe1+mV0OY7vABRRJGrZ3Yr0CCBSkAaKtt27RRUGHScRJmLn4DtjEx346SyD/9PZFyp1PWbiRljp89Pge12w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Core\\obj\\netcoreapp3.1-ps6.4.12.0.deps.proj",
+  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Core\\obj\\netcoreapp5.0-ps6.4.12.0.deps.proj",
   "expectedPackageFiles": [
     "C:\\ProgramData\\PostSharp\\NuGetFallback\\microsoft.codeanalysis\\3.1.0\\microsoft.codeanalysis.3.1.0.nupkg.sha512",
     "C:\\ProgramData\\PostSharp\\NuGetFallback\\microsoft.codeanalysis.analyzers\\2.6.2-beta2\\microsoft.codeanalysis.analyzers.2.6.2-beta2.nupkg.sha512",

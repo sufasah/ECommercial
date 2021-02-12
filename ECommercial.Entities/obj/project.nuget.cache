@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bTZ40kLEWE0wfAgR3FL5SVgrCHeeZGAE91LTe0AnhIdimw4XiNJiPjRc+n3Q4919cijWeCdQbp0V3HI+C3iGTw==",
+  "dgSpecHash": "JjY+Qlw/vZdudEmiXDxE8c7GU3+8HsTRklsTywMyZKhT3ixv1HuJBSSxcMSmVAKhHLZmT8GOr4YSEZq4oV6g/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nihaSWin\\Desktop\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
+  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.Entities\\ECommercial.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

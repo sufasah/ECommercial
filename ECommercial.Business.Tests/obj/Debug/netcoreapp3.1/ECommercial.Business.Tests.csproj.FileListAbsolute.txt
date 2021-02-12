@@ -1,0 +1,2 @@
+c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Business.Tests\obj\Debug\netcoreapp3.1\ECommercial.Business.Tests.dll
+c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Business.Tests\obj\Debug\netcoreapp3.1\ECommercial.Business.Tests.pdb

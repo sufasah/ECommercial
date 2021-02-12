@@ -5,19 +5,5 @@
   <ItemGroup>
     <ProjectReference Include="../ECommercial.Business/ECommercial.Business.csproj"/>
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="yarn.lock"/>
-    <Content remove="ClientApp/**"/>
-  </ItemGroup>
-  <Target Name="PublishAngular" AfterTargets="ComputeFilesToPublish">
-    <Exec Command="npm install" WorkingDirectory="$(FrontendRoot)" />
-    <Exec Command="npm run build -- --prod" WorkingDirectory="$(FrontendRoot)" />
-    <ItemGroup>
-      <DistFiles Include="$(FrontendRoot)dist**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
-</Target>
+
 </Project>

@@ -14,3 +14,5 @@ C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.csproj.CopyComplete
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.dll
 C:\Users\nihaSWin\Desktop\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.pdb
+c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.dll
+c:\Users\nihaSWin\Desktop\Kisisel\yazilim\Projeler\ECommercial\ECommercial.Business\obj\Debug\netcoreapp3.1\ECommercial.Business.pdb
