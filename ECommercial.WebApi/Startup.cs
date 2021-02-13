@@ -44,6 +44,10 @@ namespace ECommercial.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            else{
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
 
             app.UseHttpsRedirection();
 
