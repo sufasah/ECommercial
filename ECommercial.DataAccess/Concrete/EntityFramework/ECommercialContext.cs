@@ -1,11 +1,13 @@
 using System.Configuration;
 using ECommercial.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.DataAccess.EntityFramework
 {
-    public class ECommercialContext:DbContext
+    public class ECommercialContext:IdentityDbContext<IdentityUser>
     {
         public ECommercialContext(){   
    
@@ -42,9 +44,7 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new TaxOfficeMap());
             modelBuilder.ApplyConfiguration(new UserCouponMap());
             modelBuilder.ApplyConfiguration(new UserFavouriteProductMap());
-            modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new UserProductWillBeOrderedMap());
-            modelBuilder.ApplyConfiguration(new UserRoleMap());
             modelBuilder.ApplyConfiguration(new TestMap());
             
         }
@@ -78,11 +78,9 @@ namespace ECommercial.DataAccess.EntityFramework
         public DbSet<SubCategory> SubCategories {get;set;}
         public DbSet<SubSubCategory> SubSubCategories {get;set;}
         public DbSet<TaxOffice> TaxOffices {get;set;}
-        public DbSet<User> Users {get;set;}
         public DbSet<UserCoupon> UserCoupons {get;set;}
         public DbSet<UserFavouriteProduct> UserFavouriteProducts {get;set;}
-        public DbSet<UserProductWillBeOrdered> UserProductsWillBeOrdered {get;set;}   
-        public DbSet<UserRole> UserRoles {get;set;}        
+        public DbSet<UserProductWillBeOrdered> UserProductsWillBeOrdered {get;set;}    
     }
 
 }

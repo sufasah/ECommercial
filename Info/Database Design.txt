@@ -315,13 +315,6 @@ banks(
 
 -----------------------------------END OF ADDITIONALS
 
-CREATE TYPE shop_firm_type_enum AS ENUM('private','incorporated','sole-proprietorship','ordinary-partnership','foundation');
-CREATE TYPE shop_firm_profile_enum AS ENUM('distributor','importer', 'main dealer' , 'dealer' , 'producer');
-CREATE TYPE invoice_type_enum AS ENUM('individual','institutional');
-CREATE TYPE product_warranty_type_enum AS ENUM('day','month','year');
-CREATE TYPE shop_product_state_enum AS ENUM('onsale','onstock');
-CREATE TYPE order_product_state_enum AS ENUM('canceled-by-shop','canceled-by-user','waiting-for-payment','onreply','ready-for-shipping','oncargo-touser','concluded-success','concluded-damaged','concluded-return','concluded-missing-piece','concluded-wrong-piece','concluded-not-be-delivered','system-control','oncargo-toshop');
-
 shops(
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 username VARCHAR(30) NOT NULL,
