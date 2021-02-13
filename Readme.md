@@ -29,13 +29,13 @@ This project is an individual e-commerce web and mobile project. In this project
 
 ## Database ERD Diagram
 - - - -
-![ERD Diagram](https://github.com/sufasah/ECommercial/blob/master/UML/ERD.png?raw=true "Database ERD Diagram")
+![ERD Diagram](Info/UML/ERD.png "Database ERD Diagram")
 
 ## Database Schemas
 - - - -
-![Database Schemas](https://github.com/sufasah/ECommercial/blob/master/UML/Entities.png?raw=true "Database Schemas")
+![Database Schemas](Info/UML/Entities.png "Database Schemas")
 
-:exclamation: To See ***[Database Tables, table fields and field types and constraints](https://github.com/sufasah/ECommercial/blob/master/Database%20Design.txt "Database Design.txt")*** click and scroll to the end
+:exclamation: To See ***[Database Tables, table fields and field types and constraints](Info/Database%20Design.txt "Database Design.txt")*** click and scroll to the end
 
->End of the design! In the next days new tables and updates will be implemented to database directly without documentate! Database will be shared directly as [ecommercial.sql](info/ecommercial.sql "Database Dump File") file.
+>End of the design! In the next days new tables and updates will be implemented to database directly without documentate! Database will be shared directly as [ecommercial.sql](Info/ecommercial.sql "Database Dump File") file.
 
