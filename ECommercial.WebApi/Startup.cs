@@ -8,6 +8,8 @@ using ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals;
 using ECommercial.DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,8 +30,8 @@ namespace ECommercial.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
                 
-            services.AddControllers();
-
+            services.AddControllersWithViews();
+            
             services.AddRazorPages();
 
             ManagerDependencies(services);
@@ -37,6 +39,12 @@ namespace ECommercial.WebApi
 
             services.AddDbContext<DbContext>(options => 
               options.UseNpgsql(Configuration.GetConnectionString("ECpgsql")));
+
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,14 +55,17 @@ namespace ECommercial.WebApi
                 app.UseDeveloperExceptionPage();
             }
             else{
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("Error");
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
-            
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
             app.UseRouting();
             
             app.UseAuthentication();
@@ -65,6 +76,19 @@ namespace ECommercial.WebApi
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
+            });
+
+            app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
             });
 
         }

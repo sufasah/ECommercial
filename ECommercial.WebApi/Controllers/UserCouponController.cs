@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/user-coupons")]
-    public class UserCouponController:ControllerBase
+    public class UserCouponController:Controller
     {
         
         private IUserCouponService _manager;

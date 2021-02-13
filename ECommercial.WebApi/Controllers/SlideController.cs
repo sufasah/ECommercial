@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/slides")]
-    public class SlideController:ControllerBase
+    public class SlideController:Controller
     {
         
         private ISlideService _manager;

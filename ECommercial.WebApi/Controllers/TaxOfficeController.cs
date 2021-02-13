@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/tax-offices")]
-    public class TaxOfficeController:ControllerBase
+    public class TaxOfficeController:Controller
     {
         
         private ITaxOfficeService _manager;

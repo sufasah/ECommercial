@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/shops")]
-    public class ShopController:ControllerBase
+    public class ShopController:Controller
     {
         
         private IShopService _manager;

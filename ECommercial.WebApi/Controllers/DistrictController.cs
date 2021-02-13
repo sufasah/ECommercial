@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/districts")]
-    public class DistrictController:ControllerBase
+    public class DistrictController:Controller
     {
         
         private IDistrictService _manager;

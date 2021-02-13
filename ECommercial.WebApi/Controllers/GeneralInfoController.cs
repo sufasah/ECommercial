@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/general-infos")]
-    public class GeneralInfoController:ControllerBase
+    public class GeneralInfoController:Controller
     {
         
         private IGeneralInfoService _manager;

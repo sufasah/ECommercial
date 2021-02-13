@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/logs")]
-    public class LogController:ControllerBase
+    public class LogController:Controller
     {
         
         private ILogService _manager;

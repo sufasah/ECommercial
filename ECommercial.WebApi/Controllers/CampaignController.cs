@@ -7,7 +7,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/campaigns")]
-    public class CampaignController:ControllerBase
+    public class CampaignController:Controller
     {
         
         private ICampaignService _manager;

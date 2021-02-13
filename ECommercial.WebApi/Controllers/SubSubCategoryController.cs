@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/sub-sub-categories")]
-    public class SubSubCategoryController:ControllerBase
+    public class SubSubCategoryController:Controller
     {
         
         private ISubSubCategoryService _manager;

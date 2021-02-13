@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/user-roles")]
-    public class UserRoleController:ControllerBase
+    public class UserRoleController:Controller
     {
         
         private IUserRoleService _manager;

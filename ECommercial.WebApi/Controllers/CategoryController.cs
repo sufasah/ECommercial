@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/categories")]
-    public class CategoryController:ControllerBase
+    public class CategoryController:Controller
     {
         
         private ICategoryService _manager;

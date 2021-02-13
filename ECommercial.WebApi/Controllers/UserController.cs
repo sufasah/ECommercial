@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/users")]
-    public class UserController:ControllerBase
+    public class UserController:Controller
     {
         
         private IUserService _manager;

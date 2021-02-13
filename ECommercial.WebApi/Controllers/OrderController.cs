@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/orders")]
-    public class OrderController:ControllerBase
+    public class OrderController:Controller
     {
         
         private IOrderService _manager;

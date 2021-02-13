@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/products")]
-    public class ProductController:ControllerBase
+    public class ProductController:Controller
     {
         
         private IProductService _manager;

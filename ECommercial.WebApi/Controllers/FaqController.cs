@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/faqs")]
-    public class FaqController:ControllerBase
+    public class FaqController:Controller
     {
         
         private IFaqService _manager;

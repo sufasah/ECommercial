@@ -7,7 +7,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/addresses")]
-    public class AddressController:ControllerBase
+    public class AddressController:Controller
     {
         
         private IAddressService _manager;

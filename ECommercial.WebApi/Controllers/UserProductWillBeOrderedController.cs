@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/user-products-will-be-ordered")]
-    public class UserProductWillBeOrderedController:ControllerBase
+    public class UserProductWillBeOrderedController:Controller
     {
         
         private IUserProductWillBeOrderedService _manager;

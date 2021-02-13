@@ -10,7 +10,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/faq-sub-categories")]
-    public class FaqSubCategoryController:ControllerBase
+    public class FaqSubCategoryController:Controller
     {
         
         private IFaqSubCategoryService _manager;

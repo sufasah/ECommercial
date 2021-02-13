@@ -7,7 +7,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/brands")]
-    public class BrandController:ControllerBase
+    public class BrandController:Controller
     {
         
         private IBrandService _manager;

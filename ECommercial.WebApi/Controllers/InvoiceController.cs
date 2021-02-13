@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/invoices")]
-    public class InvoiceController:ControllerBase
+    public class InvoiceController:Controller
     {
         
         private IInvoiceService _manager;

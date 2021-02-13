@@ -8,7 +8,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/user-favourite-products")]
-    public class UserFavouriteProductController:ControllerBase
+    public class UserFavouriteProductController:Controller
     {
         
         private IUserFavouriteProductService _manager;
