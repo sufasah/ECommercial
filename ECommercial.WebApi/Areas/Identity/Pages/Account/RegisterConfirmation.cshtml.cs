@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using System.Text;
 using System.Threading.Tasks;
-using ECommercial.WebApi.Areas.Identity.Data;
+using ECommercial.Entities.concrete.EntityFramework;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

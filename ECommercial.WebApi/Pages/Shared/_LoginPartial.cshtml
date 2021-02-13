@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using ECommercial.Entities.concrete.EntityFramework
+@inject SignInManager<ECUser> SignInManager
+@inject UserManager<ECUser> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
