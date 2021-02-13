@@ -1,7 +1,7 @@
 using System;
 using ECommercial.Core.Entities;
 
-namespace ECommercial.Entites.concrete
+namespace ECommercial.Entities.concrete
 {
     public class SubCategory:IEntity
     {

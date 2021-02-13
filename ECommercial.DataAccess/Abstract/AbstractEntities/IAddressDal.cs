@@ -1,5 +1,5 @@
 using ECommercial.Core.DataAccess;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 
 namespace ECommercial.DataAccess.Abstract.AbstractEntities
 {

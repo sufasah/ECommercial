@@ -2,7 +2,7 @@ using System.Reflection;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 using AutoMapper;
 using System.Collections.Generic;
 

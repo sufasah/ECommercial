@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.WebApi.Areas.Identity.Data
 {
-    public class IdentityDataContext : IdentityDbContext<User>
+    public class IdentityDataContext : IdentityDbContext<ECUser>
     {
         public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
             : base(options)

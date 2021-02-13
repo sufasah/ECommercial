@@ -3,7 +3,7 @@ using AutoMapper;
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Core.Business;
 using ECommercial.DataAccess.Abstract.AbstractEntities;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {

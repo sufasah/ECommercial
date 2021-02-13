@@ -15,9 +15,9 @@ namespace ECommercial.WebApi.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ConfirmEmailModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<ECUser> _userManager;
 
-        public ConfirmEmailModel(UserManager<User> userManager)
+        public ConfirmEmailModel(UserManager<ECUser> userManager)
         {
             _userManager = userManager;
         }

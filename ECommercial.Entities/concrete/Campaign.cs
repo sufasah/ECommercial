@@ -2,7 +2,7 @@ using System;
 using System.Security.Principal;
 using ECommercial.Core.Entities;
 
-namespace ECommercial.Entites.concrete
+namespace ECommercial.Entities.concrete
 {
     public class Campaign:IEntity
     {

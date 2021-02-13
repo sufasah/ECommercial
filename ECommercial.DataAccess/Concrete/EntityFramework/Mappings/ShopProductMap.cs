@@ -1,4 +1,4 @@
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;

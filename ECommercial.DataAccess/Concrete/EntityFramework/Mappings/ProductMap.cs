@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Reflection.Emit;
 using System.Xml.Linq;
 using System;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 using FluentNHibernate.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

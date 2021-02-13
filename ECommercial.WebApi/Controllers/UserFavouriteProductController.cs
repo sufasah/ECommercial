@@ -1,5 +1,5 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;

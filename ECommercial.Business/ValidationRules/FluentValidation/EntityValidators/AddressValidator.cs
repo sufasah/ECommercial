@@ -1,5 +1,5 @@
 using System.Data;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 using FluentValidation;
 
 namespace ECommercial.Business.ValidationRules.FluentValidation.EntityValidators

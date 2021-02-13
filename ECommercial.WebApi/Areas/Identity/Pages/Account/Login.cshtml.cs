@@ -18,13 +18,13 @@ namespace ECommercial.WebApi.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<ECUser> _userManager;
+        private readonly SignInManager<ECUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<User> signInManager, 
+        public LoginModel(SignInManager<ECUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<User> userManager)
+            UserManager<ECUser> userManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

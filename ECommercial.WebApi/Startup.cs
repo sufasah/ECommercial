@@ -7,7 +7,7 @@ using ECommercial.DataAccess.Abstract.AbstractEntities;
 using ECommercial.DataAccess.Concrete.EntityFramework;
 using ECommercial.DataAccess.Concrete.EntityFramework.EFEntityDals;
 using ECommercial.DataAccess.EntityFramework;
-using ECommercial.Entites.concrete.EntityFramework;
+using ECommercial.Entities.concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;

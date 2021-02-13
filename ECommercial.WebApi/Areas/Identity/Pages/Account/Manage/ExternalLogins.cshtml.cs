@@ -12,12 +12,12 @@ namespace ECommercial.WebApi.Areas.Identity.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<ECUser> _userManager;
+        private readonly SignInManager<ECUser> _signInManager;
 
         public ExternalLoginsModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            UserManager<ECUser> userManager,
+            SignInManager<ECUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

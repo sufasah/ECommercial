@@ -1,5 +1,5 @@
 using ECommercial.Core.Business;
-using ECommercial.Entites.concrete;
+using ECommercial.Entities.concrete;
 
 namespace ECommercial.Business.Abstract.AbstractEntities
 {

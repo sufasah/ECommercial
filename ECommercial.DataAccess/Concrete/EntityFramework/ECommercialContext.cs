@@ -1,6 +1,6 @@
 using ECommercial.DataAccess.EntitiyFramework.Mappings;
-using ECommercial.Entites.concrete;
-using ECommercial.Entites.concrete.EntityFramework;
+using ECommercial.Entities.concrete;
+using ECommercial.Entities.concrete.EntityFramework;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

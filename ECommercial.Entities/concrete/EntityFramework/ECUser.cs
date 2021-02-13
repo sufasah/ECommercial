@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace ECommercial.Entites.concrete.EntityFramework{
+namespace ECommercial.Entities.concrete.EntityFramework{
     public class ECUser:IdentityUser{
 
     }

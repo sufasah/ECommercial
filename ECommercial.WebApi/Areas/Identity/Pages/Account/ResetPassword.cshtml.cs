@@ -16,9 +16,9 @@ namespace ECommercial.WebApi.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ResetPasswordModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<ECUser> _userManager;
 
-        public ResetPasswordModel(UserManager<User> userManager)
+        public ResetPasswordModel(UserManager<ECUser> userManager)
         {
             _userManager = userManager;
         }
