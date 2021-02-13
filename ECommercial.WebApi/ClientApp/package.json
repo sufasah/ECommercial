@@ -1,11 +1,11 @@
 {
-  "name": "Ecommercial.WebApi",
+  "name": "clientapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "echo Starting && ng serve",
     "build": "ng build",
-    "build:ssr": "ng run denemeweb:server:dev",
+    "build:ssr": "ng run ClientApp:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
