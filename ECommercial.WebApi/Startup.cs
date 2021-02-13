@@ -170,9 +170,6 @@ namespace ECommercial.WebApi
             services.AddSingleton( typeof(IUserCouponDal) , typeof(EFUserCouponDal));
             services.AddSingleton( typeof(IUserCouponService) , typeof(UserCouponManager));
             
-            services.AddSingleton( typeof(IUserDal) , typeof(EFUserDal));
-            services.AddSingleton( typeof(IUserService) , typeof(UserManager));
-                        
             services.AddSingleton( typeof(IUserFavouriteProductDal) , typeof(EFUserFavouriteProductDal));
             services.AddSingleton( typeof(IUserFavouriteProductService) , typeof(UserFavouriteProductManager));
             
@@ -185,8 +182,6 @@ namespace ECommercial.WebApi
             services.AddSingleton( typeof(IRoleDal) , typeof(EFRoleDal));
             services.AddSingleton( typeof(IRoleService) , typeof(RoleManager));
 
-            services.AddSingleton( typeof(IUserRoleDal) , typeof(EFUserRoleDal));
-            services.AddSingleton( typeof(IUserRoleService) , typeof(UserRoleManager));
             
             services.AddSingleton( typeof(DbContext) , typeof(ECommercialContext));
 

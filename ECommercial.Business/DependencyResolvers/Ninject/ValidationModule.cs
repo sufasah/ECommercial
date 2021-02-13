@@ -33,12 +33,10 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IValidator<SubCategory>>().To<SubCategoryValidator>().InSingletonScope();
             Bind<IValidator<SubSubCategory>>().To<SubSubCategoryValidator>().InSingletonScope();
             Bind<IValidator<TaxOffice>>().To<TaxOfficeValidator>().InSingletonScope();
-            Bind<IValidator<User>>().To<UserValidator>().InSingletonScope();
             Bind<IValidator<UserCoupon>>().To<UserCouponValidator>().InSingletonScope();
             Bind<IValidator<UserFavouriteProduct>>().To<UserFavouriteProductValidator>().InSingletonScope();
             Bind<IValidator<UserProductWillBeOrdered>>().To<UserProductWillBeOrderedValidator>().InSingletonScope();
             Bind<IValidator<Role>>().To<RoleValidator>().InSingletonScope();
-            Bind<IValidator<UserRole>>().To<UserRoleValidator>().InSingletonScope();
             Bind<IValidator<Log>>().To<LogValidator>().InSingletonScope();
             
         }

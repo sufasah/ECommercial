@@ -88,8 +88,6 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
             Bind<IUserCouponDal>().To<EFUserCouponDal>().InSingletonScope();
             Bind<IUserCouponService>().To<UserCouponManager>().InSingletonScope();
             
-            Bind<IUserDal>().To<EFUserDal>().InSingletonScope();
-            Bind<IUserService>().To<UserManager>().InSingletonScope();
                         
             Bind<IUserFavouriteProductDal>().To<EFUserFavouriteProductDal>().InSingletonScope();
             Bind<IUserFavouriteProductService>().To<UserFavouriteProductManager>().InSingletonScope();
@@ -102,9 +100,6 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
 
             Bind<IRoleDal>().To<EFRoleDal>().InSingletonScope();
             Bind<IRoleService>().To<RoleManager>().InSingletonScope();
-
-            Bind<IUserRoleDal>().To<EFUserRoleDal>().InSingletonScope();
-            Bind<IUserRoleService>().To<UserRoleManager>().InSingletonScope();
             
             Bind<DbContext>().To<ECommercialContext>().InSingletonScope();
 
