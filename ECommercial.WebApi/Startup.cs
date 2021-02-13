@@ -29,6 +29,7 @@ namespace ECommercial.WebApi
         {
                 
             services.AddControllers();
+
             
             ManagerDependencies(services);
             services.AddSingleton<IMapper>(AutoMapperHelper.CreateConfiguration().CreateMapper());
