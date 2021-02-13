@@ -30,7 +30,8 @@ namespace ECommercial.WebApi
                 
             services.AddControllers();
 
-            
+            services.AddRazorPages();
+
             ManagerDependencies(services);
             services.AddSingleton<IMapper>(AutoMapperHelper.CreateConfiguration().CreateMapper());
 
@@ -52,6 +53,8 @@ namespace ECommercial.WebApi
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+            
             app.UseRouting();
             
             app.UseAuthentication();
@@ -61,6 +64,7 @@ namespace ECommercial.WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
 
         }
