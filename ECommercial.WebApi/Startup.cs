@@ -30,7 +30,7 @@ namespace ECommercial.WebApi
                 
             services.AddControllers();
             
-            ManagersDependencies(services);
+            ManagerDependencies(services);
             services.AddSingleton<IMapper>(AutoMapperHelper.CreateConfiguration().CreateMapper());
 
             services.AddDbContext<DbContext>(options => 
@@ -60,7 +60,7 @@ namespace ECommercial.WebApi
 
         }
         
-        private void ManagersDependencies(IServiceCollection services){
+        private void ManagerDependencies(IServiceCollection services){
 
             services.AddSingleton( typeof(IProductService) , typeof(ProductManager));
             services.AddSingleton( typeof(IProductDal) , typeof(EFProductDal));
