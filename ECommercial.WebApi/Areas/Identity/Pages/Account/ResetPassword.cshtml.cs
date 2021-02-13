@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using ECommercial.WebApi.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -15,9 +16,9 @@ namespace ECommercial.WebApi.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ResetPasswordModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public ResetPasswordModel(UserManager<IdentityUser> userManager)
+        public ResetPasswordModel(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

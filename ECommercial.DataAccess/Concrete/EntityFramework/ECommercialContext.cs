@@ -1,13 +1,12 @@
-using System.Configuration;
 using ECommercial.DataAccess.EntitiyFramework.Mappings;
 using ECommercial.Entites.concrete;
-using Microsoft.AspNetCore.Identity;
+using ECommercial.Entites.concrete.EntityFramework;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.DataAccess.EntityFramework
 {
-    public class ECommercialContext:IdentityDbContext<IdentityUser>
+    public class ECommercialContext:IdentityDbContext<ECUser>
     {
         public ECommercialContext(){   
    

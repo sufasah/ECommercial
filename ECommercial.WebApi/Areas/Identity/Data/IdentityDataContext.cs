@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommercial.WebApi.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommercial.WebApi.Areas.Identity.Data
 {
-    public class IdentityDataContext : IdentityDbContext<IdentityUser>
+    public class IdentityDataContext : IdentityDbContext<User>
     {
         public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
             : base(options)
