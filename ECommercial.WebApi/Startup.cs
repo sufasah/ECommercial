@@ -11,7 +11,7 @@ using ECommercial.Entities.concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -135,97 +135,97 @@ namespace ECommercial.WebApi
         
         private void ManagerDependencies(IServiceCollection services){
 
-            services.AddSingleton( typeof(IProductService) , typeof(ProductManager));
-            services.AddSingleton( typeof(IProductDal) , typeof(EFProductDal));
+            services.AddScoped( typeof(IProductService) , typeof(ProductManager));
+            services.AddScoped( typeof(IProductDal) , typeof(EFProductDal));
 
-            services.AddSingleton( typeof(IAddressDal) , typeof(EFAddressDal));
-            services.AddSingleton( typeof(IAddressService) , typeof(AddressManager));
+            services.AddScoped( typeof(IAddressDal) , typeof(EFAddressDal));
+            services.AddScoped( typeof(IAddressService) , typeof(AddressManager));
             
-            services.AddSingleton( typeof(IBankDal) , typeof(EFBankDal));
-            services.AddSingleton( typeof(IBankService) , typeof(BankManager));
+            services.AddScoped( typeof(IBankDal) , typeof(EFBankDal));
+            services.AddScoped( typeof(IBankService) , typeof(BankManager));
             
-            services.AddSingleton( typeof(IBrandDal) , typeof(EFBrandDal));
-            services.AddSingleton( typeof(IBrandService) , typeof(BrandManager));
+            services.AddScoped( typeof(IBrandDal) , typeof(EFBrandDal));
+            services.AddScoped( typeof(IBrandService) , typeof(BrandManager));
             
-            services.AddSingleton( typeof(ICampaignDal) , typeof(EFCampaignDal));
-            services.AddSingleton( typeof(ICampaignService) , typeof(CampaignManager));
+            services.AddScoped( typeof(ICampaignDal) , typeof(EFCampaignDal));
+            services.AddScoped( typeof(ICampaignService) , typeof(CampaignManager));
             
-            services.AddSingleton( typeof(ICategoryDal) , typeof(EFCategoryDal));
-            services.AddSingleton( typeof(ICategoryService) , typeof(CategoryManager));
+            services.AddScoped( typeof(ICategoryDal) , typeof(EFCategoryDal));
+            services.AddScoped( typeof(ICategoryService) , typeof(CategoryManager));
             
-            services.AddSingleton( typeof(ICityDal) , typeof(EFCityDal));
-            services.AddSingleton( typeof(ICityService) , typeof(CityManager));
+            services.AddScoped( typeof(ICityDal) , typeof(EFCityDal));
+            services.AddScoped( typeof(ICityService) , typeof(CityManager));
             
-            services.AddSingleton( typeof(ICouponDal) , typeof(EFCouponDal));
-            services.AddSingleton( typeof(ICouponService) , typeof(CouponManager));
+            services.AddScoped( typeof(ICouponDal) , typeof(EFCouponDal));
+            services.AddScoped( typeof(ICouponService) , typeof(CouponManager));
             
-            services.AddSingleton( typeof(IDistrictDal) , typeof(EFDistrictDal));
-            services.AddSingleton( typeof(IDistrictService) , typeof(DistrictManager));
+            services.AddScoped( typeof(IDistrictDal) , typeof(EFDistrictDal));
+            services.AddScoped( typeof(IDistrictService) , typeof(DistrictManager));
             
-            services.AddSingleton( typeof(IFaqDal) , typeof(EFFaqDal));
-            services.AddSingleton( typeof(IFaqService) , typeof(FaqManager));
+            services.AddScoped( typeof(IFaqDal) , typeof(EFFaqDal));
+            services.AddScoped( typeof(IFaqService) , typeof(FaqManager));
             
-            services.AddSingleton( typeof(IFaqCategoryDal) , typeof(EFFaqCategoryDal));
-            services.AddSingleton( typeof(IFaqCategoryService) , typeof(FaqCategoryManager));
+            services.AddScoped( typeof(IFaqCategoryDal) , typeof(EFFaqCategoryDal));
+            services.AddScoped( typeof(IFaqCategoryService) , typeof(FaqCategoryManager));
             
-            services.AddSingleton( typeof(IFaqSubCategoryDal) , typeof(EFFaqSubCategoryDal));
-            services.AddSingleton( typeof(IFaqSubCategoryService) , typeof(FaqSubCategoryManager));
+            services.AddScoped( typeof(IFaqSubCategoryDal) , typeof(EFFaqSubCategoryDal));
+            services.AddScoped( typeof(IFaqSubCategoryService) , typeof(FaqSubCategoryManager));
             
-            services.AddSingleton( typeof(IGeneralInfoDal) , typeof(EFGeneralInfoDal));
-            services.AddSingleton( typeof(IGeneralInfoService) , typeof(GeneralInfoManager));
+            services.AddScoped( typeof(IGeneralInfoDal) , typeof(EFGeneralInfoDal));
+            services.AddScoped( typeof(IGeneralInfoService) , typeof(GeneralInfoManager));
             
-            services.AddSingleton( typeof(IInvoiceDal) , typeof(EFInvoiceDal));
-            services.AddSingleton( typeof(IInvoiceService) , typeof(InvoiceManager));
+            services.AddScoped( typeof(IInvoiceDal) , typeof(EFInvoiceDal));
+            services.AddScoped( typeof(IInvoiceService) , typeof(InvoiceManager));
             
-            services.AddSingleton( typeof(IOrderDal) , typeof(EFOrderDal));
-            services.AddSingleton( typeof(IOrderService) , typeof(OrderManager));
+            services.AddScoped( typeof(IOrderDal) , typeof(EFOrderDal));
+            services.AddScoped( typeof(IOrderService) , typeof(OrderManager));
             
-            services.AddSingleton( typeof(IOrderProductDal) , typeof(EFOrderProductDal));
-            services.AddSingleton( typeof(IOrderProductService) , typeof(OrderProductManager));
+            services.AddScoped( typeof(IOrderProductDal) , typeof(EFOrderProductDal));
+            services.AddScoped( typeof(IOrderProductService) , typeof(OrderProductManager));
             
-            services.AddSingleton( typeof(IProductCampaignDal) , typeof(EFProductCampaignDal));
-            services.AddSingleton( typeof(IProductCampaignService) , typeof(ProductCampaignManager));
+            services.AddScoped( typeof(IProductCampaignDal) , typeof(EFProductCampaignDal));
+            services.AddScoped( typeof(IProductCampaignService) , typeof(ProductCampaignManager));
             
-            services.AddSingleton( typeof(IProductRateService) , typeof(ProductRateManager));
-            services.AddSingleton( typeof(IProductRateDal) , typeof(EFProductRateDal));
+            services.AddScoped( typeof(IProductRateService) , typeof(ProductRateManager));
+            services.AddScoped( typeof(IProductRateDal) , typeof(EFProductRateDal));
             
-            services.AddSingleton( typeof(IShopDal) , typeof(EFShopDal));
-            services.AddSingleton( typeof(IShopService) , typeof(ShopManager));
+            services.AddScoped( typeof(IShopDal) , typeof(EFShopDal));
+            services.AddScoped( typeof(IShopService) , typeof(ShopManager));
             
-            services.AddSingleton( typeof(IShopProductDal) , typeof(EFShopProductDal));
-            services.AddSingleton( typeof(IShopProductService) , typeof(ShopProductManager));
+            services.AddScoped( typeof(IShopProductDal) , typeof(EFShopProductDal));
+            services.AddScoped( typeof(IShopProductService) , typeof(ShopProductManager));
             
-            services.AddSingleton( typeof(ISlideDal) , typeof(EFSlideDal));
-            services.AddSingleton( typeof(ISlideService) , typeof(SlideManager));
+            services.AddScoped( typeof(ISlideDal) , typeof(EFSlideDal));
+            services.AddScoped( typeof(ISlideService) , typeof(SlideManager));
             
-            services.AddSingleton( typeof(ISubCategoryDal) , typeof(EFSubCategoryDal));
-            services.AddSingleton( typeof(ISubCategoryService) , typeof(SubCategoryManager));
+            services.AddScoped( typeof(ISubCategoryDal) , typeof(EFSubCategoryDal));
+            services.AddScoped( typeof(ISubCategoryService) , typeof(SubCategoryManager));
             
-            services.AddSingleton( typeof(ISubSubCategoryService) , typeof(SubSubCategoryManager));
-            services.AddSingleton( typeof(ISubSubCategoryDal) , typeof(EFSubSubCategoryDal));
+            services.AddScoped( typeof(ISubSubCategoryService) , typeof(SubSubCategoryManager));
+            services.AddScoped( typeof(ISubSubCategoryDal) , typeof(EFSubSubCategoryDal));
             
-            services.AddSingleton( typeof(ITaxOfficeDal) , typeof(EFTaxOfficeDal));
-            services.AddSingleton( typeof(ITaxOfficeService) , typeof(TaxOfficeManager));
+            services.AddScoped( typeof(ITaxOfficeDal) , typeof(EFTaxOfficeDal));
+            services.AddScoped( typeof(ITaxOfficeService) , typeof(TaxOfficeManager));
             
-            services.AddSingleton( typeof(IUserCouponDal) , typeof(EFUserCouponDal));
-            services.AddSingleton( typeof(IUserCouponService) , typeof(UserCouponManager));
+            services.AddScoped( typeof(IUserCouponDal) , typeof(EFUserCouponDal));
+            services.AddScoped( typeof(IUserCouponService) , typeof(UserCouponManager));
             
-            services.AddSingleton( typeof(IUserFavouriteProductDal) , typeof(EFUserFavouriteProductDal));
-            services.AddSingleton( typeof(IUserFavouriteProductService) , typeof(UserFavouriteProductManager));
+            services.AddScoped( typeof(IUserFavouriteProductDal) , typeof(EFUserFavouriteProductDal));
+            services.AddScoped( typeof(IUserFavouriteProductService) , typeof(UserFavouriteProductManager));
             
-            services.AddSingleton( typeof(IUserProductWillBeOrderedDal) , typeof(EFUserProductWillBeOrderedDal));
-            services.AddSingleton( typeof(IUserProductWillBeOrderedService) , typeof(UserProductWillBeOrderedManager));
+            services.AddScoped( typeof(IUserProductWillBeOrderedDal) , typeof(EFUserProductWillBeOrderedDal));
+            services.AddScoped( typeof(IUserProductWillBeOrderedService) , typeof(UserProductWillBeOrderedManager));
 
-            services.AddSingleton( typeof(ILogDal) , typeof(EFLogDal));
-            services.AddSingleton( typeof(ILogService) , typeof(LogManager));
+            services.AddScoped( typeof(ILogDal) , typeof(EFLogDal));
+            services.AddScoped( typeof(ILogService) , typeof(LogManager));
 
-            services.AddSingleton( typeof(IRoleDal) , typeof(EFRoleDal));
-            services.AddSingleton( typeof(IRoleService) , typeof(RoleManager));
+            services.AddScoped( typeof(IRoleDal) , typeof(EFRoleDal));
+            services.AddScoped( typeof(IRoleService) , typeof(RoleManager));
 
             
-            services.AddSingleton( typeof(DbContext) , typeof(ECommercialContext));
+            services.AddScoped( typeof(DbContext) , typeof(ECommercialContext));
 
-            services.AddSingleton( typeof(IEntityDal<>) , typeof(EFEntityDal<>));
+            services.AddScoped( typeof(IEntityDal<>) , typeof(EFEntityDal<>));
 
 
         }
