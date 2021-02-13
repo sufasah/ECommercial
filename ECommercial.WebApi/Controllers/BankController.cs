@@ -7,7 +7,7 @@ namespace ECommercial.WebApi.Controllers
 {
 
     [Route("api/banks")]
-    public class BankController:ControllerBase
+    public class BankController:Controller
     {
         
         private IBankService _manager;

@@ -16,8 +16,8 @@ namespace ECommercial.WebApi.Areas.Identity
         {
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<IdentityDataContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("IdentityDataContextConnection")));
+                    options.UseNpgsql(
+                        context.Configuration.GetConnectionString("ECpgsql")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<IdentityDataContext>();
