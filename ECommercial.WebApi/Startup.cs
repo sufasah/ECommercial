@@ -42,7 +42,7 @@ namespace ECommercial.WebApi
             services.AddSingleton<IMapper>(AutoMapperHelper.CreateConfiguration().CreateMapper());
 
             services.AddDbContext<ECommercialContext>(options => 
-              options.UseNpgsql(Configuration.GetConnectionString("ECpgsql")));
+              options.UseNpgsql(Configuration.GetConnectionString("ECpgsql"),b => b.MigrationsAssembly("ECommercial.WebApi")));
 
             services.AddDefaultIdentity<ECUser>()
             .AddEntityFrameworkStores<ECommercialContext>()

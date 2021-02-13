@@ -12,6 +12,7 @@ namespace ECommercial.DataAccess.EntityFramework
    
         }
         public ECommercialContext(DbContextOptions<ECommercialContext> options):base(options){
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -45,7 +46,7 @@ namespace ECommercial.DataAccess.EntityFramework
             modelBuilder.ApplyConfiguration(new UserFavouriteProductMap());
             modelBuilder.ApplyConfiguration(new UserProductWillBeOrderedMap());
             modelBuilder.ApplyConfiguration(new TestMap());
-            
+            base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
