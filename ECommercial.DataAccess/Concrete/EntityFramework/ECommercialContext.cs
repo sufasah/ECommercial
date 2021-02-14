@@ -5,6 +5,7 @@ using ECommercial.Entities.concrete.EntityFramework;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ECommercial.DataAccess.EntityFramework
 {
@@ -52,8 +53,8 @@ namespace ECommercial.DataAccess.EntityFramework
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;User Id=postgres;Password=123;Database=ecommercial;");
+            IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build(); 
+            optionsBuilder.UseNpgsql(configuration.GetConnectionString("ECpgsql"));
         }
         public DbSet<Address> Addresses {get;set;}
         public DbSet<Bank> Banks {get;set;}
