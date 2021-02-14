@@ -11,13 +11,12 @@ namespace ECommercial.WebApi.Migrations
             migrationBuilder.EnsureSchema(
                 name: "public");
 
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 schema: "public",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true)
@@ -32,7 +31,7 @@ namespace ECommercial.WebApi.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
@@ -60,7 +59,7 @@ namespace ECommercial.WebApi.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    RoleId = table.Column<string>(nullable: false),
+                    RoleId = table.Column<Guid>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -83,7 +82,7 @@ namespace ECommercial.WebApi.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    UserId = table.Column<string>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -107,7 +106,7 @@ namespace ECommercial.WebApi.Migrations
                     LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
                     ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -126,8 +125,8 @@ namespace ECommercial.WebApi.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
-                    RoleId = table.Column<string>(nullable: false)
+                    UserId = table.Column<Guid>(nullable: false),
+                    RoleId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -153,7 +152,7 @@ namespace ECommercial.WebApi.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
                     LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
                     Name = table.Column<string>(maxLength: 128, nullable: false),
                     Value = table.Column<string>(nullable: true)
@@ -217,7 +216,149 @@ namespace ECommercial.WebApi.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            
+            migrationBuilder.DropTable(
+                name: "addresses",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoleClaims",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserClaims",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserLogins",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserRoles",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserTokens",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "banks",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "brands",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "campaigns",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "categories",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "cities",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "coupons",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "districts",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "faq_subcategories",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "faqs",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "FaqSubCategories",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "general_infos",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "invoices",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "logs",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "order_products",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "orders",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "product_campaigns",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "product_rates",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "products",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "shop_products",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "shops",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "slides",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "subcategories",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "subsubcategories",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "tax_offices",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "tests",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "user_coupons",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "user_favourite_products",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "user_products_will_be_ordered",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles",
+                schema: "public");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers",
+                schema: "public");
         }
     }
 }
