@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class UserFavouriteProductManager : EntityServiceBase<UserFavouriteProduct>,IUserFavouriteProductService
     {
-        private IUserFavouriteProductDal _userFavouriteProductDal;
-        private IEntityDal<UserFavouriteProduct> _entityDal;
-        private IMapper _mapper;
+        private readonly IUserFavouriteProductDal _userFavouriteProductDal;
+        private readonly IEntityDal<UserFavouriteProduct> _entityDal;
+        private readonly IMapper _mapper;
         public UserFavouriteProductManager(IUserFavouriteProductDal userFavouriteProductDal,IEntityDal<UserFavouriteProduct> entityDal,IMapper mapper):base(userFavouriteProductDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _userFavouriteProductDal = userFavouriteProductDal;

@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class SlideManager : EntityServiceBase<Slide>,ISlideService
     {
-        private ISlideDal _slideDal;
-        private IEntityDal<Slide> _entityDal;
-        private IMapper _mapper;
+        private readonly ISlideDal _slideDal;
+        private readonly IEntityDal<Slide> _entityDal;
+        private readonly IMapper _mapper;
         public SlideManager(ISlideDal slideDal,IEntityDal<Slide> entityDal,IMapper mapper):base(slideDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _slideDal = slideDal;

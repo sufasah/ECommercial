@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class TaxOfficeController:ApiController
     {
         
-        private ITaxOfficeService _manager;
+        private readonly ITaxOfficeService _manager;
         public TaxOfficeController(ITaxOfficeService manager)
         {
             _manager=manager;

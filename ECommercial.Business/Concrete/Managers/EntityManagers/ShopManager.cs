@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class ShopManager : EntityServiceBase<Shop>,IShopService
     {
-        private IShopDal _shopDal;
-        private IEntityDal<Shop> _entityDal;
-        private IMapper _mapper;
+        private readonly IShopDal _shopDal;
+        private readonly IEntityDal<Shop> _entityDal;
+        private readonly IMapper _mapper;
         public ShopManager(IShopDal shopDal,IEntityDal<Shop> entityDal,IMapper mapper):base(shopDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _shopDal = shopDal;

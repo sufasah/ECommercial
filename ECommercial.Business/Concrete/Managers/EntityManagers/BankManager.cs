@@ -9,9 +9,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class BankManager : EntityServiceBase<Bank>,IBankService
     {
-        private IBankDal _bankDal;
-        private IEntityDal<Bank> _entityDal;
-        private IMapper _mapper;
+        private readonly IBankDal _bankDal;
+        private readonly IEntityDal<Bank> _entityDal;
+        private readonly IMapper _mapper;
         public BankManager(IBankDal bankDal,IEntityDal<Bank> entityDal,IMapper mapper):base(bankDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _bankDal = bankDal;

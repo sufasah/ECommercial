@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class UserProductWillBeOrderedManager : EntityServiceBase<UserProductWillBeOrdered>,IUserProductWillBeOrderedService
     {
-        private IUserProductWillBeOrderedDal _userProductWillBeOrderedDal;
-        private IEntityDal<UserProductWillBeOrdered> _entityDal;
-        private IMapper _mapper;
+        private readonly IUserProductWillBeOrderedDal _userProductWillBeOrderedDal;
+        private readonly IEntityDal<UserProductWillBeOrdered> _entityDal;
+        private readonly IMapper _mapper;
         public UserProductWillBeOrderedManager(IUserProductWillBeOrderedDal userProductWillBeOrderedDal,IEntityDal<UserProductWillBeOrdered> entityDal,IMapper mapper):base(userProductWillBeOrderedDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _userProductWillBeOrderedDal = userProductWillBeOrderedDal;

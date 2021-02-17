@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class FaqController:ApiController
     {
         
-        private IFaqService _manager;
+        private readonly IFaqService _manager;
         public FaqController(IFaqService manager)
         {
             _manager=manager;

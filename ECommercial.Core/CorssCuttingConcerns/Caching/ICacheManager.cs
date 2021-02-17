@@ -4,7 +4,7 @@ namespace ECommercial.Core.CorssCuttingConcerns.Caching
     {
          T Get<T>(string key);
          void Add(string key,object data,int cacheTimeMinutes);
-         bool isAdd(string key);
+         bool IsAdded(string key);
          void Remove(string key);
          void Clear();
     }

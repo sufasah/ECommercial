@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class ProductCampaignController:ApiController
     {
         
-        private IProductCampaignService _manager;
+        private readonly IProductCampaignService _manager;
         public ProductCampaignController(IProductCampaignService manager)
         {
             _manager=manager;

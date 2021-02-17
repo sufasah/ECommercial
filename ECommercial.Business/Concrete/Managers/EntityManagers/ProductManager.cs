@@ -9,9 +9,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class ProductManager : EntityServiceBase<Product>,IProductService
     {
-        private IProductDal _productDal;
-        private IEntityDal<Product> _entityDal;
-        private IMapper _mapper;
+        private readonly IProductDal _productDal;
+        private readonly IEntityDal<Product> _entityDal;
+        private readonly IMapper _mapper;
         public ProductManager(IProductDal productDal,IEntityDal<Product> entityDal,IMapper mapper):base(productDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _productDal = productDal;

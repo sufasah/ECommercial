@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class ShopProductController:ApiController
     {
         
-        private IShopProductService _manager;
+        private readonly IShopProductService _manager;
         public ShopProductController(IShopProductService manager)
         {
             _manager=manager;

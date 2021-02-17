@@ -10,7 +10,7 @@ namespace ECommercial.DataAccess.Concrete.EntityFramework
     public class EFEntityDal<TEntity> : IEntityDal<TEntity>
         where TEntity:class,IEntity,new()
     {
-        private DbContext _context;
+        private readonly DbContext _context;
 
         public EFEntityDal(DbContext context)
         {

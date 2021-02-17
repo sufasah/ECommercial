@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class ProductRateController:ApiController
     {
         
-        private IProductRateService _manager;
+        private readonly IProductRateService _manager;
         public ProductRateController(IProductRateService manager)
         {
             _manager=manager;

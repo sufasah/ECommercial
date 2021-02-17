@@ -11,7 +11,7 @@ namespace ECommercial.WebApi.Controllers
     public class CampaignController:ApiController
     {
         
-        private ICampaignService _manager;
+        private readonly ICampaignService _manager;
         public CampaignController(ICampaignService manager) 
         {
             _manager=manager;

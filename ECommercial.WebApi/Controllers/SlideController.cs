@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class SlideController:ApiController
     {
         
-        private ISlideService _manager;
+        private readonly ISlideService _manager;
         public SlideController(ISlideService manager)
         {
             _manager=manager;

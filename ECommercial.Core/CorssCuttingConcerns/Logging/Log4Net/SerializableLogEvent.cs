@@ -6,7 +6,7 @@ namespace ECommercial.Core.CorssCuttingConcerns.Logging.Log4Net
     [Serializable]
     public class SerializableLogEvent
     {
-        LoggingEvent _loggingEvent;
+        private readonly LoggingEvent _loggingEvent;
 
         public SerializableLogEvent(LoggingEvent loggingEvent){
             _loggingEvent=loggingEvent;

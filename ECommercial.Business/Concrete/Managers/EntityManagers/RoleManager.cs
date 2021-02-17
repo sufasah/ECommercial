@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class RoleManager : EntityServiceBase<Role>,IRoleService
     {
-        private IRoleDal _roleDal;
-        private IEntityDal<Role> _entityDal;
-        private IMapper _mapper;
+        private readonly IRoleDal _roleDal;
+        private readonly IEntityDal<Role> _entityDal;
+        private readonly IMapper _mapper;
         public RoleManager(IRoleDal roleDal,IEntityDal<Role> entityDal,IMapper mapper):base(roleDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _roleDal = roleDal;

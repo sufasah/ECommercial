@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class InvoiceManager : EntityServiceBase<Invoice>,IInvoiceService
     {
-        private IInvoiceDal _invoiceDal;
-        private IEntityDal<Invoice> _entityDal;
-        private IMapper _mapper;
+        private readonly IInvoiceDal _invoiceDal;
+        private readonly IEntityDal<Invoice> _entityDal;
+        private readonly IMapper _mapper;
         public InvoiceManager(IInvoiceDal invoiceDal,IEntityDal<Invoice> entityDal,IMapper mapper):base(invoiceDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _invoiceDal = invoiceDal;

@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class SubCategoryManager : EntityServiceBase<SubCategory>,ISubCategoryService
     {
-        private ISubCategoryDal _subCategoryDal;
-        private IEntityDal<SubCategory> _entityDal;
-        private IMapper _mapper;
+        private readonly ISubCategoryDal _subCategoryDal;
+        private readonly IEntityDal<SubCategory> _entityDal;
+        private readonly IMapper _mapper;
         public SubCategoryManager(ISubCategoryDal subCategoryDal,IEntityDal<SubCategory> entityDal,IMapper mapper):base(subCategoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _subCategoryDal = subCategoryDal;

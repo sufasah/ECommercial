@@ -7,7 +7,7 @@ namespace ECommercial.Business.DependencyResolvers.Ninject
     {
         private static StandardKernel _kernel;
         public static StandardKernel StandardKernelInstance(){
-            _kernel=_kernel??new StandardKernel();
+            _kernel ??= new StandardKernel();
             return _kernel;
         }
         public static T GetInstance<T>(NinjectModule module){

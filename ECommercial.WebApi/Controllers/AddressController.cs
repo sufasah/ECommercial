@@ -10,7 +10,7 @@ namespace ECommercial.WebApi.Controllers
     public class AddressController:ApiController
     {
         
-        private IAddressService _manager;
+        private readonly IAddressService _manager;
         public AddressController(IAddressService manager) 
         {
             _manager=manager;

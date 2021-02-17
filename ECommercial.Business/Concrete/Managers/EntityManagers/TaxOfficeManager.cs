@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class TaxOfficeManager : EntityServiceBase<TaxOffice>,ITaxOfficeService
     {
-        private ITaxOfficeDal _taxOfficeDal;
-        private IEntityDal<TaxOffice> _entityDal;
-        private IMapper _mapper;
+        private readonly ITaxOfficeDal _taxOfficeDal;
+        private readonly IEntityDal<TaxOffice> _entityDal;
+        private readonly IMapper _mapper;
         public TaxOfficeManager(ITaxOfficeDal taxOfficeDal,IEntityDal<TaxOffice> entityDal,IMapper mapper):base(taxOfficeDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _taxOfficeDal = taxOfficeDal;

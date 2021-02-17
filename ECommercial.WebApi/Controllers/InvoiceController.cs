@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class InvoiceController:ApiController
     {
         
-        private IInvoiceService _manager;
+        private readonly IInvoiceService _manager;
         public InvoiceController(IInvoiceService manager)
         {
             _manager=manager;

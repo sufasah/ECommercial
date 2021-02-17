@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class DistrictController:ApiController
     {
         
-        private IDistrictService _manager;
+        private readonly IDistrictService _manager;
         public DistrictController(IDistrictService manager)
         {
             _manager=manager;

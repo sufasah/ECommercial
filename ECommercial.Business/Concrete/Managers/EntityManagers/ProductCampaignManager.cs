@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class ProductCampaignManager : EntityServiceBase<ProductCampaign>,IProductCampaignService
     {
-        private IProductCampaignDal _productCampaignDal;
-        private IEntityDal<ProductCampaign> _entityDal;
-        private IMapper _mapper;
+        private readonly IProductCampaignDal _productCampaignDal;
+        private readonly IEntityDal<ProductCampaign> _entityDal;
+        private readonly IMapper _mapper;
         public ProductCampaignManager(IProductCampaignDal productCampaignDal,IEntityDal<ProductCampaign> entityDal,IMapper mapper):base(productCampaignDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _productCampaignDal = productCampaignDal;

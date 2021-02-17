@@ -15,9 +15,9 @@ namespace ECommercial.Core.CorssCuttingConcerns.Caching.Microsoft
         }
         public MemoryCachingManager()
         {
-            Cache=createInstance();
+            Cache=CreateInstance();
         }
-        public IMemoryCache createInstance(){
+        public IMemoryCache CreateInstance(){
             return new MemoryCache(new MemoryCacheOptions(){ SizeLimit=1024*1024});
         }
         
@@ -32,7 +32,7 @@ namespace ECommercial.Core.CorssCuttingConcerns.Caching.Microsoft
 
         public void Clear()
         {
-            Cache = createInstance();// since .net core, linq queries cant be usable for cache object. So it cant be iterable through all items to remove.
+            Cache = CreateInstance();// since .net core, linq queries cant be usable for cache object. So it cant be iterable through all items to remove.
         }
 
         public T Get<T>(string key)
@@ -40,7 +40,7 @@ namespace ECommercial.Core.CorssCuttingConcerns.Caching.Microsoft
             return (T)Cache.Get(key);
         }
 
-        public bool isAdd(string key)
+        public bool IsAdded(string key)
         {
             object x;
             return Cache.TryGetValue(key,out x);

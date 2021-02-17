@@ -9,10 +9,10 @@ using System.Collections.Generic;
 namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class FaqSubCategoryManager : EntityServiceBase<FaqSubCategory>,IFaqSubCategoryService
-    {
-        private IFaqSubCategoryDal _faqSubCategoryDal;
-        private IEntityDal<FaqSubCategory> _entityDal;
-        private IMapper _mapper;
+    { 
+        private readonly IFaqSubCategoryDal _faqSubCategoryDal;
+        private readonly IEntityDal<FaqSubCategory> _entityDal;
+        private readonly IMapper _mapper;
         public FaqSubCategoryManager(IFaqSubCategoryDal faqSubCategoryDal,IEntityDal<FaqSubCategory> entityDal,IMapper mapper):base(faqSubCategoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _faqSubCategoryDal = faqSubCategoryDal;

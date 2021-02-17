@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class RoleController:ApiController
     {
         
-        private IRoleService _manager;
+        private readonly IRoleService _manager;
         public RoleController(IRoleService manager)
         {
             _manager=manager;

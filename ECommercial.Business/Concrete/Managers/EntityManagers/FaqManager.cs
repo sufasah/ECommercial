@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class FaqManager : EntityServiceBase<Faq>,IFaqService
     {
-        private IFaqDal _faqDal;
-        private IEntityDal<Faq> _entityDal;
-        private IMapper _mapper;
+        private readonly IFaqDal _faqDal;
+        private readonly IEntityDal<Faq> _entityDal;
+        private readonly IMapper _mapper;
         public FaqManager(IFaqDal faqDal,IEntityDal<Faq> entityDal,IMapper mapper):base(faqDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _faqDal = faqDal;

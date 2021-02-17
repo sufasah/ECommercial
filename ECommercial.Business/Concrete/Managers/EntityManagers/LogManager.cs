@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class LogManager : EntityServiceBase<Log>,ILogService
     {
-        private ILogDal _logDal;
-        private IEntityDal<Log> _entityDal;
-        private IMapper _mapper;
+        private readonly ILogDal _logDal;
+        private readonly IEntityDal<Log> _entityDal;
+        private readonly IMapper _mapper;
         public LogManager(ILogDal logDal,IEntityDal<Log> entityDal,IMapper mapper):base(logDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _logDal = logDal;

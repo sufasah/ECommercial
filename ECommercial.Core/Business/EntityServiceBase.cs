@@ -12,9 +12,9 @@ namespace ECommercial.Core.Business
     public abstract class EntityServiceBase<TEntity> : IService<TEntity>
         where TEntity :class,IEntity, new()
     {
-        private IEntityRepository<TEntity> _entityRepository;
-        private MemberInfo _entityPrimaryKeyMember;
-        private IMapper _mapper;
+        private readonly IEntityRepository<TEntity> _entityRepository;
+        private readonly MemberInfo _entityPrimaryKeyMember;
+        private readonly IMapper _mapper;
         protected EntityServiceBase(IEntityRepository<TEntity> entityRepository, MemberInfo entityPrimaryKeyMember,IMapper mapper)
         {
             _entityRepository = entityRepository;

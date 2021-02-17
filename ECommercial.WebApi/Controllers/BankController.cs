@@ -11,7 +11,7 @@ namespace ECommercial.WebApi.Controllers
     public class BankController:ApiController
     {
         
-        private IBankService _manager;
+        private readonly IBankService _manager;
         public BankController(IBankService manager) 
         {
             _manager=manager;

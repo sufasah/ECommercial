@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class DistrictManager : EntityServiceBase<District>,IDistrictService
     {
-        private IDistrictDal _districtDal;
-        private IEntityDal<District> _entityDal;
-        private IMapper _mapper;
+        private readonly IDistrictDal _districtDal;
+        private readonly IEntityDal<District> _entityDal;
+        private readonly IMapper _mapper;
         public DistrictManager(IDistrictDal districtDal,IEntityDal<District> entityDal,IMapper mapper):base(districtDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _districtDal = districtDal;

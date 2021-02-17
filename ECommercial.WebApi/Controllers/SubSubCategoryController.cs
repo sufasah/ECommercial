@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class SubSubCategoryController:ApiController
     {
         
-        private ISubSubCategoryService _manager;
+        private readonly ISubSubCategoryService _manager;
         public SubSubCategoryController(ISubSubCategoryService manager)
         {
             _manager=manager;

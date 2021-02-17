@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class GeneralInfoManager : EntityServiceBase<GeneralInfo>,IGeneralInfoService
     {
-        private IGeneralInfoDal _generalInfoDal;
-        private IEntityDal<GeneralInfo> _entityDal;
-        private IMapper _mapper;
+        private readonly IGeneralInfoDal _generalInfoDal;
+        private readonly IEntityDal<GeneralInfo> _entityDal;
+        private readonly IMapper _mapper;
         public GeneralInfoManager(IGeneralInfoDal generalInfoDal,IEntityDal<GeneralInfo> entityDal,IMapper mapper):base(generalInfoDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _generalInfoDal = generalInfoDal;

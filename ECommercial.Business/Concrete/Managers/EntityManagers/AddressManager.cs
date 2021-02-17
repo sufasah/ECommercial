@@ -9,9 +9,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class AddressManager : EntityServiceBase<Address>,IAddressService
     {
-        private IAddressDal _addressDal;
-        private IEntityDal<Address> _entityDal;
-        private IMapper _mapper;
+        private readonly IAddressDal _addressDal;
+        private readonly IEntityDal<Address> _entityDal;
+        private readonly IMapper _mapper;
         public AddressManager(IAddressDal AddressDal,IEntityDal<Address> entityDal,IMapper mapper):base(AddressDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _addressDal = AddressDal;

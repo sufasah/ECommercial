@@ -10,9 +10,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class OrderManager : EntityServiceBase<Order>,IOrderService
     {
-        private IOrderDal _orderDal;
-        private IEntityDal<Order> _entityDal;
-        private IMapper _mapper;
+        private readonly IOrderDal _orderDal;
+        private readonly IEntityDal<Order> _entityDal;
+        private readonly IMapper _mapper;
         public OrderManager(IOrderDal orderDal,IEntityDal<Order> entityDal,IMapper mapper):base(orderDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _orderDal = orderDal;

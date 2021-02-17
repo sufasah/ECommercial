@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class UserProductWillBeOrderedController:ApiController
     {
         
-        private IUserProductWillBeOrderedService _manager;
+        private readonly IUserProductWillBeOrderedService _manager;
         public UserProductWillBeOrderedController(IUserProductWillBeOrderedService manager)
         {
             _manager=manager;

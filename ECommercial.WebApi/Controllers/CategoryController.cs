@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class CategoryController:ApiController
     {
         
-        private ICategoryService _manager;
+        private readonly ICategoryService _manager;
         public CategoryController(ICategoryService manager)
         {
             _manager=manager;

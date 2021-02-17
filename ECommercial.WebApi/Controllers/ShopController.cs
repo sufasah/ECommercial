@@ -11,7 +11,7 @@ namespace ECommercial.WebApi.Controllers
     public class ShopController:ApiController
     {
         
-        private IShopService _manager;
+        private readonly IShopService _manager;
         public ShopController(IShopService manager)
         {
             _manager=manager;

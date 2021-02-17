@@ -9,9 +9,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class CategoryManager : EntityServiceBase<Category>,ICategoryService
     {
-        private ICategoryDal _categoryDal;
-        private IEntityDal<Category> _entityDal;
-        private IMapper _mapper;
+        private readonly ICategoryDal _categoryDal;
+        private readonly IEntityDal<Category> _entityDal;
+        private readonly IMapper _mapper;
         public CategoryManager(ICategoryDal categoryDal,IEntityDal<Category> entityDal,IMapper mapper):base(categoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _categoryDal = categoryDal;

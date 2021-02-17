@@ -11,7 +11,7 @@ namespace ECommercial.WebApi.Controllers
     public class BrandController:ApiController
     {
         
-        private IBrandService _manager;
+        private readonly IBrandService _manager;
         public BrandController(IBrandService manager)
         {
             _manager=manager;

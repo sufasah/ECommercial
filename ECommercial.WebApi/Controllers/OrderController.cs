@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class OrderController:ApiController
     {
         
-        private IOrderService _manager;
+        private readonly IOrderService _manager;
         public OrderController(IOrderService manager)
         {
             _manager=manager;

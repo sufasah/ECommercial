@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class UserFavouriteProductController:ApiController
     {
         
-        private IUserFavouriteProductService _manager;
+        private readonly IUserFavouriteProductService _manager;
         public UserFavouriteProductController(IUserFavouriteProductService manager)
         {
             _manager=manager;

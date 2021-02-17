@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class CityController:ApiController
     {
         
-        private ICityService _manager;
+        private readonly ICityService _manager;
         public CityController(ICityService manager)
         {
             _manager=manager;

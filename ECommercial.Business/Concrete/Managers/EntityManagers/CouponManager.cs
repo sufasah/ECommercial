@@ -8,9 +8,9 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class CouponManager : EntityServiceBase<Coupon>,ICouponService
     {
-        private ICouponDal _couponDal;
-        private IEntityDal<Coupon> _entityDal;
-        private IMapper _mapper;
+        private readonly ICouponDal _couponDal;
+        private readonly IEntityDal<Coupon> _entityDal;
+        private readonly IMapper _mapper;
         public CouponManager(ICouponDal couponDal,IEntityDal<Coupon> entityDal,IMapper mapper):base(couponDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _couponDal = couponDal;

@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class LogController:ApiController
     {
         
-        private ILogService _manager;
+        private readonly ILogService _manager;
         public LogController(ILogService manager)
         {
             _manager=manager;

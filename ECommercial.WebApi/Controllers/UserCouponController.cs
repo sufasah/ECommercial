@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class UserCouponController:ApiController
     {
         
-        private IUserCouponService _manager;
+        private readonly IUserCouponService _manager;
         public UserCouponController(IUserCouponService manager)
         {
             _manager=manager;

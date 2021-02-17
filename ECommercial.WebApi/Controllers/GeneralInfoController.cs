@@ -12,7 +12,7 @@ namespace ECommercial.WebApi.Controllers
     public class GeneralInfoController:ApiController
     {
         
-        private IGeneralInfoService _manager;
+        private readonly IGeneralInfoService _manager;
         public GeneralInfoController(IGeneralInfoService manager)
         {
             _manager=manager;

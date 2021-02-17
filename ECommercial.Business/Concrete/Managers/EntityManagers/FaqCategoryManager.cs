@@ -10,10 +10,10 @@ namespace ECommercial.Business.Concrete.Managers.EntityManagers
 {
     public class FaqCategoryManager : EntityServiceBase<FaqCategory>,IFaqCategoryService
     {
-        private IFaqCategoryDal _faqCategoryDal;
+        private readonly IFaqCategoryDal _faqCategoryDal;
         
-        private IEntityDal<FaqCategory> _entityDal;
-        private IMapper _mapper;
+        private readonly IEntityDal<FaqCategory> _entityDal;
+        private readonly IMapper _mapper;
         public FaqCategoryManager(IFaqCategoryDal faqCategoryDal,IEntityDal<FaqCategory> entityDal,IMapper mapper):base(faqCategoryDal,entityDal.GetPrimaryKeyMember(),mapper)
         {
             _faqCategoryDal = faqCategoryDal;
