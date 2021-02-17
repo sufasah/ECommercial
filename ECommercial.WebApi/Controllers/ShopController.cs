@@ -1,14 +1,14 @@
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using ECommercial.WebApi.Controllers.BaseControllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/shops")]
-    public class ShopController:Controller
+    [Route("shops")]
+    public class ShopController:ApiController
     {
         
         private IShopService _manager;

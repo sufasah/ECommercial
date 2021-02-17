@@ -1,14 +1,15 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/sub-sub-categories")]
-    public class SubSubCategoryController:Controller
+    [Route("sub-sub-categories")]
+    public class SubSubCategoryController:ApiController
     {
         
         private ISubSubCategoryService _manager;

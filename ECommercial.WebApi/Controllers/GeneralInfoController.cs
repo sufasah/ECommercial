@@ -1,14 +1,15 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/general-infos")]
-    public class GeneralInfoController:Controller
+    [Route("general-infos")]
+    public class GeneralInfoController:ApiController
     {
         
         private IGeneralInfoService _manager;

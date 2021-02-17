@@ -1,14 +1,15 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/product-rates")]
-    public class ProductRateController:Controller
+    [Route("product-rates")]
+    public class ProductRateController:ApiController
     {
         
         private IProductRateService _manager;

@@ -2,12 +2,12 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
-
+using ECommercial.WebApi.Controllers.BaseControllers;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/addresses")]
-    public class AddressController:Controller
+    [Route("addresses")]
+    public class AddressController:ApiController
     {
         
         private IAddressService _manager;
@@ -23,6 +23,7 @@ namespace ECommercial.WebApi.Controllers
                 return NoResult();
             return Ok(entity);
         }
+        
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(string id){

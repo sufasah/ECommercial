@@ -1,13 +1,14 @@
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
+using ECommercial.WebApi.Controllers.BaseControllers;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/banks")]
-    public class BankController:Controller
+    [Route("banks")]
+    public class BankController:ApiController
     {
         
         private IBankService _manager;

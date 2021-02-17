@@ -1,14 +1,15 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/user-products-will-be-ordered")]
-    public class UserProductWillBeOrderedController:Controller
+    [Route("user-products-will-be-ordered")]
+    public class UserProductWillBeOrderedController:ApiController
     {
         
         private IUserProductWillBeOrderedService _manager;

@@ -2,12 +2,13 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/campaigns")]
-    public class CampaignController:Controller
+    [Route("campaigns")]
+    public class CampaignController:ApiController
     {
         
         private ICampaignService _manager;

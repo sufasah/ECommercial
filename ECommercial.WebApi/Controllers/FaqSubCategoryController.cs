@@ -1,6 +1,7 @@
 using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 
 
@@ -9,8 +10,8 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/faq-sub-categories")]
-    public class FaqSubCategoryController:Controller
+    [Route("faq-sub-categories")]
+    public class FaqSubCategoryController:ApiController
     {
         
         private IFaqSubCategoryService _manager;

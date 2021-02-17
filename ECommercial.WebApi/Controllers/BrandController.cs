@@ -2,12 +2,13 @@ using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("api/brands")]
-    public class BrandController:Controller
+    [Route("brands")]
+    public class BrandController:ApiController
     {
         
         private IBrandService _manager;
