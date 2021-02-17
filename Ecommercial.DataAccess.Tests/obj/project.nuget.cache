@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1OBmauVdbUIScVPigd53QIAcDo5YeNFKTVtIeSKWQ5i6rO5a4CxbXSZThzTNh7Zp7NrY1T+3cAMExjbofjxNZA==",
+  "dgSpecHash": "oZPsa8bwPpCtDTj3pIUHZj63tLriR/sU6GxeQcjywHus6esYmBHl33sYO7INS75X5ZIqTJGMbZnDymjTWoB3dQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\ECommercial.DataAccess.Tests.csproj",
+  "projectFilePath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\Ecommercial.DataAccess.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nihaSWin\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\nihaSWin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

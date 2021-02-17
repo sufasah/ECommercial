@@ -2171,7 +2171,6 @@
           "AutoMapper": "10.1.1",
           "FluentNHibernate": "2.1.2",
           "FluentValidation.AspNetCore": "9.2.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "NHibernate": "5.3.3",
           "Newtonsoft.Json": "12.0.3",
@@ -7212,9 +7211,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\ECommercial.DataAccess.Tests.csproj",
-      "projectName": "ECommercial.DataAccess.Tests",
-      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\ECommercial.DataAccess.Tests.csproj",
+      "projectUniqueName": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\Ecommercial.DataAccess.Tests.csproj",
+      "projectName": "Ecommercial.DataAccess.Tests",
+      "projectPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\Ecommercial.DataAccess.Tests.csproj",
       "packagesPath": "C:\\Users\\nihaSWin\\.nuget\\packages\\",
       "outputPath": "c:\\Users\\nihaSWin\\Desktop\\Kisisel\\yazilim\\Projeler\\ECommercial\\ECommercial.DataAccess.Tests\\obj\\",
       "projectStyle": "PackageReference",

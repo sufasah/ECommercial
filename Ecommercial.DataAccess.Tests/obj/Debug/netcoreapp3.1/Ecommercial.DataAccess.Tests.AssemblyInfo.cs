@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ECommercial.DataAccess.Tests")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Ecommercial.DataAccess.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ECommercial.DataAccess.Tests")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ECommercial.DataAccess.Tests")]
+[assembly: System.Reflection.AssemblyProductAttribute("Ecommercial.DataAccess.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Ecommercial.DataAccess.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.
