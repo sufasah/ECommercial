@@ -20,7 +20,7 @@ namespace ECommercial.WebApi.Controllers
             var entity =_manager.GetAll();
             if(entity.Count==0)
                 return NoResult();
-            return Ok(entity);
+            return ResponseJson(entity);
         }
         [HttpGet]
         [Route("{id}")]
@@ -28,12 +28,12 @@ namespace ECommercial.WebApi.Controllers
             var entity =_manager.GetByPrimaryKey(id);
             if(entity==null)
                 return NoResult();
-            return Ok(entity);
+            return ResponseJson(entity);
         }
         [HttpPost]
         public IActionResult Post([FromBody]Bank body){
             var entity = _manager.Add(body);
-            return Ok(entity);
+            return ResponseJson(entity);
         }
         [HttpDelete]
         [Route("{id}")]
@@ -42,13 +42,13 @@ namespace ECommercial.WebApi.Controllers
             if(entity==null)
                 return NoResult();
             _manager.Delete(entity);
-            return Ok(entity);
+            return ResponseJson(entity);
         }
         [HttpPut]
         [Route("{id}")]
         public IActionResult Put([FromBody]Bank body){
             var entity = _manager.Update(body);
-            return Ok(_manager.Update(entity));
+            return ResponseJson(_manager.Update(entity));
         }
 
         private IActionResult NoResult(){
