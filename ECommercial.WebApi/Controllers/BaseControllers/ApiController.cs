@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommercial.WebApi.Controllers.BaseControllers
 {
-    [Route("v1/")]
+    [Route("api/v1/")]
     public class ApiController:Controller
     {
         
