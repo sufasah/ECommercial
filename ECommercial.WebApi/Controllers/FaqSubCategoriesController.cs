@@ -3,17 +3,18 @@ using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using ECommercial.WebApi.Controllers.BaseControllers;
 
+
+
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("invoices")]
-    public class InvoiceController:ApiController
+    public class FaqSubCategoriesController:ApiController
     {
         
-        private readonly IInvoiceService _manager;
-        public InvoiceController(IInvoiceService manager)
+        private readonly IFaqSubCategoryService _manager;
+        public FaqSubCategoriesController(IFaqSubCategoryService manager)
         {
             _manager=manager;
         }
@@ -33,7 +34,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Invoice body){
+        public IActionResult Post([FromBody]FaqSubCategory body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +49,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Invoice body){
+        public IActionResult Put([FromBody]FaqSubCategory body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

@@ -1,22 +1,21 @@
-using ECommercial.Business.Abstract.AbstractEntities;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
-using ECommercial.WebApi.Controllers.BaseControllers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ECommercial.WebApi.Controllers.BaseControllers;
+
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("shops")]
-    public class ShopController:ApiController
+    public class SlidesController:ApiController
     {
         
-        private readonly IShopService _manager;
-        public ShopController(IShopService manager)
+        private readonly ISlideService _manager;
+        public SlidesController(ISlideService manager)
         {
             _manager=manager;
         }
-        [Authorize]
         [HttpGet]
         public IActionResult GetAll(){
             var entity =_manager.GetAll();
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Shop body){
+        public IActionResult Post([FromBody]Slide body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Shop body){
+        public IActionResult Put([FromBody]Slide body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }
@@ -56,6 +55,5 @@ namespace ECommercial.WebApi.Controllers
         private IActionResult NoResult(){
             return BadRequest("[{}]");
         }
-
     }
 }

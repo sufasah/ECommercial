@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("faq-categories")]
-    public class FaqCategoryController:ApiController
+    public class LogsController:ApiController
     {
         
-        private readonly IFaqCategoryService _manager;
-        public FaqCategoryController(IFaqCategoryService manager)
+        private readonly ILogService _manager;
+        public LogsController(ILogService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]FaqCategory body){
+        public IActionResult Post([FromBody]Log body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]FaqCategory body){
+        public IActionResult Put([FromBody]Log body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

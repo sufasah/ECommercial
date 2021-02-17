@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("sub-categories")]
-    public class SubCategoryController:ApiController
+    public class TaxOfficesController:ApiController
     {
         
-        private readonly ISubCategoryService _manager;
-        public SubCategoryController(ISubCategoryService manager)
+        private readonly ITaxOfficeService _manager;
+        public TaxOfficesController(ITaxOfficeService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]SubCategory body){
+        public IActionResult Post([FromBody]TaxOffice body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]SubCategory body){
+        public IActionResult Put([FromBody]TaxOffice body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

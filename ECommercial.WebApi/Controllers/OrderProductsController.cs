@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("faqs")]
-    public class FaqController:ApiController
+    public class OrderProductsController:ApiController
     {
         
-        private readonly IFaqService _manager;
-        public FaqController(IFaqService manager)
+        private readonly IOrderProductService _manager;
+        public OrderProductsController(IOrderProductService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Faq body){
+        public IActionResult Post([FromBody]OrderProduct body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Faq body){
+        public IActionResult Put([FromBody]OrderProduct body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

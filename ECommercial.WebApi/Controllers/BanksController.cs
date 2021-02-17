@@ -1,19 +1,17 @@
 using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
-using Microsoft.AspNetCore.Mvc;
 using ECommercial.WebApi.Controllers.BaseControllers;
-
+using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("coupons")]
-    public class CouponController:ApiController
+    public class BanksController:ApiController
     {
         
-        private readonly ICouponService _manager;
-        public CouponController(ICouponService manager)
+        private readonly IBankService _manager;
+        public BanksController(IBankService manager) 
         {
             _manager=manager;
         }
@@ -33,7 +31,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Coupon body){
+        public IActionResult Post([FromBody]Bank body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +46,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Coupon body){
+        public IActionResult Put([FromBody]Bank body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("general-infos")]
-    public class GeneralInfoController:ApiController
+    public class GeneralInfosController:ApiController
     {
         
         private readonly IGeneralInfoService _manager;
-        public GeneralInfoController(IGeneralInfoService manager)
+        public GeneralInfosController(IGeneralInfoService manager)
         {
             _manager=manager;
         }

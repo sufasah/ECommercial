@@ -7,13 +7,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
-
-    [Route("tax-offices")]
-    public class TaxOfficeController:ApiController
+    public class InvoicesController:ApiController
     {
         
-        private readonly ITaxOfficeService _manager;
-        public TaxOfficeController(ITaxOfficeService manager)
+        private readonly IInvoiceService _manager;
+        public InvoicesController(IInvoiceService manager)
         {
             _manager=manager;
         }
@@ -33,7 +31,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]TaxOffice body){
+        public IActionResult Post([FromBody]Invoice body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +46,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]TaxOffice body){
+        public IActionResult Put([FromBody]Invoice body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

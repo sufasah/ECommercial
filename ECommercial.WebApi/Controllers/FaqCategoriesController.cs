@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("districts")]
-    public class DistrictController:ApiController
+    public class FaqCategoriesController:ApiController
     {
         
-        private readonly IDistrictService _manager;
-        public DistrictController(IDistrictService manager)
+        private readonly IFaqCategoryService _manager;
+        public FaqCategoriesController(IFaqCategoryService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]District body){
+        public IActionResult Post([FromBody]FaqCategory body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]District body){
+        public IActionResult Put([FromBody]FaqCategory body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

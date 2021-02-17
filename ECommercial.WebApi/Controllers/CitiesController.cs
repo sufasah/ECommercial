@@ -1,4 +1,4 @@
-using ECommercial.Business.Abstract.AbstractEntities; 
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using ECommercial.WebApi.Controllers.BaseControllers;
@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("order-products")]
-    public class OrderProductController:ApiController
+    public class CitiesController:ApiController
     {
         
-        private readonly IOrderProductService _manager;
-        public OrderProductController(IOrderProductService manager)
+        private readonly ICityService _manager;
+        public CitiesController(ICityService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]OrderProduct body){
+        public IActionResult Post([FromBody]City body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]OrderProduct body){
+        public IActionResult Put([FromBody]City body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

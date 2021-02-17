@@ -1,19 +1,17 @@
-using ECommercial.Business.Abstract.AbstractEntities; 
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
-using ECommercial.WebApi.Controllers.BaseControllers;
-
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using ECommercial.WebApi.Controllers.BaseControllers;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("slides")]
-    public class SlideController:ApiController
+    public class CampaignsController:ApiController
     {
         
-        private readonly ISlideService _manager;
-        public SlideController(ISlideService manager)
+        private readonly ICampaignService _manager;
+        public CampaignsController(ICampaignService manager) 
         {
             _manager=manager;
         }
@@ -33,7 +31,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Slide body){
+        public IActionResult Post([FromBody]Campaign body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +46,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Slide body){
+        public IActionResult Put([FromBody]Campaign body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

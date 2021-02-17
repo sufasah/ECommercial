@@ -1,18 +1,18 @@
-using ECommercial.Business.Abstract.AbstractEntities;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 using ECommercial.WebApi.Controllers.BaseControllers;
+
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("brands")]
-    public class BrandController:ApiController
+    public class UserCouponsController:ApiController
     {
         
-        private readonly IBrandService _manager;
-        public BrandController(IBrandService manager)
+        private readonly IUserCouponService _manager;
+        public UserCouponsController(IUserCouponService manager)
         {
             _manager=manager;
         }
@@ -32,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Brand body){
+        public IActionResult Post([FromBody]UserCoupon body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -47,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Brand body){
+        public IActionResult Put([FromBody]UserCoupon body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

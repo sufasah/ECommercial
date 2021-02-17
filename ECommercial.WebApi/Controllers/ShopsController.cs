@@ -1,24 +1,21 @@
-using ECommercial.Business.Abstract.AbstractEntities; 
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
-using Microsoft.AspNetCore.Mvc;
 using ECommercial.WebApi.Controllers.BaseControllers;
-
-
-
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("faq-sub-categories")]
-    public class FaqSubCategoryController:ApiController
+    public class ShopsController:ApiController
     {
         
-        private readonly IFaqSubCategoryService _manager;
-        public FaqSubCategoryController(IFaqSubCategoryService manager)
+        private readonly IShopService _manager;
+        public ShopsController(IShopService manager)
         {
             _manager=manager;
         }
+        [Authorize]
         [HttpGet]
         public IActionResult GetAll(){
             var entity =_manager.GetAll();
@@ -35,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]FaqSubCategory body){
+        public IActionResult Post([FromBody]Shop body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -50,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]FaqSubCategory body){
+        public IActionResult Put([FromBody]Shop body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }
@@ -58,5 +55,6 @@ namespace ECommercial.WebApi.Controllers
         private IActionResult NoResult(){
             return BadRequest("[{}]");
         }
+
     }
 }

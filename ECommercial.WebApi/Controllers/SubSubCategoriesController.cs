@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("logs")]
-    public class LogController:ApiController
+    public class SubSubCategoriesController:ApiController
     {
         
-        private readonly ILogService _manager;
-        public LogController(ILogService manager)
+        private readonly ISubSubCategoryService _manager;
+        public SubSubCategoriesController(ISubSubCategoryService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Log body){
+        public IActionResult Post([FromBody]SubSubCategory body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Log body){
+        public IActionResult Put([FromBody]SubSubCategory body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

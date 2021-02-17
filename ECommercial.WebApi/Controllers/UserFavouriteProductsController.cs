@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("products")]
-    public class ProductController:ApiController
+    public class UserFavouriteProductsController:ApiController
     {
         
-        private readonly IProductService _manager;
-        public ProductController(IProductService manager)
+        private readonly IUserFavouriteProductService _manager;
+        public UserFavouriteProductsController(IUserFavouriteProductService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Product body){
+        public IActionResult Post([FromBody]UserFavouriteProduct body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Product body){
+        public IActionResult Put([FromBody]UserFavouriteProduct body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

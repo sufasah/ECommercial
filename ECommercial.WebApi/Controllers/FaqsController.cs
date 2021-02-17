@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("product-campaigns")]
-    public class ProductCampaignController:ApiController
+    public class FaqsController:ApiController
     {
         
-        private readonly IProductCampaignService _manager;
-        public ProductCampaignController(IProductCampaignService manager)
+        private readonly IFaqService _manager;
+        public FaqsController(IFaqService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]ProductCampaign body){
+        public IActionResult Post([FromBody]Faq body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]ProductCampaign body){
+        public IActionResult Put([FromBody]Faq body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

@@ -1,18 +1,18 @@
-using ECommercial.Business.Abstract.AbstractEntities;
+using ECommercial.Business.Abstract.AbstractEntities; 
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 using ECommercial.WebApi.Controllers.BaseControllers;
+
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("campaigns")]
-    public class CampaignController:ApiController
+    public class DistrictsController:ApiController
     {
         
-        private readonly ICampaignService _manager;
-        public CampaignController(ICampaignService manager) 
+        private readonly IDistrictService _manager;
+        public DistrictsController(IDistrictService manager)
         {
             _manager=manager;
         }
@@ -32,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]Campaign body){
+        public IActionResult Post([FromBody]District body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -47,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]Campaign body){
+        public IActionResult Put([FromBody]District body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

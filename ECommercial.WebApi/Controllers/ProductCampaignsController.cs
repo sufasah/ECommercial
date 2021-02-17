@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("user-coupons")]
-    public class UserCouponController:ApiController
+    public class ProductsCampaignController:ApiController
     {
         
-        private readonly IUserCouponService _manager;
-        public UserCouponController(IUserCouponService manager)
+        private readonly IProductCampaignService _manager;
+        public ProductsCampaignController(IProductCampaignService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]UserCoupon body){
+        public IActionResult Post([FromBody]ProductCampaign body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]UserCoupon body){
+        public IActionResult Put([FromBody]ProductCampaign body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

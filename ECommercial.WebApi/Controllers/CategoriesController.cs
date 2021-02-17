@@ -1,4 +1,4 @@
-using ECommercial.Business.Abstract.AbstractEntities; 
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
 using ECommercial.WebApi.Controllers.BaseControllers;
@@ -8,12 +8,11 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("sub-sub-categories")]
-    public class SubSubCategoryController:ApiController
+    public class CategoriesController:ApiController
     {
         
-        private readonly ISubSubCategoryService _manager;
-        public SubSubCategoryController(ISubSubCategoryService manager)
+        private readonly ICategoryService _manager;
+        public CategoriesController(ICategoryService manager)
         {
             _manager=manager;
         }
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]SubSubCategory body){
+        public IActionResult Post([FromBody]Category body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]SubSubCategory body){
+        public IActionResult Put([FromBody]Category body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }

@@ -1,22 +1,20 @@
-using ECommercial.Business.Abstract.AbstractEntities; 
+using ECommercial.Business.Abstract.AbstractEntities;
 using ECommercial.Entities.concrete;
 using Microsoft.AspNetCore.Mvc;
-using ECommercial.WebApi.Controllers.BaseControllers;
-
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
-
+using ECommercial.WebApi.Controllers.BaseControllers;
 namespace ECommercial.WebApi.Controllers
 {
 
-    [Route("user-favourite-products")]
-    public class UserFavouriteProductController:ApiController
+    public class AddressesController:ApiController
     {
         
-        private readonly IUserFavouriteProductService _manager;
-        public UserFavouriteProductController(IUserFavouriteProductService manager)
+        private readonly IAddressService _manager;
+        public AddressesController(IAddressService manager) 
         {
             _manager=manager;
         }
+
         [HttpGet]
         public IActionResult GetAll(){
             var entity =_manager.GetAll();
@@ -24,6 +22,7 @@ namespace ECommercial.WebApi.Controllers
                 return NoResult();
             return Ok(entity);
         }
+        
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(string id){
@@ -33,7 +32,7 @@ namespace ECommercial.WebApi.Controllers
             return Ok(entity);
         }
         [HttpPost]
-        public IActionResult Post([FromBody]UserFavouriteProduct body){
+        public IActionResult Post([FromBody]Address body){
             var entity = _manager.Add(body);
             return Ok(entity);
         }
@@ -48,7 +47,7 @@ namespace ECommercial.WebApi.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromBody]UserFavouriteProduct body){
+        public IActionResult Put([FromBody]Address body){
             var entity = _manager.Update(body);
             return Ok(_manager.Update(entity));
         }
