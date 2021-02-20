@@ -91,10 +91,10 @@ namespace ECommercial.WebApi
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/Error");
             }
             else{
-                app.UseExceptionHandler("Error");
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 

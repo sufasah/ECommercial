@@ -50,9 +50,5 @@ namespace ECommercial.WebApi.Controllers
             var entity = _manager.Update(body);
             return ResponseJson(_manager.Update(entity));
         }
-
-        private IActionResult NoResult(){
-            return BadRequest("[{}]");
-        }
     }
 }
