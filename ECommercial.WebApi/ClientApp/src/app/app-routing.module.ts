@@ -4,7 +4,7 @@ import { HomePageComponent } from '@modules/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path:"/",
+    path:"",
     component:HomePageComponent
   },
 ];

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  logged=false;
+  profileName="Fadıl";
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchAction(f:any){
+    f.ent=2;
   }
 
 }

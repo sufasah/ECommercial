@@ -1,1 +1,105 @@
-<p>header works!</p>
+<header>
+  <div class="header-top">
+    <div class="header-start">
+      <a [routerLink]="['/']">
+        <h1 class="logo"><span class="d-none">E-Commercial</span></h1>
+      </a>
+    </div>
+
+    <div class="nav-deliver">
+      <span class="location-icon"></span>
+      <div>
+        <span id="deliver-to" class="text-line-1">Deliver To</span>
+        <span class="text-line-2">Turkey</span>
+      </div>
+    </div>
+
+    <div class="header-middle">
+      <div class="nav-searchbar">
+        <div class="nav-search-category">
+          <span class="nav-search-label"></span>
+          <i class="nav-drop-down-icon"></i>
+        </div>
+
+        <form #f="ngForm" class="search-form" (ngSubmit)="searchAction(f)">
+          <input type="text" name="header-search" />
+          <div class="search-submit">
+            <button type="submit"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="header-end">
+      <div class="nav-country">
+        <span class="country-icon"></span>
+        <span class="nav-drop-down-icon"></span>
+      </div>
+
+      <div class="nav-account">
+        <span class="text-line-1">
+          <ng-container *ngIf="logged; else NotLogged;">Hello, {{profileName}}</ng-container>
+          <ng-template #NotLogged>Hello, Sign In</ng-template>
+        </span>
+        <span class="text-line-2">
+          Accounts & Lists
+          <span class="nav-drop-down-icon"></span>
+        </span>
+      </div>
+
+      <div class="nav-orders">
+        <span class="text-line-1">
+          Returns
+        </span>
+        <span class="text-line-2">
+          & Orders
+        </span>
+      </div>
+
+      <div class="nav-cart">
+        <span class="cart-count">0</span>
+        <span class="cart-icon"></span>
+        <span class="text-line-2">Cart</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-bottom">
+    <div class="header-start">
+      <div class="nav-categories">
+        <span class="list-icon"></span>
+        <span class="nav-text">
+          Categories
+        </span>
+      </div>
+    </div>
+    <div class="header-middle">
+      <a [routerLink]="['/']" class="nav-item">
+        Today's Deals
+      </a>
+      <a [routerLink]="['/']" class="nav-item">
+        Customer Service
+      </a>
+      <a [routerLink]="['/']" class="nav-item">
+        Buy Again
+      </a>
+      <a [routerLink]="['/']" class="nav-item">
+        <span>
+          Browsing History
+        </span>
+        <span class="nav-drop-down-icon"></span>
+      </a>
+      <a [routerLink]="['/']" class="nav-item">
+        Gift Cards
+      </a>
+      <a [routerLink]="['/']" class="nav-item">
+        Sell
+      </a>
+    </div>
+    <div class="header-end">
+      <a [routerLink]="['/']" class="nav-item">
+        Protect yoursel with E-Commercial from Covid-19
+      </a>
+    </div>
+  </div>
+</header>
