@@ -26,14 +26,13 @@ This project is an individual e-commerce web and mobile project. In this project
 <br/>
 <br/>
 
+## Database Schemas
+- - - -
+![Database Schemas](Info/UML/Entities.png "Database Schemas")
 
 ## Database ERD Diagram
 - - - -
 ![ERD Diagram](Info/UML/ERD.png "Database ERD Diagram")
-
-## Database Schemas
-- - - -
-![Database Schemas](Info/UML/Entities.png "Database Schemas")
 
 :exclamation: To See ***[Database Tables, table fields and field types and constraints](Info/Database%20Design.txt "Database Design.txt")*** click and scroll to the end
 
