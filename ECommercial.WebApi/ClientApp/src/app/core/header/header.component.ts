@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { asNativeElements, Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,13 @@ export class HeaderComponent implements OnInit {
 
   searchAction(f:any){
     f.ent=2;
+  }
+
+  searchInputFocus(){
+    document.getElementById("searchbar")?.classList.add("input-focused");
+  }
+  searchInputFocusOut(){
+    document.getElementById("searchbar")?.classList.remove("input-focused");
   }
 
 }

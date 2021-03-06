@@ -6,3 +6,10 @@
 /* Directories */
 @use "partials/modules/modules-dir";
 
+/* Clearing default properties */
+a{
+  color:inherit;
+  &:hover{
+    text-decoration: none;
+  }
+}
