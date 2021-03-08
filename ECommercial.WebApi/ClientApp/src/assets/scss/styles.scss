@@ -2,14 +2,9 @@
 @use "variables";
 @use "mixins";
 @use "fonts";
+@use "_clear";
 
 /* Directories */
+@use "partials/tools/tools-dir";
+@use "partials/animations/animations-dir";
 @use "partials/modules/modules-dir";
-
-/* Clearing default properties */
-a{
-  color:inherit;
-  &:hover{
-    text-decoration: none;
-  }
-}

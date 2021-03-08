@@ -2,88 +2,121 @@
 
 <div class="home-body container-fluid">
   <section id="slider">
-    <div id="sliderControl" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/assets/images/placeholder.png" class="d-block w-100" alt="...">
+    <div id="sliderControl" class="carousel slide"  data-bs-ride="carousel">
+      <a [routerLink]="['/']">
+        <div class="carousel-inner">
+          <div class="carousel-item h-100 active">
+            <img src="/assets/images/slide-1.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item h-100">
+            <img src="/assets/images/slide-2.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item h-100">
+            <img src="/assets/images/slide-3.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item h-100">
+            <img src="/assets/images/slide-4.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item h-100">
+            <img src="/assets/images/slide-5.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="/assets/images/placeholder.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="/assets/images/placeholder.png" class="d-block w-100" alt="...">
-        </div>
-      </div>
+      </a>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderControl"  data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden" aria-label="sr-only">Previous</span>
+        <span class="d-none" aria-label="sr-only">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#sliderControl"  data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden" aria-label="sr-only">Next</span>
+        <span class="d-none" aria-label="sr-only">Next</span>
       </button>
     </div>
   </section>
 
   <section id="products">
-    <div class="info"> You are on ecommercial.com. You can shop millions of products with fast delivery.</div>
-
-    <div class="cardbox" *ngFor="let item of topItems">
-      <h2>{{item.header}}</h2>
-      <img src="/assets/images/placeholder.png" alt="Placeholder">
-      <a [routerLink]="['/']">{{item.link}}</a>
+    <div class="info text-center"> You are on ecommercial.com. You can shop millions of products with fast delivery.</div>
+    <div class="card-layout">
+      <div class="cardbox" *ngFor="let item of topItems;let lastItem=last">
+        <h2>{{item.header}}</h2>
+        <a [routerLink]="[item.link]">
+          <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!lastItem">
+        </a>
+        <div class="divided-layout" *ngIf="lastItem">
+          <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
+            <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
+            <div class="divided-text">{{dividedItem.text}}</div>
+          </a>
+        </div>
+        <a class="box-link" *ngIf="!lastItem" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <a class="box-link box-link-disabled" *ngIf="lastItem">{{item.linkText}}</a>
+      </div>
     </div>
+    <hr class="box-break">
+    <ng-container *ngFor="let item of fromDiscover;let lastItem=last">
+      <div class="horizontal-box">
+        <h2>{{item.header}}</h2><a class="box-link" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <div class="image-layout">
+          <div class="overflow-control">
+            <a [routerLink]="[product.link]" *ngFor="let product of item.products">
+              <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+            </a>
+            <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
+            <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+          </div>
+        </div>
+      </div>
+      <hr class="box-break" *ngIf="!lastItem">
+    </ng-container>
 
-    <div class="horizontal-box" *ngFor="let item of fromDiscover">
-      <h2>{{item.header}}</h2><a href="">{{item.link}}</a>
-      <div>
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <button class="horizontal-box-left"></button>
-        <button class="horizontal-box-right"></button>
+    <div class="card-layout">
+      <div class="cardbox" *ngFor="let item of afterDiscover; let firstItem=first">
+        <h2>{{item.header}}</h2>
+        <a [routerLink]="[item.link]">
+          <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!firstItem">
+        </a>
+        <div class="divided-layout" *ngIf="firstItem">
+          <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
+            <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
+            <div class="divided-text">{{dividedItem.text}}</div>
+          </a>
+        </div>
+        <a class="box-link" *ngIf="!firstItem" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <a class="box-link box-link-disabled" *ngIf="firstItem">{{item.linkText}}</a>
       </div>
     </div>
 
-    <div class="cardbox" *ngFor="let item of afterDiscover">
-      <h2>{{item.header}}</h2>
-      <img src="/assets/images/placeholder.png" alt="Placeholder">
-      <a [routerLink]="['/']">{{item.link}}</a>
-    </div>
-
-    <div class="horizontal-box" *ngFor="let item of beforeBottom">
-      <h2>{{item.header}}</h2><a href="">{{item.link}}</a>
-      <div>
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <button class="horizontal-box-left"></button>
-        <button class="horizontal-box-right"></button>
+    <hr class="box-break">
+    <ng-container *ngFor="let item of beforeBottom; let lastItem=last">
+      <div class="horizontal-box">
+        <h2>{{item.header}}</h2><a class="box-link" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <div class="image-layout">
+          <div class="overflow-control">
+            <a [routerLink]="[product.link]" *ngFor="let product of item.products">
+              <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+            </a>
+            <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
+            <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="last-box horizontal-box">
-      <hr/>
-      <h2>Inspired by your browsing history</h2>
-      <div>
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <img src="/assets/images/placeholder.png" alt="">
-        <button class="horizontal-box-left"></button>
-        <button class="horizontal-box-right"></button>
-      </div>
-    </div>
+      <hr class="box-break" *ngIf="!lastItem">
+    </ng-container>
   </section>
-  <div class="back-top">Back To Top</div>
+
+  <div class="last-box horizontal-box container-fluid text-center">
+    <hr/>
+    <h2>Inspired by your browsing history</h2>
+    <div class="image-layout">
+      <div class="overflow-control">
+        <a [routerLink]="[product.link]" *ngFor="let product of lastboxProducts">
+          <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+        </a>
+      </div>
+      <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
+      <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+    </div>
+  </div>
+  <div class="back-to-top">Back to top</div>
 </div>
 
 <app-footer></app-footer>
