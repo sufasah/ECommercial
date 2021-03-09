@@ -1,0 +1,23 @@
+.outlined-button{
+  height: 35px;
+  padding: 8px 18px 6px 8px;
+  background: transparent;
+  border: 1px solid var(--gb-color-gray-light);
+  color:var(--gb-color-secondary-dark);
+  font-size: 12px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.outlined-button-icon{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: cover!important;
+}
+.outlined-button-text{
+  margin: 0 .5em;
+}

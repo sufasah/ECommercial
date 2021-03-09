@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from '@core/header/header.component';
 import { FooterComponent } from '@core/footer/footer.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
+import { LogoComponent } from './shared/components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HomePageComponent } from '@modules/home-page/home-page.component';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
+    LogoComponent,
   ],
   imports: [
     FormsModule,

@@ -16,6 +16,7 @@
   }
 
   .cardbox{
+    z-index: 1;
     padding: 0.6em;
     background-color: var(--gb-color-secondary-light);
     margin:0 10px;
@@ -160,25 +161,12 @@
       margin: 20px;
     }
   }
-  .back-to-top{
-    color:var(--gb-color-secondary-light);
-    background-color: #37475A;
-    padding: 15px 0;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    &:hover{
-      background-color: #485769;
-    }
-  }
 }
 #sliderControl{
-  display: none;
   width: 1500px;
   height: 600px;
   margin:auto;
-  margin-bottom: -350px;
+  margin-bottom: -360px;
 
   .carousel-inner{
     width: 100%;
@@ -219,7 +207,8 @@
 
 #products{
   max-width: 1500px;
-  padding: 20px;
+  padding: 20px 10px;
+  padding-top: 0;
   margin: auto;
   h2 {
     display: inline-block;
@@ -228,11 +217,14 @@
     font-size: 1.275rem;
   }
   .info{
-    padding: 0.5em;
+    padding: 10px;
+    z-index: 1;
+    margin: 10px;
+    margin-bottom: 0;
+    position: relative;
     background-color: #F5F6F6;
-    margin:10px;
     color: var(--gb-color-black-dark);
-    font-size: 0.9rem;
+    font-size: 0.825rem;
   }
 
 }

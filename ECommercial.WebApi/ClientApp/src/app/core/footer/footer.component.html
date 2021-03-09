@@ -1,1 +1,60 @@
-<p>footer works!</p>
+<footer>
+  <div class="back-to-top" onclick="window.scrollTo(0,0)">Back to top</div>
+  <div id="footer-top">
+    <div class="footer-container container">
+
+      <div class="footer-row row">
+        <div class="footer-col col" *ngFor="let col of topCols">
+          <h2 class="footer-col-header">{{col.header}}</h2>
+          <div class="footer-items">
+            <a class="footer-item" [routerLink]="[item.link]" *ngFor="let item of col.items">{{item.linkText}}</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <hr class="footer-hr">
+
+    <div class="footer-container-fluid container-fluid ">
+      <div class="row justify-content-center align-items-center">
+        <app-logo class="footer-logo mr-4"></app-logo>
+        <div class="btn-group ml-4">
+          <button class="outlined-button">
+            <i class="outlined-button-icon global-icon"></i>
+            <span class="outlined-button-text">English</span>
+            <span class="up-down-arrow-icon"></span>
+          </button>
+          <button class="outlined-button">
+            <i class="outlined-button-icon" style="margin-top: -3px;font-style: normal;">$</i>
+            <span class="outlined-button-text">USD - U.S. Dollar</span>
+          </button>
+          <button class="outlined-button">
+            <i class="outlined-button-icon flag-icon"></i>
+            <span class="outlined-button-text">Turkey</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-bottom">
+    <div class="footer-container container">
+      <div class="footer-row row">
+        <div class="footer-col col" *ngFor="let col of botCols">
+          <a class="footer-item" [routerLink]="[item.link]" *ngFor="let item of col.items">
+            <div class="footer-item-line-1">{{item.linkText}}</div>
+            <div class="footer-item-line-2">{{item.linkText2}}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container-fluid container-fluid ">
+      <div class="row justify-content-center align-items-center">
+        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Conditions of Use</a>
+        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Privacy Notice</a>
+        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Interest-Based Ads</a>
+        <span class="footer-last-texts footer-item-line-2">© 1996-2021, ECommercial.com, All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>
