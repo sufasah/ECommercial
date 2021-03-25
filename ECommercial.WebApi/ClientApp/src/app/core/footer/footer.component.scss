@@ -31,13 +31,14 @@ footer{
   background-color: var(--gb-color-primary-light);
 
   .footer-col-header{
-    font-size: 1rem;
+    font-size: 1em;
     color: var(--gb-color-secondary-light);
     font-weight: 700;
   }
   .footer-item{
     color:var(--gb-color-secondary-dark);
     padding: .175em;
+    font-size:1em;
   }
 }
 #footer-bottom{
@@ -93,4 +94,45 @@ footer{
   left:10px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width:600px){
+    .footer-logo{
+      margin:0px!important;
+    }
+}
+
+@media screen and (max-width:475px){
+  #footer-top{
+    .footer-col{
+      font-size:.75em;
+      .footer-items{
+        font-size:1em;
+      }
+      flex-basis:150px;
+      margin-top:1em;
+    }
+    .btn-group{
+      margin:0px!important;
+    }
+    .outlined-button{
+      font-size:8px;
+      .outlined-button-icon{
+        margin-top:3px!important;
+      }
+    }
+  }
+  #footer-bottom{
+    .footer-col{
+      flex-basis:150px;
+    }
+  }
+}
+
+@media screen and (max-width:350px){
+  #footer-top{
+    .footer-col{
+      flex-basis:130px
+    }
+  }
 }

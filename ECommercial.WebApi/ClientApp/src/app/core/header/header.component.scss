@@ -1,32 +1,5 @@
-/* Mixins */
-@mixin border-inside($outdent,$border-size,$radius,$color,$opacity) {
-  content: " ";
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  top: $outdent;
-  left: $outdent;
-  right: $outdent;
-  bottom: $outdent;
-  border: $border-size solid $color;
-  border-radius: $radius;
-  opacity: $opacity;
-}
-@mixin border-shadow($outdent,$border-size,$radius,$color,$opacity) {
-  &:before {
-    @include border-inside($outdent,$border-size,$radius,$color,$opacity);
-  }
-}
 
-@mixin border($outdent,$border-size,$radius,$color,$opacity) {
-  &:after {
-    content: " ";
-    @include border-inside($outdent,$border-size,$radius,$color,$opacity);
-  }
-}
-/* End Mixins */
-
-
+@import "mixins";
 header{
   font-family: "Lato";
 
@@ -67,7 +40,7 @@ header{
     height: 8px;
   }
   .header-top{
-    height: 60px;
+    min-height: 60px;
     background-color: var(--gb-color-primary);
   }
 
@@ -262,14 +235,14 @@ header{
 }// header-end
 
 .header-bottom{
-  height: 40px;
+  min-height: 40px;
   align-items: center;
   background-color: var(--gb-color-primary-light);
   color:var(--gb-color-secondary-light);
   padding: .3rem;
   font-size: 0.9rem;
   font-weight: 700;
-
+  overflow: auto;
   .nav-item-hover{
     padding: .3rem .4rem;
   }
@@ -281,6 +254,11 @@ header{
       color:inherit;
     }
   }
+
+  .header-middle{
+    min-width: 440px;
+  }
+
 }
 
 .header-start{
@@ -290,18 +268,67 @@ header{
     justify-content: center;
     align-items: center;
 
-    .list-icon{
-      display: inline-block;
-      background-image: url("/assets/icons/menu.png");
-      width: 20px;
-      height: 16px;
-    }
     .nav-text{
       margin-left:0.25em;
     }
   }
-}
 
+}
+.menu{
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
 .header-middle{
   width: 100%;
 }
+
+.list-icon{
+  display: inline-block;
+  background-image: url("/assets/icons/menu.png");
+  width: 20px;
+  height: 16px;
+}
+
+@media screen and (max-width:767.98px)
+{
+  .header-top{
+    flex-wrap: wrap;
+    .header-middle{
+      order: 1;
+    }
+  }
+}
+
+@media screen and (max-width:550px){
+  .header-start,.header-middle,.header-end{
+    padding:0!important;
+  }
+  .header-top{
+    justify-content: center;
+    .header-middle{
+      margin-bottom:5px;
+    }
+  }
+  .header-bottom{
+    font-size:.8125rem;
+    .list-icon{
+      width:14px;
+      height:14px;
+      background-size:cover;
+      margin-top:-1px;
+    }
+  }
+  .header-end{
+    width:100%;
+    justify-content:center;
+
+    *{
+      margin:0 2px;
+    }
+  }
+  .flex-fill{
+    display: none;
+  }
+}
+

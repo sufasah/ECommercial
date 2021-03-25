@@ -1,10 +1,10 @@
 /* Main */
-@use "variables";
-@use "mixins";
-@use "fonts";
-@use "_clear";
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "clear";
 
 /* Directories */
-@use "partials/tools/tools-dir";
-@use "partials/animations/animations-dir";
-@use "partials/modules/modules-dir";
+@import "partials/tools/tools-dir";
+@import "partials/animations/animations-dir";
+@import "partials/modules/modules-dir";

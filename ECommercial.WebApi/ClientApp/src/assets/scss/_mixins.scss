@@ -1,0 +1,28 @@
+/* border and border shadow */
+@mixin border-inside($outdent,$border-size,$radius,$color,$opacity) {
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  top: $outdent;
+  left: $outdent;
+  right: $outdent;
+  bottom: $outdent;
+  border: $border-size solid $color;
+  border-radius: $radius;
+  opacity: $opacity;
+}
+@mixin border-shadow($outdent,$border-size,$radius,$color,$opacity) {
+  &:before {
+    @include border-inside($outdent,$border-size,$radius,$color,$opacity);
+  }
+}
+
+@mixin border($outdent,$border-size,$radius,$color,$opacity) {
+  &:after {
+    content: " ";
+    @include border-inside($outdent,$border-size,$radius,$color,$opacity);
+  }
+}
+
+
