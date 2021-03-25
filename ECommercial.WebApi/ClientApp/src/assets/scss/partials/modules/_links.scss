@@ -1,0 +1,11 @@
+.ecom-link{
+  font-size: .82rem;
+  text-decoration: none;
+  color: var(--gb-color-blue-light);
+  margin: 1em 0;
+  font-weight: 500;
+  &:hover{
+    text-decoration: underline;
+    color:var(--gb-color-red);
+  }
+}

@@ -1,3 +1,20 @@
+.ecom-default-button{
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  color: var(--gb-color-black-dark);
+  border:1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  padding: .3em .6em;
+  &:hover{
+    background: rgba(#f0c14b, .9);
+  }
+  &:active{
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    background-color: #f0c14b;
+  }
+  &:focus{
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+  }
+}
 .outlined-button{
   height: 35px;
   padding: 8px 18px 6px 8px;

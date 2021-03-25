@@ -1,0 +1,13 @@
+.ecom-alert{
+  font-family: "Lato";
+}
+.ecom-alert-icon-error{
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/icons/alert-error.png");
+}
+.ecom-alert-inline-error{
+  display: inline;
+  color:var(--gb-color-red);
+  font-weight: 700;
+}
