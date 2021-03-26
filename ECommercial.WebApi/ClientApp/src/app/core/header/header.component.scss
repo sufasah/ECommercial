@@ -84,6 +84,14 @@ header{
   min-width: 225px;
   padding-left: 0;
   padding-right: 0;
+
+  .dropdown-menu{
+    max-height: 300px;
+    overflow: auto;
+  }
+  .dropdown-item{
+    font-size: .875rem;
+  }
 }//header-middle
 
 .nav-searchbar{
@@ -96,6 +104,7 @@ header{
 
   .nav-search-label{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    user-select: none;
   }
   .nav-search-category{
     display: inline-block;

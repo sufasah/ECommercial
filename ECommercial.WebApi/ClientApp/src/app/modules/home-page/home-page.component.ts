@@ -10,6 +10,7 @@ import "bootstrap";
 export class HomePageComponent implements OnInit {
 
   constructor() { }
+  logged=false;
 
   makeProducts=function(from:number,to:number,preText:string ){
     var res=[];
@@ -180,6 +181,13 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.addCarouselButtonClickEvents();
+    let zip:any = $("#zipCode");
+    zip.on("input",function(e:any){
+      let val = zip.val();
+
+      if(val.length>5)
+        zip.val(val.slice(0,5));
+    });
   }
 
   addCarouselButtonClickEvents(): void {

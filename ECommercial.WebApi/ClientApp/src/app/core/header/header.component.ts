@@ -1,6 +1,6 @@
 import { asNativeElements, Component, OnInit } from '@angular/core';
-import { $ } from 'protractor';
-
+import  $  from 'jquery';
+import "bootstrap";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
 
   logged=false;
   profileName="Fadıl";
+  selectedCategory="All";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,7 +20,6 @@ export class HeaderComponent implements OnInit {
   searchAction(f:any){
     f.ent=2;
   }
-
   searchInputFocus(){
     document.getElementById("searchbar")?.classList.add("input-focused");
   }
@@ -26,4 +27,33 @@ export class HeaderComponent implements OnInit {
     document.getElementById("searchbar")?.classList.remove("input-focused");
   }
 
+  clickSearchCategory(){
+
+    (<any>$("#searchCategory")).dropdown("toggle");
+  }
+  clickCategoryDropdownItem(evt:any){
+    this.selectedCategory=evt.target.innerText
+  }
+  categories=[
+    "Arts & Crafts",
+    "Automotive",
+    "Baby",
+    "Electronics",
+    "Books",
+    "Arts & Crafts",
+    "Automotive",
+    "Baby",
+    "Electronics",
+    "Books",
+    "Arts & Crafts",
+    "Automotive",
+    "Baby",
+    "Electronics",
+    "Books",
+    "Arts & Crafts",
+    "Automotive",
+    "Baby",
+    "Electronics",
+    "Books",
+  ];
 }

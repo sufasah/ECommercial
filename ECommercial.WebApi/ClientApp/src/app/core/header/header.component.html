@@ -13,13 +13,19 @@
     <div class="flex-fill"></div>
     <div class="header-middle">
       <div id="searchbar" class="nav-searchbar">
-        <div class="nav-search-category" onclick="this.focus()" tabindex="-1">
-          <span class="nav-search-label"><small>All</small></span>
-          <i class="nav-drop-down-icon"></i>
+        <div class="dropdown">
+          <div class="nav-search-category" (click)="clickSearchCategory()" tabindex="-1" id="searchCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="nav-search-label"><small (ngModel)="selectedCategory">{{selectedCategory}}</small></span>
+            <i class="nav-drop-down-icon"></i>
+          </div>
+          <div class="dropdown-menu" aria-labelledby="searchCategory">
+            <a class="dropdown-item" [routerLink]="[ '/' ]" (click)="clickCategoryDropdownItem($event)">All Departments</a>
+            <a class="dropdown-item" [routerLink]="[ '/' ]" (click)="clickCategoryDropdownItem($event)" *ngFor="let category of categories">{{category}}</a>
+          </div>
         </div>
         <div class="search-form">
           <form #f="ngForm"  (ngSubmit)="searchAction(f)">
-            <input type="text" name="header-search" (focus)="searchInputFocus()" (focusout)="searchInputFocusOut()" />
+            <input type="text" name="header-search" (focus)="searchInputFocus()" (focusout)="searchInputFocusOut()" autocomplete="off"/>
             <div class="search-submit">
               <button type="submit" ></button>
             </div>

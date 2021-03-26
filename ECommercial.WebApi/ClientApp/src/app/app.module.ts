@@ -11,7 +11,6 @@ import { HeaderComponent } from '@core/header/header.component';
 import { FooterComponent } from '@core/footer/footer.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
 import { LogoComponent } from '@shared/components/logo/logo.component';
-import { ModalComponent } from '@shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { ModalComponent } from '@shared/components/modal/modal.component';
     FooterComponent,
     HomePageComponent,
     LogoComponent,
-    ModalComponent,
   ],
   imports: [
     FormsModule,
