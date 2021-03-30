@@ -10,6 +10,12 @@ export class HeaderComponent implements OnInit,AfterViewInit{
   logged=false;
   profileName="Fadıl";
   selectedCategory="All";
+  choosenLanguage="TR";
+  languages = [
+    {language:"Türkçe", code:"TR"},
+    {language:"English", code:"EN"},
+  ];
+
   constructor() {
   }
   ngAfterViewInit(): void {
