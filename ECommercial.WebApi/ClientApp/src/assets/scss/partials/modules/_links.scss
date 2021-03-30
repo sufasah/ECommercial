@@ -4,6 +4,7 @@
   color: var(--gb-color-blue-light);
   margin: 1em 0;
   font-weight: 500;
+  cursor: pointer;
   &:hover{
     text-decoration: underline;
     color:var(--gb-color-red);

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import $ from "jquery";
-import "bootstrap";
+
 
 @Component({
   selector: 'app-home-page',
@@ -180,27 +179,6 @@ export class HomePageComponent implements OnInit {
   lastboxProducts=this.makeProducts(84,94,"product");
 
   ngOnInit(): void {
-    this.addCarouselButtonClickEvents();
-    let zip:any = $("#zipCode");
-    zip.on("input",function(e:any){
-      let val = zip.val();
-
-      if(val.length>5)
-        zip.val(val.slice(0,5));
-    });
-  }
-
-  addCarouselButtonClickEvents(): void {
-    var sliderControl=(<any>$('#sliderControl'));
-    $('#sliderControl .carousel-control-prev').on("click",function(){
-      sliderControl.carousel("prev");
-    });
-    $('#sliderControl .carousel-control-next').on("click",function(){
-        sliderControl.carousel("next");
-    });
-
-    sliderControl.carousel({interval:5000});
-    sliderControl.carousel("cycle");
   }
 
 }

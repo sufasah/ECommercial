@@ -1,3 +1,5 @@
+@use "../../mixins";
+// default-button
 .ecom-default-button{
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   color: var(--gb-color-black-dark);
@@ -16,7 +18,9 @@
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
   }
 }
-.outlined-button{
+
+// outlined-button
+.ecom-outlined-button{
   height: 35px;
   padding: 8px 18px 6px 8px;
   background: transparent;
@@ -29,13 +33,54 @@
   align-items: center;
   border-radius: 3px;
 }
-
-.outlined-button-icon{
+.ecom-outlined-button-icon{
   display: inline-block;
   width: 15px;
   height: 15px;
   background-size: cover!important;
 }
-.outlined-button-text{
+.ecom-outlined-button-text{
   margin: 0 .5em;
+}
+
+// radio-button
+@mixin insideRadioAfter(){
+  content: "";
+  position: absolute;
+  background-color: var(--gb-color-accent-dark);
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  border-radius: 60%;
+  transform: translate(-52%, -52%);
+  margin: 50%;
+}
+
+.ecom-radio{
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  @include border-shadow(0,1px,20px,var(--gb-color-gray),1);
+
+  &:checked::after{
+    @include insideRadioAfter;
+  }
+  &:hover{
+    &:not(:checked)::after{
+      @include insideRadioAfter;
+      opacity: .5;
+    }
+  }
+}
+.ecom-radio-label{
+  font-size: .8rem;
+  margin-left: .5rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover{
+    color: var(--gb-color-accent-dark);
+    text-decoration: underline;
+  }
 }

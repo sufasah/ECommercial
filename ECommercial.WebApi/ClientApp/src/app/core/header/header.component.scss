@@ -40,7 +40,6 @@ header{
     height: 8px;
   }
   .header-top{
-    min-height: 60px;
     background-color: var(--gb-color-primary);
     .header-middle{
         height:60px;
@@ -202,8 +201,24 @@ header{
       background-image: url("/assets/icons/flag-tr.png");
     }
     .nav-drop-down-icon{
-        margin-left:0.2em;
-        margin-top: 0.6em;
+      margin-left:0.2em;
+      margin-top: 0.6em;
+    }
+  }
+  .nav-country-dropdown{
+      color: var(--gb-color-gray-dark);
+      font-family: "Lato";
+      font-size: 0.725rem;
+      font-weight: 500;
+    .text-line-2{
+      color: var(--gb-color-gray-dark);
+    }
+    .ecom-link{
+      font-size: .675rem;
+    }
+    .ecom-radio-label{
+      vertical-align: 10%;
+      margin-left:.25rem;
     }
   }
 
@@ -244,6 +259,15 @@ header{
     .text-line-2{
       margin-top: 1em;
     }
+  }
+  .arrow-up{
+    @include triangle("up",10px,white);
+    position: absolute;
+    top: -7px;
+    left: 29px;
+  }
+  .dropdown-menu{
+    top: -12px!important;
   }
 }// header-end
 
@@ -303,6 +327,14 @@ header{
   height: 16px;
 }
 
+@media screen and (max-width:992px){
+  .header-top{
+    .arrow-up{
+      left: 30px;
+    }
+  }
+}
+
 @media screen and (max-width:767.98px)
 {
   .header-top{
@@ -313,14 +345,23 @@ header{
   }
 }
 
-@media screen and (max-width:550px){
+@media screen and (max-width:560px){
   .header-start,.header-middle,.header-end{
     padding:0!important;
   }
-  .header-top{
-    justify-content: center;
-    .header-middle{
-      margin-bottom:5px;
+  header{
+    .header-top{
+      justify-content: center;
+      .header-middle{
+        margin-bottom:5px;
+        height: 50px;
+      }
+      .dropdown-menu{
+        top:-3px!important;
+      }
+      .arrow-up{
+        left: 29px;
+      }
     }
   }
   .header-bottom{

@@ -14,7 +14,7 @@
     <div class="header-middle">
       <div id="searchbar" class="nav-searchbar">
         <div class="dropdown">
-          <div class="nav-search-category" (click)="clickSearchCategory()" tabindex="-1" id="searchCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="nav-search-category" id="searchCategory" data-toggle="dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false">
             <span class="nav-search-label"><small (ngModel)="selectedCategory">{{selectedCategory}}</small></span>
             <i class="nav-drop-down-icon"></i>
           </div>
@@ -34,9 +34,21 @@
       </div>
     </div>
     <div class="header-end">
-      <div class="nav-country nav-item-hover">
+      <div class="nav-country nav-item-hover h-100" data-toggle="dropdown" id="navCountry" >
         <span class="country-icon"></span>
         <span class="nav-drop-down-icon"></span>
+      </div>
+      <div class="dropdown-menu nav-country-dropdown" aria-labelledby="navCountry" >
+        <div class="arrow-up d-inline"></div>
+        <div class="px-2">
+          <span class="text-line-2 mr-2">Change Language</span>
+          <span class="ecom-link">Learn more</span>
+        </div>
+        <div class="dropdown-divider mx-3"></div>
+        <div class="px-3">
+          <div class="ecom-radio-group"><input class="ecom-radio" type="radio" name="language" id="englishRadio" ><label class="ecom-radio-label" for="englishRadio">English - EN</label></div>
+          <div class="ecom-radio-group"><input class="ecom-radio" type="radio" name="language" id="turkishRadio"><label class="ecom-radio-label" for="turkishRadio">Turkish - TR</label></div>
+        </div>
       </div>
 
       <div class="nav-account nav-item-hover">

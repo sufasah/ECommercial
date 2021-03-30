@@ -155,7 +155,7 @@
   max-width: 1500px;
 
   margin:auto;
-  margin-bottom: -25%;
+  margin-bottom: -24%;
 
   .carousel-inner{
     width: 100%;
@@ -268,7 +268,7 @@
 
 @media screen and (min-width:1500px){
   #sliderControl{
-    margin-bottom:-440px;
+    margin-bottom:-360px;
   }
 }
 
@@ -279,7 +279,7 @@
   }
   #products{
     .horizontal-box{
-      .box-link{
+      .ecom-link{
         display:block;
         margin:0px;
         padding:0px 7px;
