@@ -204,6 +204,7 @@ header{
       margin-left:0.2em;
       margin-top: 0.6em;
     }
+
   }
   .nav-country-dropdown{
       color: var(--gb-color-gray-dark);
@@ -219,6 +220,12 @@ header{
     .ecom-radio-label{
       vertical-align: 10%;
       margin-left:.25rem;
+    }
+    .arrow-up{
+      @include triangle("up",10px,white);
+      position: absolute;
+      top: -7px;
+      left: 16.75%;
     }
   }
 
@@ -259,12 +266,6 @@ header{
     .text-line-2{
       margin-top: 1em;
     }
-  }
-  .arrow-up{
-    @include triangle("up",10px,white);
-    position: absolute;
-    top: -7px;
-    left: 29px;
   }
   .dropdown-menu{
     top: -12px!important;
@@ -329,8 +330,10 @@ header{
 
 @media screen and (max-width:992px){
   .header-top{
-    .arrow-up{
-      left: 30px;
+    .nav-country-dropdown{
+      .arrow-up{
+        left: 17.5%;
+      }
     }
   }
 }
@@ -358,9 +361,9 @@ header{
       }
       .dropdown-menu{
         top:-3px!important;
-      }
-      .arrow-up{
-        left: 29px;
+        .arrow-up{
+          left:16%;
+        }
       }
     }
   }
