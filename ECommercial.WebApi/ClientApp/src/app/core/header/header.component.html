@@ -34,32 +34,44 @@
       </div>
     </div>
     <div class="header-end">
-      <div class="nav-country nav-item-hover h-100" data-toggle="dropdown" id="navCountry" >
-        <span class="country-icon"></span>
-        <span class="nav-drop-down-icon"></span>
-      </div>
-      <div class="dropdown-menu nav-country-dropdown" aria-labelledby="navCountry" >
-        <div class="arrow-up d-inline"></div>
-        <div class="px-2">
-          <span class="text-line-2 mr-2">Change Language</span>
-          <span class="ecom-link">Learn more</span>
+      <div>
+        <div class="nav-country nav-item-hover h-100" data-toggle="dropdown" id="navCountry" >
+          <span class="country-icon"></span>
+          <span class="nav-drop-down-icon"></span>
         </div>
-        <div class="dropdown-divider mx-3"></div>
-        <div class="px-3">
-          <div class="ecom-radio-group" *ngFor="let lang of languages"><input class="ecom-radio" type="radio" name="language" id="{{lang.language}}Radio" [checked]="lang.code === choosenLanguage ? true : false"><label class="ecom-radio-label" for="{{lang.language}}Radio" >{{lang.language}} - {{lang.code}}</label></div>
+        <div class="dropdown-menu nav-country-dropdown" aria-labelledby="navCountry" >
+          <div class="arrow-up d-inline"></div>
+          <div class="px-2">
+            <span class="text-line-2 mr-2">Change Language</span>
+            <span class="ecom-link">Learn more</span>
+          </div>
+          <div class="dropdown-divider mx-3"></div>
+          <div class="px-3">
+            <div class="ecom-radio-group" *ngFor="let lang of languages"><input class="ecom-radio" type="radio" name="language" id="{{lang.language}}Radio" [checked]="lang.code === choosenLanguage ? true : false"><label class="ecom-radio-label" for="{{lang.language}}Radio" >{{lang.language}} - {{lang.code}}</label></div>
+          </div>
         </div>
       </div>
-
-      <div class="nav-account nav-item-hover">
-        <div class="text-line-container">
-          <span class="text-line-1">
-            <ng-container *ngIf="logged; else NotLogged;">Hello, {{profileName}}</ng-container>
-            <ng-template #NotLogged>Hello, Sign In</ng-template>
-          </span>
-          <span class="text-line-2">
-            Account & Other
-            <span class="nav-drop-down-icon"></span>
-          </span>
+      <div>
+        <div class="nav-account nav-item-hover h-100" data-toggle="dropdown" id="navAccount">
+          <div class="text-line-container">
+            <span class="text-line-1">
+              <ng-container *ngIf="logged; else NotLogged;">Hello, {{profileName}}</ng-container>
+              <ng-template #NotLogged>Hello, Sign In</ng-template>
+            </span>
+            <span class="text-line-2">
+              Account & Other
+              <span class="nav-drop-down-icon"></span>
+            </span>
+          </div>
+        </div>
+        <div class="dropdown-menu nav-account-dropdown p-3" aria-labelledby="navAccount">
+          <div class="arrow-up d-inline"></div>
+          <h2 class="font-weight-bolder">Your Account</h2>
+          <a class="ecom-link" [routerLink]="[ '/']">Account</a>
+          <a class="ecom-link" [routerLink]="[ '/']">Orders</a>
+          <a class="ecom-link" [routerLink]="[ '/']">Recommendations</a>
+          <a class="ecom-link" [routerLink]="[ '/']">Browsing History</a>
+          <a class="ecom-link" [routerLink]="[ '/']">Sign out</a>
         </div>
       </div>
 

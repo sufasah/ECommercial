@@ -23,11 +23,33 @@ export class HeaderComponent implements OnInit,AfterViewInit{
     $(document).ready(function(){
       let elem = $("#navCountry");
       let menu = elem.next();
-      self.convertHoverDropdown(elem,menu);
+
+      let navCountryForeground = $(".ecom-foreground[aria-labelledby='navCountry']");
+      let header = $("header");
+      let body=$("body");
+
+      self.convertHoverDropdown(elem,menu)
+
+
+
+      let onShow=()=>{
+        navCountryForeground.css("top",header.position().top+header.css("height"));
+        navCountryForeground.css("opacity",.4);
+        navCountryForeground.css("height",Number(body.css("height").replace(/[^-\d\.]/g, '')-Number(header.css("height").replace(/[^-\d\.]/g, ''))));
+      };
+
+      let onHide=()=>{
+        navCountryForeground.css("opacity",0);
+        navCountryForeground.css("height",0);
+      }
+
+      let navAccount=$("#navAccount");
+
+      self.convertHoverDropdown(navAccount,navAccount.next(),onShow,onHide);
   });
 }
 
-convertHoverDropdown(elem:any,menu:any){
+convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   let shown=false
   let to:any,toh:any;
   elem.removeAttr("data-toggle");
@@ -38,6 +60,7 @@ convertHoverDropdown(elem:any,menu:any){
       if(!shown){
         elem.dropdown("toggle");
         shown=true;
+        onShow();
       }
     },200);
   };
@@ -47,6 +70,7 @@ convertHoverDropdown(elem:any,menu:any){
     toh = setTimeout(function(){
       elem.dropdown("hide");
       shown=false;
+      onHide();
     },400);
   };
 

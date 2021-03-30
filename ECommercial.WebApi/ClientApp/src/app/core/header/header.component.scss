@@ -26,7 +26,7 @@ header{
   .nav-item-hover{
     border: 1px solid transparent;
     cursor: pointer;
-
+    user-select: none;
     &:hover{
       border:1px solid var(--gb-color-secondary);
     }
@@ -221,20 +221,44 @@ header{
       vertical-align: 10%;
       margin-left:.25rem;
     }
+    .ecom-radio-group{
+      margin-top: .5rem;
+    }
     .arrow-up{
-      @include triangle("up",10px,white);
-      position: absolute;
-      top: -7px;
       left: 16.75%;
     }
+  }
+  .arrow-up{
+    @include triangle("up",10px,white);
+    position: absolute;
+    top: -7px;
   }
 
   .nav-account{
     padding:0 0.4rem;
-
     .nav-drop-down-icon{
       margin-left: 0.2em;
     }
+  }
+
+  .nav-account-dropdown{
+    h2{
+      font-size: 1rem;
+    }
+    .ecom-link{
+      font-size: .875rem;
+      color: var(--gb-color-gray-dark);
+      display: block;
+      margin: 5px 0;
+
+      &:hover{
+        color:var(--gb-color-accent-dark);
+      }
+    }
+    .arrow-up{
+      left:72.5%;
+    }
+
   }
 
   .nav-orders{
@@ -283,6 +307,7 @@ header{
   overflow: auto;
   .nav-item-hover{
     padding: .3rem .4rem;
+
   }
   .nav-item{
     width: max-content;
