@@ -56,7 +56,7 @@
       <div class="horizontal-box">
         <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
-          <div class="overflow-control">
+          <div class="overflow-control w-100">
             <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
@@ -90,7 +90,7 @@
       <div class="horizontal-box">
         <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
-          <div class="overflow-control">
+          <div class="overflow-control w-100">
             <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
@@ -107,7 +107,7 @@
     <hr/>
     <h2>Inspired by your browsing history</h2>
     <div class="image-layout">
-      <div class="overflow-control">
+      <div class="overflow-control w-100">
         <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of lastboxProducts">
           <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
         </a>

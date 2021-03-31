@@ -80,6 +80,9 @@
     .image-layout{
       display: flex;
       position: relative;
+      height: 230px;
+      box-sizing: content-box;
+      overflow: hidden;
     }
     img{
       flex:1 0;

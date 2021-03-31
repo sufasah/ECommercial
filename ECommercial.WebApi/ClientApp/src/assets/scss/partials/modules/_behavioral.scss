@@ -1,4 +1,6 @@
 .overflow-control{
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
   user-select: none;
+  height: calc( 100% + 17px );
 }
