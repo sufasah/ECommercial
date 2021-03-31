@@ -57,8 +57,8 @@
         <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
           <div class="overflow-control">
-            <a [routerLink]="[product.link]" *ngFor="let product of item.products">
-              <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+            <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
+              <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
             <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
             <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
@@ -91,8 +91,8 @@
         <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
           <div class="overflow-control">
-            <a [routerLink]="[product.link]" *ngFor="let product of item.products">
-              <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+            <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
+              <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
             <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
             <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
@@ -108,8 +108,8 @@
     <h2>Inspired by your browsing history</h2>
     <div class="image-layout">
       <div class="overflow-control">
-        <a [routerLink]="[product.link]" *ngFor="let product of lastboxProducts">
-          <img src="{{product.imgUrl}}" alt="{{product.imgAlt}}">
+        <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of lastboxProducts">
+          <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
         </a>
       </div>
       <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>

@@ -46,6 +46,42 @@ export class HeaderComponent implements OnInit,AfterViewInit{
       let navAccount=$("#navAccount");
 
       self.convertHoverDropdown(navAccount,navAccount.next(),onShow,onHide);
+
+      let overflows = $(".overflow-control");
+      let positions:any=[];
+
+      overflows.each(function(index:any){
+        let overflow = $(overflows[index]);
+        positions.push({
+          dragging:false,
+          left: 0,
+          x: 0,
+          y: 0,
+        });
+
+        let dragging=false;
+        let pos:any =positions[index];
+
+        overflow.on("mousedown",function(e:MouseEvent){
+          pos.left=overflow.scrollLeft();
+          pos.x=e.clientX;
+          pos.y=e.clientY;
+          pos.dragging=true;
+        });
+
+        overflow.on("mousemove",function(e:MouseEvent){
+          if(pos.dragging){
+            const dx = e.clientX - pos.x;
+            overflow[0].scrollLeft = pos.left - dx;
+          }
+        });
+
+        $(window).on("mouseup",function(){
+          pos.dragging=false;
+        });
+      });
+
+
   });
 }
 
