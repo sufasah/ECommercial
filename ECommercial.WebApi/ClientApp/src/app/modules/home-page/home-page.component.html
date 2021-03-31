@@ -47,14 +47,14 @@
             <div class="divided-text">{{dividedItem.text}}</div>
           </a>
         </div>
-        <a class="ecom-link" *ngIf="!lastItem" [routerLink]="[item.link]">{{item.linkText}}</a>
-        <a class="ecom-link box-link-disabled" *ngIf="lastItem">{{item.linkText}}</a>
+        <a class="ecom-link mt-3" *ngIf="!lastItem" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <a class="ecom-link mt-3 box-link-disabled" *ngIf="lastItem">{{item.linkText}}</a>
       </div>
     </div>
     <hr class="box-break">
     <ng-container *ngFor="let item of fromDiscover;let lastItem=last">
       <div class="horizontal-box">
-        <h2>{{item.header}}</h2><a class="ecom-link" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
           <div class="overflow-control">
             <a [routerLink]="[product.link]" *ngFor="let product of item.products">
@@ -88,7 +88,7 @@
     <hr class="box-break">
     <ng-container *ngFor="let item of beforeBottom; let lastItem=last">
       <div class="horizontal-box">
-        <h2>{{item.header}}</h2><a class="ecom-link" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout">
           <div class="overflow-control">
             <a [routerLink]="[product.link]" *ngFor="let product of item.products">

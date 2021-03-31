@@ -17,7 +17,7 @@
 
   .cardbox{
     z-index: 1;
-    padding: 0.6em;
+    padding: 1em;
     background-color: var(--gb-color-secondary-light);
     margin:0 10px;
     flex: 1 0 20%;
@@ -25,14 +25,13 @@
     flex-direction: column;
     min-width: 280px;
     margin-top:20px;
+
     h2{
       font-weight: 700;
     }
-    .card-img,.box-link{
-      padding: 0 0.6em;
-    }
     .card-img{
       height: 304px;
+      margin-top: 10px;
     }
 
     .divided-images{
@@ -80,6 +79,7 @@
     }
     .overflow-control{
       overflow-x: auto;
+      user-select: none;
     }
     .image-layout{
       display: flex;
@@ -201,7 +201,6 @@
   margin: auto;
   h2 {
     display: inline-block;
-    padding: .5em;
     margin: 0;
     font-size: 1.275rem;
   }
@@ -258,11 +257,6 @@
         font-size:1rem;
       }
     }
-    .horizontal-box{
-      h2{
-        font-size:1rem;
-      }
-    }
   }
 }
 
@@ -276,15 +270,6 @@
   .carousel-control-next-icon,.carousel-control-prev-icon{
     width:20px!important;
     height:30px!important;
-  }
-  #products{
-    .horizontal-box{
-      .ecom-link{
-        display:block;
-        margin:0px;
-        padding:0px 7px;
-     }
-    }
   }
 }
 
