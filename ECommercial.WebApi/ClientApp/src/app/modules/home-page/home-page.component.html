@@ -33,31 +33,39 @@
     </div>
   </section>
 
-  <section id="products">
-    <div class="info text-center"> You are on ecommercial.com. You can shop millions of products with fast delivery.</div>
-    <div class="card-layout">
-      <div class="cardbox" *ngFor="let item of topItems;let lastItem=last">
-        <h2>{{item.header}}</h2>
-        <a [routerLink]="[item.link]">
-          <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!lastItem">
-        </a>
-        <div class="divided-layout" *ngIf="lastItem">
-          <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
-            <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
-            <div class="divided-text">{{dividedItem.text}}</div>
+  <section id="products" class="container">
+    <div class="row m-0">
+      <div class="col-12 p-0">
+        <div class="info text-center"> You are on ecommercial.com. You can shop millions of products with fast delivery.</div>
+      </div>
+    </div>
+    <div class="row justify-content-around m-0">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1"  *ngFor="let item of topItems;let lastItem=last">
+        <div class="cardbox mx-auto mt-3">
+          <h2>{{item.header}}</h2>
+          <a [routerLink]="[item.link]">
+            <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!lastItem">
           </a>
+          <div class="divided-layout" *ngIf="lastItem">
+            <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
+              <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
+              <div class="divided-text">{{dividedItem.text}}</div>
+            </a>
+          </div>
+          <a class="ecom-link mt-3" *ngIf="!lastItem" [routerLink]="[item.link]">{{item.linkText}}</a>
+          <a class="ecom-link mt-3 box-link-disabled" *ngIf="lastItem">{{item.linkText}}</a>
         </div>
-        <a class="ecom-link mt-3" *ngIf="!lastItem" [routerLink]="[item.link]">{{item.linkText}}</a>
-        <a class="ecom-link mt-3 box-link-disabled" *ngIf="lastItem">{{item.linkText}}</a>
       </div>
     </div>
     <hr class="box-break">
     <ng-container *ngFor="let item of fromDiscover;let lastItem=last">
-      <div class="horizontal-box">
-        <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
-        <div class="image-layout">
+      <div class="row m-0 horizontal-box">
+        <h2>{{item.header}}</h2>
+        <div class="w-100 d-block d-sm-none"></div>
+        <a class="ecom-link ml-sm-3 mt-sm-1" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <div class="image-layout w-100">
           <div class="overflow-control w-100">
-            <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
+            <a  [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
             <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
@@ -69,27 +77,33 @@
     </ng-container>
 
     <div class="card-layout">
-      <div class="cardbox" *ngFor="let item of afterDiscover; let firstItem=first">
-        <h2>{{item.header}}</h2>
-        <a [routerLink]="[item.link]">
-          <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!firstItem">
-        </a>
-        <div class="divided-layout" *ngIf="firstItem">
-          <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
-            <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
-            <div class="divided-text">{{dividedItem.text}}</div>
-          </a>
+      <div class="row m-0">
+        <div class="col-12 col-md-6  col-xl-3 p-1" *ngFor="let item of afterDiscover; let firstItem=first">
+          <div class="cardbox mx-auto mt-3">
+            <h2>{{item.header}}</h2>
+            <a [routerLink]="[item.link]">
+              <img src="{{item.imgUrl}}" class="card-img" alt="{{item.imgAlt}}" *ngIf="!firstItem">
+            </a>
+            <div class="divided-layout" *ngIf="firstItem">
+              <a class="divided-images" [routerLink]="[dividedItem.link]" *ngFor="let dividedItem of item.dividedList">
+                <img class="divided-image img-fluid" src="{{dividedItem.imgUrl}}" alt="{{dividedItem.imgAlt}}"/>
+                <div class="divided-text">{{dividedItem.text}}</div>
+              </a>
+            </div>
+            <a class="ecom-link mt-3" *ngIf="!firstItem" [routerLink]="[item.link]">{{item.linkText}}</a>
+            <a class="ecom-link box-link-disabled mt-3" *ngIf="firstItem">{{item.linkText}}</a>
+          </div>
         </div>
-        <a class="ecom-link" *ngIf="!firstItem" [routerLink]="[item.link]">{{item.linkText}}</a>
-        <a class="ecom-link box-link-disabled" *ngIf="firstItem">{{item.linkText}}</a>
       </div>
     </div>
 
     <hr class="box-break">
     <ng-container *ngFor="let item of beforeBottom; let lastItem=last">
-      <div class="horizontal-box">
-        <h2>{{item.header}}</h2><a class="ecom-link ml-sm-3 d-block d-sm-inline-block" [routerLink]="[item.link]">{{item.linkText}}</a>
-        <div class="image-layout">
+      <div class="row m-0 horizontal-box">
+        <h2>{{item.header}}</h2>
+        <div class="w-100 d-block d-sm-none"></div>
+        <a class="ecom-link d-block d-md-inline-block ml-sm-3 mt-sm-1" [routerLink]="[item.link]">{{item.linkText}}</a>
+        <div class="image-layout w-100">
           <div class="overflow-control w-100">
             <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
