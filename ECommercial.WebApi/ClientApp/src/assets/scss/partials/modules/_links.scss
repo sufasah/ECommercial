@@ -1,11 +1,31 @@
-.ecom-link{
-  font-size: .82rem;
+@mixin ecomLinkProperties($font-size){
+  font-size: $font-size;
   text-decoration: none;
-  color: var(--gb-color-blue-light);
   font-weight: 500;
   cursor: pointer;
   &:hover{
     text-decoration: underline;
+    @content;
+  }
+}
+
+.ecom-link{
+  color: var(--gb-color-blue-light);
+  @include ecomLinkProperties(.82rem){
     color:var(--gb-color-red);
+  }
+}
+
+.ecom-link-hov-accent{
+  color: var(--gb-color-blue-light);
+  @include ecomLinkProperties(.82rem){
+    color:var(--gb-color-accent-dark);
+  }
+}
+
+.ecom-link-gray{
+  color: var(--gb-color-gray-dark);
+  @include ecomLinkProperties(.875rem){
+    color:var(--gb-color-accent-dark);
   }
 }

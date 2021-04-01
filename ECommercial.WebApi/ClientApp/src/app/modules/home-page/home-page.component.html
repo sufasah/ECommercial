@@ -64,12 +64,14 @@
         <div class="w-100 d-block d-sm-none"></div>
         <a class="ecom-link ml-sm-3 mt-sm-1" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout w-100">
-          <div class="overflow-control w-100">
+          <div class="overflow-control">
             <a  [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
-            <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
-            <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+            <div class="horizontal-lr">
+              <button class="horizontal-box-left m-auto"><span class="products-left-icon"></span></button>
+              <button class="horizontal-box-right m-auto"><span class="products-right-icon"></span></button>
+            </div>
           </div>
         </div>
       </div>
@@ -104,12 +106,14 @@
         <div class="w-100 d-block d-sm-none"></div>
         <a class="ecom-link d-block d-md-inline-block ml-sm-3 mt-sm-1" [routerLink]="[item.link]">{{item.linkText}}</a>
         <div class="image-layout w-100">
-          <div class="overflow-control w-100">
+          <div class="overflow-control">
             <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of item.products">
               <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
             </a>
-            <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
-            <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+            <div class="horizontal-lr">
+              <button class="horizontal-box-left m-auto"><span class="products-left-icon"></span></button>
+              <button class="horizontal-box-right m-auto"><span class="products-right-icon"></span></button>
+            </div>
           </div>
         </div>
       </div>
@@ -121,13 +125,15 @@
     <hr/>
     <h2>Inspired by your browsing history</h2>
     <div class="image-layout">
-      <div class="overflow-control w-100">
+      <div class="overflow-control">
         <a [routerLink]="[product.link]" draggable="false" *ngFor="let product of lastboxProducts">
           <img src="{{product.imgUrl}}" draggable="false" alt="{{product.imgAlt}}">
         </a>
       </div>
-      <button class="horizontal-box-left" tabindex="-1"><span class="products-left-icon"></span></button>
-      <button class="horizontal-box-right" tabindex="-1"><span class="products-right-icon"></span></button>
+      <div class="horizontal-lr">
+        <button class="horizontal-box-left m-auto"><span class="products-left-icon"></span></button>
+        <button class="horizontal-box-right m-auto"><span class="products-right-icon"></span></button>
+      </div>
     </div>
   </div>
 </div>
@@ -144,7 +150,7 @@
           Delivery options and delivery speed may vary for different locations
         </small></p>
         <a class="ecom-link" *ngIf="logged; else signInForAddress">Manage address book</a>
-        <ng-template #signInForAddress><button class="ecom-default-button w-100">Sign in to see your addresses</button></ng-template>
+        <ng-template #signInForAddress><button class="ecom-button w-100">Sign in to see your addresses</button></ng-template>
         <div class="ecom-text-hr">
           <h5 >or enter a TR zip code</h5>
         </div>
@@ -159,7 +165,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="ecom-default-button" data-dismiss="modal">Done</button>
+        <button type="button" class="ecom-button" data-dismiss="modal">Done</button>
       </div>
     </div>
   </div>

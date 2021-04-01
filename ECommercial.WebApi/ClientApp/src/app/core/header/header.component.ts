@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit,AfterViewInit{
     {language:"English", code:"EN"},
   ];
 
+  dropdowns:any=[]
   constructor() {
   }
   ngAfterViewInit(): void {
@@ -46,6 +47,7 @@ export class HeaderComponent implements OnInit,AfterViewInit{
       let navAccount=$("#navAccount");
 
       self.convertHoverDropdown(navAccount,navAccount.next(),onShow,onHide);
+
 
       let overflows = $(".overflow-control");
       let positions:any=[];
@@ -88,6 +90,7 @@ export class HeaderComponent implements OnInit,AfterViewInit{
 convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   let shown=false
   let to:any,toh:any;
+  let self=this;
   elem.removeAttr("data-toggle");
 
   let enteredListener=function(){
@@ -95,6 +98,10 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
     to=setTimeout(function(){
       if(!shown){
         elem.dropdown("toggle");
+        self.dropdowns.forEach((element:any) => {
+          if(element!==elem)
+            element.dropdown("hide");
+        });
         shown=true;
         onShow();
       }
@@ -117,6 +124,7 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   elem.on("mouseleave",leavedListener);
   menu.on("mouseenter",menuEnteredListener);
   menu.on("mouseleave",leavedListener);
+  this.dropdowns.push(elem);
 }
 
   ngOnInit(): void {

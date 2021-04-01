@@ -66,12 +66,19 @@
         </div>
         <div class="dropdown-menu nav-account-dropdown p-3" aria-labelledby="navAccount">
           <div class="arrow-up d-inline"></div>
+          <div *ngIf="!logged">
+            <button class="ecom-button w-100">Sign in</button>
+            <div class="mt-1">
+              <small>New customer? </small><a [routerLink]="[ '/' ]" class="ecom-link-hov-accent">Start here.</a>
+            </div>
+            <div class="dropdown-divider mb-2 mt-1"></div>
+          </div>
           <h2 class="font-weight-bolder">Your Account</h2>
-          <a class="ecom-link" [routerLink]="[ '/']">Account</a>
-          <a class="ecom-link" [routerLink]="[ '/']">Orders</a>
-          <a class="ecom-link" [routerLink]="[ '/']">Recommendations</a>
-          <a class="ecom-link" [routerLink]="[ '/']">Browsing History</a>
-          <a class="ecom-link" [routerLink]="[ '/']">Sign out</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Account</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Orders</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Recommendations</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Browsing History</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Sign out</a>
         </div>
       </div>
 

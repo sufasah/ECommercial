@@ -49,6 +49,7 @@ header{
 
   .header-start,.header-middle,.header-end{
     padding: 0.3rem;
+    align-self: flex-start;
   }
 }// header
 
@@ -245,20 +246,9 @@ header{
     h2{
       font-size: 1rem;
     }
-    .ecom-link{
-      font-size: .875rem;
-      color: var(--gb-color-gray-dark);
-      display: block;
-      margin: 5px 0;
-
-      &:hover{
-        color:var(--gb-color-accent-dark);
-      }
-    }
     .arrow-up{
-      left:72.5%;
+      left:49%;
     }
-
   }
 
   .nav-orders{

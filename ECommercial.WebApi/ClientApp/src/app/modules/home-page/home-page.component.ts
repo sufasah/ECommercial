@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var $:any;
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -178,7 +178,66 @@ export class HomePageComponent implements OnInit {
   lastboxProducts=this.makeProducts(84,94,"product");
 
   ngOnInit(): void {
+    $(document).ready(()=>{
+      let horiLefts=$(".horizontal-box .horizontal-box-left");
+      let horiRights=$(".horizontal-box .horizontal-box-right");
 
+      $(".horizontal-box:not(.last-box) .horizontal-box-right").each((i:any,elem:any)=>{
+        let overflow = $(elem).closest(".overflow-control");
+        let imageLayout=$(elem).closest(".image-layout");
+        if(overflow.get(0).scrollWidth>imageLayout.width()-1){
+          $(elem).addClass("horizontal-lr-active");
+        }
+      });
+
+      {
+        let imageLayout=$(".last-box .image-layout")
+        let overflow = imageLayout.find(".overflow-control");
+        if(overflow.get(0).scrollWidth>imageLayout.width()-1){
+          imageLayout.find(".horizontal-box-right").addClass("horizontal-lr-active");
+        }
+      }
+
+
+      horiLefts.on("click",(evt:any)=>{
+        let elem = $(evt.currentTarget);
+        if(elem.hasClass("horizontal-lr-active")){
+          let overflow = elem.closest(".overflow-control");
+          let imageLayout= elem.closest(".image-layout");
+          let nextPos= overflow.scrollLeft() - imageLayout.width();
+          overflow.stop();
+          overflow.animate({
+            scrollLeft: nextPos<0?0:nextPos,
+          },1000);
+        }
+      });
+
+      horiRights.on("click",(evt:any)=>{
+        let elem = $(evt.currentTarget);
+        if(elem.hasClass("horizontal-lr-active")){
+          let overflow = elem.closest(".overflow-control");
+          let imageLayout= elem.closest(".image-layout");
+          let nextPos=overflow.scrollLeft() + imageLayout.width();
+          overflow.stop();
+          overflow.animate({
+            scrollLeft:nextPos>overflow[0].scrollWidth?overflow[0].scrollWidth:nextPos,
+          },1000);
+        }
+      });
+
+      $(".overflow-control").on("scroll",function(evt:any){
+        let overflow = $(evt.currentTarget);
+        if(overflow.scrollLeft()+overflow.innerWidth()>=overflow[0].scrollWidth-1)
+          overflow.find(".horizontal-box-right").removeClass("horizontal-lr-active");
+        else
+          overflow.find(".horizontal-box-right").addClass("horizontal-lr-active");
+
+        if(overflow.scrollLeft()<=0)
+          overflow.find(".horizontal-box-left").removeClass("horizontal-lr-active");
+        else
+          overflow.find(".horizontal-box-left").addClass("horizontal-lr-active");
+      });
+    });
   }
 
 }
