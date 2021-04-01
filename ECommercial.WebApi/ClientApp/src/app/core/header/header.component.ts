@@ -31,8 +31,6 @@ export class HeaderComponent implements OnInit,AfterViewInit{
 
       self.convertHoverDropdown(elem,menu)
 
-
-
       let onShow=()=>{
         navCountryForeground.css("top",header.position().top+header.css("height"));
         navCountryForeground.css("opacity",.4);
@@ -82,10 +80,8 @@ export class HeaderComponent implements OnInit,AfterViewInit{
           pos.dragging=false;
         });
       });
-
-
-  });
-}
+    });
+  }
 
 convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   let shown=false

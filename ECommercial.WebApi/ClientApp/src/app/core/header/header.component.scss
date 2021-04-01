@@ -225,14 +225,6 @@ header{
     .ecom-radio-group{
       margin-top: .5rem;
     }
-    .arrow-up{
-      left: 16.75%;
-    }
-  }
-  .arrow-up{
-    @include triangle("up",10px,white);
-    position: absolute;
-    top: -7px;
   }
 
   .nav-account{
@@ -245,9 +237,6 @@ header{
   .nav-account-dropdown{
     h2{
       font-size: 1rem;
-    }
-    .arrow-up{
-      left:49%;
     }
   }
 
@@ -280,9 +269,6 @@ header{
     .text-line-2{
       margin-top: 1em;
     }
-  }
-  .dropdown-menu{
-    top: -12px!important;
   }
 }// header-end
 
@@ -342,16 +328,6 @@ header{
   height: 16px;
 }
 
-@media screen and (max-width:992px){
-  .header-top{
-    .nav-country-dropdown{
-      .arrow-up{
-        left: 17.5%;
-      }
-    }
-  }
-}
-
 @media screen and (max-width:767.98px)
 {
   .header-top{
@@ -372,12 +348,6 @@ header{
       .header-middle{
         margin-bottom:5px;
         height: 50px;
-      }
-      .dropdown-menu{
-        top:-3px!important;
-        .arrow-up{
-          left:16%;
-        }
       }
     }
   }
