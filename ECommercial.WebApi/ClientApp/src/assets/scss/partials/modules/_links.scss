@@ -18,7 +18,7 @@
 
 .ecom-link-hov-accent{
   color: var(--gb-color-blue-light);
-  @include ecomLinkProperties(.82rem){
+  @include ecomLinkProperties(.775rem){
     color:var(--gb-color-accent-dark);
   }
 }

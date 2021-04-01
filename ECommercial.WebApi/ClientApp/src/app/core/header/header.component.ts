@@ -29,12 +29,16 @@ export class HeaderComponent implements OnInit,AfterViewInit{
       let header = $("header");
       let body=$("body");
 
-      self.convertHoverDropdown(elem,menu)
+      let footerCountry = $("#footerCountry");
+      let footerMenu=footerCountry.next();
+
+      self.convertHoverDropdown(elem,menu);
+      self.convertHoverDropdown(footerCountry,footerMenu);
 
       let onShow=()=>{
         navCountryForeground.css("top",header.position().top+header.css("height"));
         navCountryForeground.css("opacity",.4);
-        navCountryForeground.css("height",Number(body.css("height").replace(/[^-\d\.]/g, '')-Number(header.css("height").replace(/[^-\d\.]/g, ''))));
+        navCountryForeground.css("height",body.height()-header.height());
       };
 
       let onHide=()=>{

@@ -19,15 +19,25 @@
       <div class="row justify-content-center align-items-center">
         <app-logo class="footer-logo mr-4"></app-logo>
         <div class="btn-group ml-4">
-          <button class="ecom-outlined-button">
+          <button class="ecom-outlined-button" id="footerCountry" data-toggle="dropdown">
             <i class="ecom-outlined-button-icon global-icon"></i>
             <span class="ecom-outlined-button-text">English</span>
             <span class="up-down-arrow-icon"></span>
           </button>
-          <button class="ecom-outlined-button">
-            <i class="ecom-outlined-button-icon flag-icon"></i>
-            <span class="ecom-outlined-button-text">Turkey</span>
-          </button>
+          <div class="dropdown-menu footer-country-dropdown" aria-labelledby="footerCountry" >
+            <div class="d-inline"></div>
+            <div class="px-2">
+              <span class="text-line-2 mr-2">Change Language</span>
+              <span class="ecom-link">Learn more</span>
+            </div>
+            <div class="dropdown-divider mx-3"></div>
+            <div class="px-3">
+              <div class="ecom-radio-group" *ngFor="let lang of languages">
+                <input class="ecom-radio" type="radio" name="language" id="{{lang.language}}RadioFooter" [checked]="lang.code === choosenLanguage ? true : false">
+                <label class="ecom-radio-label" for="{{lang.language}}RadioFooter" >{{lang.language}} - {{lang.code}}</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

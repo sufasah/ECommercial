@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  choosenLanguage="TR";
+  languages = [
+    {language:"Türkçe", code:"TR"},
+    {language:"English", code:"EN"},
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
