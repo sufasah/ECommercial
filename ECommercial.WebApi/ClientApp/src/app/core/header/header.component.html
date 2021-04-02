@@ -47,7 +47,10 @@
           </div>
           <div class="dropdown-divider mx-3"></div>
           <div class="px-3">
-            <div class="ecom-radio-group" *ngFor="let lang of languages"><input class="ecom-radio" type="radio" name="language" id="{{lang.language}}Radio" [checked]="lang.code === choosenLanguage ? true : false"><label class="ecom-radio-label" for="{{lang.language}}Radio" >{{lang.language}} - {{lang.code}}</label></div>
+            <div class="ecom-radio-group" *ngFor="let lang of languages">
+              <input #langRadio class="ecom-radio" type="radio" name="language" id="{{lang.language}}Radio" (change)="langRadioChanged(langRadio)" value="{{lang.code}}" [checked]="choosenLanguage==lang.code">
+              <label class="ecom-radio-label" for="{{lang.language}}Radio" >{{lang.language}} - {{lang.code}}</label>
+            </div>
           </div>
         </div>
       </div>
@@ -74,7 +77,7 @@
             <div class="dropdown-divider mb-2 mt-1"></div>
           </div>
           <h2 class="font-weight-bolder">Your Account</h2>
-          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Account</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/Account' ]">Account</a>
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Orders</a>
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Recommendations</a>
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Browsing History</a>

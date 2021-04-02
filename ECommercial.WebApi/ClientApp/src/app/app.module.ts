@@ -10,6 +10,7 @@ import { HeaderComponent } from '@core/header/header.component';
 import { FooterComponent } from '@core/footer/footer.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
 import { LogoComponent } from '@shared/components/logo/logo.component';
+import { AccountPageComponent } from './modules/account-page/account-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LogoComponent } from '@shared/components/logo/logo.component';
     FooterComponent,
     HomePageComponent,
     LogoComponent,
+    AccountPageComponent,
   ],
   imports: [
     FormsModule,

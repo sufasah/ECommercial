@@ -165,4 +165,8 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
     "Electronics",
     "Books",
   ];
+
+  langRadioChanged(elem:any){
+    this.choosenLanguage=elem.value;
+  }
 }

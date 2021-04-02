@@ -13,6 +13,10 @@ export class FooterComponent implements OnInit {
     {language:"English", code:"EN"},
   ];
 
+  langRadioChanged(elem:any){
+    this.choosenLanguage=elem.value;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

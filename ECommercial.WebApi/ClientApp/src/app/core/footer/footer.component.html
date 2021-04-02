@@ -33,7 +33,7 @@
             <div class="dropdown-divider mx-3"></div>
             <div class="px-3">
               <div class="ecom-radio-group" *ngFor="let lang of languages">
-                <input class="ecom-radio" type="radio" name="language" id="{{lang.language}}RadioFooter" [checked]="lang.code === choosenLanguage ? true : false">
+                <input #langRadioFooter class="ecom-radio" type="radio" name="languageFooter" id="{{lang.language}}RadioFooter" value="{{lang.code}}" (change)="langRadioChanged(langRadioFooter)" [checked]="lang.code === choosenLanguage">
                 <label class="ecom-radio-label" for="{{lang.language}}RadioFooter" >{{lang.language}} - {{lang.code}}</label>
               </div>
             </div>
