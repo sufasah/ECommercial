@@ -62,8 +62,6 @@ export class HeaderComponent implements OnInit,AfterViewInit{
           x: 0,
           y: 0,
         });
-
-        let dragging=false;
         let pos:any =positions[index];
 
         overflow.on("mousedown",function(e:MouseEvent){
@@ -91,7 +89,7 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   let shown=false
   let to:any,toh:any;
   let self=this;
-  elem.removeAttr("data-toggle");
+  elem.removeAttr("data-bs-toggle");
 
   let enteredListener=function(){
     clearTimeout(toh);

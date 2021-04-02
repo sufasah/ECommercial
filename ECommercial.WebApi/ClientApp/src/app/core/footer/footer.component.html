@@ -13,12 +13,14 @@
 
       </div>
     </div>
-    <hr class="footer-hr">
+    <div class="footer-hr"></div>
 
     <div class="footer-container-fluid container-fluid ">
-      <div class="row justify-content-center align-items-center">
-        <app-logo class="footer-logo mr-4"></app-logo>
-        <div class="btn-group ml-4">
+      <div class="row align-items-center">
+        <div class="col text-end">
+          <app-logo class="footer-logo"></app-logo>
+        </div>
+        <div class="btn-group ml-4 col">
           <button class="ecom-outlined-button" id="footerCountry" data-toggle="dropdown">
             <i class="ecom-outlined-button-icon global-icon"></i>
             <span class="ecom-outlined-button-text">English</span>
@@ -55,11 +57,13 @@
       </div>
     </div>
     <div class="footer-container-fluid container-fluid ">
-      <div class="row justify-content-center align-items-center">
-        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Conditions of Use</a>
-        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Privacy Notice</a>
-        <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Interest-Based Ads</a>
-        <span class="footer-last-texts footer-item-line-2">© 1996-2021, ECommercial.com, All Rights Reserved.</span>
+      <div class="row align-items-center justify-content-center">
+        <div class="col text-center">
+          <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Conditions of Use</a>
+          <a class="footer-last-texts footer-item-line-1" [routerLink]="[ '/']">Privacy Notice</a>
+          <a class="footer-last-texts footer-item-line-1 d-inline-block" [routerLink]="[ '/']">Interest-Based Ads</a>
+          <span class="footer-last-texts footer-item-line-2 d-inline-block">© 1996-2021, ECommercial.com, All Rights Reserved.</span>
+        </div>
       </div>
     </div>
   </div>

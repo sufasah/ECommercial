@@ -211,15 +211,15 @@
 }
 
 #products{
+  position: relative;
+  z-index: 1;
   max-width: 1500px;
   padding: 20px 10px;
   padding-top: 0;
   margin: auto;
   .info{
     padding: 10px;
-    z-index: 1;
     margin-bottom: 0;
-    position: relative;
     background-color: #F5F6F6;
     color: var(--gb-color-black-dark);
     font-size: 0.825rem;

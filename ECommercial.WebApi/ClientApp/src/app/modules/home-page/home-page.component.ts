@@ -182,28 +182,21 @@ export class HomePageComponent implements OnInit {
       let horiLefts=$(".horizontal-box .horizontal-box-left");
       let horiRights=$(".horizontal-box .horizontal-box-right");
 
-      $(".horizontal-box:not(.last-box) .horizontal-box-right").each((i:any,elem:any)=>{
-        let overflow = $(elem).closest(".overflow-control");
-        let imageLayout=$(elem).closest(".image-layout");
-        if(overflow.get(0).scrollWidth>imageLayout.width()-1){
-          $(elem).addClass("horizontal-lr-active");
-        }
-      });
-
-      {
-        let imageLayout=$(".last-box .image-layout")
+      $(".horizontal-box").each((i:any,elem:any)=>{
+        let imageLayout=$(elem).find(".image-layout");
         let overflow = imageLayout.find(".overflow-control");
         if(overflow.get(0).scrollWidth>imageLayout.width()-1){
           imageLayout.find(".horizontal-box-right").addClass("horizontal-lr-active");
         }
-      }
+      });
 
 
       horiLefts.on("click",(evt:any)=>{
-        let elem = $(evt.currentTarget);
-        if(elem.hasClass("horizontal-lr-active")){
-          let overflow = elem.closest(".overflow-control");
-          let imageLayout= elem.closest(".image-layout");
+        let elem = $(evt.currentTarget).closest(".horizontal-box");
+        let horiLeft= $(evt.currentTarget);
+        if(horiLeft.hasClass("horizontal-lr-active")){
+          let imageLayout=$(elem).find(".image-layout");
+          let overflow = imageLayout.find(".overflow-control");
           let nextPos= overflow.scrollLeft() - imageLayout.width();
           overflow.stop();
           overflow.animate({
@@ -213,10 +206,11 @@ export class HomePageComponent implements OnInit {
       });
 
       horiRights.on("click",(evt:any)=>{
-        let elem = $(evt.currentTarget);
-        if(elem.hasClass("horizontal-lr-active")){
-          let overflow = elem.closest(".overflow-control");
-          let imageLayout= elem.closest(".image-layout");
+        let elem = $(evt.currentTarget).closest(".horizontal-box");
+        let horiRight= $(evt.currentTarget);
+        if(horiRight.hasClass("horizontal-lr-active")){
+          let imageLayout=$(elem).find(".image-layout");
+          let overflow = imageLayout.find(".overflow-control");
           let nextPos=overflow.scrollLeft() + imageLayout.width();
           overflow.stop();
           overflow.animate({
@@ -227,15 +221,17 @@ export class HomePageComponent implements OnInit {
 
       $(".overflow-control").on("scroll",function(evt:any){
         let overflow = $(evt.currentTarget);
+        let imageLayout = overflow.closest(".image-layout");
+
         if(overflow.scrollLeft()+overflow.innerWidth()>=overflow[0].scrollWidth-1)
-          overflow.find(".horizontal-box-right").removeClass("horizontal-lr-active");
+          imageLayout.find(".horizontal-box-right").removeClass("horizontal-lr-active");
         else
-          overflow.find(".horizontal-box-right").addClass("horizontal-lr-active");
+          imageLayout.find(".horizontal-box-right").addClass("horizontal-lr-active");
 
         if(overflow.scrollLeft()<=0)
-          overflow.find(".horizontal-box-left").removeClass("horizontal-lr-active");
+          imageLayout.find(".horizontal-box-left").removeClass("horizontal-lr-active");
         else
-          overflow.find(".horizontal-box-left").addClass("horizontal-lr-active");
+          imageLayout.find(".horizontal-box-left").addClass("horizontal-lr-active");
       });
     });
   }

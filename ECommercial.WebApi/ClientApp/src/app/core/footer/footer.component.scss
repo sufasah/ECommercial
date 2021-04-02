@@ -17,7 +17,7 @@ footer{
   }
 
   .footer-hr{
-    border-color: $backToTopBgColor;
+    border:1px solid $backToTopBgColor;
   }
 }
 #footer-top,#footer-bottom{
@@ -37,6 +37,7 @@ footer{
   }
   .footer-item{
     color:var(--gb-color-secondary-dark);
+    text-decoration: none;
     padding: .175em;
     font-size:1em;
   }
@@ -68,6 +69,7 @@ footer{
   .footer-item{
     color:var(--gb-color-secondary-dark);
     padding: .175em;
+    text-decoration: none;
   }
   .footer-item-line-1,.footer-item-line-2{
     font-family: "Montserrat";
