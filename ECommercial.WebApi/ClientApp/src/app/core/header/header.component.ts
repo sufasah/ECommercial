@@ -141,27 +141,80 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   clickCategoryDropdownItem(evt:any){
     this.selectedCategory=evt.target.innerText
   }
-  categories=[
-    "Arts & Crafts",
-    "Automotive",
-    "Baby",
-    "Electronics",
-    "Books",
-    "Arts & Crafts",
-    "Automotive",
-    "Baby",
-    "Electronics",
-    "Books",
-    "Arts & Crafts",
-    "Automotive",
-    "Baby",
-    "Electronics",
-    "Books",
-    "Arts & Crafts",
-    "Automotive",
-    "Baby",
-    "Electronics",
-    "Books",
+
+  createSubCategories(id:Number){
+    return [{
+      name:"sub1"+id,
+      subSubCategories:[
+        "subsub1"+id,
+        "subsub2"+id,
+        "subsub3"+id,
+        "subsub4"+id,
+        "subsub5"+id,
+      ],
+    },
+    {
+      name:"sub2"+id,
+      subSubCategories:[
+        "subsub6"+id,
+        "subsub7"+id,
+        "subsub8"+id,
+        "subsub9"+id,
+        "subsub10"+id,
+      ],
+    },
+    {
+      name:"sub3"+id,
+      subSubCategories:[
+        "subsub11"+id,
+        "subsub12"+id,
+        "subsub13"+id,
+        "subsub14"+id,
+        "subsub15"+id,
+      ],
+    },
+    {
+      name:"sub4"+id,
+      subSubCategories:[
+        "subsub16"+id,
+        "subsub17"+id,
+        "subsub18"+id,
+        "subsub19"+id,
+        "subsub20"+id,
+      ],
+    },
+    {
+      name:"sub5"+id,
+      subSubCategories:[
+        "subsub21"+id,
+        "subsub22"+id,
+        "subsub23"+id,
+        "subsub24"+id,
+        "subsub25"+id,
+      ],
+    }];
+  }
+
+  categories=[{
+    name: "Arts & Crafts",
+    subCategories:this.createSubCategories(1),
+  },
+  {
+    name:"Automotive",
+    subCategories:this.createSubCategories(2),
+  },
+  {
+    name:"Baby",
+    subCategories:this.createSubCategories(3),
+  },
+  {
+    name:"Electronics",
+    subCategories:this.createSubCategories(4),
+  },
+  {
+    name:"Books",
+    subCategories:this.createSubCategories(5),
+  },
   ];
 
   langRadioChanged(elem:any){

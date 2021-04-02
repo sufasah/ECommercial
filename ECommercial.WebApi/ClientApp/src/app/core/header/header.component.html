@@ -20,7 +20,7 @@
           </div>
           <div class="dropdown-menu" aria-labelledby="searchCategory">
             <a class="dropdown-item" [routerLink]="[ '/' ]" (click)="clickCategoryDropdownItem($event)">All Departments</a>
-            <a class="dropdown-item" [routerLink]="[ '/' ]" (click)="clickCategoryDropdownItem($event)" *ngFor="let category of categories">{{category}}</a>
+            <a class="dropdown-item" [routerLink]="[ '/' ]" (click)="clickCategoryDropdownItem($event)" *ngFor="let category of categories">{{category.name}}</a>
           </div>
         </div>
         <div class="search-form">
@@ -107,8 +107,8 @@
     <div class="header-bottom overflow-control">
       <div class="header-start">
         <div class="nav-categories nav-item-hover" data-bs-toggle="offcanvas" data-bs-target="#categoryOffCanvas" role="button" aria-controls="categoryOffCanvas">
-          <span class="list-icon"></span>
-          <span class="nav-text">
+          <span class="list-icon" data-bs-toggle="offcanvas" data-bs-target="#categoryOffCanvas" role="button" aria-controls="categoryOffCanvas"></span>
+          <span class="nav-text" data-bs-toggle="offcanvas" data-bs-target="#categoryOffCanvas" role="button" aria-controls="categoryOffCanvas">
             Categories
           </span>
         </div>
@@ -144,20 +144,34 @@
     </div>
   </div>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="categoryOffCanvas" aria-labelledby="categoryOffcanvas">
-    <div class="offcanvas-header">
-      <h5 class="m-0 px-3 d-flex align-items-center">
-        <i class="fas fa-user-circle" style="font-size: 28px;"></i>
-        <span class="me-1 ms-3">Hello,</span>
-        <span *ngIf="logged; else signInSpan">{{profileName}}</span>
-        <ng-template #signInSpan>
-          <span>Sign In</span>
-        </ng-template>
-      </h5>
-    </div>
-    <div type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></div>
-    <div class="offcanvas-body">
-      <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    <a [routerLink]="[ '/Account' ]" data-bs-dismiss="offcanvas">
+      <div class="offcanvas-header">
+        <h6 class="m-0 px-3 d-flex align-items-center">
+          <i class="fas fa-user-circle fs-3"></i>
+          <div class="fs-5">
+            <span class="me-1 ms-3">Hello,</span>
+            <span *ngIf="logged; else signInSpan">{{profileName}}</span>
+          </div>
+          <ng-template #signInSpan>
+            <span>Sign In</span>
+          </ng-template>
+        </h6>
+      </div>
+    </a>
+    <div class="fas fa-times fs-3" data-bs-dismiss="offcanvas" aria-label="Close"></div>
+    <div class="offcanvas-body p-0 mt-2 accordion" id="categoryList">
+      <div class="categories"  *ngFor="let category of categories; let itemIndex=index">
+        <div data-bs-toggle="collapse" attr.data-bs-target="#collapseCategory{{itemIndex}}" aria-expanded="true" attr.aria-controls="collapseCategory{{itemIndex}}">
+          <h5 class="fw-bold m-0 p-2 ps-5 user-select-none">{{category.name}}</h5>
+        </div>
+
+        <ul class="sub-categories list-unstyled accordion-collapse collapse " id="collapseCategory{{itemIndex}}" data-bs-parent="categoryList" >
+          <li class="sub-category d-flex align-items-center" *ngFor="let subCategory of category.subCategories">
+            <a [routerLink]="" class="ps-5 p-2 text-decoration-none flex-grow-1">{{subCategory.name}}</a>
+            <i class="fas fa-angle-right p-3"></i>
+          </li>
+        </ul>
+        <div class="dropdown-divider"></div>
       </div>
     </div>
   </div>
