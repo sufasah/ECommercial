@@ -220,4 +220,17 @@ convertHoverDropdown(elem:any,menu:any,onShow:any=()=>{},onHide:any=()=>{}){
   langRadioChanged(elem:any){
     this.choosenLanguage=elem.value;
   }
+
+  selectedSubCategory:any={};
+
+  selectSubSubCategories(subCategory:any){
+    this.selectedSubCategory=subCategory;
+    var elem = $(".sub-sub-categories-body");
+    elem.css("left",0);
+  }
+
+  goToCategories(){
+    var elem= $(".sub-sub-categories-body");
+    elem.css("left","100%");
+  }
 }
