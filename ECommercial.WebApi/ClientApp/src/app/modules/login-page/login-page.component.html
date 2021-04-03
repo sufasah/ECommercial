@@ -1,0 +1,33 @@
+<div class="container-fluid m-0 p-2 d-flex flex-column justify-content-center align-items-center">
+  <app-logo></app-logo>
+  <section class="ecom-alert-block d-none">
+    <div class="alert-header">
+      <i class="ecom-alert-icon"></i>
+      <h5 class="alert-header">There was a problem</h5>
+    </div>
+    <div class="alert-text">We cannot find an account with that email address</div>
+  </section>
+  <section class="login-body rounded mt-2 d-flex flex-column justify-content-center px-4 py-3">
+    <h3 style="margin-left: 3px;">Sign-In</h3>
+
+    <label class="email-label p-1 fw-bolder" for="email">Email or mobile phone number</label>
+    <input class="email-input ecom-input form-control mb-3" type="email" name="emailOrPhone" id="email"/>
+
+    <button class="ecom-button rounded mb-3">Continue</button>
+
+    <span>By continuing, you agree E-Commercial's <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Conditions of Use</a> and <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Privacy Notice</a></span>
+
+    <a class="ecom-link-blue-lighter-hov-accent-darker mt-3" [routerLink]="['/Login']">Forgot your password?</a>
+  </section>
+  <section class="login-footer">
+    <div>New to E-Commercial?</div>
+    <button>Create new account</button>
+  </section>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <a>Condition of use</a>
+    <a>Privacy Notice</a>
+    <a>Help</a>
+  </div>
+  <span>© 1996-2021, ECommercial.com, All Rights Reserved.</span>
+</div>

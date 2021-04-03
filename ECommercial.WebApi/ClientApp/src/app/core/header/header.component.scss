@@ -332,8 +332,8 @@ header{
 #categoryOffCanvas{
   .fa-times{
     position: absolute;
-    right: 15px;
-    top:20px;
+    right: 0;
+    top:2px;
     cursor: pointer;
     color: var(--gb-color-secondary-light);
     opacity: .9;

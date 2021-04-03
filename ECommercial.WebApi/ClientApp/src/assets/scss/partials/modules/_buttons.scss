@@ -15,6 +15,7 @@
     background-color: #f0c14b;
   }
   &:focus{
+    border-color: var(--gb-color-accent-darker);
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
   }
 }

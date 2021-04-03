@@ -29,3 +29,10 @@
     color:var(--gb-color-accent-dark);
   }
 }
+
+.ecom-link-blue-lighter-hov-accent-darker{
+  color: var(--gb-color-blue-lighter);
+  @include ecomLinkProperties(.725rem){
+    color:var(--gb-color-accent-darker);
+  }
+}

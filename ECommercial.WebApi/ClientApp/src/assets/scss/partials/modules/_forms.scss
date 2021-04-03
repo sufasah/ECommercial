@@ -1,0 +1,9 @@
+.ecom-input{
+  height: 30px;
+  border-color: var(--gb-color-gray-light);
+  font-size: .875rem;
+  &:focus{
+    border-color: var(--gb-color-accent-darker);
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+  }
+}

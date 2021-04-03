@@ -11,6 +11,7 @@ import { FooterComponent } from '@core/footer/footer.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
 import { LogoComponent } from '@shared/components/logo/logo.component';
 import { AccountPageComponent } from './modules/account-page/account-page.component';
+import { LoginPageComponent } from './modules/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AccountPageComponent } from './modules/account-page/account-page.compon
     HomePageComponent,
     LogoComponent,
     AccountPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     FormsModule,

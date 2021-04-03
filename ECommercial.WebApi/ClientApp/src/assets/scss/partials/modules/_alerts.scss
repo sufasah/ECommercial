@@ -1,13 +1,31 @@
 .ecom-alert{
   font-family: "Lato";
 }
-.ecom-alert-icon-error{
-  width: 20px;
-  height: 20px;
-  background-image: url("/assets/icons/alert-error.png");
-}
 .ecom-alert-inline-error{
   display: inline;
   color:var(--gb-color-red);
   font-weight: 700;
+}
+
+.ecom-alert-block{
+  border:1px solid var(--gb-color-red);
+  border-radius: 3px;
+  padding: .725rem 0;
+  width: 350px;
+  box-shadow: 0 0 0 4px #fcf4f4 inset;
+
+  .alert-header{
+    font-family: "Lato";
+    display: inline-block;
+    color: var(--gb-color-red);
+    vertical-align: 5px;
+    margin-left: .725rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .alert-text{
+    margin-left:3.4rem;
+    font-size: .825rem;
+    font-weight: 500;
+  }
 }
