@@ -1,3 +1,16 @@
+// radio-button
+@mixin insideRadioAfter(){
+  content: "";
+  position: absolute;
+  background-color: var(--gb-color-accent-dark);
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  border-radius: 60%;
+  transform: translate(-52%, -52%);
+  margin: 50%;
+}
+
 .ecom-input{
   height: 30px;
   border-color: var(--gb-color-gray-light);
@@ -5,5 +18,35 @@
   &:focus{
     border-color: var(--gb-color-accent-darker);
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+  }
+}
+
+
+.ecom-radio{
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  @include border-shadow(0,1px,20px,var(--gb-color-gray),1);
+
+  &:checked::after{
+    @include insideRadioAfter;
+  }
+  &:hover{
+    &:not(:checked)::after{
+      @include insideRadioAfter;
+      opacity: .5;
+    }
+  }
+}
+.ecom-radio-label{
+  font-size: .8rem;
+  margin-left: .5rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover{
+    color: var(--gb-color-accent-dark);
+    text-decoration: underline;
   }
 }

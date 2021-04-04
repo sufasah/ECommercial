@@ -142,53 +142,85 @@
       </div>
     </div>
   </div>
-  <div class="offcanvas overflow-hidden offcanvas-start" tabindex="-1" id="categoryOffCanvas" aria-labelledby="categoryOffcanvas">
-    <a [routerLink]="[ '/Account' ]" data-bs-dismiss="offcanvas">
-      <div class="offcanvas-header">
-        <h6 class="m-0 px-3 d-flex align-items-center">
-          <i class="fas fa-user-circle fs-3"></i>
-          <div class="fs-5">
-            <span class="me-1 ms-3">Hello,</span>
-            <span *ngIf="logged; else signInSpan">{{profileName}}</span>
-          </div>
-          <ng-template #signInSpan>
-            <span>Sign In</span>
-          </ng-template>
-        </h6>
-      </div>
-    </a>
-    <div class="fas fa-times fs-4 p-3" data-bs-dismiss="offcanvas" aria-label="Close"></div>
 
-    <div class="offcanvas-body p-0 accordion position-relative" id="categoryList">
-      <div class="categories"  *ngFor="let category of categories; let itemIndex=index" >
-        <h5 class="fw-bold m-0 p-3 ps-5 user-select-none accordion-button collapsed" data-bs-toggle="collapse" attr.data-bs-target="#collapseCategory{{itemIndex}}" attr.aria-controls="collapseCategory{{itemIndex}}">{{category.name}}</h5>
+</header>
 
-        <ul class="sub-categories m-0 list-unstyled collapse " id="collapseCategory{{itemIndex}}">
-          <li class="sub-category d-flex align-items-center" *ngFor="let subCategory of category.subCategories">
-            <a [routerLink]="['/']" class="ps-5 p-2 text-decoration-none flex-grow-1"  data-bs-dismiss="offcanvas">{{subCategory.name}}</a>
-            <i (click)="selectSubSubCategories(subCategory)" class="fas fa-angle-right p-3 fs-5"></i>
-          </li>
-        </ul>
-        <div class="dropdown-divider m-0"></div>
-      </div>
+<div class="offcanvas overflow-hidden offcanvas-start" tabindex="-1" id="categoryOffCanvas" aria-labelledby="categoryOffcanvas">
+  <a [routerLink]="[ '/Account' ]" data-bs-dismiss="offcanvas">
+    <div class="offcanvas-header">
+      <h6 class="m-0 px-3 d-flex align-items-center">
+        <i class="fas fa-user-circle fs-3"></i>
+        <div class="fs-5">
+          <span class="me-1 ms-3">Hello,</span>
+          <span *ngIf="logged; else signInSpan">{{profileName}}</span>
+        </div>
+        <ng-template #signInSpan>
+          <span>Sign In</span>
+        </ng-template>
+      </h6>
     </div>
+  </a>
+  <div class="fas fa-times fs-4 p-3" data-bs-dismiss="offcanvas" aria-label="Close"></div>
 
-    <div class="offcanvas-body p-0 sub-sub-categories-body w-100 h-100">
-      <i (click)="goToCategories()" class="fas fa-angle-left p-3 fs-5 " style="line-height: 1.5;cursor: pointer;"></i>
-      <h6 class="fw-bold m-0 p-3 user-select-none d-inline-block">{{selectedSubCategory.name}}</h6>
-      <div class="dropdown-divider m-0"></div>
-      <ul class="sub-sub-categories m-0 list-unstyled">
-        <li class="sub-sub-category d-flex align-items-center p-2" *ngFor="let subSubCategory of selectedSubCategory.subSubCategories">
-          <a [routerLink]="['/']" class="ps-5 p-2 text-decoration-none flex-grow-1"  data-bs-dismiss="offcanvas">
-            {{subSubCategory}}
-          </a>
+  <div class="offcanvas-body p-0 accordion position-relative" id="categoryList">
+    <div class="categories"  *ngFor="let category of categories; let itemIndex=index" >
+      <h5 class="fw-bold m-0 p-3 ps-5 user-select-none accordion-button collapsed" data-bs-toggle="collapse" attr.data-bs-target="#collapseCategory{{itemIndex}}" attr.aria-controls="collapseCategory{{itemIndex}}">{{category.name}}</h5>
+
+      <ul class="sub-categories m-0 list-unstyled collapse " id="collapseCategory{{itemIndex}}">
+        <li class="sub-category d-flex align-items-center" *ngFor="let subCategory of category.subCategories">
+          <a [routerLink]="['/']" class="ps-5 p-2 text-decoration-none flex-grow-1"  data-bs-dismiss="offcanvas">{{subCategory.name}}</a>
+          <i (click)="selectSubSubCategories(subCategory)" class="fas fa-angle-right p-3 fs-5"></i>
         </li>
       </ul>
       <div class="dropdown-divider m-0"></div>
-
     </div>
+  </div>
 
-
+  <div class="offcanvas-body p-0 sub-sub-categories-body w-100 h-100">
+    <i (click)="goToCategories()" class="fas fa-angle-left p-3 fs-5 " style="line-height: 1.5;cursor: pointer;"></i>
+    <h6 class="fw-bold m-0 p-3 user-select-none d-inline-block">{{selectedSubCategory.name}}</h6>
+    <div class="dropdown-divider m-0"></div>
+    <ul class="sub-sub-categories m-0 list-unstyled">
+      <li class="sub-sub-category d-flex align-items-center p-2" *ngFor="let subSubCategory of selectedSubCategory.subSubCategories">
+        <a [routerLink]="['/']" class="ps-5 p-2 text-decoration-none flex-grow-1"  data-bs-dismiss="offcanvas">
+          {{subSubCategory}}
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown-divider m-0"></div>
 
   </div>
-</header>
+</div>
+
+<div class="modal fade" id="deliverModal" tabindex="-1" role="dialog" aria-labelledby="deliverModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Choose your location</h5>
+      </div>
+      <div class="modal-body">
+        <p class="body-info"><small>
+          Delivery options and delivery speed may vary for different locations
+        </small></p>
+        <a class="ecom-link" *ngIf="logged; else signInForAddress">Manage address book</a>
+        <ng-template #signInForAddress><button class="ecom-button w-100">Sign in to see your addresses</button></ng-template>
+        <div class="ecom-text-hr">
+          <h5 >or enter a TR zip code</h5>
+        </div>
+        <form class="form-inline">
+          <div class="form-group w-100 justify-content-center">
+            <label for="zipCode" class="sr-only">Zip Code</label>
+            <input type="number"  class="form-control" id="zipCode"/>
+            <div class="w-100"></div>
+            <i class="ecom-error-icon"></i>
+            <div class="ecom-alert ecom-alert-inline-error">Please enter a valid TR zip code</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="ecom-button" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ecom-foreground" aria-labelledby="navCountry"></div>

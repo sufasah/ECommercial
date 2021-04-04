@@ -1,11 +1,23 @@
 .login-body{
   border:1px solid var(--gb-color-secondary-dark);
-  width: 350px;
   font-size: .725rem;
   font-weight: 400;
+  .email-label{
+    font-size: .825rem;
+  }
 }
 
-.email-label{
-  font-size: .825rem;
+.login-end{
+  background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+
+  .login-end-inner{
+    background: linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
+  }
+  .rights{
+    font-family: "Montserrat";
+    font-size: .625rem;
+    color: var(--gb-color-gray-dark);
+    font-weight: 500;
+  }
 }
 

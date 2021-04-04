@@ -137,39 +137,5 @@
   </div>
 </div>
 
-
-<div class="modal fade" id="deliverModal" tabindex="-1" role="dialog" aria-labelledby="deliverModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Choose your location</h5>
-      </div>
-      <div class="modal-body">
-        <p class="body-info"><small>
-          Delivery options and delivery speed may vary for different locations
-        </small></p>
-        <a class="ecom-link" *ngIf="logged; else signInForAddress">Manage address book</a>
-        <ng-template #signInForAddress><button class="ecom-button w-100">Sign in to see your addresses</button></ng-template>
-        <div class="ecom-text-hr">
-          <h5 >or enter a TR zip code</h5>
-        </div>
-        <form class="form-inline">
-          <div class="form-group w-100 justify-content-center">
-            <label for="zipCode" class="sr-only">Zip Code</label>
-            <input type="number"  class="form-control" id="zipCode"/>
-            <div class="w-100"></div>
-            <i class="ecom-error-icon"></i>
-            <div class="ecom-alert ecom-alert-inline-error">Please enter a valid TR zip code</div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="ecom-button" data-dismiss="modal">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <app-footer></app-footer>
 
-<div class="ecom-foreground" aria-labelledby="navCountry"></div>
