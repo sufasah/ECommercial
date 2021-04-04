@@ -20,20 +20,9 @@ export class LoginPageComponent implements OnInit {
     this.rememberMe=!this.rememberMe;
   }
 
-  showPasswordPart(){
-    let loginFirst = $(".login-first");
-    let loginSecond = $(".login-second");
-
-    loginFirst.addClass("d-none");
-    loginSecond.removeClass("d-none");
-  }
-
-  showEmailPart(){
-    let loginFirst = $(".login-first");
-    let loginSecond = $(".login-second");
-
-    loginFirst.removeClass("d-none");
-    loginSecond.addClass("d-none");
+  showPart(elem:any){
+    $(".login-part").addClass("d-none");
+    $(elem).removeClass("d-none");
   }
 
 

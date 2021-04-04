@@ -11,28 +11,29 @@
     <section class="login-body w-100 rounded mt-2 d-flex flex-column justify-content-center px-4 py-3">
       <h3 style="margin-left: 3px;">Sign-In</h3>
 
-      <div class="login-first w-100 mt-2 d-flex flex-column justify-content-center">
+      <div #emailPart class="login-part w-100 mt-2 d-flex flex-column justify-content-center">
         <label class="input-label p-1 fw-bolder" for="email">Email or mobile phone number</label>
         <input class="email-input ecom-input form-control mb-3" [(ngModel)]="email" type="email" name="emailOrPhone" id="email"/>
 
         <a [routerLink]="['/Login']" class="mb-3 w-100">
-          <button (click)="showPasswordPart()" class="ecom-button rounded w-100">
+          <button (click)="showPart(passwordPart)" class="ecom-button rounded w-100">
             Continue
           </button>
         </a>
 
         <span>By continuing, you agree E-Commercial's <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Conditions of Use</a> and <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Privacy Notice</a></span>
       </div>
-      <div class="login-second w-100 mt-2 d-flex flex-column justify-content-center d-none">
+
+      <div #passwordPart class="login-part w-100 mt-2 d-flex flex-column justify-content-center d-none">
         <div class="email-text">
           <span class="me-1">{{email}}</span>
-          <a class="ecom-link-blue-lighter-hov-accent-darker" (click)="showEmailPart()">Change</a>
+          <a class="ecom-link-blue-lighter-hov-accent-darker" (click)="showPart(emailPart)">Change</a>
         </div>
 
         <label class="input-label p-1 fw-bolder" for="password">Password</label>
         <input class="email-input ecom-input form-control mb-3" type="password" name="password" id="password"/>
 
-        <a [routerLink]="['/Login']" class="mb-3 w-100">
+        <a [routerLink]="['/']" class="mb-3 w-100">
           <button class="ecom-button rounded w-100">Sign-In</button>
         </a>
 
@@ -41,7 +42,8 @@
           <label for="rememberMe">Keep me signed in.</label>
         </div>
       </div>
-      <a class="ecom-link-blue-lighter-hov-accent-darker mt-3 align-self-start" [routerLink]="['/Login']">Forgot your password?</a>
+
+      <a class="ecom-link-blue-lighter-hov-accent-darker mt-3 align-self-start" [routerLink]="['/ForgotPassword']">Forgot your password?</a>
     </section>
     <section class="login-footer w-100 mt-3">
       <div class="ecom-text-hr w-100">

@@ -69,7 +69,9 @@
         <div class="dropdown-menu nav-account-dropdown p-3" aria-labelledby="navAccount">
           <div class="d-inline"></div>
           <div *ngIf="!logged">
-            <button class="ecom-button w-100">Sign in</button>
+            <a [routerLink]="[ '/Login' ]">
+              <button class="ecom-button w-100">Sign in</button>
+            </a>
             <div class="mt-1">
               <small>New customer? </small><a [routerLink]="[ '/' ]" class="ecom-link-hov-accent">Start here.</a>
             </div>
