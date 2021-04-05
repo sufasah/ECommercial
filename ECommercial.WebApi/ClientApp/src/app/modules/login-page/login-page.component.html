@@ -21,7 +21,7 @@
           </button>
         </a>
 
-        <span>By continuing, you agree E-Commercial's <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Conditions of Use</a> and <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Privacy Notice</a></span>
+        <span>By continuing, you agree E-Commercial's <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Conditions of Use</a> and <a [routerLink]="['/Login']" class="ecom-link-blue-lighter-hov-accent-darker">Privacy Notice.</a></span>
       </div>
 
       <div #passwordPart class="login-part w-100 mt-2 d-flex flex-column justify-content-center d-none">
@@ -49,20 +49,11 @@
       <div class="ecom-text-hr w-100">
         <h5>New to E-Commercial?</h5>
       </div>
-      <a [routerLink]="[ '/Login' ]">
+      <a [routerLink]="[ '/Register' ]">
         <button class="ecom-gray-button w-100 rounded">Create new account</button>
       </a>
     </section>
   </div>
 
-  <section class="login-end mt-4 w-100">
-    <div class="login-end-inner d-flex justify-content-center align-items-center pt-3">
-      <a class="ecom-link-blue-lighter-hov-accent-darker mx-3" [routerLink]="[ '/Login' ]">Condition of use</a>
-      <a class="ecom-link-blue-lighter-hov-accent-darker mx-3" [routerLink]="[ '/Login' ]">Privacy Notice</a>
-      <a class="ecom-link-blue-lighter-hov-accent-darker mx-3" [routerLink]="[ '/Login' ]">Help</a>
-    </div>
-    <div class="d-flex justify-content-center align-items-center mt-3">
-      <span class="rights">© 1996-2021, ECommercial.com, Inc. or its affiliates</span>
-    </div>
-  </section>
+  <app-login-end class="w-100"></app-login-end>
 </div>

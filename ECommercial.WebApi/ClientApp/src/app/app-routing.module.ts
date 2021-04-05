@@ -4,6 +4,7 @@ import { AccountPageComponent } from '@modules/account-page/account-page.compone
 import { ForgotPasswordPageComponent } from '@modules/forgot-password-page/forgot-password-page.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
 import { LoginPageComponent } from '@modules/login-page/login-page.component';
+import { RegisterPageComponent } from '@modules/register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:"ForgotPassword",
     component:ForgotPasswordPageComponent,
+  },
+  {
+    path:"Register",
+    component:RegisterPageComponent,
   }
 ];
 
