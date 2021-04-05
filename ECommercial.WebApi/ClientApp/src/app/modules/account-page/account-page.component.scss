@@ -1,0 +1,24 @@
+.account-card{
+  height: 100px;
+  font-size: .825rem;
+
+  .card-title{
+    font-size: 1.125rem;
+  }
+
+  &:hover{
+    background-color: var(--gb-color-secondary-dark);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width:400px){
+  .account-card{
+    font-size:.75rem;
+
+    .card-title{
+      font-size: .9rem;
+    }
+  }
+}
+

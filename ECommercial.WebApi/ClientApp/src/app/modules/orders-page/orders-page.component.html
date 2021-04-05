@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 p-3 ps-4">
+      <app-account-breadcrumb [page]="'Your Orders'"></app-account-breadcrumb>
+
+      <div class="d-flex">
+        <h3 class="flex-grow-1 m-0">Your Orders</h3>
+        <div class="d-flex mt-1">
+          <i class="fas fa-search pt-2 position-absolute ms-2" style="pointer-events: none;"></i>
+          <input class="form-control ecom-input search-order d-inline-block me-2" type="text" name="search" placeholder="Search all orders"/>
+          <button class="ecom-dark-gray-button rounded">Search Orders</button>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs pt-4">
+        <li class="nav-item" style="margin:-5px"><a class="nav-link"> </a></li>
+        <li class="nav-item">
+          <a class="nav-link ecom-link-blue-lighter-hov-accent-darker active" [routerLink]="['.']" fragment="orders" data-bs-toggle="tab" role="tab">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ecom-link-blue-lighter-hov-accent-darker" [routerLink]="['.']"  fragment="buyAgain" data-bs-toggle="tab" role="tab">Buy Again</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ecom-link-blue-lighter-hov-accent-darker" [routerLink]="['.']"  fragment="openOrders" data-bs-toggle="tab" role="tab">Open Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ecom-link-blue-lighter-hov-accent-darker" [routerLink]="['.']" fragment="digitalOrders" data-bs-toggle="tab" role="tab">Digital Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ecom-link-blue-lighter-hov-accent-darker" [routerLink]="['.']" fragment="cancelledOrders" data-bs-toggle="tab" role="tab">Cancelled Orders</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tabpanel" id="orders" class="tab-pane active pt-3"><b>0 orders</b> placed in </div>
+        <div role="tabpanel" id="buyAgain" class="tab-pane">Buy Again</div>
+        <div role="tabpanel" id="openOrders" class="tab-pane">Open Orders</div>
+        <div role="tabpanel" id="digitalOrders" class="tab-pane">Digital Orders</div>
+        <div role="tabpanel" id="cancelledOrders" class="tab-pane">Cancelled Orders</div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -15,6 +15,8 @@ import { LoginPageComponent } from './modules/login-page/login-page.component';
 import { ForgotPasswordPageComponent } from './modules/forgot-password-page/forgot-password-page.component';
 import { RegisterPageComponent } from './modules/register-page/register-page.component';
 import { LoginEndComponent } from './shared/components/login-end/login-end.component';
+import { OrdersPageComponent } from './modules/orders-page/orders-page.component';
+import { AccountBreadcrumbComponent } from './shared/components/account-breadcrumb/account-breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { LoginEndComponent } from './shared/components/login-end/login-end.compo
     ForgotPasswordPageComponent,
     RegisterPageComponent,
     LoginEndComponent,
+    OrdersPageComponent,
+    AccountBreadcrumbComponent,
   ],
   imports: [
     FormsModule,

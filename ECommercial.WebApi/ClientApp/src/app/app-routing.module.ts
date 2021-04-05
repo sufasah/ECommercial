@@ -4,6 +4,7 @@ import { AccountPageComponent } from '@modules/account-page/account-page.compone
 import { ForgotPasswordPageComponent } from '@modules/forgot-password-page/forgot-password-page.component';
 import { HomePageComponent } from '@modules/home-page/home-page.component';
 import { LoginPageComponent } from '@modules/login-page/login-page.component';
+import { OrdersPageComponent } from '@modules/orders-page/orders-page.component';
 import { RegisterPageComponent } from '@modules/register-page/register-page.component';
 
 const routes: Routes = [
@@ -13,7 +14,16 @@ const routes: Routes = [
   },
   {
     path:"Account",
-    component:AccountPageComponent,
+    children: [
+      {
+        path:"",
+        component:AccountPageComponent,
+      },
+      {
+        path:"Orders",
+        component:OrdersPageComponent,
+      },
+    ],
   },
   {
     path:"Login",
@@ -26,7 +36,8 @@ const routes: Routes = [
   {
     path:"Register",
     component:RegisterPageComponent,
-  }
+  },
+
 ];
 
 @NgModule({

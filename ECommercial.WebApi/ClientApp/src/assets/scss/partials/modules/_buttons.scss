@@ -68,3 +68,18 @@
     0 0 3px 2px rgb(228 121 17 / 50%),
     );
 }
+
+.ecom-dark-gray-button{
+  @include ecom-button-inside(
+    linear-gradient(to bottom,#72787F,#444C55),
+    #3d444c #2f353b #2c3137,
+    linear-gradient(to bottom,#666b72,#393f47),
+    var(--gb-color-black-light),
+    0 1px 3px rgb(0 0 0 / 20%) inset,
+    #32373e #24282d #212429,
+    0 0 3px 2px rgb(228 121 17 / 50%),
+    );
+  box-shadow: 0 1px 0 rgb(255 255 255 / 15%) inset;
+  font-weight:700;
+  color: #fff;
+}

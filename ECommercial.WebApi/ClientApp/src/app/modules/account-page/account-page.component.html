@@ -1,3 +1,31 @@
 <app-header></app-header>
-account
+
+<div class="container p-3">
+  <h3>Your Account</h3>
+
+  <div class="row" >
+    <div class="col-xl-4 col-md-6 col-12" *ngFor="let card of cards">
+      <a [routerLink]="[ card.link ]" class="text-decoration-none">
+        <div class="card account-card mb-3">
+          <div class="row h-100 g-0">
+            <div class="d-sm-none col-1"></div>
+            <div class="col-2 col-sm-3 text-center d-flex justify-content-center align-items-center">
+              <img width="75px" height="75px" src="{{card.imgUrl}}" alt="card.title">
+            </div>
+            <div class="col-8 col-sm-9">
+              <div class="card-body">
+                <h6 class="card-title m-0">{{card.title}}</h6>
+                <p class="card-text text-muted">{{card.text}}</p>
+              </div>
+            </div>
+            <div class="d-sm-none col-1"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <hr style="border-color:var(--gb-color-secondary-dark);">
+</div>
+
 <app-footer></app-footer>

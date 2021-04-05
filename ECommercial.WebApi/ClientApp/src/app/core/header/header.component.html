@@ -82,7 +82,7 @@
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Orders</a>
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Recommendations</a>
           <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Browsing History</a>
-          <a class="ecom-link-gray d-block" [routerLink]="[ '/']">Sign out</a>
+          <a class="ecom-link-gray d-block" [routerLink]="[ '/']" *ngIf="logged">Sign out</a>
         </div>
       </div>
 
