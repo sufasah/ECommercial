@@ -17,12 +17,13 @@ Continues, -
 <br>
 
 * Project Description: <br/>
-This project is an individual e-commerce project. In this project, I am going to built web APIs as a backend and frontend side is going to be working on browser and mobile. In this application, users can have accounts, sell and buy products, communicate with other users, search their needs. There are going to be various frameworks, databases, libraries used in this project because main purpose of doing this project is about to experience and practise all written below. Also there are going to be ORMs, IoC containers, logging, caching etc. 
+This project is clone of amazon website. In this project, I am going to built web API as a backend and the frontend side is going to be working on browser and mobile. In this application, same functionalities are going to exist as much as possible. There are going to be various frameworks, databases, libraries used in this project because main purpose of doing this project is about to experience and practise all written below. Also there are going to be ORMs, IoC containers, logging, caching etc.
+
 **Things will be used in the project:** 
     | Database | Back-end | Front-end | Mobile Front-end |
     | :-: | :-: | :-: | :-:
-    | Postgresql | Asp .Net Core | Angular | Android Native|
-    | Mysql | Spring Boot | React | Flutter |
+    | Postgresql | Asp .Net Core | Angular | Flutter|
+    | Mysql | Spring Boot | React | React Native |
 <br/>
 <br/>
 
