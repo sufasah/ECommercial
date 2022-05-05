@@ -13,7 +13,9 @@ October 2020
 <br>
 
 * Project State And Duration: <br/>
-Continues, -
+Cancelled,
+
+This projet is massive to deal with. Learning is a continuous process and learning everything at once while doing a project can only cause using technologies and tools within a framework or language. It is much more important to learn concepts, problems and solutions which are reason to come out of related software technologies and tools day by day in needed deep. So, It will be more effective way to learn with more than one smaller projects for specific situations associated with the tools and technologies.
 <br>
 
 * Project Description: <br/>
